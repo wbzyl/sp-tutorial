@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/uv.css", "/stylesheets/sp.css" %>
+    <%= stylesheet_link_tag "/stylesheets/print.css", :media => "print" %>
+    <!--[if IE]>
+      <%= stylesheet_link_tag "css/blueprint/ie.css" %>
+    <![endif]-->
+
+    <title><%= "WB/SP" + page_title %></title>
+  </head>
+  <body>
+    <div class="span-21" id="header">
+      <div class="push-1 span-7">
+        <a href="/"><%= image_tag "/images/sp.png", :alt => "[WB/Srodowisko Programisty logo]" %></a>
+      </div>
+      <div class="span-13 last">
+        <div class="append-1" id="links">
+          <a href="http://wbzyl.ug.edu.pl/sp/">home</a>
+          <a href="http://wbzyl.ug.edu.pl/galeria/">galeria</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="span-21 container"><!-- showgrid -->
+      <div class="push-1 span-12" id="content">
+      
+        <%= yield %>          
+        
+      </div>
+      <div class="span-8 last">
+      </div>
+    </div>
+
+  </body>
+</html>

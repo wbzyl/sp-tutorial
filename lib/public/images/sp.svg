@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640px"
+   height="480px"
+   id="svg12"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="sp.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/wbzyl/public_git/tutorials/rails3-tutorial/lib/public/images/rails3.png"
+   inkscape:export-xdpi="60"
+   inkscape:export-ydpi="60">
+  <defs
+     id="defs14">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 240 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="640 : 240 : 1"
+       inkscape:persp3d-origin="320 : 160 : 1"
+       id="perspective20" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4838726"
+     inkscape:cx="311.53406"
+     inkscape:cy="331.04089"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:window-width="1274"
+     inkscape:window-height="724"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <rect
+       style="opacity:1;fill:#00a800;fill-opacity:1"
+       id="rect1128"
+       width="124.73831"
+       height="57.222939"
+       x="53.724297"
+       y="66.788307"
+       transform="matrix(0.9999972,2.3648638e-3,-0.1817384,0.9833469,0,0)"
+       inkscape:export-filename="/home/wbzyl/public_git/tutorials/sp2009/lib/public/images/sp.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#300000;font-family:Cyklop;-inkscape-font-specification:Cyklop Italic;fill-opacity:1"
+       x="38.810169"
+       y="112.35313"
+       id="text2018"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0043746,0.9956445)"
+       inkscape:export-filename="/home/wbzyl/public_git/tutorials/sp2009/lib/public/images/sp.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan2020"
+         x="38.810169"
+         y="112.35313">WB</tspan></text>
+    <rect
+       transform="matrix(0.9999998,6.9232515e-4,-0.2264004,0.9740343,0,0)"
+       y="67.774132"
+       x="180.94753"
+       height="57.796818"
+       width="426.27826"
+       id="rect1130"
+       style="opacity:1;fill:#f0d800;fill-opacity:1"
+       inkscape:export-filename="/home/wbzyl/public_git/tutorials/sp2009/lib/public/images/sp.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#300000;font-family:Cyklop;-inkscape-font-specification:Cyklop Italic;fill-opacity:1"
+       x="164.09065"
+       y="111.84612"
+       id="text2026"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/wbzyl/public_git/tutorials/sp2009/lib/public/images/sp.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan2028"
+         x="164.09065"
+         y="111.84612"
+         dx="0 0 0 -21.222042 0 0 0 -0.67391229 -1.3478246">SP 2009/10</tspan></text>
+  </g>
+</svg>
