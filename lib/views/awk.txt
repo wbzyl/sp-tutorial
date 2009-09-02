@@ -1,0 +1,191 @@
+### awk
+
+When you need to work with columns of data or execute a little bit of
+code for each line matching a pattern, use <TT>awk</TT>.  <TT>awk</TT>
+programs are pattern-action pairs.  While some <TT>awk</TT> programs
+are complicated enough to require a separate file containing the
+program, you can do some amazing things using an argument on the
+command-line.
+
+<TT>awk</TT> thinks input lines are broken up into fields (i.e.,
+columns) separate by whitespace.  Fields are referenced in an action
+via <TT>$1</TT>, <TT>$2</TT>, ... while <TT>$0</TT> refers to the
+entire input line.
+
+A pattern-action pair looks like:
+
+<div class="code"><PRE>
+pattern {action}
+</PRE></div>
+
+If you omit the pattern, the action is executed for each input line.
+Omitting the action means print the line.  You can separate the pairs
+by newline or semicolon.
+
+Consider input
+
+<div class="code"><PRE>
+aasghar Asghar, Ali
+wchen   Chen, Wei
+zchen   Chen, Zhen-Jian
+</PRE></div>
+
+If you want a list of login names, ask <TT>awk</TT> to print the first column:
+
+<div class="code"><PRE>
+$ cat /home/public/cs601/unix/emails.txt | awk '{print $1;}'
+</PRE></div>
+
+If you want to convert the login names to email addresses, use the
+<TT>printf</TT> C-lookalike function:
+
+<div class="code"><PRE>
+$ cat /home/public/cs601/unix/emails.txt | awk '{printf("%s@cs.usfca.edu,",$1);}'
+</PRE></div>
+
+Because of the missing <TT>\n</TT> in the <TT>printf</TT> string,
+you'll see the output all on one line ready for pasting into a mail
+program:
+
+<div class="code"><PRE>
+aasghar@cs.usfca.edu,wchen@cs.usfca.edu,zchen@cs.usfca.edu
+</PRE></div>
+
+You might also want to reorder columns of data.  To print firstname,
+lastname, you might try:
+
+<div class="code"><PRE>
+$ cat /home/public/cs601/unix/emails.txt | awk '{printf("%s %s\n", $3, $2);}'
+</PRE></div>
+
+but you'll notice that the comma is still there as it is part of the column:
+
+<div class="code"><PRE>
+Ali Asghar,
+Wei Chen,
+Zhen-Jian Chen,
+</PRE></div>
+
+You need to pipe the output thru <TT>tr</TT> (or <TT>sed</TT>) to strip the comma:
+
+<div class="code"><PRE>
+$ cat /home/public/cs601/unix/emails.txt | \
+  awk '{printf("%s %s\n", $3, $2);}' | \
+  tr -d ','
+</PRE></div>
+
+Then you will see:
+
+<div class="code"><PRE>
+
+Ali Asghar
+Wei Chen
+Zhen-Jian Chen
+</PRE></div>
+
+You can also use <TT>awk</TT> to examine the value of content.  To sum
+up the first column of the following data (in file
+<TT>/home/public/cs601/unix/coffee</TT>):
+
+<div class="code"><PRE>
+3 parrt
+2 jcoker
+8 tombu
+</PRE></div>
+
+use the following simple command:
+
+<div class="code"><PRE>
+$ awk '{n+=$1;} ; END {print n;}' &lt; /home/public/cs601/unix/coffee
+</PRE></div>
+
+where <TT>END</TT> is a special pattern that means "after processing the stream."
+
+If you want to filter or sum all values less than or equal to, say 3,
+use an <TT>if</TT> statement:
+
+<div class="code"><PRE>
+$ awk '{if ($1&lt;=3) n+=$1;} END {print n;}' &lt; /home/public/cs601/unix/coffee
+</PRE></div>
+
+In this case, you will see output <TT>5</TT> (3+2);
+
+Using <TT>awk</TT> to grab a particular column is very common when
+processing log files.  Consider a <A
+HREF="http://www.jguru.com"><B>http://www.jguru.com</B></A> page view
+log file, <TT>/home/public/cs601/unix/pageview-20021022.log</TT>, that
+are of the form:
+
+<div class="code"><PRE>
+date-stamp(thread-name): userID-or-IPaddr URL site-section
+</PRE></div>
+
+So, the data looks like this:
+
+<div class="code"><PRE>
+20021022_00.00.04(tcpConnection-80-3019):       203.6.152.30    /faq/subtopic.jsp?topicID=472&page=2    FAQs     
+20021022_00.00.07(tcpConnection-80-2981):       995134  /index.jsp      Home 
+20021022_00.00.08(tcpConnection-80-2901):       66.67.34.44     /faq/subtopic.jsp?topicID=364   FAQs     
+20021022_00.00.12(tcpConnection-80-3003):       217.65.96.13    /faq/view.jsp?EID=736437        FAQs     
+20021022_00.00.13(tcpConnection-80-3019):       203.124.210.98  /faq/topicindex.jsp?topic=JSP   FAQs/JSP         
+20021022_00.00.15(tcpConnection-80-2988):       202.56.231.154  /faq/index.jsp FAQs     
+20021022_00.00.19(tcpConnection-80-2976):       66.67.34.44     /faq/view.jsp?EID=225150        FAQs     
+220021022_00.00.21(tcpConnection-80-2974):       143.89.192.5    /forums/most_active.jsp?topic=EJB       Forums/EJB       
+20021022_00.00.21(tcpConnection-80-2996):       193.108.239.34  /guru/edit_account.jsp  Guru     
+20021022_00.00.21(tcpConnection-80-2996):       193.108.239.34  /misc/login.jsp Misc     
+...
+</PRE></div>
+
+When a user is logged in, the log file has their user ID rather than
+their IP address.
+
+Here is how you get a list of URLs that people view on say October 22, 2002:
+
+<div class="code"><PRE>
+
+$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log
+/faq/subtopic.jsp?topicID=472&page=2
+/index.jsp
+/faq/subtopic.jsp?topicID=364
+/faq/view.jsp?EID=736437
+/faq/topicindex.jsp?topic=JSP
+/faq/index.jsp
+/faq/view.jsp?EID=225150
+/forums/most_active.jsp?topic=EJB
+/guru/edit_account.jsp
+/misc/login.jsp
+...
+</PRE></div>
+
+If you want to count how many page views there were that day that were
+not processing pages (my processing pages are all of the form
+<TT>process_</TT><em>xxx</em>), pipe the results through <TT>grep</TT>
+and <TT>wc</TT>:
+
+<div class="code"><PRE>
+$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
+  grep -v process | \
+  wc -l
+67850
+</PRE></div>
+
+If you want a unique list of URLs, you can sort the output and then
+use <TT>uniq</TT>:
+
+<div class="code"><PRE>
+$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
+  sort | \
+  uniq
+</PRE></div>
+
+<TT>uniq</TT> just collapses all repeated lines into a single
+line--that is why you must sort the output first.  You'll get output
+like:
+
+<div class="code"><PRE>
+/article/index.jsp
+/article/index.jsp?page=1
+/article/index.jsp?page=10
+/article/index.jsp?page=2
+...
+</PRE></div>

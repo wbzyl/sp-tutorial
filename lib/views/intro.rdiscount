@@ -1,5 +1,8 @@
 #### {% title "Jak zostać Uniksowym guru w kwadrans" %}
 
+[unix guru]: http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html "How To Look Like A UNIX Guru"
+
+
 # Jak zostać Uniksowym guru w kwadrans
 
 UNIX is an extremely popular platform for deploying server software
@@ -12,16 +15,16 @@ If you want to be a serious server developer, you will need to have a
 certain facility with a number of UNIX tools; about 15. You will start
 to see similarities among them, particularly regular expressions, and
 soon you will feel very comfortable. Combining the simple commands,
-you can build very powerful tools very quickly--much faster than you
+you can build very powerful tools very quickly—much faster than you
 could build the equivalent functionality in C or Java, for example.
 
 
 ## Wszystko jest strumieniem
 
 The first thing you need to know is that UNIX is based upon the idea
-of a <em>stream</em>.  Everything is a <em>stream</em>, or appears to be.  Device
+of a *stream*.  Everything is a *stream*, or appears to be. Device
 drivers look like streams, terminals look like streams, processes
-communicate via streams, etc...  The input and output of a program are
+communicate via streams, etc…  The input and output of a program are
 streams that you can redirect into a device, a file, or another
 program.
 
@@ -29,24 +32,20 @@ Here is an example device, the null device, that lets you throw output
 away.  For example, you might want to run a program but ignore the
 output.
 
-<div class="code"><PRE>
-$ ls &gt; /dev/null # ignore output of ls
-</PRE></div>
+    :::shell-unix-generic
+    ls > /dev/null # ignore output of ls
 
-where "<TT># ignore output of ls</TT>" is a comment.
+where "`# ignore output of ls`" is a comment.
 
-Most of the commands covered in this lecture process <TT>stdin</TT>
-and send results to <TT>stdout</TT>.  In this manner, you can
+Most of the commands covered in this lecture process `stdin`
+and send results to `stdout`.  In this manner, you can
 incrementally process a data stream by hooking the output of one tool
-to the input of another via a <em>pipe</em>.  For example, the
+to the input of another via a *pipe*.  For example, the
 following piped sequence prints the number of files in the current
 directory modified in August.
 
-
-<div class="code"><PRE>
-$ ls -l | grep Aug | wc -l
-</PRE></div>
-
+    :::shell-unix-generic
+    ls -l | grep Aug | wc -l
 
 Imagine how long it would take you to write the equivalent C or Java
 program.  You can become an extremely productive UNIX programmer if
@@ -55,40 +54,35 @@ programming on a PC, I use MKS's UNIX shell and command library to
 make it look like a UNIX box.  Worth the cash.  
 
 
-## Getting help
+## Uzyskiwanie pomocy
 
 If you need to know about a command, ask for the "man" page.  For
-example, to find out about the <TT>ls</TT> command, type
+example, to find out about the `ls` command, type
 
-<div class="code"><PRE>
-$ man ls
-LS(1)                   System General Commands Manual                   LS(1)
-
-NAME
-     ls - list directory contents
-
-SYNOPSIS
-     ls [-ACFLRSTWacdfgiklnoqrstux1] [file ...]
-
-DESCRIPTION
-     For each operand that names a file of a type other than directory, ls
-...
-
-</PRE></div>
-
-
+    :::shell-unix-generic
+    man ls
+    LS(1)       User Commands       LS(1)
+    
+    NAME
+         ls - list directory contents
+    
+    SYNOPSIS
+         ls [OPTION]... [FILE]...
+    
+    DESCRIPTION
+         List information about the FILEs (the current directory 
+         by default). Sort entries alphabetically if none 
+         of -cftuvSUX nor --sort.
+    ...
 
 You will get a summary of the command and any arguments.
 
-If you cannot remember the command's name, try using <TT>apropos</TT>
-which finds commands and library routines related to that word.  For
-example, to find out how to do checksums, type
+If you cannot remember the command's name, try using `apropos`
+which finds commands and library routines related to that word.  
+For example, to find out how to do checksums, type
 
-<div class="code"><PRE>
-$ apropos checksum
-cksum(1), sum(1)         - display file checksums and block counts
-md5(1)                   - calculate a message-digest fingerprint (checksum) for a file
-</PRE></div>
+    apropos checksum
+    cksum(1), sum(1)  - display file checksums and block counts
 
 
 ## Special Directories and files
@@ -107,7 +101,7 @@ is the same as plain <TT>test</TT>.  If <TT>test</TT> is a directory above, use
 
 <TT>/</TT> is the root directory; there is no drive specification in UNIX.
 
-The <TT>.bash_profile</TT> file is very important as it is how your shell
+The <TT>.bash\_profile</TT> file is very important as it is how your shell
 session is initialized including your ever-important <TT>CLASSPATH</TT>
 
 environment variable.  Your <TT>bash</TT> shell initialization file is
@@ -229,25 +223,40 @@ $ pwd
 
 ### top
 
-To watch a dynamic display of the processes on your box in action, use <TT>top</TT>.
+To watch a dynamic display of the processes on your box in action, use 
+`top` or `htop`.
 
 ### ps
 
-To print out (wide display) all processes running on a box, use <TT>ps auxwww</TT>.
+To print out (wide display) all processes running on a box, use 
+
+    :::shell-unix-generic
+    ps auxww  # double w
 
 ### chmod
 
-To change the privileges of a file or directory, use <TT>chmod</TT>.  The
+To change the privileges of a file or directory, use `chmod`.  The
 privileges are 3 digit octal words with 3 bits per digit: rwxrwxrwx
 where the first digit is for the file owner, the 2nd for the group,
 and 3rd for anybody.  644 is a common word value file which means
-110100100 or rw-r--r--.  When you do <TT>ls -l</TT> you will see these
-bits. 755 is a common word value for directories: rwxr-xr-x where
-directories need to be executable for <TT>cd</TT> to be able to enter that
-dir. 755 is a shorthand for the more readable argument <TT>u=rwx,go=rx</TT>.
+110100100 or
+
+    rw-r--r--
+
+When you do `ls -l` you will see these bits. 
+
+755 is a common word value for directories: 
+
+    rwxr-xr-x 
+
+where directories need to be executable for `cd` to be able to enter that
+dir. 755 is a shorthand for the more readable argument 
+
+    u=rwx,go=rx
+
 u is user, g is group, o is other.
 
-Use <TT>chmod -R</TT> for recursively applying to all the dirs below the
+Use `chmod -R` for recursively applying to all the dirs below the
 argument as well.
 
 
@@ -317,30 +326,23 @@ $ cat /home/public/cs601/unix/access.log | grep -v -f /tmp/spider.IPs
 
 Finally, to ignore the case of the input stream, use <TT>-i</TT>.
 
-## Translating streams
 
-Morphing a text stream is a fundamental UNIX operation.  PERL is a
-good tool for this, but since I don't like PERL I stick with three
-tools: <TT>tr</TT>, <TT>sed</TT>, and <TT>awk</TT>.  PERL and these
-tools are line-by-line tools in that they operate well only on
-patterns fully contained within a single line.  If you need to process
-more complicated patterns like XML or you need to parse a programming
-language, use a context-free grammar tool like <A
-HREF="http://www.antlr.org"><B> ANTLR</B></A>.  
+## Przekształcanie strumieni tekstu
+
+Morphing a text stream is a fundamental UNIX operation.
 
 ### tr
 
-For manipulating whitespace, you will find <TT>tr</TT> very useful.
+For manipulating whitespace, you will find `tr` very useful.
 
 If you have columns of data separated by spaces and you would like the
 columns to collapse so there is a single column of data, tell
 <TT>tr</TT> to replace space with newline <TT>tr ' ' '\n'</TT>.
 Consider input file <TT>/home/public/cs601/unix/names</TT>:
 
-<div class="code"><PRE>
-jim scott mike
-bill randy tom
-</PRE></div>
+    :::shell-unix-generic
+    jim scott mike
+    bill randy tom
 
 To get all those names in a column, use
 
@@ -395,205 +397,14 @@ The <TT>\(...\)</TT> grouping collects text that you can refer to with
 If you want to kill everything from the ',' character to end of line,
 use the end-of-line marker <TT>$</TT>:
 
-    :::bash
+    :::shell-unix-generic
     $ ... | sed 's/,.*$//' # kill from comma to end of line
 
-### awk
-
-When you need to work with columns of data or execute a little bit of
-code for each line matching a pattern, use <TT>awk</TT>.  <TT>awk</TT>
-programs are pattern-action pairs.  While some <TT>awk</TT> programs
-are complicated enough to require a separate file containing the
-program, you can do some amazing things using an argument on the
-command-line.
-
-<TT>awk</TT> thinks input lines are broken up into fields (i.e.,
-columns) separate by whitespace.  Fields are referenced in an action
-via <TT>$1</TT>, <TT>$2</TT>, ... while <TT>$0</TT> refers to the
-entire input line.
-
-A pattern-action pair looks like:
-
-<div class="code"><PRE>
-pattern {action}
-</PRE></div>
-
-If you omit the pattern, the action is executed for each input line.
-Omitting the action means print the line.  You can separate the pairs
-by newline or semicolon.
-
-Consider input
-
-<div class="code"><PRE>
-aasghar Asghar, Ali
-wchen   Chen, Wei
-zchen   Chen, Zhen-Jian
-</PRE></div>
-
-If you want a list of login names, ask <TT>awk</TT> to print the first column:
-
-<div class="code"><PRE>
-$ cat /home/public/cs601/unix/emails.txt | awk '{print $1;}'
-</PRE></div>
-
-If you want to convert the login names to email addresses, use the
-<TT>printf</TT> C-lookalike function:
-
-<div class="code"><PRE>
-$ cat /home/public/cs601/unix/emails.txt | awk '{printf("%s@cs.usfca.edu,",$1);}'
-</PRE></div>
-
-Because of the missing <TT>\n</TT> in the <TT>printf</TT> string,
-you'll see the output all on one line ready for pasting into a mail
-program:
-
-<div class="code"><PRE>
-aasghar@cs.usfca.edu,wchen@cs.usfca.edu,zchen@cs.usfca.edu
-</PRE></div>
-
-You might also want to reorder columns of data.  To print firstname,
-lastname, you might try:
-
-<div class="code"><PRE>
-$ cat /home/public/cs601/unix/emails.txt | awk '{printf("%s %s\n", $3, $2);}'
-</PRE></div>
-
-but you'll notice that the comma is still there as it is part of the column:
-
-<div class="code"><PRE>
-Ali Asghar,
-Wei Chen,
-Zhen-Jian Chen,
-</PRE></div>
-
-You need to pipe the output thru <TT>tr</TT> (or <TT>sed</TT>) to strip the comma:
-
-<div class="code"><PRE>
-$ cat /home/public/cs601/unix/emails.txt | \
-  awk '{printf("%s %s\n", $3, $2);}' | \
-  tr -d ','
-</PRE></div>
-
-Then you will see:
-
-<div class="code"><PRE>
-
-Ali Asghar
-Wei Chen
-Zhen-Jian Chen
-</PRE></div>
-
-You can also use <TT>awk</TT> to examine the value of content.  To sum
-up the first column of the following data (in file
-<TT>/home/public/cs601/unix/coffee</TT>):
-
-<div class="code"><PRE>
-3 parrt
-2 jcoker
-8 tombu
-</PRE></div>
-
-use the following simple command:
-
-<div class="code"><PRE>
-$ awk '{n+=$1;} ; END {print n;}' &lt; /home/public/cs601/unix/coffee
-</PRE></div>
-
-where <TT>END</TT> is a special pattern that means "after processing the stream."
-
-If you want to filter or sum all values less than or equal to, say 3,
-use an <TT>if</TT> statement:
-
-<div class="code"><PRE>
-$ awk '{if ($1&lt;=3) n+=$1;} END {print n;}' &lt; /home/public/cs601/unix/coffee
-</PRE></div>
-
-In this case, you will see output <TT>5</TT> (3+2);
-
-Using <TT>awk</TT> to grab a particular column is very common when
-processing log files.  Consider a <A
-HREF="http://www.jguru.com"><B>http://www.jguru.com</B></A> page view
-log file, <TT>/home/public/cs601/unix/pageview-20021022.log</TT>, that
-are of the form:
-
-<div class="code"><PRE>
-date-stamp(thread-name): userID-or-IPaddr URL site-section
-</PRE></div>
-
-So, the data looks like this:
-
-<div class="code"><PRE>
-20021022_00.00.04(tcpConnection-80-3019):       203.6.152.30    /faq/subtopic.jsp?topicID=472&page=2    FAQs     
-20021022_00.00.07(tcpConnection-80-2981):       995134  /index.jsp      Home 
-20021022_00.00.08(tcpConnection-80-2901):       66.67.34.44     /faq/subtopic.jsp?topicID=364   FAQs     
-20021022_00.00.12(tcpConnection-80-3003):       217.65.96.13    /faq/view.jsp?EID=736437        FAQs     
-20021022_00.00.13(tcpConnection-80-3019):       203.124.210.98  /faq/topicindex.jsp?topic=JSP   FAQs/JSP         
-20021022_00.00.15(tcpConnection-80-2988):       202.56.231.154  /faq/index.jsp FAQs     
-20021022_00.00.19(tcpConnection-80-2976):       66.67.34.44     /faq/view.jsp?EID=225150        FAQs     
-220021022_00.00.21(tcpConnection-80-2974):       143.89.192.5    /forums/most_active.jsp?topic=EJB       Forums/EJB       
-20021022_00.00.21(tcpConnection-80-2996):       193.108.239.34  /guru/edit_account.jsp  Guru     
-20021022_00.00.21(tcpConnection-80-2996):       193.108.239.34  /misc/login.jsp Misc     
-...
-</PRE></div>
-
-When a user is logged in, the log file has their user ID rather than
-their IP address.
-
-Here is how you get a list of URLs that people view on say October 22, 2002:
-
-<div class="code"><PRE>
-
-$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log
-/faq/subtopic.jsp?topicID=472&page=2
-/index.jsp
-/faq/subtopic.jsp?topicID=364
-/faq/view.jsp?EID=736437
-/faq/topicindex.jsp?topic=JSP
-/faq/index.jsp
-/faq/view.jsp?EID=225150
-/forums/most_active.jsp?topic=EJB
-/guru/edit_account.jsp
-/misc/login.jsp
-...
-</PRE></div>
-
-If you want to count how many page views there were that day that were
-not processing pages (my processing pages are all of the form
-<TT>process_</TT><em>xxx</em>), pipe the results through <TT>grep</TT>
-and <TT>wc</TT>:
-
-<div class="code"><PRE>
-$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
-  grep -v process | \
-  wc -l
-67850
-</PRE></div>
-
-If you want a unique list of URLs, you can sort the output and then
-use <TT>uniq</TT>:
-
-<div class="code"><PRE>
-$ awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
-  sort | \
-  uniq
-</PRE></div>
-
-<TT>uniq</TT> just collapses all repeated lines into a single
-line--that is why you must sort the output first.  You'll get output
-like:
-
-<div class="code"><PRE>
-/article/index.jsp
-/article/index.jsp?page=1
-/article/index.jsp?page=10
-/article/index.jsp?page=2
-...
-</PRE></div>
 
 ## Tarballs
 
-Note: <em>The name comes from a similar word, hairball (stuff that
-cats throw up), I'm pretty sure</em>.
+Note: *The name comes from a similar word, **hairball** (stuff that
+cats throw up), I'm pretty sure.*
 
 To collect a bunch of files and directories together, use
 <TT>tar</TT>.  For example, to tar up your entire home directory and
@@ -673,9 +484,9 @@ $ zcat bigfile.gz
 </PRE></div>
 
 
-## Moving files between machines
+## Kopiowanie plików między komputerami
 
-## rsync
+### rsync
 
 When you need to have a directory on one machine mirrored on another
 machine, use <TT>rsync</TT>.  It compares all the files in a directory
@@ -726,7 +537,7 @@ $ scp lecture.html parrt@nexus.cs.usfca.edu:~parrt/lectures
 Just like <TT>cp</TT>, use <TT>-r</TT> to copy a directory recursively.
 
 
-## Miscellaneous
+## Pozostałe programy
 
 ### find
 
@@ -827,7 +638,7 @@ If nothing is found in your path, you'll see:
 
 <div class="code"><PRE>
 $ which fuser
-/usr/bin/which: no fuser in (/usr/local/bin:/usr/local/java/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/X11R6/bin:/home/parrt/bin)
+/usr/bin/which: no fuser in (/usr/local/bin:/usr/X11R6/bin:/usr/X11R6/bin)
 </PRE></div>
 
 ### kill, pkill
@@ -851,7 +662,7 @@ $ /usr/sbin/traceroute www.cnn.com
 ...
 </PRE></div>
 
-### What is my IP address?
+### Jaki jest mój adres IP?
 
 <div class="code"><PRE>
 $ /sbin/ifconfig
@@ -866,9 +677,11 @@ eth0      Link encap:Ethernet  HWaddr 00:10:DC:58:B1:F0
 </PRE></div>
 
 
-## Useful combinations
+## Użyteczne potoki: generowanie histogramu
 
-### How to make a histogram
+**Uwaga**: zastąpić *awk* programem *cut*. Zamiast anlizować
+plik *pageview-20021022.log* przeanalizować plik dziennika
+railsów: zacząć od *grep 'Rendering '*
 
 A histogram is set of count, value pairs indicating how often the
 value occurs.  The basic operation will be to sort, then count how
@@ -962,74 +775,3 @@ $ grep -v -f /tmp/spider.IPs /home/public/cs601/unix/pageview-20021022.log | \
  525 /faq/home.jsp?topic=Struts
  501 /faq/home.jsp?topic=JSP
 </PRE></div>
-
-### Generating scripts and programs
-
-I like to automate as much as possible.  Sometimes that means writing
-a program that generates another program or script.
-
-**Processing mail files**
-
-I wanted to get a sequence of SQL commands that would update our
-database whenever someone's email bounced.  Processing the mail file
-is pretty easy since you can look for the error code followed by the
-email address.  A bounced email looks like:
-
-<div class="code"><PRE>
-From MAILER-DAEMON@localhost.localdomain  Wed Jan  9 17:32:33 2002
-Return-Path: &lt;&gt;
-Received: from web.jguru.com (web.jguru.com [64.49.216.133])
-        by localhost.localdomain (8.9.3/8.9.3) with ESMTP id RAA18767
-        for &lt;notifications@jguru.com&gt;; Wed, 9 Jan 2002 17:32:32 -0800
-Received: from localhost (localhost)
-        by web.jguru.com (8.11.6/8.11.6) id g0A1W2o02285;
-        Wed, 9 Jan 2002 17:32:02 -0800
-Date: Wed, 9 Jan 2002 17:32:02 -0800
-From: Mail Delivery Subsystem &lt;MAILER-DAEMON@web.jguru.com&gt;
-Message-Id: &lt;200201100132.g0A1W2o02285@web.jguru.com&gt;
-
-To: &lt;notifications@jguru.com&gt;
-MIME-Version: 1.0
-Content-Type: multipart/report; report-type=delivery-status;
-        boundary="g0A1W2o02285.1010626322/web.jguru.com"
-Subject: Returned mail: see transcript for details
-Auto-Submitted: auto-generated (failure)
-
-This is a MIME-encapsulated message
-
---g0A1W2o02285.1010626322/web.jguru.com
-
-The original message was received at Wed, 9 Jan 2002 17:32:02 -0800
-from localhost [127.0.0.1]
-
-   ----- The following addresses had permanent fatal errors -----
-&lt;pain@intheneck.com&gt;
-    (reason: 550 Host unknown)
-
-   ----- Transcript of session follows -----
-550 5.1.2 &lt;pain@intheneck.com&gt;... Host unknown (Name server: intheneck.com: host not found)
-...
-</PRE></div>
-
-Notice the SMTP 550 error message.  Look for that at the start of a
-line then kill the angle brackets, remove the <TT>...</TT> and use
-<TT>awk</TT> to print out the SQL:
-
-<div class="code"><PRE>
-# This script works on one email or a file full of other emails
-# since it just looks for the SMTP 550 or 554 results and then
-# converts them to SQL commands.
-grep -E '^(550|554)' | \
-        sed 's/[&lt;&gt;]//g' | \
-        sed 's/\.\.\.//' | \
-        awk "{printf(\"UPDATE PERSON SET bounce=1 WHERE email='%s';\n\",\$3);}" &gt;&gt; bounces.sql
-</PRE></div>
-
-I have to escape the <TT>$3</TT> because it means something to the
-surround bash shell script and I want <TT>awk</TT> to see the dollar
-sign.
-
-
-## Źródło
-
-[How To Look Like A UNIX Guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)

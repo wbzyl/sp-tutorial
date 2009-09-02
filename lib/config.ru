@@ -8,5 +8,8 @@ require 'uv'
 
 use Rack::ShowExceptions
 use Rack::Lint
-use Rack::Codehighlighter, :ultraviolet, :element => 'pre>code', :markdown => true
+
+use Rack::Codehighlighter, :ultraviolet, :markdown => true,
+  :element => "pre>code", :pattern => /\A:::([-\w]+)\s*\n/
+
 run WB::SPTutorial.new
