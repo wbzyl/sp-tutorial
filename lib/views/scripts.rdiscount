@@ -1,5 +1,7 @@
 #### {% title "Skryptologia stosowana" %}
 
+# Skryptologia stosowana
+
 <blockquote>
   {%= image_tag "/images/borenstein.jpg", :alt => "[Nathaniel S. Borenstein]" %}
   <p>
@@ -11,6 +13,4 @@
   </p>
   <p class="author">— <a href="http://www.guppylake.com/~nsb/">Nathaniel Borenstein</a></p>
 </blockquote>
-
-# Skryptologia stosowana
 

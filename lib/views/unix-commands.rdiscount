@@ -1,3 +1,12 @@
 #### {% title "Przegląd poleceń Uniksowych" %}
 
 # Przegląd poleceń Uniksowych
+
+<blockquote>
+  {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
+  <p>
+   Computer Science is embarrassed by the computer.
+  </p>
+  <p class="author">— Alan Perlis</p>
+</blockquote>
+

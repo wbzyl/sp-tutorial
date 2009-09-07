@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Header; 
+  src: url('fonts/Cyklop-Italic.otf') format('opentype');
+}
+
 /* hack for RDiscount comments */
 
 h4 {
@@ -22,8 +27,8 @@ body {
   padding-top: 24px;
   padding-bottom: 0px;
   background-color: #F07818;
-  border: solid #888;
-  border-width: 1px 1px 0px 1px;
+  /* border: solid #888; */
+  /* border-width: 1px 1px 0px 1px; */
 }
 
 #links {
@@ -36,7 +41,7 @@ body {
 }
 
 .container {
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   background-color: #FEF9F0;
 }
 
@@ -47,9 +52,9 @@ a[href$=".rdf"], a[href^="aim:"] {
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 160%;
-  font-family: "DejaVu Sans", "PakTypeNaqsh", serif;
+  font-family: Header, "DejaVu Sans", "PakTypeNaqsh", serif;
   font-style: italic;
   color: #D80000;
   padding-top: 16px;

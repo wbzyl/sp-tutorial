@@ -1,5 +1,7 @@
 #### {% title "Ćwiczenia" %}
 
+# Ćwiczenia
+
 <blockquote>
   {%= image_tag "/images/albert_einstein.jpg", :alt => "[Albert Einstein]" %}
   <p>
@@ -11,5 +13,3 @@
   </p>
   <p class="author">— Albert Einstein</p>
 </blockquote>
-
-# Ćwiczenia
