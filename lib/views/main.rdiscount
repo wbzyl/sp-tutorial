@@ -7,8 +7,8 @@
   <p class="author">— John von Neumann</p>
 </blockquote>
 
-1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/intro" %}
 1. {%= link_to "Przegląd poleceń Uniksowych", "/unix-commands" %}
+1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/intro" %}
 1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
 1. {%= link_to "Ćwiczenia", "/exercises" %}

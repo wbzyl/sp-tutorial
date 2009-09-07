@@ -1,3 +1,16 @@
 #### {% title "Skryptologia stosowana" %}
 
+<blockquote>
+  {%= image_tag "/images/borenstein.jpg", :alt => "[Nathaniel S. Borenstein]" %}
+  <p>
+   It should be noted that no ethically-trained software engineer
+   would ever consent to write a <i>destroy_baghdad</i> procedure. Basic
+   professional ethics would instead require him to write a
+   <i>destroy_city</i> procedure, to which Baghdad could be given as a
+   parameter.
+  </p>
+  <p class="author">— <a href="http://www.guppylake.com/~nsb/">Nathaniel Borenstein</a></p>
+</blockquote>
+
 # Skryptologia stosowana
+

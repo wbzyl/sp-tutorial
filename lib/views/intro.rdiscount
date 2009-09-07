@@ -5,6 +5,21 @@
 
 # Jak zostać Uniksowym guru w kwadrans
 
+<blockquote>
+  {%= image_tag "/images/richard_stallman.jpg", :alt => "[Richard Stallman]" %}
+  <p>
+   Richard M. Stallman, Linus Torvalds,
+   and Donald E. Knuth engage in a discussion on whose impact
+   on the computerized world was the greatest.<br/>
+   Stallman: "God told me I have programmed
+   the best editor in the world!"
+   Torvalds: "Well, God told *me* that I have programmed
+   the best operating system in the world!"
+   Knuth: "Wait, wait &#x2013; I never said that."
+  </p>
+  <p class="author">[from rec.humor.funny]</p>
+</blockquote>
+
 UNIX is an extremely popular platform for deploying server software
 partly because of its security and stability, but also because it has
 a rich set of command line and scripting tools. Programmers use these

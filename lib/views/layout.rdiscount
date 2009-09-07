@@ -14,7 +14,7 @@
   <body>
     <div class="span-21" id="header">
       <div class="push-1 span-7">
-        <a href="/"><%= image_tag "/images/sp.png", :alt => "[WB/Srodowisko Programisty logo]" %></a>
+        <a href="/sp/"><%= image_tag "/images/sp.png", :alt => "[WB/Srodowisko Programisty logo]" %></a>
       </div>
       <div class="span-13 last">
         <div class="append-1" id="links">

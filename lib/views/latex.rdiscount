@@ -1,3 +1,12 @@
 #### {% title "Nie za krótkie wprowadzenie do LaTeX-a" %}
 
 # Nie za krótkie wprowadzenie do LaTeX-a
+
+<blockquote>
+  {%= image_tag "/images/knuth.jpg", :alt => "[Donald E. Knuth]" %}
+  <p>
+   Computers are good at following instructions, 
+   but not at reading your mind. 
+  </p>
+  <p class="author">— Donald E. Knuth</p>
+</blockquote>
