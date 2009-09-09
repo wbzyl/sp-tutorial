@@ -1,0 +1,13 @@
+#### {% title "Git jest git" %}
+
+# Git jest git
+
+<blockquote>
+  {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
+  <p>
+   Zawinski's Law: Every program attempts to expand until it can read
+   mail. Those programs which cannot so expand are replaced by ones
+   which can.
+  </p>
+  <p class="author">— Jamie Zawinski</p>
+</blockquote>
