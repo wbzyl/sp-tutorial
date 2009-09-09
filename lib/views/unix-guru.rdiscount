@@ -454,26 +454,27 @@ When you need to have a directory on one machine mirrored on another
 machine, use `rsync`.  It compares all the files in a directory
 subtree and copies over any that have changed to the mirrored
 directory on the other machine.  For example, here is how you could
-"pull" all logs files from `livebox.jguru.com` to the box from
+"pull" all css screencasts files from `renia.local` to the box from
 which you execute the `rsync` command:
 
     :::shell-unix-generic
-    hostname
-    jazz.jguru.com
-    rsync -rabz -e ssh -v 'parrt@livebox.jguru.com:/var/log/jguru/*' \
-       /backup/web/logs
+    hostname -f
+    wlodek.local
+    rsync -raz -e ssh -v wlodek@renia.local:screencasts/css-tricks.com \
+        ~/backup/
+    ls ~/backup/css-tricks.com/
+      VideoCast-57-css3.m4v
+      ...
 
 `rsync` will delete or truncate files to ensure the files stay
 the same.  This is bad if you erase a file by mistake--it will wipe
-out your backup file.  Add an argument called `--suffix` to
+out your backup file.  Change the options above to `-rabz` to
 tell `rsync` to make a copy of any existing file before it
-overwrites it:
+overwrites it. Or change a filename of any existing file:
 
     :::shell-unix-generic
-    hostname
-    jazz.jguru.com
     rsync -rabz -e ssh -v --suffix .rsync_`date '+%Y%m%d'` \
-        'parrt@livebox.jguru.com:/var/log/jguru/*' /backup/web/logs
+        wlodek@renia.local:screencasts/css-tricks.com ~/backup/
 
 where ``date '+%Y%m%d'`` (in reverse single quotes) means
 "execute this `date` command".
@@ -481,15 +482,15 @@ where ``date '+%Y%m%d'`` (in reverse single quotes) means
 To exclude certain patterns from the sync, use `--exclude`:
 
     :::shell-unix-generic
-    rsync -rabz --exclude=entitymanager/ --suffix .rsync_`date '+%Y%m%d'` \
-        -e ssh -v 'parrt@livebox.jguru.com:/var/log/jguru/*' /backup/web/logs
+    rsync -rabz --exclude=tmp/ --suffix .rsync_`date '+%Y%m%d'` \
+        -e ssh -v wbzyl@renia.local:screencasts/css-tricks.com' ~/backup/
 
 ### scp
 
 To copy a file or directory manually, use `scp`:
 
     :::shell-unix-generic
-    scp lecture.html parrt@nexus.cs.usfca.edu:~parrt/lectures
+    scp lecture.html wbzyl@sigma.ug.edu.pl:public_html/
 
 Just like `cp`, use `-r` to copy a directory recursively.
 
@@ -499,16 +500,15 @@ Just like `cp`, use `-r` to copy a directory recursively.
 ### find
 
 Most GUIs for Linux or PCs have a search facility, but from the
-command-line you can use `find`.  To find all files named
-`.p4` starting in directory `~/antlr/depot/projects`,
-use:
+command-line you can use `find`.  To find all files with suffix
+`.c` starting in directory `~/projects`, use:
 
     :::shell-unix-generic
-    find  ~/antlr/depot/projects -name '.p4'
+    find  ~/projects -name '.c'
 
 The default "action" is to `-print`.
 
-You can specify a regular expression to match.  For example, to look
+You can specify a globbing pattern to match.  For example, to look
 under your home directory for any xml files, use:
 
     :::shell-unix-generic
@@ -532,7 +532,7 @@ script that uses `find` to delete all files older than 14 days.
 
     :::shell-unix-generic
     #!/bin/sh
-    BACKUP_DIR=/var/data/backup
+    BACKUP_DIR=$HOME/backup
     # number of days to keep backups
     AGE=14 # days
     AGE_MINS=$[ $AGE * 60 * 24 ]
@@ -546,9 +546,7 @@ If you want to know who is using a port such as HTTP (80), use
 
     :::shell-unix-generic
     sudo /sbin/fuser -n tcp 80
-    80/tcp:              13476 13477 13478 13479 13480
-    13481 13482 13483 13484 13486 13487 13489 13490 13491
-    13492 13493 13495 13496 13497 13498 13499 13500 13501 13608
+    80/tcp:              1812 1884 1892 1898
 
 The output indicates the list of processes associated with that port.
 
