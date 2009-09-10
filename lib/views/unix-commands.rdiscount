@@ -1,6 +1,6 @@
 #### {% title "Przegląd poleceń Uniksowych" %}
 
-# Przegląd poleceń Uniksowych
+# Przetrwać z uniksem
 
 <blockquote>
   {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
@@ -10,3 +10,80 @@
   <p class="author">— Alan Perlis</p>
 </blockquote>
 
+
+## Logowanie i wylogowanie
+
+* Hasła. Co mierzy [„The Password Meter”] [password meter]
+* Zmiana hasła: polecenie `passwd`
+* Logowanie zdalne: `ssh`
+* Wylogowanie: `exit`, `logout`
+* Blokowanie i odblokowywanie terminala
+* Polecenie `who`.
+
+Uzyskiwanie pomocy: polecenie `man`.
+
+Składnia polecenia uniksowego.
+
+
+## Limity dyskowe
+
+Polecenia: `quota`, `du -h` i `du -sh`, `df -h`.
+
+Do wypróbowania:
+
+    :::shell-unix-generic
+    df -k
+    df -m
+    df -h
+    du /tmp
+    du -s /tmp      # -s = zestawienie
+    du -h -s /tmp
+
+Zestawianie poleceń w potok: 
+wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
+
+    :::shell-unix-generic
+    du -m ~ | sort -k1nr | head
+
+Konfiguracja przeglądarki: zmiana wielkości pamięci podręcznej
+przeglądarki (ang. *cache*).
+
+
+## Operacje na plikach
+
+Zawartość katalogu '/'. Katalog domowy użytkownika: `pwd`.
+Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
+
+Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
+Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
+
+Rozwijanie nazw plików (globbing).
+
+Wyświetlanie zawartości pliku: `cat`.
+
+Polecenia: `wc`, `head` oraz `tail`.
+
+Zdalne kopiowanie plików: `scp`.
+
+
+## Uprawnienia
+
+Polecenia `chmod` i `chown`.
+
+Tworzymy własną stronę WWW na serwerze *sigma.ug.edu.pl*.
+
+
+## Zmienne środowiska
+
+Polecenie: `env`. Zmienna `PATH`.
+
+Pliki: `.bashrc`, `.bash_profile`, `.bash_history`. 
+
+
+#### Linki
+
+[password meter]: http://www.passwordmeter.com "Password Strength Checker"
+
+    (<a href="http://kimmo.suominen.com/docs/ssh">Getting
+    started with SSH</a>).
+    Zobacz też poniżej <b>fuse filesystem</b>.
