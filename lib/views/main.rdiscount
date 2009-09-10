@@ -15,9 +15,22 @@
 1. {%= link_to "Ćwiczenia", "/exercises" %}
 1. {%= link_to "Odpowiedzi", "/answers" %}
 
-## Dokumentacja
 
-Podręczniki:
+## Literatura
 
-1. Bash
-2. LaTeX
+1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
+1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
+1. S. Chacon. [Pro Git – professional version control] [progit].
+1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl. 
+   [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
+   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski). 
+1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
+1. GNU Operating System. [Laugh along with GNU] [gnu os]. 
+1. J. Gruber. [Markdown] [markdown].
+
+#### Linki
+
+[lshort2e]: ftp://ftp.gust.org.pl/pub/CTAN/info/lshort/polish/lshort2e.pdf "Wprowadzenie do systemu LaTeX2e"
+[gnu os]: http://www.gnu.org/fun/fun.html "Laugh along with GNU - GNU Project - Free Software Foundation (FSF)"
+[progit]: http://progit.org/book/ "Pro Git – professional version control"
+[markdown]: http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"

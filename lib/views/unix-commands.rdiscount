@@ -207,8 +207,7 @@ Samouczek:
 <a href="http://www.ee.surrey.ac.uk/Teaching/Unix">UNIX Tutorial for Beginners</a>.
 
 W utrwaleniu składni poleceń uniksowych może pomóc lektura
-<a href="http://www.piotr.nabielec.com/?doc=artikle/spluczka">tej
-krótkiej satyry science-fiction</a>.
+tej krótkiej satyry science-fiction: [Spłuczka w linuxie] [spluczka].
 
 Też warte przeczytania:
 <a href="http://bashcurescancer.com">BASH Cures Cancer</a>.
@@ -230,3 +229,4 @@ Też warte przeczytania:
 [fuse]: http://fuse.sourceforge.net/sshfs.html "SSH Filesystem"
 [regexp tutorial]: http://gnosis.cx/publish/programming/regular_expressions.html "Learning to Use Regexp"
 [regexp tester]: http://www.roblocher.com/technotes/regexp.aspx "Regular Expression Tester"
+[spluczka]: http://www.piotr.nabielec.com/index.php?option=com_content&task=view&id=41 "Spłuczka w linuxie"
