@@ -564,7 +564,7 @@ standard unix locations for the command.
 
 `whereis` also shows `man` pages.
 
-### which
+### which, type
 
 Sometimes you might be executing the wrong version of a command and
 you want to know which version of the command your `PATH`
@@ -581,7 +581,7 @@ If nothing is found in your path, you'll see:
 
     :::shell-unix-generic
     which fuser
-    /usr/bin/which: no fuser in (/usr/local/bin:/usr/X11R6/bin:/usr/X11R6/bin)
+    /usr/bin/which: no fuser in (/usr/local/bin:/usr/X11R6/bin)
 
 ### kill, pkill
 
@@ -592,13 +592,16 @@ from `ps` or `top` (see below).
 Use `kill -9 pid` when you can't get the process to die; 
 this means kill it with "extreme prejudice".
 
-### traceroute
+### tracepath, traceroute
 
 If you are having trouble getting to a site, use `traceroute`
 to watch the sequence of hops used to get to a site:
 
     :::shell-unix-generic
-    /usr/sbin/traceroute www.cnn.com
+    /usr/sbin/tracepath sigma.ug.edu.pl
+     
+    ...
+    sudo /usr/sbin/traceroute sigma.ug.edu.pl
      1  65.219.20.145 (65.219.20.145)  2.348 ms  1.87 ms  1.814 ms
      2  loopback0.gw5.sfo4.alter.net (137.39.11.23)  3.667 ms  3.741 ms  3.695 ms
      3  160.atm3-0.xr1.sfo4.alter.net (152.63.51.190)  3.855 ms  3.825 ms  3.993 ms
@@ -609,11 +612,16 @@ to watch the sequence of hops used to get to a site:
     :::shell-unix-generic
     /sbin/ifconfig
 
+or
+
+    :::shell-unix-generic
+    /sbin/ifconfig eth0
+
 Under the `eth0` interface, you'll see the `inet addr`:
 
     :::shell-unix-generic
-    eth0      Link encap:Ethernet  HWaddr 00:10:DC:58:B1:F0  
-              inet addr:138.202.170.4  Bcast:138.202.170.255  Mask:255.255.255.0
+    eth0      Link encap:Ethernet  HWaddr 00:10:AA:58:B0:F0  
+              inet addr:192.168.100.8  Bcast:192.168.100.255  Mask:255.255.255.0
               ...
 
 
