@@ -599,13 +599,25 @@ to watch the sequence of hops used to get to a site:
 
     :::shell-unix-generic
     /usr/sbin/tracepath sigma.ug.edu.pl
-     
-    ...
-    sudo /usr/sbin/traceroute sigma.ug.edu.pl
-     1  65.219.20.145 (65.219.20.145)  2.348 ms  1.87 ms  1.814 ms
-     2  loopback0.gw5.sfo4.alter.net (137.39.11.23)  3.667 ms  3.741 ms  3.695 ms
-     3  160.atm3-0.xr1.sfo4.alter.net (152.63.51.190)  3.855 ms  3.825 ms  3.993 ms
-    ...
+    1:  wlodek.local                                          0.391ms pmtu 1500
+        ...
+    5:  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)           10.854ms asymm  6 
+    6:  TP-tp-edu-gw.task.gda.pl (153.19.0.2)                 42.373ms asymm 13 
+    7:  tp-jra10ge.task.gda.pl (153.19.252.33)                34.889ms asymm 12 
+    8:  area1-ug1-swr.task.gda.pl (153.19.254.228)            34.365ms asymm 12 
+    9:  sigma.ug.edu.pl (153.19.7.230)                        36.318ms reached
+        Resume: pmtu 1500 hops 9 back 52 
+    
+    sudo /bin/traceroute sigma.ug.edu.pl
+    traceroute to sigma.ug.edu.pl (153.19.7.230), 30 hops max, 60 byte packets
+    1  wlodek.local  1.708 ms  2.529 ms  3.330 ms
+       ...
+    5  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)  21.905 ms  22.052 ms  30.636 ms
+    6  TP-tp-edu-gw.task.gda.pl (153.19.0.2)  42.546 ms  33.290 ms  33.401 ms
+    7  tp-jra10ge.task.gda.pl (153.19.252.33)  38.472 ms  38.876 ms  39.371 ms
+    8  area1-ug1-swr.task.gda.pl (153.19.254.228)  41.536 ms  41.720 ms  41.916 ms
+    9  sigma.ug.edu.pl (153.19.7.230)  39.618 ms  39.921 ms  40.236 ms
+
 
 ### Jaki jest mój adres IP?
 
@@ -620,16 +632,12 @@ or
 Under the `eth0` interface, you'll see the `inet addr`:
 
     :::shell-unix-generic
-    eth0      Link encap:Ethernet  HWaddr 00:10:AA:58:B0:F0  
-              inet addr:192.168.100.8  Bcast:192.168.100.255  Mask:255.255.255.0
-              ...
+    eth0      Link encap:Ethernet  HWaddr 00:0E:35:95:80:44  
+              inet addr:192.188.100.1  Bcast:192.188.100.255  Mask:255.255.255.0
+              inet6 addr: fe00::40a:32ca:c950:1234/64 Scope:Link
 
 
 ## Użyteczne potoki: generowanie histogramu
-
-**Uwaga**: zastąpić *awk* programem *cut*. Zamiast anlizować
-plik *pageview-20021022.log* przeanalizować plik dziennika
-railsów: zacząć od *grep 'Rendering '*
 
 A histogram is set of count, value pairs indicating how often the
 value occurs.  The basic operation will be to sort, then count how
@@ -648,70 +656,41 @@ the number of occurrences in front of the value.  Recall the previous
 sorting:
 
     :::shell-unix-generic
-    awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq
-    /article/index.jsp
-    /article/index.jsp?page=1
-    /article/index.jsp?page=10
+    /sp/
+    /sp/exercises
+    /sp/git
+    /sp/images/alan_kay.jpg
+    /sp/images/alan_perlis.jpg
+    /sp/images/albert_einstein.jpg
     ...
 
 Now add `-c` to `uniq`:
 
     :::shell-unix-generic
-    awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq -c
-    623 /article/index.jsp
-      6 /article/index.jsp?page=1
-     10 /article/index.jsp?page=10
-    109 /article/index.jsp?page=2
-    ...
+       22 /sp/
+        6 /sp/exercises
+        2 /sp/git
+        1 /sp/images/alan_kay.jpg
+        2 /sp/images/alan_perlis.jpg
+        4 /sp/images/albert_einstein.jpg
+        ...
 
 Now all you have to do is reverse sort the lines according to the first column numerically.
 
     :::shell-unix-generic
-    awk '{print $3;}' &lt; /home/public/cs601/unix/pageview-20021022.log | \
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq -c | \
     sort -r -n
-    6170 /index.jsp
-    2916 /search/results.jsp
-    1397 /faq/index.jsp
-    1018 /forums/index.jsp
-    ...
-
-In practice, you might want to get a histogram that has been
-"despidered" and only has faq related views.  You can filter out all
-page view lines associated with spider IPs and filter in only faq
-lines:
-
-    :::shell-unix-generic
-    grep -v -f /tmp/spider.IPs /home/public/cs601/unix/pageview-20021022.log | \
-    awk '{print $3;}'| \
-    grep '/faq' | \
-    sort | \
-    uniq -c | \
-    sort -r -n
-    1397 /faq/index.jsp
-     884 /faq/home.jsp?topic=Tomcat
-     525 /faq/home.jsp?topic=Struts
-     501 /faq/home.jsp?topic=JSP
-     423 /faq/home.jsp?topic=EJB
-    ...
-
-If you want to only see despidered faq pages that were referenced more
-than 500 times, add an `awk` command to the end.
-
-    :::shell-unix-generic
-    grep -v -f /tmp/spider.IPs /home/public/cs601/unix/pageview-20021022.log | \
-    awk '{print $3;}'| \
-    grep '/faq' | \
-    sort | \
-    uniq -c | \
-    sort -r -n | \
-    awk '{if ($1&gt;500) print $0;}'
-    1397 /faq/index.jsp
-     884 /faq/home.jsp?topic=Tomcat
-     525 /faq/home.jsp?topic=Struts
-     501 /faq/home.jsp?topic=JSP
+       51 /sp/stylesheets/uv.css
+       51 /sp/stylesheets/sp.css
+       51 /sp/stylesheets/screen.css
+       51 /sp/stylesheets/print.css
+       50 /sp/stylesheets/icons/external.png
+       ...
