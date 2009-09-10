@@ -13,9 +13,9 @@
 
 ## Logowanie i wylogowanie
 
-* Hasła. Co mierzy [„The Password Meter”] [password meter]
+* Hasła. Co mierzy [The Password Meter] [password meter]
 * Zmiana hasła: polecenie `passwd`
-* Logowanie zdalne: `ssh`
+* Logowanie zdalne: `ssh`. [Getting started with SSH] [started with ssh]
 * Wylogowanie: `exit`, `logout`
 * Blokowanie i odblokowywanie terminala
 * Polecenie `who`.
@@ -23,6 +23,11 @@
 Uzyskiwanie pomocy: polecenie `man`.
 
 Składnia polecenia uniksowego.
+
+Tworzenie aliasów: 
+
+    :::shell-unix-generic
+    alias l='ls -l'
 
 
 ## Limity dyskowe
@@ -39,20 +44,37 @@ Do wypróbowania:
     du -s /tmp      # -s = zestawienie
     du -h -s /tmp
 
-Zestawianie poleceń w potok: 
-wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
-
-    :::shell-unix-generic
-    du -m ~ | sort -k1nr | head
-
 Konfiguracja przeglądarki: zmiana wielkości pamięci podręcznej
 przeglądarki (ang. *cache*).
 
 
+## Potoki
+
+Zestawianie poleceń w potok:
+
+    :::shell-unix-generic
+    who | sort
+    who | wc -l
+    ls | wc -l
+    who | grep wbzyl
+
+Inne przykłady. Teraz używam git-a.
+
+    grep pattern $(find . | grep -v .svn)
+    grep pattern $(find -name .svn -prune -o -print)
+
+Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
+
+    :::shell-unix-generic
+    du -m ~ | sort -k1nr | head
+
+
 ## Operacje na plikach
 
-Zawartość katalogu '/'. Katalog domowy użytkownika: `pwd`.
+Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
 Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
+
+Pliki ukryte: `~/.bash_login`, `~/.bashrc`.
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
 Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
@@ -75,15 +97,136 @@ Tworzymy własną stronę WWW na serwerze *sigma.ug.edu.pl*.
 
 ## Zmienne środowiska
 
-Polecenie: `env`. Zmienna `PATH`.
+Polecenie: `env` i `set`.
+
+Zmienna `PATH`.
+
+I18N: `LANG`, `LC_XXX`.
 
 Pliki: `.bashrc`, `.bash_profile`, `.bash_history`. 
+
+
+## Przekierowywanie wejścia/wyjścia
+
+Jakieś przykłady: `>`, `>>`, `<`.
+
+    :::shell-unix-generic
+    cd
+    echo "export PATH=$PATH:."  >> .bashrc
+    cd ~/.ssh
+    cat ../id_rsa.pub >> authorized_keys    
+
+
+## Polecenie find
+
+Proste przykłady:
+
+    :::shell-unix-generic
+    find | LC_ALL=C sort
+    find -ls | sort -k11
+    grep POSIX_OPEN_MAX /dev/null $(find /usr/include -type f | sort)
+    getconf ARG_MAX
+    find /usr/include -type f | xargs grep POSIX_OPEN_MAX /dev/null
+
+Znajdź pliki puste lub nie otwierane od ponad roku:
+
+    :::shell-unix-generic
+    find . -size 0 -o -atime +365
+
+
+## Polecenie diff
+
+Tworzymy dwa pliki testowe:
+
+    :::shell-unix-generic
+    echo Test 1 > test.1
+    echo Test 2 > test.2
+
+Sprawdzamy różnice:
+
+    :::shell-unix-generic
+    diff test.[12]
+    diff -c test.[12]
+
+Tworzymy łatę (ang. patch):
+
+    :::shell-unix-generic
+    diff -c test.1 test.2 > test.diff
+
+Nakładamy łatę:
+
+    :::shell-unix-generic
+    patch < test.diff
+    cat test.1
+
+
+<blockquote>
+ {%= image_tag "/images/tparr.jpg", :alt => "[Terence Parr]" %}
+ <p>
+  I can safely say that I am crippled without grep and feel naked
+  (believe me, that ain't pretty) without sed, awk, and wc.
+ <p>
+ <p class="author">
+  — <a href="http://www-128.ibm.com/developerworks/xml/library/x-sbxml.html">Terence Parr</a>
+ </p>
+</blockquote>
+
+## Wyrażenia regularne 
+
+Samouczek: [Learning to Use Regular Expressions] [regexp tutorial].
+
+Program <kbd>egrep</kbd>.
+
+Testowanie wyrażeń regularnych: [Regular Expression Tester] [regexp tester]
+
+
+## Fuse filesystem
+
+Krótka ściąga z [Fuse filesystem] [fuse].
+
+Łączenie ze zdalnym hostem:
+
+    :::shell-unix-generic
+    sshfs username@host: mountpoint
+
+Odmontowanie systemu zdalnego:
+
+    :::shell-unix-generic
+    fusermount -u mountpoint
+
+## Do poduszki…
+
+Klasyczny esej pisarza science-fiction N. Stephenson'a:
+<a href="http://www.cryptonomicon.com/beginning.html">In the Beginning 
+was the Command Line</a> — obowiązkowa lektura guru uniksowego!
+
+Praktyczne:
+<a href="http://www.pixelbeat.org/cmdline.html">Linux command: A practical reference</a>.
+
+Samouczek:
+<a href="http://www.ee.surrey.ac.uk/Teaching/Unix">UNIX Tutorial for Beginners</a>.
+
+W utrwaleniu składni poleceń uniksowych może pomóc lektura
+<a href="http://www.piotr.nabielec.com/?doc=artikle/spluczka">tej
+krótkiej satyry science-fiction</a>.
+
+Też warte przeczytania:
+<a href="http://bashcurescancer.com">BASH Cures Cancer</a>.
+
+
+## Alternatywa
+
+[Ruby shell] [rush]. Instalacja:
+
+    :::shell-unix-generic
+    gem install rush
 
 
 #### Linki
 
 [password meter]: http://www.passwordmeter.com "Password Strength Checker"
-
-    (<a href="http://kimmo.suominen.com/docs/ssh">Getting
-    started with SSH</a>).
-    Zobacz też poniżej <b>fuse filesystem</b>.
+[started with ssh]: http://kimmo.suominen.com/docs/ssh "Getting started with SSH"
+[rush]: http://rush.heroku.com "Ruby shell"
+[fuse]: http://fuse.sourceforge.net/sshfs.html "SSH Filesystem"
+[regexp tutorial]: http://gnosis.cx/publish/programming/regular_expressions.html "Learning to Use Regexp"
+[regexp tester]: http://www.roblocher.com/technotes/regexp.aspx "Regular Expression Tester"
