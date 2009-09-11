@@ -1,13 +1,23 @@
-# Środowisko Programisty (albo szkoła podstawowa U***)
+# Środowisko Programisty
 
-Notatki do wykładu z „Środowiska Programisty”
-przygotwane w postaci aplikacji Sinatry.
+Gem zawierający notatki do wykładu z „Środowiska Programisty”.
 
-Instalacja:
+### Instalacja
 
     gem install wbzyl-sp-tutorial -s http://gems.github.com
 
-*sp-tutorial* zależy od wielu gemów.
+### Zależności
+
+*sp-tutorial* zależy od następujących gemów, które należy zainstalować:
+
+* rack 
+* sinatra
+* rdiscount
+* wbzyl-sinatra-rdiscount    
+* wbzyl-rack-codehighlighter
+* ultraviolet
+
+### Uruchamianie
 
 Aplikację uruchamiamy, np. tak:
 
