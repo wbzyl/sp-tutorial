@@ -12,7 +12,8 @@ Wykonać polecenie:
 
 ### Zależności
 
-*sp-tutorial* zależy od następujących gemów, które należy zainstalować:
+*sp-tutorial* zależy od następujących gemów, 
+które należy zainstalować:
 
 * rack 
 * sinatra
