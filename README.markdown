@@ -4,7 +4,11 @@ Gem zawierający notatki do wykładu z „Środowiska Programisty”.
 
 ### Instalacja
 
-    gem install wbzyl-sp-tutorial -s http://gems.github.com
+Wykonać polecenie:
+
+    gem install wbzyl-sp-ii -s http://gems.github.com
+
+
 
 ### Zależności
 
