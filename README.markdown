@@ -24,10 +24,14 @@ które należy zainstalować:
 
 ### Uruchamianie
 
-Aplikację uruchamiamy, np. tak:
+Sprawdzamy gdzie w systemie został zainstalowany gem *sp-ii*:
+
+    gem which wbzyl-sp-ii
+
+Przechodzimy do tego katalogu i uruchamiamy aplikację:
 
     thin --rackup config.ru -p 3000 start
 
-Po uruchomieniu aplikacja jest dostępna z:
+Po uruchomieniu aplikacja jest dostępna z URL:
 
     http://localhost:3000/

@@ -10,3 +10,286 @@
   </p>
   <p class="author">— Donald E. Knuth</p>
 </blockquote>
+
+Na *Sigmie* zainstalowany jest system TeX z paczki *texlive*.
+Dokumentację do systemu można pobrać z serwera
+[Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
+
+System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
+
+## Konfiguracja TeX Live
+
+TeX Live to ok. 35000 plików (razem, mniej więcej 1GB).
+Pliki te są umieszczone w drzewkach. Listę drzewek otrzymamy
+wykonując polecenie:
+
+    kpsexpand \$TEXMF
+    ~/.texlive2009/texmf-config,
+    ~/.texlive2009/texmf-var,
+    /usr/share/texlive/texmf-config,
+    /usr/share/texlive/texmf-var,
+    /usr/share/texlive/texmf,
+    /usr/share/texmf-local,
+    /usr/share/texlive/texmf-dist
+
+Powyższa lista, to drzewka na moim komputerze.
+Na *Sigmie* mamy takie drzewka:
+
+    /home/pracinf/wbzyl/.texlive2008/texmf-config,
+    /var/lib/texmf,
+    /home/pracinf/wbzyl/texmf, # tutaj trzymamy prywatne pliki
+    /etc/texlive,
+    /var/lib/texmf,
+    /usr/share/texmf,
+    /usr/share/texmf,  # bug! zamienić na texmf-local
+    /usr/share/texmf-dist
+
+System TeX konfigurujemy edytując plik *texmf.cnf*.
+Plik ten odszukujemy w systemie w taki sposób:
+
+    kpsewhich texmf.cnf
+    /usr/share/texlive/texmf/web2c/texmf.cnf
+
+Ścieżka do tego pliku na *Sigmie*: 
+
+    /usr/share/texmf/web2c/texmf.cnf
+
+Zawartość tego pliku podejrzymy tak:
+
+    less $(kpsewhich texmf.cnf)
+
+
+## Fonty Latin Modern 
+
+[Rodzina fontów Latin Modern w formacie OTF] [lm].
+Jak zainstalować w systemie? Kopiujemy archiwum do drzewka
+*lokalnego* i tam je rozpakowujemy. Na koniec wykonujemy
+polecenie: `mktexlsr` (albo `texhash`).
+
+
+## Format *LaTeX*
+
+Format *LaTeX* jest najczęściej używaną biblioteką makr.
+Autorem tej biblioteki jest Leslie Lamport.
+
+Inne biblioteki to:
+
+* *plain*
+* *eplain*
+* *context*
+
+Najciekawszym projektem jest *LuaTeX*.
+
+Na zajęciach będziemy korzystać z programu *xetex*.
+Program ten potrafi czytać pliki w kodowaniu UTF-8 
+(domyślne kodowanie na *Sigmie*) oraz 
+potrafi użyć każdy font zainstalowany w systemie.
+
+Listę zainstalowanych fontów otrzymamy wykonując polecenie:
+
+    fc-list
+
+
+## Dokument korzystający z biblioteki LaTeX
+
+Dokument pokazuje jak ustawić wielkość fontu, rozmiar strony…
+Kompilujemy go tak:
+
+    xelatex xarticle.tex
+
+A to zawartość pliku *xarticle.tex*:
+
+    :::latex
+    % !TEX TS-program = xelatex
+    % !TEX encoding = UTF-8
+    
+    % Przykładowy szablon dokumentu XeLaTeX korzystajacego z klasy „article”
+    % oraz pakietu „fontspec” ułatwiającego wybieranie fontów.
+    
+    \documentclass[12pt]{article}    % domyślne 10pt jest za małe
+    
+    \usepackage{fontspec}             % dokumentacja „fontspec.pdf” 
+    \defaultfontfeatures{Mapping=tex-text} % konwencja: -- --- ,, ''
+    \usepackage{xunicode} % unicode support for LaTeX character names 
+                                          % (accents, European chars, etc)
+    \usepackage{xltxtra}      % extra customizations for XeLaTeX
+    
+    \setmainfont{DejaVu Serif}     % teraz \textrm to DejaVu Serif 
+                                   % (powinien byc zainstalowany w systemie)
+    \setmonofont{DejaVu Sans Mono} % zmień font monotype  
+    
+    % użyj pakietów:
+    \usepackage{geometry} % zobacz „geometry.pdf”
+    \geometry{a4paper}    % po więcej opcji
+    
+    \usepackage{graphicx} % włączanie grafiki: polecenie \includegraphics
+    
+    \usepackage[polish]{polyglossia}  % najważniejszy pakiet
+    
+    \title{Krótki tytuł}
+    \author{Hieronim Brzęczyszczykiewicz}
+    %\date{} % odkomentuj aby usunąć datę lub wstaw jakąś datę między {}
+             % w przeciwnym wypadku drukowana jest aktualna data
+    
+    \begin{document}
+    \maketitle % drukuj tytuł
+    
+    \section{Pierwsza sekcja}
+    
+    Nieco kodu:
+    
+    \begin{verbatim}
+    def hello
+      print "Witaj świecie!"
+    end
+    \end{verbatim}
+    
+    \subsection{Pierwsza podsekcja}
+    
+    Nieco tekstu…
+    
+    \end{document}
+
+Bardziej skomplikowane: wstawianie obrazków, tabelki, matematyka, bibliografia.
+Kompilujemy to tak:
+
+    xelatex pracka
+    bibtex pracka
+    xelatex pracka
+    xelatex pracka
+
+A to zawartość pliku *pracka.tex*:
+
+    :::latex
+    % !TEX TS-program = xelatex
+    % !TEX encoding = UTF-8 Unicode
+    
+    \documentclass[12pt]{article}
+    
+    \usepackage{geometry}
+    \geometry{a4paper}
+    
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text}
+    
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    
+    \usepackage{hyperref}
+    \usepackage{color}
+    \usepackage{url}
+    \usepackage{graphicx}   % włączanie grafiki: polecenie \includegraphics
+    
+    \usepackage[polish]{polyglossia}  % najważniejszy pakiet
+    
+    
+    \bibliographystyle{unsrt}
+    
+    \title{\color{red}{Przykładowy dokument w formacie \LaTeX}}
+    \author{Anonim \and Minoma}
+    \date{\color{blue}{Styczeń 2004}}
+    
+    \begin{document}
+    
+    \maketitle
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    
+    \section{Wstęp}\label{sec:wstep}
+    Autorem biblioteki (formatu) \LaTeX\ jest Leslie Lamport
+    (zob.~\cite{Gurari.TeX4ht}).
+    
+    \section{Podstawy}\label{sec:podstawy}
+    Książka ,,Sekunda komputera'' przedstawia to, co komputer
+    robi w~ciągu jednej sekundy -- taki jest \emph{bynajmniej} główny
+    kierunek rozważań.
+    
+    \section{Wzory}\label{sec:wzory}
+    Ten wzór wszyscy znają: \(2+2=4\), a~ten jest znany tylko
+    niektórym: \[ e^{2\pi i}=-1 \] Oba wzory wpisujemy w prosty
+    sposób z~klawiatury: \verb|\(2+2=4\)| oraz
+    \begin{verbatim}
+    \[ e^{2\pi i}=-1 \]
+    \end{verbatim}
+    
+    
+    \section{Książki}\label{sec:ksiazki}
+    Inne pozycje o których wspomniano w~[\ref{sec:wstep}] to:
+    \begin{enumerate}
+    \item ,,The Twenty First Century'';
+    \item ,,The Upside-Down Evolution''. 
+    \end{enumerate}
+    
+    \section{Ilustracje}\label{sec:ilustracje}
+    
+    Ilustracja o której mowa w tym rozdziale znajduje się u góry
+    strony~\cite{wiki.docbookxsl}.
+    \begin{figure}
+    \caption{Całkowita wariacja (wg Bull 2004, s.~44)}
+    \label{fig:wariacje}
+    \begin{center}
+    \includegraphics[width=.75\textwidth]{diagram}
+    \end{center}
+    \end{figure}
+    
+    \section{Tabelki}\label{sec:tabelki}
+    
+    Tabelka o której mowa w tym rozdziale znajduje się u góry
+    strony.
+    \begin{table}
+    \caption{Wydatki}
+    \label{tab:wydatki}
+    \begin{center}
+    \begin{tabular}{clr}
+      &Pozycja&Kwota\\
+    \hline
+    1.&Opłaty&2,000\\
+      &Oprogramowanie&500\\
+    2.&Światło&1,000\\
+    \cline{3-3}
+      &Razem&3,500
+    \end{tabular}
+    \end{center}
+    \end{table}
+    
+    \bibliography{pd}
+    
+    \end{document}
+
+Plik z bibliografią *pd.bib*:
+
+    :::bibtex
+    @Book{Goossens.lwc,
+      author       = "Michel Goossens and Sebastian Rahtz",
+      title        = "{\LaTeX} Web Companion",
+      publisher    = "Addison-Wesley",
+      year         = "2001"
+    }
+    
+    @Booklet{Gurari.TeX4ht,
+      title        = {TeX4ht: {\LaTeX} and {\TeX} for Hypertext},
+      author       = "Eitan Gurari",
+      howpublished = "\url{http://www.cse.ohio-state.edu/~gurari/TeX4ht/}",
+      year         = 2004,
+    }
+    
+    @Booklet{Veillard.libxslt,
+      author       = {Daniel Veillard},
+      title        = {{LIBXSLT} --- The {XSLT C} library for {G}nome},
+      howpublished = {\url{http://xmlsoft.org/XSLT}},
+      year         = 2003,
+    }
+    
+    @Booklet{wiki.docbookxsl,
+      author       = "Wiki",
+      title        = "{DocBook} {XSL} {Stylesheets}",
+      howpublished = {\url{http://wiki.docbook.org/topic/DocBookXslStylesheets}},
+      year         = 2004,
+    }
+
+
+#### Linki
+
+[gust doc]: http://www.gust.org.pl/doc "Dokumentacje — GUST"
+[lm]: http://www.gust.org.pl/projects/e-foundry/latin-modern/download "Latin Modern collection"

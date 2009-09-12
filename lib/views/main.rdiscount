@@ -25,6 +25,9 @@
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
    (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski). 
 1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
+1. [TeX Live] [texlive].
+1. [TeXWorks IDE] [texworks].
+1. [GUST — Polska Grupa Użytkowników Systemu TeX] [gust].
 1. GNU Operating System. [Laugh along with GNU] [gnu os]. 
 1. J. Gruber. [Markdown] [markdown].
 
@@ -34,3 +37,6 @@
 [gnu os]: http://www.gnu.org/fun/fun.html "Laugh along with GNU - GNU Project - Free Software Foundation (FSF)"
 [progit]: http://progit.org/book/ "Pro Git – professional version control"
 [markdown]: http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"
+[texlive]: http://www.tug.org/texlive/ "TeX Live"
+[texworks]: http://www.tug.org/texworks/ "TeXworks: lowering the entry barrier to the TeX world"
+[gust]: http://www.gust.org.pl/ "Grupa Użytkowników Systemu TeX"
