@@ -92,7 +92,19 @@ Zdalne kopiowanie plików: `scp`.
 
 Polecenia `chmod` i `chown`.
 
-Tworzymy własną stronę WWW na serwerze *sigma.ug.edu.pl*.
+
+## Przykład: własna strona WWW na *Sigmie*
+
+
+## Przykład: repozytorium Git
+
+
+## Przykład: udostępniamy repozytorium Git
+
+
+## Przykład: blog
+
+[Gotowiec](http://github.com/wbzyl/jekyll-ii).
 
 
 ## Zmienne środowiska

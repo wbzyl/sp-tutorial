@@ -14,6 +14,29 @@
   <p class="author">— Albert Einstein</p>
 </blockquote>
 
+Rozwiązania ćwiczeń należy umieścić na swoim blogu.
+Na przykład, rozwiązania ćwiczeń LaTeX-owych, powinny
+być dostępne pod jakimś takim URL:
+
+    http://sigma.ug.edu.pl/~wbzyl/2009-11-22-latex.html
+
+(Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
+no i data będzie inna.)
+
+Kod należy umieścić w repozytorium git. Na przykład
+
+    cd ~/tmp
+    mkdir latex
+    cd latex
+    touch README.md
+    git init
+    ... dodajemy pliki z kodem/rozwiązaniem ...
+    git add .
+    git commit -m "gotowe"
+    cd ..
+    git clone --bare latex ~/public_git/latex.git
+    rm -rf ~/tmp/latex
+
 ## Bash
 
 ## Git
