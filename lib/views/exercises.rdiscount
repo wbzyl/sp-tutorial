@@ -13,3 +13,20 @@
   </p>
   <p class="author">— Albert Einstein</p>
 </blockquote>
+
+## Bash
+
+## Git
+
+## LaTeX
+
+Przykładowy dokument korzystający z pakietów:
+
+* *geometry*
+* *floatlft* albo *photo* (pływające wstawki) 
+* *graphicx* (dokumentacja *epslatex.pdf*)
+
+Dorzucić bibliografię i skrypt powłoki kompilujący
+źródło do pdf-a.
+
+## Skrypty powłoki

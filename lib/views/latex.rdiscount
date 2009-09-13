@@ -59,6 +59,11 @@ Zawartość tego pliku podejrzymy tak:
     less $(kpsewhich texmf.cnf)
 
 
+<blockquote>
+  {%= image_tag "/images/bop.jpg", :alt => "[autorzy Latin Modern]" %}
+  <p class="center">B. Jackowski, J. M. Nowacki, P.&nbsp;Strzelczyk</p>
+</blockquote>
+
 ## Fonty Latin Modern 
 
 [Rodzina fontów Latin Modern w formacie OTF] [lm].
@@ -89,60 +94,112 @@ Listę zainstalowanych fontów otrzymamy wykonując polecenie:
 
     fc-list
 
+Aby zainstalować font kopiujemy plik z fontem do katalogu
+*~/.fonts* i wykonujemy polecenie:
 
-## Dokument korzystający z biblioteki LaTeX
+    fc-cache -v -f ~/.fonts
 
-Dokument pokazuje jak ustawić wielkość fontu, rozmiar strony…
-Kompilujemy go tak:
+
+<blockquote>
+  {%= image_tag "/images/marcin_wolinski.jpg", :alt => "[Marcin Woliński]" %}
+  <p class="center">Marcin Woliński</p>
+</blockquote>
+
+## Obłożenie klawiatury dla programisty
+
+„Starannie zaprojektowane obłożenie klawiatury, zapewniające dostęp do
+wszystkich potrzebnych symboli, jest istotnym elementem wygodnego
+środowiska pracy osoby zajmującej się składem tekstu. W wypadku TeX-a
+wiele symboli można uzyskać za pomocą poleceń, ale ponieważ powoli
+standardem kodowania tekstu staje się Unicode, tych znaków, które
+zostały uwzględnione w Unikodzie, wygodniej jest używać
+bezpośrednio. Oczywiście pod warunkiem, że nie wymaga to szukania
+znaków w «tablicy symboli».”
+Marcin Woliński. [Racjonalna polska klawiatura dla programisty i&nbsp;typografa] [mw keyboard].
+
+Opis instalacji dla Ubuntu (i dla Fedory) łatki ze strony autora.
+
+W terminalu przejść do katalogu */usr/share/X11/xkb/*:
+
+    cd /usr/share/X11/xkb/
+
+Nałożyć pobraną łatę na pliki definicyjne klawiatury poleceniem *patch*:
+
+    sudo patch -b -p1 < ...ścieżka/do/mwplkeyb.ubuntu9.04.diff
+
+Dla bezpieczeństwa można najprzód wykonać powyższe polecenie na próbę:
+
+    patch --dry-run -b -p1 < ...ścieżka/do/mwplkeyb.ubuntu9.04.diff
+
+i dopiero jeśli odpowie, że może z powodzeniem nałożyć wszystkie
+łatki, wykonać polecenie powyżej.
+
+Uaktywnić ten układ klawiatury w sposób właściwy dla danego środowiska
+graficznego. W GNOME można go wyklikać z menu 
+
+    System ↦ Preferencje ↦ Klawiatura 
+      Układy ↦ Dodaj ↦ Kraj: Polska, Wariant: «International (with dead keys)». 
+
+Z terminala można aktywować nasz układ klawiatury dla bieżącej sesji poleceniem:
+
+    setxkbmap 'pl(intl)'
+
+Dla trwałego efektu trzeba by je dodać do jakiegoś skryptu
+inicjującego sesję X Window.
+
+
+<blockquote>
+  {%= image_tag "/images/jkew.jpg", :alt => "[Jonathan Kew]" %}
+  <p class="center">Jonathan Kew autor XeTeX-a</p>
+</blockquote>
+
+## Przykładowy dokument w formacie LaTeX
+
+Dokument pokazuje jak zmienić wielkość fontu, jak ustawić rozmiar strony,
+jak zmienić font. Kompilujemy go tak:
 
     xelatex xarticle.tex
 
-A to zawartość pliku *xarticle.tex*:
+A to zawartość tego przykładowgo dokumentu *xarticle.tex*:
 
     :::latex
     % !TEX TS-program = xelatex
     % !TEX encoding = UTF-8
     
-    % Przykładowy szablon dokumentu XeLaTeX korzystajacego z klasy „article”
-    % oraz pakietu „fontspec” ułatwiającego wybieranie fontów.
+    % Przykładowy szablon dokumentu XeLaTeX 
+    % korzystajacego z klasy „article” oraz pakietu 
+    % „fontspec” ułatwiającego wybieranie fontów.
     
-    \documentclass[12pt]{article}    % domyślne 10pt jest za małe
+    \documentclass[12pt]{article} % domyślne 10pt jest za małe
     
-    \usepackage{fontspec}             % dokumentacja „fontspec.pdf” 
+    \usepackage{fontspec} % dokumentacja „fontspec.pdf” 
     \defaultfontfeatures{Mapping=tex-text} % konwencja: -- --- ,, ''
-    \usepackage{xunicode} % unicode support for LaTeX character names 
-                                          % (accents, European chars, etc)
-    \usepackage{xltxtra}      % extra customizations for XeLaTeX
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
     
-    \setmainfont{DejaVu Serif}     % teraz \textrm to DejaVu Serif 
-                                   % (powinien byc zainstalowany w systemie)
-    \setmonofont{DejaVu Sans Mono} % zmień font monotype  
-    
-    % użyj pakietów:
+    \setmainfont{DejaVu Serif} % zmień font na „DejaVu Serif”
+                               % font powinien byc zainstalowany w systemie?
+
     \usepackage{geometry} % zobacz „geometry.pdf”
-    \geometry{a4paper}    % po więcej opcji
+    \geometry{a4paper}
     
-    \usepackage{graphicx} % włączanie grafiki: polecenie \includegraphics
+    \usepackage{graphicx} % polecenie \includegraphics, dokumentacja „epslatex.pdf”
     
-    \usepackage[polish]{polyglossia}  % najważniejszy pakiet
+    \usepackage[polish]{polyglossia} % najważniejszy pakiet
     
     \title{Krótki tytuł}
     \author{Hieronim Brzęczyszczykiewicz}
     %\date{} % odkomentuj aby usunąć datę lub wstaw jakąś datę między {}
-             % w przeciwnym wypadku drukowana jest aktualna data
+             % jeśli tego nie zrobisz będzie drukowana aktualna data
     
     \begin{document}
     \maketitle % drukuj tytuł
     
     \section{Pierwsza sekcja}
-    
-    Nieco kodu:
-    
-    \begin{verbatim}
-    def hello
-      print "Witaj świecie!"
-    end
-    \end{verbatim}
+ 
+    Akapity oddzielamy
+
+    \em{pustym wierszem}.
     
     \subsection{Pierwsza podsekcja}
     
@@ -150,15 +207,15 @@ A to zawartość pliku *xarticle.tex*:
     
     \end{document}
 
-Bardziej skomplikowane: wstawianie obrazków, tabelki, matematyka, bibliografia.
-Kompilujemy to tak:
+Bardziej skomplikowant dokument: wstawianie obrazków, tabelki, 
+listy wypunktowane, matematyka, bibliografia. Kompilujemy to tak:
 
     xelatex pracka
     bibtex pracka
     xelatex pracka
     xelatex pracka
 
-A to zawartość pliku *pracka.tex*:
+A to zawartość tego pliku *pracka.tex*:
 
     :::latex
     % !TEX TS-program = xelatex
@@ -168,20 +225,35 @@ A to zawartość pliku *pracka.tex*:
     
     \usepackage{geometry}
     \geometry{a4paper}
-    
+
+    % Tak zmieniamy fonty, kiedy korzystamy z programu TeX + format LaTeX
+    %\usepackage{lmodern}    % domyślna rodzina fontów to Latin Modern
+    \usepackage{euler}      % zmień fonty matematyczne na Euler
+
+    % Tak zmieniamy fonty, kiedy korzystamy z programu XeTeX + format LaTeX    
     \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text}
-    
-    \usepackage{xunicode}
-    \usepackage{xltxtra}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \setmainfont{TeX Gyre Schola} % URW Century Schoolbook L from TeX Gyre collection
+    % fc-list | egrep "TeX Gyre Schola"
+    % TeX Gyre Schola:style=Bold
+    % TeX Gyre Schola:style=Italic
+    % TeX Gyre Schola:style=Bold Italic
+    % TeX Gyre Schola:style=Regular
+    %
+    % albo tak
+    \setromanfont[Mapping=tex-text]{TeX Gyre Schola}
+    \setsansfont[Mapping=tex-text]{Myriad Pro}
+    \setmonofont{DejaVu LGC Sans Mono}
+
+    \usepackage{xunicode}   % akcentowane znaki / … / „ / ” / – / —
+    \usepackage{xltxtra}    % XeTeX logo
     
     \usepackage{hyperref}
     \usepackage{color}
     \usepackage{url}
-    \usepackage{graphicx}   % włączanie grafiki: polecenie \includegraphics
+    \usepackage{graphicx}   % polecenie \includegraphics
     
     \usepackage[polish]{polyglossia}  % najważniejszy pakiet
-    
     
     \bibliographystyle{unsrt}
     
@@ -191,21 +263,33 @@ A to zawartość pliku *pracka.tex*:
     
     \begin{document}
     
-    \maketitle
-    \tableofcontents
-    \listoffigures
-    \listoftables
-    
-    \section{Wstęp}\label{sec:wstep}
-    Autorem biblioteki (formatu) \LaTeX\ jest Leslie Lamport
-    (zob.~\cite{Gurari.TeX4ht}).
+      \maketitle
+      \tableofcontents
+      \listoffigures
+      \listoftables
     
     \section{Podstawy}\label{sec:podstawy}
     Książka ,,Sekunda komputera'' przedstawia to, co komputer
     robi w~ciągu jednej sekundy -- taki jest \emph{bynajmniej} główny
     kierunek rozważań.
+
+    Uwaga: akapity odzielamy \textit{pustym wierszem}.
     
-    \section{Wzory}\label{sec:wzory}
+    \section{Otoczenie verbatim}\label{sec:verbatim}
+    
+    W fontach maszynowych wszystki znaki mają taką samą
+    szerokość. Za pomocą takich fontów składane
+    są listingi lub kod programów, na przykład
+     
+    \begin{verbatim}
+    $ fc-list | egrep "TeX Gyre Schola"
+    TeX Gyre Schola:style=Bold
+    TeX Gyre Schola:style=Italic
+    TeX Gyre Schola:style=Bold Italic
+    TeX Gyre Schola:style=Regular
+    \end{verbatim}
+        
+    \section{Matematyka}\label{sec:wzory}
     Ten wzór wszyscy znają: \(2+2=4\), a~ten jest znany tylko
     niektórym: \[ e^{2\pi i}=-1 \] Oba wzory wpisujemy w prosty
     sposób z~klawiatury: \verb|\(2+2=4\)| oraz
@@ -213,9 +297,27 @@ A to zawartość pliku *pracka.tex*:
     \[ e^{2\pi i}=-1 \]
     \end{verbatim}
     
+    \section{Więcej matematyki}
+    Kilka wzorów ze strony~\cite{jsMath.examples}:
     
-    \section{Książki}\label{sec:ksiazki}
-    Inne pozycje o których wspomniano w~[\ref{sec:wstep}] to:
+    \[ 
+      \int_0^1 f(x)\,dx = 1 
+    \]
+    \[ 
+      {n\choose k} \equiv {\lfloor n/p\rfloor \choose \lfloor k/p\rfloor}
+         {{n\bmod p} \choose {k\bmod p}} \pmod p
+    \]
+    \[
+      A = \pmatrix{x-\lambda & 1 & 0\cr
+                     0 & x-\lambda & 1\cr
+                     0 & 0 & x-\lambda\cr}
+       \qquad\qquad
+      \left\lgroup\matrix{a&b&c\cr d&e&f}\right\rgroup
+      \left\lgroup\matrix{u&x\cr v&y\cr w&z}\right\rgroup
+    \]
+    
+    \section{Listy}\label{sec:ksiazki}
+    Inne pozycje o których wspomniano w~[\ref{sec:podstawy}] to:
     \begin{enumerate}
     \item ,,The Twenty First Century'';
     \item ,,The Upside-Down Evolution''. 
@@ -287,9 +389,17 @@ Plik z bibliografią *pd.bib*:
       howpublished = {\url{http://wiki.docbook.org/topic/DocBookXslStylesheets}},
       year         = 2004,
     }
+    
+    @Booklet{jsMath.examples,
+      title        = {Examples of jsMath},
+      author       = "Davide Cervone",
+      howpublished = "\url{http://www.math.union.edu/~dpvc/jsMath/examples/welcome.html}",
+      year         = 2009,
+    }
 
 
 #### Linki
 
 [gust doc]: http://www.gust.org.pl/doc "Dokumentacje — GUST"
 [lm]: http://www.gust.org.pl/projects/e-foundry/latin-modern/download "Latin Modern collection"
+[mw keyboard]: http://marcinwolinski.pl/keyboard/ "Racjonalna polska klawiatura dla programisty…"
