@@ -31,6 +31,11 @@ Proste skrypty:
 <a href="/doc/bash/get-metar-EPGD.sh">pogoda</a>
 
 
+## Command line Russian roulette
+
+    [ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo *Click*
+
+
 ## Drukowanie listingów programów
 
 Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
@@ -40,4 +45,3 @@ Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
 
 [enscript]: http://www.codento.com/people/mtr/genscript "Enscript"
 [a2ps]: http://www-inf.enst.fr/~demaille/ "a2ps"
-
