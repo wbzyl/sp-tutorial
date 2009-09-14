@@ -96,13 +96,123 @@ Zdalne kopiowanie plików: `scp`.
 
 ## Uprawnienia
 
-Polecenia `chmod` i `chown`.
+Polecenia `chmod` i `chown`. Przykład:
+
+    :::shell-unix-generic
+    cd ~/tmp
+    mkdir xxx
+    ls -ld xxx
+    # drwxr-xr-x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
+    chmod 701 xxx
+    ls -ld xxx
+    # drwx-----x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
+    touch xxx/readme
+    ls -l xxx/readme
+    # -rw-r--r-- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
+    chmod 600 xxx/readme
+    ls -l xxx/readme
+    # -rw------- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
+
+Dlaczego nie ma przykładów dla polecenia `chown`:
+
+    :::shell-unix-generic
+    groups
 
 
 ## Przykład: własna strona WWW na *Sigmie*
 
+Własna strona na *Sigmie* krok po kroku:
+
+    :::shell-unix-generic
+    cd
+    chmod 711 ../wbzyl
+    mkdir public_html
+    chmod 711 public_html
+    cd public_html
+    cat > index.html
+    ... wklejamy zawarość pliku index.html poniżej ...
+    ... wciskamy ctrl-D
+    cat > main.css
+    ... wklejamy zawarość pliku main.css poniżej ...
+    ... wciskamy ctrl-D
+
+Plik *index.html*:
+
+    :::html
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+        "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <link href="/favicon.ico" rel="SHORTCUT ICON">
+      <link href="main.css" media="all" rel="Stylesheet" type="text/css" charset="utf-8">
+      <title>HTML + CSS + Javascript</title>
+    </head>
+      <body>
+        <h1>HTML + CSS</h1>
+        <p>Przykładowy akapit.</p>
+      </body>
+    </html>
+
+Plik *main.css*:
+
+    :::css_experimental
+    html {
+      background-color: #AAAAAA;
+    }
+    body { 
+      margin: 2em;
+      padding: 2em;
+      font-family: Verdana, sans-serif; 
+      background-color: #EEEEEE;
+    }
+
+Na koniec walidujemy stronę.
+
 
 ## Przykład: repozytorium Git
+
+Zakładamy **bare** repozytorium:
+
+    :::shell-unix-generic
+    mkdir ~/public_git # katalog na publiczne repozytoria
+    cd ~/tmp
+    mkdir test
+    cd test
+    touch README.md
+    git init
+    git add .
+    git commit -m "pierwsza wrzutka"
+    cd ..
+    git clone --bare test ~/public_git/test.git
+
+Teraz każdy może ze swojego komputera sklonować repo:
+
+    :::shell-unix-generic
+    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
+
+Właściciel repo, czyli ja, klonuje repo w taki sposób:
+
+    :::shell-unix-generic
+    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+
+Teraz, każdy może wykonać `pull` z repo a właściciel
+może wykonać `pull` i `push`.
+
+
+## Praca z Emacesm czystym relaksem
+
+Edytory ASCII v. edytory non-ASCII.
+
+Użyteczne linki:
+
+* [A Guided Tour of Emacs] [emacs-tour]
+* {%= link_to "Skróty klawiszowe edytora Emacs", "/doc/survival.pdf" %}
+* [Emacs Wiki] [emacs-wiki]
+* [Emacs Starter Kit] [emacs-starter-kit]
+* [GNU Emacs manual] [emacs-manual]
+* [Programming in Emacs Lisp (Second Edition)] [emacs-lisp-intro]
+* [An Introduction to Programming in Emacs Lisp] [elisp]
 
 
 ## Przykład: udostępniamy repozytorium Git
@@ -261,3 +371,10 @@ Też warte przeczytania:
 [regexp tutorial]: http://gnosis.cx/publish/programming/regular_expressions.html "Learning to Use Regexp"
 [regexp tester]: http://www.roblocher.com/technotes/regexp.aspx "Regular Expression Tester"
 [spluczka]: http://www.piotr.nabielec.com/index.php?option=com_content&task=view&id=41 "Spłuczka w linuxie"
+
+[emacs-starter-kit]: http://github.com/technomancy/emacs-starter-kit "Emacs Starter Kit"
+[emacs-wiki]: http://www.emacswiki.org "Emacs Wiki"
+[emacs-manual]: http://www.gnu.org/software/emacs/manual/emacs.html "GNU Emacs manual"
+[emacs-lisp-intro]: http://www.gnu.org/software/emacs/emacs-lisp-intro/emacs-lisp-intro.html "Programming in Emacs Lisp (Second Edition)"
+[elisp]: http://www.gnu.org/software/emacs/manual/elisp.html "An Introduction to Programming in Emacs Lisp"
+[emacs-tour]: http://www.gnu.org/software/emacs/tour "A Guided Tour of Emacs"
