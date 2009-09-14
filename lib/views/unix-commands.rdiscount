@@ -74,6 +74,12 @@ Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
 Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
 Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
 
+<blockquote>
+  <h1>Bashowe dziwadełka</h1>
+<pre>alias kitty=cat   
+</pre>
+</blockquote>
+
 Pliki ukryte: `~/.bash_login`, `~/.bashrc`.
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
@@ -205,6 +211,19 @@ Odmontowanie systemu zdalnego:
 
     :::shell-unix-generic
     fusermount -u mountpoint
+
+
+<blockquote>
+ <p>
+  A novice programmer was explained the meaning of RTFM. He showed up
+  the next day saying: 
+ „So I went out and bought the Kama Sutra. Now what?”
+  </p>
+  <p><i>Meta</i>:
+   If you tell the joke above to a non-programmer, he will ask:
+   „What's RTFM?” A programmer will ask: „What's Kama Sutra?”
+  </p>
+</blockquote>
 
 ## Do poduszki…
 

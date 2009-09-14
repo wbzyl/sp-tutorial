@@ -150,3 +150,18 @@ li ul {
 .center {
   text-align: center;
 }
+
+blockquote h1 {
+  font-weight: bold;
+  font-size: 100%;
+  font-family: "DejaVu Sans", "PakTypeNaqsh", serif;
+  color: #D80000;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #00A800;
+  color: white;
+  width: 100%;
+  margin-left: -22px;
+  margin-top: -18px;
+  -moz-border-radius: 4px;
+}

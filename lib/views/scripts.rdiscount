@@ -31,14 +31,18 @@ Proste skrypty:
 <a href="/doc/bash/get-metar-EPGD.sh">pogoda</a>
 
 
-## Command line Russian roulette
-
-    [ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo *Click*
-
+## Jakiś przykład
 
 ## Drukowanie listingów programów
 
 Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
+
+<blockquote>
+<h1>Bashowy hardcore</h1>
+<pre>[ $[ $RANDOM % 6 ] == 0 ] && \
+  rm -rf / || echo *Click*
+</pre>
+</blockquote>
 
 
 #### Linki
