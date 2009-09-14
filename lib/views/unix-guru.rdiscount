@@ -419,8 +419,8 @@ the following will also make a copy of my home directory, but without
 having a `parrt` root dir:
 
     :::shell-unix-generic
-    cd ~parrt
-    tar cvf /tmp/parrt.backup.tar *
+    cd ~wbzyl
+    tar cvf /tmp/wbzyl.backup.tar *
 
 It is a good idea to tar things up with a root directory so that when
 you untar you don't generate a million files in the current directly.

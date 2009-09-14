@@ -21,13 +21,19 @@
 * Polecenie `who`.
 
 Uzyskiwanie pomocy: polecenie `man`.
-
 Składnia polecenia uniksowego.
 
 Tworzenie aliasów: 
 
     :::shell-unix-generic
     alias l='ls -l'
+
+Generujemy klucze: prywatny i publiczny:
+
+    :::shell-unix-generic
+    ssh-keygen
+    ... Enter, Enter…
+    cat ~/.ssh/id_rsa.pub
 
 
 ## Limity dyskowe
@@ -58,7 +64,18 @@ Zestawianie poleceń w potok:
     ls | wc -l
     who | grep wbzyl
 
-Inne przykłady. Teraz używam git-a.
+<blockquote>
+  <h1>Bashowy hardcore</h1>
+<pre>rm -rf $( du -s * | \
+  sort -rn | head -1 | cut  -f 2 )
+kill -9 $( ps augxww | \
+  sort -rnk +3,+4 | \
+  head -1 | \
+  awk '{print $2}' )
+</pre>
+</blockquote>
+
+Inne przykłady (mało użyteczne, teraz używam git-a a nie svn):
 
     grep pattern $(find . | grep -v .svn)
     grep pattern $(find -name .svn -prune -o -print)
@@ -76,18 +93,32 @@ Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
 
 <blockquote>
   <h1>Bashowe dziwadełka</h1>
-<pre>alias kitty=cat   
+<pre>alias kitty=cat
+alias dir=ls
+alias erase=rm
+alias process_table=ps
+setenv DISPLAY=vt100
 </pre>
 </blockquote>
-
-Pliki ukryte: `~/.bash_login`, `~/.bashrc`.
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
 Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
 
-Rozwijanie nazw plików (globbing).
+Rozwijanie nazw plików: globbing.
 
-Wyświetlanie zawartości pliku: `cat`.
+*Pliki ukryte*, to pliki których nazwy zaczynają się od kropki:
+
+    :::shell-unix-generic
+    ls -la | egrep ' \.'
+
+Wyświetlanie zawartości pliku: `cat`:
+
+    :::shell-unix-generic
+    cat /etc/bashrc
+    cat -n /etc/bashrc
+    cat /etc/bashrc /etc/passwd > ~/tmp/etc.txt
+    cat /etc/passwd | tr a-z A-Z
+    tr a-z A-Z < /etc/passwd
 
 Polecenia: `wc`, `head` oraz `tail`.
 
@@ -146,10 +177,10 @@ Plik *index.html*:
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <link href="/favicon.ico" rel="SHORTCUT ICON">
       <link href="main.css" media="all" rel="Stylesheet" type="text/css" charset="utf-8">
-      <title>HTML + CSS + Javascript</title>
+      <title>HTML4 + CSS</title>
     </head>
       <body>
-        <h1>HTML + CSS</h1>
+        <h1>HTML4 + CSS</h1>
         <p>Przykładowy akapit.</p>
       </body>
     </html>
@@ -161,7 +192,7 @@ Plik *main.css*:
       background-color: #AAAAAA;
     }
     body { 
-      margin: 2em;
+      margin: 20px 100px;
       padding: 2em;
       font-family: Verdana, sans-serif; 
       background-color: #EEEEEE;
@@ -172,10 +203,9 @@ Na koniec walidujemy stronę.
 
 ## Przykład: repozytorium Git
 
-Zakładamy **bare** repozytorium:
+Zakładamy repozytorium:
 
     :::shell-unix-generic
-    mkdir ~/public_git # katalog na publiczne repozytoria
     cd ~/tmp
     mkdir test
     cd test
@@ -183,24 +213,10 @@ Zakładamy **bare** repozytorium:
     git init
     git add .
     git commit -m "pierwsza wrzutka"
-    cd ..
-    git clone --bare test ~/public_git/test.git
-
-Teraz każdy może ze swojego komputera sklonować repo:
-
-    :::shell-unix-generic
-    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
-
-Właściciel repo, czyli ja, klonuje repo w taki sposób:
-
-    :::shell-unix-generic
-    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
-
-Teraz, każdy może wykonać `pull` z repo a właściciel
-może wykonać `pull` i `push`.
+    ... edycja README.md, add – zmiany, commit – co zostało zrobione
 
 
-## Praca z Emacesm czystym relaksem
+## Praca z *Emacsem* czystym relaksem
 
 Edytory ASCII v. edytory non-ASCII.
 
@@ -217,10 +233,62 @@ Użyteczne linki:
 
 ## Przykład: udostępniamy repozytorium Git
 
+Tworzymy *bare* repo *test.git* z repozytorium *test*:
+
+    :::shell-unix-generic
+    mkdir ~/public_git  # katalog na publiczne repozytoria
+    git clone --bare ~/tmp/test ~/public_git/test.git
+
+Teraz każdy, korzystając z protokołu git, może sklonować na swój
+komputer repo *test.git*:
+
+    :::shell-unix-generic
+    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
+
+Właściciel repo, czyli ja, klonuje repo korzystając z protokołu
+**ssh**:
+
+    :::shell-unix-generic
+    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+
+Właściciel repo może wykonać `pull` i `push`, a pozostali
+tylko `pull`.
+
 
 ## Przykład: blog
 
-[Gotowiec](http://github.com/wbzyl/jekyll-ii).
+Skorzystamy z gotowego bloga [jekyll-ii](http://github.com/wbzyl/jekyll-ii),
+który specjalnie przygotowałem na tę okazję.
+
+Wchodzimy na serwer *http://github.com*, gdzie zakładamy darmowe publiczne
+konto (do 300MB): zakładka *Pricing and Signup*.
+
+Po zalogowaniu się na swoje konto, klikamy w zakładkę *account*
+i dodajemy klucz publiczny z *Sigmy*: zakładka *SSH Public Keys*.
+
+Przechodzimy na konto: *http://github.com/wbzyl/*, gdzie klikamy
+w projekt *jekyll-ii*. Forkujemy projekt. Na koniec, klonujemy 
+sforkowany przed chwilą projekt na swój komputer. 
+
+Teraz przechodzimy do katalogu z projektem:
+
+    :::shell-unix-generic
+    cd jekyll-ii
+
+i dodajemy oryginalne repozytorium jako **remote**:
+
+    :::shell-unix-generic
+    git remote add wbzyl git://github.com/wbzyl/jekyll-ii.git
+
+Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
+
+    :::shell-unix-generic
+    git fetch wbzyl
+    git diff wbzyl/master
+    git merge wbzyl/master
+
+Piszemy pierwszy wpis do swojego bloga: 
+[instrukcje są tutaj] [jekyll-ii].
 
 
 ## Zmienne środowiska
@@ -378,3 +446,5 @@ Też warte przeczytania:
 [emacs-lisp-intro]: http://www.gnu.org/software/emacs/emacs-lisp-intro/emacs-lisp-intro.html "Programming in Emacs Lisp (Second Edition)"
 [elisp]: http://www.gnu.org/software/emacs/manual/elisp.html "An Introduction to Programming in Emacs Lisp"
 [emacs-tour]: http://www.gnu.org/software/emacs/tour "A Guided Tour of Emacs"
+
+[jekyll-ii]: http://github.com/wbzyl/jekyll-ii "Blog Jekyll dostosowany do Sigmy"

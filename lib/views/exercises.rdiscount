@@ -39,7 +39,17 @@ Kod należy umieścić w repozytorium git. Na przykład
 
 ## Bash
 
+Utworzyć puste pliki o nazwach *bad name* i *-badname*.
+Usunąć je korzystając z polecenia *rm*.
+
+Przygotować opis wyrażeń regularnych
+rozpoznawanych przez program *egrep* plus przykłady.
+
+
+
 ## Git
+
+
 
 ## LaTeX
 
@@ -52,4 +62,8 @@ Przykładowy dokument korzystający z pakietów:
 Dorzucić bibliografię i skrypt powłoki kompilujący
 źródło do pdf-a.
 
+
 ## Skrypty powłoki
+
+Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
+polskie litery.

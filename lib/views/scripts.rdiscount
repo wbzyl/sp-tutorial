@@ -14,28 +14,60 @@
   <p class="author">— <a href="http://www.guppylake.com/~nsb/">Nathaniel Borenstein</a></p>
 </blockquote>
 
-Skrypty powłoki:
-
-* "/doc/bash/szaradzista.sh" gierki słowne i krzyżówki
-
-W podręczniku użytkownika
-<kbd>bash</kbd>
-znajdziesz wszystkie szczegóły
-dotyczące programowania powłoki. 
-Warto też zapoznać sie z książką Mendel Coopera,
-<a href="http://personal.riverusers.com/~thegrendel/index.html"><i>Advanced
-Bash-Scripting Guide</i></a>
-
-Proste skrypty:
-<a href="/doc/bash/listing.sh">listing</a>,
-<a href="/doc/bash/get-metar-EPGD.sh">pogoda</a>
+W podręczniku użytkownika programu *bash* znajdziesz wszystkie
+szczegóły dotyczące programowania powłoki.
 
 
-## Jakiś przykład
+## Rot13
 
-## Drukowanie listingów programów
+Prosty program kodujący. Użycie:
 
-Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
+    :::shell-unix-generic
+    ./rot13.sh filename
+    ./rot13.sh < filename
+    ./rot13.sh
+    ... i wpisujemy tekst z klawiatury ...
+
+Plik *rot13.sh*:
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    # "a" na "n", "b" na "o", itd
+    cat "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'
+    
+    exit 0
+
+Uwaga: konstrukacja `cat "$@"` umożliwia pobieranie 
+tekstu ze *stdin* lub z pliku.
+
+
+## Blank rename
+
+Czasami w nazwach plików pojawiają się spacje. To jest *bad thing*.
+Skrypt *blank-rename.sh* zamienia spacje w nazwach na znak
+podkreślenia *_*.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    number=0             # licznik plików, którym zmieniono nazwy
+    FOUND=0              # zmienna: aby kod się lepiej czytał
+    
+    for filename in *    # przejrzyj wszystkie pliki w katalogu
+    do
+         echo "$filename" | grep -q " "         # sprawdź czy nazwa pliku
+         if [ $? -eq $FOUND ]                   # zawiera spacje
+         then
+           fname=$filename                      # tak, więc zabieramy sie do pracy
+           n=`echo $fname | sed -e "s/ /_/g"`   # podstawiamy _ za każdą spację
+           mv "$fname" "$n"                     # zmieniamy nazwę pliku
+           let "number += 1"
+         fi
+    done   
+    
+    echo "Liczba plików, którym zmieniono nazwy: $number"
+    exit 0
+
 
 <blockquote>
 <h1>Bashowy hardcore</h1>
@@ -43,6 +75,114 @@ Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
   rm -rf / || echo *Click*
 </pre>
 </blockquote>
+
+## Make dictionary, *makedict.sh*
+
+Klasyczny skrypt z 1993. Autorem skryptu jest Alec Muffett.
+„This script processes text files to produce a sorted list of words
+found in the files.  This may be useful for compiling dictionaries and
+for other lexicographic purposes.” Niestety, ten skrypt nie rozpoznaje
+polskich liter: ą, ć, ę, itd.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    E_BADARGS=64
+    if [ ! -r "$1" ]                    #  Need at least one
+    then                                #  valid file argument.
+      echo "Usage: $0 files-to-process"
+      exit $E_BADARGS
+    fi  
+    cat $* |                            # Contents of specified files to stdout.
+            tr A-Z a-z |                # Convert to lowercase.
+            tr ' ' '\012' |             # New: change spaces to newlines.
+    #       tr -cd '\012[a-z][0-9]' |   # Get rid of everything non-alphanumeric
+                                        #  (in original script).
+            tr -c '\012a-z'  '\012' |   # Rather than deleting non-alpha chars,
+                                        #  change them to newlines.
+            sort |                      # $SORT options unnecessary now.
+            uniq |                      # Remove duplicates.
+            grep -v '^#' |              # Delete lines beginning with a hashmark.
+            grep -v '^$'                # Delete blank lines.
+    
+    exit 0
+
+W manualu polecenia *test* jest opisana opcja *-r*
+
+
+## Zapisujemy wyjście z bloku do pliku
+
+Czasami, technika ta jest użyteczna.
+
+Program *rpm-check.sh* odpytuje plik rpm:
+
+* description
+* listing 
+* czy może być zainstalowany w systemie
+
+i zapisuje rezultat do pliku.
+
+Opcje programu *rpm* są opisane w manualu.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    SUCCESS=0
+    E_NOARGS=64
+    
+    if [ -z "$1" ]
+    then
+      echo "Usage: `basename $0` rpm-file"
+      exit $E_NOARGS
+    fi  
+    
+    {                   # początek bloku
+      echo
+      echo "Archive Description:"
+      rpm -qpi $1       # description
+      echo
+      echo "Archive Listing:"
+      rpm -qpl $1       # listing
+      echo
+      rpm -i --test $1  # czy pakiet rpm da się zainstalować
+      if [ "$?" -eq $SUCCESS ]
+      then
+        echo "Można instalować: $1"
+      else
+        echo "Nie można instalować: $1"
+      fi  
+      echo              # koniec bloku
+    } > "$1.test"       # przekierowanie całego wyjścia z bloku do pliku
+    
+    echo "Wyniki testu pliku rpm zapisano do pliku $1.test"
+    
+    exit 0
+
+Wynik podobny do:
+
+    less pakiet-rpm
+
+ale bez ChangeLog i z informacją czy można instalować.
+
+
+## Pogoda
+
+<a href="/doc/bash/get-metar-EPGD.sh">pogoda</a>
+
+
+## Listing
+
+<a href="/doc/bash/listing.sh">listing</a>,
+
+
+## Szaradzista
+
+"/doc/bash/szaradzista.sh" gierki słowne i krzyżówki
+
+
+## Drukowanie listingów programów
+
+Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
 
 
 #### Linki
