@@ -17,6 +17,69 @@
 W podręczniku użytkownika programu *bash* znajdziesz wszystkie
 szczegóły dotyczące programowania powłoki.
 
+Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z 
+wbudowanego polecenia powłoki *help*, na przykład:
+
+    :::shell-unix-generic
+    help if
+    help case
+    help help
+
+
+## Zmienne powłoki specjalnego przeznaczenia
+
+<table summary="Special Shell Variables">
+  <caption><em>Zmienne specjalne powłoki</em></caption>
+  <thead>
+    <tr>
+      <th class="span-2">Zmienna</th>
+      <th class="span-9 last">Znaczenie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>$0</code></td>
+      <td>nazwa pliku ze skryptem</td>
+    </tr>
+    <tr>
+      <td><code>$1 – $9</code></td>
+      <td>parametry pozycyjne przekazywane do skryptu</td>
+    </tr>
+    <tr>
+      <td><code>${10}</code></td>
+      <td>parametr 10.</td>
+    </tr>
+    <tr>
+      <td><code>$#</code></td>
+      <td>liczba parametrów przekazanych do skryptu</td>
+    </tr>
+    <tr>
+      <td><code>"$*"</code></td>
+      <td>wszystkie parametry (jedno słowo)</td>
+    </tr>
+    <tr>
+      <td><code>"$@"</code></td>
+      <td>wszystkie parametry (oddzielne słowa)</td>
+    </tr>
+    <tr>
+      <td><code>${#*}</code></td>
+      <td>liczba parametrów przekazanych do skryptu</td>
+    </tr>
+    <tr>
+      <td><code>${#@}</code></td>
+      <td>liczba parametrów przekazanych do skryptu</td>
+    </tr>
+    <tr>
+      <td><code>$?</code></td>
+      <td>wartość zwrócona przez skrypt</td>
+    </tr>
+    <tr>
+      <td><code>$$</code></td>
+      <td>ID procesu (PID)</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Rot13
 
@@ -40,6 +103,41 @@ Plik *rot13.sh*:
 
 Uwaga: konstrukacja `cat "$@"` umożliwia pobieranie 
 tekstu ze *stdin* lub z pliku.
+
+
+## Kolorowy tekst
+
+Program *listing.sh* pokazuje jak za pomocą *ANSI escape sequences*
+kolorować wypisywany tekst:
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    red='\e[31m'
+    end_color='\e[0m'
+    
+    echo -e "${red}Listing katalogu:${end_color}" `pwd`
+    ls --color -lt
+    
+    exit 0
+
+A ten skrypt pokazuje jak zmieniać kolor tła 
+i znaki normalne na znaki pobgrubione:
+
+    :::shell-unix-generic
+    #!/bin/bash
+    esc="\033["
+    echo -n " _ _ _ _ _40 _ _ _ 41_ _ _ _42 _ _ _ 43"
+    echo "_ _ _ 44_ _ _ _45 _ _ _ 46_ _ _ _47 _"
+    for fore in 30 31 32 33 34 35 36 37; do
+    	line1="$fore  "
+    	line2="    "
+    	for back in 40 41 42 43 44 45 46 47; do
+    		line1="${line1}${esc}${back};${fore}m Normal  ${esc}0m"
+    		line2="${line2}${esc}${back};${fore};1m Bold    ${esc}0m"
+    	done
+    	echo -e "$line1\n$line2"
+    done
 
 
 ## Blank rename
@@ -69,6 +167,29 @@ podkreślenia *_*.
     exit 0
 
 
+## Szaradzista
+
+Skrypt *szaradzista.sh* dopasowuje wzorzec zadany wyrażeniem 
+regularnym programu *egrep* do zbioru słowników:
+
+    szaradzista.sh wzorzec-egrep [pliki-slownikow]
+
+Jak przygotowac samemu słownik, zobacz następny skrypt.
+
+Sam skrypt jest prosty:
+
+    :::shell-unix-generic
+    #!/bin/sh
+    FILES="
+    	/usr/local/share/dict/doroszewski.words
+          "
+    pattern="$1"
+    shift
+    # jeśli użytkownik wskaże własne słowniki, 
+    # to słowniki wymienione w FILES są ignorowane
+    test $# -gt 0 && FILES="$@"
+    egrep -h -i "$pattern" $FILES 2> /dev/null | sort -u -f
+
 <blockquote>
 <h1>Bashowy hardcore</h1>
 <pre>[ $[ $RANDOM % 6 ] == 0 ] && \
@@ -96,18 +217,43 @@ polskich liter: ą, ć, ę, itd.
     cat $* |                            # Contents of specified files to stdout.
             tr A-Z a-z |                # Convert to lowercase.
             tr ' ' '\012' |             # New: change spaces to newlines.
-    #       tr -cd '\012[a-z][0-9]' |   # Get rid of everything non-alphanumeric
-                                        #  (in original script).
             tr -c '\012a-z'  '\012' |   # Rather than deleting non-alpha chars,
                                         #  change them to newlines.
-            sort |                      # $SORT options unnecessary now.
+            sort |                      # 
             uniq |                      # Remove duplicates.
             grep -v '^#' |              # Delete lines beginning with a hashmark.
             grep -v '^$'                # Delete blank lines.
     
     exit 0
 
-W manualu polecenia *test* jest opisana opcja *-r*
+W manualu polecenia *test* jest opisana opcja *-r*.
+Gdzie podziały się znaki kontynuacji wiersza \(&nbsp;\\&nbsp;\)?
+
+
+## Backup plików zmienionych w ostatnich 24h
+
+Tworzymy archiwum ze wszystkich plików zmienionych w ostatnich 
+24 godzinach. Archiwum, to plik "tarball" (tarred i gzipped).
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    BACKUPFILE=backup-$(date +%m-%d-%Y)
+    #                 wstaw datę do nazwy pliku
+    archive=${1:-$BACKUPFILE}
+    # jeśli w wierszu poleceń nie podano nazwy pliku na archiwum
+    # użyj nazwy "backup-MM-DD-YYYY.tar.gz."
+    
+    tar cvf - `find . -mtime -1 -type f -print` > $archive.tar
+    gzip $archive.tar
+    echo "Directory $PWD backed up in archive file \"$archive.tar.gz\"."
+    
+    exit 0
+
+Powyższy kod nie działa jeśli jest dużo plików do zarchiwizowania
+lub nazwy plików zawierają spacje. Tak można to poprawić:
+     
+    find . -mtime -1 -type f -print0 | xargs -0 tar rvf "$archive.tar"
 
 
 ## Zapisujemy wyjście z bloku do pliku
@@ -165,24 +311,157 @@ Wynik podobny do:
 ale bez ChangeLog i z informacją czy można instalować.
 
 
-## Pogoda
+## Echo argumentów wywołania skryptu
 
-<a href="/doc/bash/get-metar-EPGD.sh">pogoda</a>
+Call this script with a few command-line parameters.
+For example:
+
+    sh echo-params.sh raz dwa trzy
+
+Wynik:
+
+    command-line parameter $1 = raz
+    command-line parameter $2 = dwa
+    command-line parameter $3 = trzy
+
+Skrypt *echo-params.sh*:
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    params=$#              # liczba parametrów w linii poleceń
+    param=1                # zaczynamy od parametru 1.
+    
+    while [ "$param" -le "$params" ]
+    do
+      echo -n "command-line parameter "
+      echo -n \$$param     # wypisz tylko *nazwę* zmiennej
+    #         ^^^          # $1, $2, $3, itd.
+                           # dlaczego?
+                           # \$ cytuje pierwszy znak "$"
+                           # dlatego echo wypisuje $
+                           # i teraz $param *dereferences* "$param"
+      echo -n " = "
+      eval echo \$$param   # wypisz *wartość* zmiennej
+    # ^^^^      ^^^        # "eval" wymusza *evaluation* \$$param
+    
+    (( param ++ ))         # przejdź do następnego parametru
+    done
+    
+    exit $?
 
 
-## Listing
+## Zmiana kolejności parametrów pozycyjnych
 
-<a href="/doc/bash/listing.sh">listing</a>,
+W skrypcie korzystamy z polecenia wbudowanego powłoki `set`.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    variable="raz dwa trzy cztery"
+    
+    # przypisujemy zmiennym pozycyjnym wartość zmiennej "$variable"
+    set -- $variable
+    
+    first_param=$1
+    second_param=$2
+    shift; shift        # usuń $1 i $2 – pierwsze dwa parametry
+    # shift 2           # to też działa
+    remaining_params="$*"
+    
+    echo "pierwszy parameter   = $first_param"        # raz
+    echo "drugi parameter      = $second_param"       # dwa
+    echo "pozostałe parametery = $remaining_params"   # trzy cztery
 
 
-## Szaradzista
+## Pliki i katalogi
 
-"/doc/bash/szaradzista.sh" gierki słowne i krzyżówki
+Na koniec skrypt *filesdirectories.sh* z książki
+Pokazuje zastosowanie polecenia wbudowanego *trap*.
+
+Skrypt przegląda wszystkie pliki i katalogi, grupuje je 
+wedle dat ostatniej modyfikacji, zapisujac wyniki
+w plikach FILES.XXX i DIRECTORIES.XXX:
+
+    filesdirectories.sh KATALOG
+
+A to sam skrypt:
+
+    :::shell-unix-generic
+    #! /bin/sh -
+
+    # <newline> <space> <tab>
+    IFS='
+     	'
+    
+    # security: ograniczamy wyszukiwanie tylko do wymienionych katalogów
+    PATH=/usr/local/bin:/bin:/usr/bin  # opcja -fprint dostępna tylko w GNU find
+    export PATH
+    
+    if [ $# -ne 1 ]
+    then
+    	echo "Stosowanie: $0 katalog" >&2
+    	exit 1
+    fi
+    
+    umask 077             # gwarantuje prywatność tworzonych plików
+    
+    TMP=${TMPDIR:-/tmp}   # uwzględnia alternatywne katalogi plików tymczasowych
+    TMPFILES="
+    	$TMP/DIRECTORIES.all.$$ $TMP/DIRECTORIES.all.$$.tmp
+    	$TMP/DIRECTORIES.last01.$$ $TMP/DIRECTORIES.last01.$$.tmp
+    	$TMP/DIRECTORIES.last02.$$ $TMP/DIRECTORIES.last02.$$.tmp
+    	$TMP/DIRECTORIES.last07.$$ $TMP/DIRECTORIES.last07.$$.tmp
+    	$TMP/DIRECTORIES.last14.$$ $TMP/DIRECTORIES.last14.$$.tmp
+    	$TMP/DIRECTORIES.last31.$$ $TMP/DIRECTORIES.last31.$$.tmp
+    	$TMP/FILES.all.$$ $TMP/FILES.all.$$.tmp
+    	$TMP/FILES.last01.$$ $TMP/FILES.last01.$$.tmp
+    	$TMP/FILES.last02.$$ $TMP/FILES.last02.$$.tmp
+    	$TMP/FILES.last07.$$ $TMP/FILES.last07.$$.tmp
+    	$TMP/FILES.last14.$$ $TMP/FILES.last14.$$.tmp
+    	$TMP/FILES.last31.$$ $TMP/FILES.last31.$$.tmp
+    	"
+    
+    WD=$1
+    cd $WD || exit 1
+    
+    trap 'exit 1'		HUP INT PIPE QUIT TERM	# liczbowo: 1 2 3 13 15
+    trap 'rm -f $TMPFILES'	EXIT			# liczbowo: 0
+    
+    find . \
+    	   -name DIRECTORIES.all -true \
+    	-o -name 'DIRECTORIES.last[0-9][0-9]' -true \
+    	-o -name FILES.all -true \
+    	-o -name 'FILES.last[0-9][0-9]' -true \
+        -o -path '*.svn*' -true \
+    	-o -type f            -fprint $TMP/FILES.all.$$ \
+    	-a         -mtime -31 -fprint $TMP/FILES.last31.$$ \
+    	-a         -mtime -14 -fprint $TMP/FILES.last14.$$ \
+    	-a         -mtime  -7 -fprint $TMP/FILES.last07.$$ \
+    	-a         -mtime  -2 -fprint $TMP/FILES.last02.$$ \
+    	-a         -mtime  -1 -fprint $TMP/FILES.last01.$$ \
+    	-o -type d            -fprint $TMP/DIRECTORIES.all.$$ \
+    	-a         -mtime -31 -fprint $TMP/DIRECTORIES.last31.$$ \
+    	-a         -mtime -14 -fprint $TMP/DIRECTORIES.last14.$$ \
+    	-a         -mtime  -7 -fprint $TMP/DIRECTORIES.last07.$$ \
+    	-a         -mtime  -2 -fprint $TMP/DIRECTORIES.last02.$$ \
+    	-a         -mtime  -1 -fprint $TMP/DIRECTORIES.last01.$$
+    
+    for i in FILES.all FILES.last31 FILES.last14 FILES.last07 \
+    	FILES.last02 FILES.last01 DIRECTORIES.all \
+    	DIRECTORIES.last31 DIRECTORIES.last14 \
+    	DIRECTORIES.last07
+    do
+    	sed -e "s=^[.]/=$WD/=" -e "s=^[.]$=$WD=" $TMP/$i.$$ |
+    		LC_ALL=C sort > $TMP/$i.$$.tmp
+        cmp -s $TMP/$i.$$.tmp $i || mv $TMP/$i.$$.tmp $i
+    done
 
 
 ## Drukowanie listingów programów
 
-Korzystamy z programu [Enscript] [enscript] lub [a2ps] [a2ps].
+Zwykle korzystam z programu [a2ps] [a2ps].
+Kiedyś używałem programu [Enscript] [enscript].
 
 
 #### Linki

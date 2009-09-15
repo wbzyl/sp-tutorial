@@ -207,15 +207,37 @@ A to zawartość tego przykładowgo dokumentu *xarticle.tex*:
     
     \end{document}
 
-Bardziej skomplikowant dokument: wstawianie obrazków, tabelki, 
-listy wypunktowane, matematyka, bibliografia. Kompilujemy to tak:
+Wpisując tekst w powinniśmy zwrócić uwagę, że LaTeX rezerwuje
+niektóre ze znaków:
+
+    %   $   #   &   \   {   }   ^   _   ~
+
+Są to tzw. *znaki specjalne*. Jeśli chcemy wydrukować
+te znaki, to wklepujemy je odpowiednio jako
+
+    \%  \$  \#  \& 
+
+Poniższe cztery znaki
+
+    "   |   <   >
+
+też są znakami specjalnymi. Jeśli je wpiszesz, to zostaną wydrukowane
+zupełnie inne znaki.
+
+
+## Więcej LaTeX-a
+
+Teraz pora na bardziej skomplikowany dokument pkazujący jak wstawiać obrazki,
+tabelki, listy wypunktowane, jak wpisywać matematykę, 
+jak przygotowywać bibliografię. Plik *pracka.tex* zawierający
+wszystkie te rzeczy kompilujemy w taki sposób (4 przebiegi):
 
     xelatex pracka
     bibtex pracka
     xelatex pracka
     xelatex pracka
 
-A to zawartość tego pliku *pracka.tex*:
+A to zawartość tego pliku:
 
     :::latex
     % !TEX TS-program = xelatex
