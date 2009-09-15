@@ -420,8 +420,24 @@ Plik z bibliografią *pd.bib*:
     }
 
 
+## I-Ching
+
+Ściągamy mój pakiet [I-ching Divinations] [i-ching].
+Instalujemy go i poprawiamy skrypt *dod.sh*, tak
+aby korzystał z fontów PFB (a nie z fontów PK).
+
+Teraz uruchamiamy skrypt i po jego wykonaniu oglądamy wróżbę:
+
+    gv your-divination.ps
+
+Skrypt *dod.sh* korzysta z programu *tex*.
+Czy zamiast programu *tex* można użyć programu *xetex*?
+
+
 #### Linki
 
 [gust doc]: http://www.gust.org.pl/doc "Dokumentacje — GUST"
 [lm]: http://www.gust.org.pl/projects/e-foundry/latin-modern/download "Latin Modern collection"
 [mw keyboard]: http://marcinwolinski.pl/keyboard/ "Racjonalna polska klawiatura dla programisty…"
+
+[i-ching]: http://www.ctan.org/tex-archive/fonts/psfonts/i-ching/ "I-Ching Divinations" 
