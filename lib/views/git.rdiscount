@@ -11,3 +11,173 @@
   </p>
   <p class="author">— Jamie Zawinski</p>
 </blockquote>
+
+Do czego służy system *Git*? Odpowiedź znajdziemy na stronie domowej projektu
+[Git - Fast Version Control System] [git home].
+
+Obejrzenie wystąpienia autora Linuksa:
+[Tech Talk: Linus Torvalds on git] [torvalds on git]
+dla pracowników Google powinno wyjaśnić dlaczego powstał Git
+i dlaczego Google więcej już nie poprosi LT o wygłoszenie referatu.
+
+Randal L. Schwartz “Guru-On-Demand” jest autorem najlepszego
+wprowadzenia do języka Perl jakie czytałem. Z jego
+screencastu [Git] [schwartz on git] można dowiedzieć się 
+jak Git zmienił jego życie.
+
+Tom Preston-Werner w [Git Przypowieści] [the-git-parable] napisał:
+„Most people try to teach Git by demonstrating a few dozen commands
+and then yelling “tadaaaaa.” I believe this method is flawed. Such
+a treatment may leave you with the ability to use Git to perform
+simple tasks, but the Git commands will still feel like magical
+incantations.”
+
+Przypowieść ta opisuje perypetie czeladnika tworzącego system
+gitopodobny od podstaw.
+
+
+## Konfiguracja
+
+<blockquote>
+ <p>
+  Podchodzi informatyk do fortepianu i ogląda go wnikliwie: 
+  — Hmm, tylko 84
+  klawisze, z czego 1/3 funkcyjnych, wszystkie nieopisane,
+  chociaż… shift naciskany nogą. Oryginalnie.
+ </p>
+</blockquote>
+
+Pracę z gitem zaczynamy od przedstawienia się:
+
+    git config -l
+    git config --global user.name "Wlodek Bzyl"
+    git config --global user.email "matwb@univ.gda.pl"
+    
+po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
+
+    cat ~/.gitconfig
+
+Łatwiej będzie nam porozumiewać się z Gitem, po dodaniu do pliku
+konfiguracyjnego kilku skrótów:
+
+    git config --global alias.co checkout
+    git config --global alias.ci commit
+    git config --global alias.st status
+    git config --global alias.br branch
+    git config --global alias.df diff
+    git config --global alias.lg log -p
+
+Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
+
+    git config --global color.diff auto
+    git config --global color.status auto
+    git config --global color.branch auto
+
+Jeszcze trochę ręcznych robótek w pliku *~/.gitconfig*:
+
+    :::ini
+    [color "branch"]
+      current = yellow reverse
+      local = yellow
+      remote = green
+    [color "diff"]
+      meta = yellow bold
+      frag = magenta bold
+      old = red bold
+      new = green bold
+    [color "status"]
+      added = yellow
+      changed = green
+      untracked = cyan
+    # highlight whitespace in diffs
+    [color]
+      ui = true
+    [core]
+      whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+i po konfiguracji.
+
+Wygodnie też jest mieć kilka aliasów w bashu.
+Dopisujemy je do pliku *~/.bashrc*:
+
+    :::shell-unix-generic
+    alias gb='git branch -a'
+    alias gl='git log -p'
+    alias gt='git status'
+    
+## Zakładamy repozytorium
+
+Pierwsze repozytorium, zgodnie ze starą uniksową tradycją
+powinno mieć nazwę *hello-world*:
+
+    mkdir hello-world
+    cd hello-world
+    git init
+    touch .gitignore README.md Makefile hello.c
+    git add .
+    git commit -m "pierwsza wrzutka"
+    git log -p
+
+
+## Git na codzień
+
+<blockquote>
+ <p>
+  Przychodzi administrator rano do pracy, siada do komputera, aby
+  zobaczyć co się działo w nocy i śpiewa: <em>Chcę oglądać twoje logi,
+  logi, logi, logi…</em>
+ </p>
+</blockquote>
+
+    ... edycja, edycja ...
+    git status
+    git add [nazwy plików albo .]
+    git commit -m "jakiś wpis do loga"
+    ... edycja, edycja ...
+
+Każdy plik w systemie Git ma trzy życia: jedno w „working tree”,
+drugie w „index” i trzecie w „trunk”:
+
+    git diff           # shows you the differences from index to working tree
+    git diff HEAD      # shows you the differences from trunk to working tree
+    git diff --cached  # shows you the differences from trunk to index
+
+I na koniec pracy:
+
+    git whatchanged -p # show logs with difference each commit introduces
+    gitk               # run the repository browser
+
+
+
+## Tak klonujemy projekty z *Sigmy*
+
+<blockquote>
+ <p>
+  Wsiada informatyk do taksówki. Taksiarz pyta:<br/>
+  — Dokąd jedziemy?<br/>
+  — 127.0.0.1
+ </p>
+</blockquote>
+
+Korzystając z protokołu GIT:
+
+    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
+
+Własne projekty klonujemy korzystając z SSH:
+
+    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+
+albo tak:
+
+    git clone wbzyl@sigma.inf.ug.edu.pl:public_git/test.git
+
+To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
+
+
+
+#### Linki
+
+[git home]: http://git.or.cz "git home"
+[the-git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html "The Git Parable"
+[torvalds on git]: http://www.youtube.com/watch?v=4XpnKHJAok8 "Tech Talk: Linus Torvalds on git"
+[schwartz on git]: http://www.youtube.com/watch?v=8dhZ9BXQgc4 "Git"

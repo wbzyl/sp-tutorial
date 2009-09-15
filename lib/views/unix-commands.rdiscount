@@ -281,6 +281,8 @@ Użyteczne linki:
 * [Programming in Emacs Lisp (Second Edition)] [emacs-lisp-intro]
 * [An Introduction to Programming in Emacs Lisp] [elisp]
 
+Zobacz też edytor [Bespin » Code in the Cloud] [bespin].
+
 
 ## Przykład: udostępniamy repozytorium Git
 
@@ -499,3 +501,5 @@ Też warte przeczytania:
 [emacs-tour]: http://www.gnu.org/software/emacs/tour "A Guided Tour of Emacs"
 
 [jekyll-ii]: http://github.com/wbzyl/jekyll-ii "Blog Jekyll dostosowany do Sigmy"
+
+[bespin]: https://bespin.mozilla.com/ "Bespin » Code in the Cloud"

@@ -377,6 +377,7 @@ W skrypcie korzystamy z polecenia wbudowanego powłoki `set`.
 ## Pliki i katalogi
 
 Na koniec skrypt *filesdirectories.sh* z książki
+A. Robbinsa & N. H. F. Beebe, [Programowanie skryptów powloki] [psp].
 Pokazuje zastosowanie polecenia wbudowanego *trap*.
 
 Skrypt przegląda wszystkie pliki i katalogi, grupuje je 
@@ -468,3 +469,4 @@ Kiedyś używałem programu [Enscript] [enscript].
 
 [enscript]: http://www.codento.com/people/mtr/genscript "Enscript"
 [a2ps]: http://www-inf.enst.fr/~demaille/ "a2ps"
+[psp]: http://helion.pl/ksiazki/powlok.htm "Programowanie skryptów powłoki"
