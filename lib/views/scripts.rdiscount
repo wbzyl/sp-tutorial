@@ -107,6 +107,12 @@ tekstu ze *stdin* lub z pliku.
 
 ## Kolorowy tekst
 
+<blockquote>
+ <p>
+  S.E.S.J.A. = System Eliminacji Studentów Już Aktywny 
+ </p>
+</blockquote>
+
 Program *listing.sh* pokazuje jak za pomocą *ANSI escape sequences*
 kolorować wypisywany tekst:
 
@@ -166,6 +172,14 @@ podkreślenia *_*.
     echo "Liczba plików, którym zmieniono nazwy: $number"
     exit 0
 
+
+<blockquote>
+ <p>
+  A language that doesn't affect the way you think
+  about programming is not worth knowing
+ </p>
+ <p class="author">— Alan Perlis</p>
+</blockquote>
 
 ## *shift* – przetwarzanie opcji
 
@@ -278,6 +292,13 @@ W manualu polecenia *test* opisano opcję *-r* (i pozostałe też).
 
 Gdzie podziały się znaki kontynuacji wiersza \(&nbsp;\\&nbsp;\)?
 
+
+<blockquote>
+ <p>
+  Jeżeli udoskonalasz coś dostatecznie długo, na pewno to zepsujesz.
+ </p>
+ <p class="author">— E. Murphy</p>
+</blockquote>
 
 ## Backup plików zmienionych w ostatnich 24h
 

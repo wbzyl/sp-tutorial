@@ -310,7 +310,7 @@ tylko `pull`.
 
 ## Przykład: blog
 
-Skorzystamy z gotowego bloga [jekyll-ii](http://github.com/wbzyl/jekyll-ii),
+Skorzystamy z gotowego bloga [Jekyll-Bloga] [jblog]
 który specjalnie przygotowałem na tę okazję.
 
 Wchodzimy na serwer *http://github.com*, gdzie zakładamy darmowe publiczne
@@ -320,18 +320,18 @@ Po zalogowaniu się na swoje konto, klikamy w zakładkę *account*
 i dodajemy klucz publiczny z *Sigmy*: zakładka *SSH Public Keys*.
 
 Przechodzimy na konto: *http://github.com/wbzyl/*, gdzie klikamy
-w projekt *jekyll-ii*. Forkujemy projekt. Na koniec, klonujemy 
+w projekt *jblog*. Forkujemy projekt. Na koniec, klonujemy 
 sforkowany przed chwilą projekt na swój komputer. 
 
 Teraz przechodzimy do katalogu z projektem:
 
     :::shell-unix-generic
-    cd jekyll-ii
+    cd jblog
 
 i dodajemy oryginalne repozytorium jako **remote**:
 
     :::shell-unix-generic
-    git remote add wbzyl git://github.com/wbzyl/jekyll-ii.git
+    git remote add wbzyl git://github.com/wbzyl/jblog.git
 
 Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
 
@@ -340,8 +340,7 @@ Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
     git diff wbzyl/master
     git merge wbzyl/master
 
-Piszemy pierwszy wpis do swojego bloga: 
-[instrukcje są tutaj] [jekyll-ii].
+Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
 
 
 ## Zmienne środowiska
@@ -500,6 +499,6 @@ Też warte przeczytania:
 [elisp]: http://www.gnu.org/software/emacs/manual/elisp.html "An Introduction to Programming in Emacs Lisp"
 [emacs-tour]: http://www.gnu.org/software/emacs/tour "A Guided Tour of Emacs"
 
-[jekyll-ii]: http://github.com/wbzyl/jekyll-ii "Blog Jekyll dostosowany do Sigmy"
+[jblog]: http://github.com/wbzyl/jblog "Jekyll-Blog dostosowany do Sigmy"
 
 [bespin]: https://bespin.mozilla.com/ "Bespin » Code in the Cloud"

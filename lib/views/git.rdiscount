@@ -35,6 +35,8 @@ incantations.”
 Przypowieść ta opisuje perypetie czeladnika tworzącego system
 gitopodobny od podstaw.
 
+Różne: S. Chacon, [Git in One Hour] [git-in-one-hour].
+
 
 ## Konfiguracja
 
@@ -104,6 +106,21 @@ Dopisujemy je do pliku *~/.bashrc*:
     alias gb='git branch -a'
     alias gl='git log -p'
     alias gt='git status'
+
+
+<blockquote>
+ <h1>Zasłyszane</h1>
+ <p>
+  Q: Couldn't this be done using a Git repo?<br/>
+  A: What's that “Git” thing?
+  Diversion system is developed using “Mother Driven Development”. 
+  With this system, you keep asking yourself:
+  <em>Would my mother understand this?</em>
+ </p>
+ <p>
+  Call it the poor man’s approach to usability.
+ </p>
+</blockquote>
     
 ## Zakładamy repozytorium
 
@@ -148,8 +165,75 @@ I na koniec pracy:
     gitk               # run the repository browser
 
 
+## Proste rebase
 
-## Tak klonujemy projekty z *Sigmy*
+Zakładamy repo:
+
+    mkdir test
+    cd test
+    cat > README.md
+    # Hello project
+    .. ctrl+d
+    git init
+    git add .
+    git commit -m "wrzutka: 1."
+    gitk
+
+Nowy pomysł:
+
+    git checkout -b newidea
+    cat > README.md
+    # Hello world project
+    .. ctrl+d
+    git commit -m "wrzutka z gałęzi newidea: 1." -a
+    cat >> README.md
+    Kolekcja programów hello world.
+    .. ctrl+d
+    git commit -m "wrzutka z gałęzi newidea: 2." -a
+    gitk
+
+Przechodzimy na główną gałąź:
+
+    git checkout master
+    cat >> README.md
+    ## Ruby
+        print "hello world"
+    .. ctrl+d
+    git commit -m "wrzutka: 2." -a
+    gitk
+
+Przechodzimy na newidea:
+
+    git checkout newidea
+    git rebase master     # rebase wykonujemy z gałęzi newidea
+    git checkout master
+    gitk
+
+Wracamy na główną gałąź i usuwamy newidea:
+
+    git merge newidea      # powinno być fast-forward
+    gitk
+    git branch -d newidea    
+    gitk
+
+
+## Remote rebase (działa?)
+
+Przygotowania do rebase:
+
+    git remote add wbzyl git://github.com/wbzyl/jblog.git
+    git fetch wbzyl
+    git branch -a  #-> powinno się pojawić: wbzyl/master
+
+Rebasing:
+
+    git checkout -b upstream
+    git diff wbzyl/master     # to lubię!
+    git rebase wbzyl/master   # rebase wykonujemy z gałęzi upstream
+    ... fix conflicts and git add . ...
+    git checkout master
+    git merge                 # powinno być: fast-forward    
+
 
 <blockquote>
  <p>
@@ -158,6 +242,8 @@ I na koniec pracy:
   — 127.0.0.1
  </p>
 </blockquote>
+
+## Tak klonujemy projekty z *Sigmy*
 
 Korzystając z protokołu GIT:
 
@@ -181,3 +267,4 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 [the-git-parable]: http://tom.preston-werner.com/2009/05/19/the-git-parable.html "The Git Parable"
 [torvalds on git]: http://www.youtube.com/watch?v=4XpnKHJAok8 "Tech Talk: Linus Torvalds on git"
 [schwartz on git]: http://www.youtube.com/watch?v=8dhZ9BXQgc4 "Git"
+[git-in-one-hour]: http://www.oreillynet.com/pub/e/1394 "Git in One Hour"

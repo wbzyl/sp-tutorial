@@ -53,7 +53,7 @@ rozpoznawanych przez program *egrep* plus przykłady.
 
 ## LaTeX
 
-Przykładowy dokument korzystający z pakietów:
+1\. Przykładowy dokument korzystający z pakietów:
 
 * *geometry*
 * *floatlft* albo *photo* (pływające wstawki) 
@@ -61,6 +61,9 @@ Przykładowy dokument korzystający z pakietów:
 
 Dorzucić bibliografię i skrypt powłoki kompilujący
 źródło do pdf-a.
+
+2\. Asymptote. Dokument z rysunkami przygotowanymi w tym programie.
+
 
 
 ## Skrypty powłoki
