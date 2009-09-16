@@ -167,6 +167,54 @@ podkreślenia *_*.
     exit 0
 
 
+## *shift* – przetwarzanie opcji
+
+Polecenie `shift` jest używane do manipulowania argumentami pozycyjnymi.
+Na przykład po wywołaniu `shift` parametr `$1` otrzymuje dotychczasową
+wartość parametru `$2`, parametr `$2` — wartość parametru `$3` itd.
+
+Każde wywołanie `shift` zmniejsza wartość `$#`.
+
+Polecenie przyjmuje opcjonalny argument określający rozmiar
+przesunięcia; domyślna wartość to 1.
+
+Poniższy skrypt pokazuje jak wykorzystać `shift` do przetwarzania
+opcji: `-f`, `-v` i `-q`.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    file=
+    verbose=
+    quiet=
+    
+    while [ $# -gt 0 ]
+    do
+      case $1 in
+      -f)  file=$2
+           shift  # dlaczego?
+           ;;
+      -v)  verbose=true
+           quiet=     
+           ;;
+      -q)  quiet=true
+           verbose=
+           ;;
+      --)  shift  # para kreseczek oznacza zwyczajowo koniec opcji
+           break
+           ;;
+      -*)  echo $0: $1: nieznana opcja >&2
+           ;;
+       *)  break  # argument nie będący opcją; przerwanie przetwarzania opcji
+           ;;
+      esac
+      shift  # przesuń argumenty dla następnego przebiegu pętli
+    done
+
+Ale zwykle tak nie programujemy. Upraszczamy sobie zadanie
+przetwarzania opcji korzystając z polecenia wbudowanego `getopts`.
+
+
 ## Szaradzista
 
 Skrypt *szaradzista.sh* dopasowuje wzorzec zadany wyrażeniem 
@@ -174,7 +222,7 @@ regularnym programu *egrep* do zbioru słowników:
 
     szaradzista.sh wzorzec-egrep [pliki-slownikow]
 
-Jak przygotowac samemu słownik, zobacz następny skrypt.
+Jak przygotować samemu słownik, zobacz następny skrypt.
 
 Sam skrypt jest prosty:
 
@@ -226,7 +274,8 @@ polskich liter: ą, ć, ę, itd.
     
     exit 0
 
-W manualu polecenia *test* jest opisana opcja *-r*.
+W manualu polecenia *test* opisano opcję *-r* (i pozostałe też).
+
 Gdzie podziały się znaki kontynuacji wiersza \(&nbsp;\\&nbsp;\)?
 
 
@@ -311,49 +360,79 @@ Wynik podobny do:
 ale bez ChangeLog i z informacją czy można instalować.
 
 
-## Echo argumentów wywołania skryptu
+## Funkcje
 
-Call this script with a few command-line parameters.
-For example:
+Zaczynamy od cytatu z manuala: „A shell function stores a series of
+commands for later execution. When the name of a shell function is
+used as a simple command name, the list of commands associated with
+that function name is executed.  Functions are executed in the context
+of the current shell; no new process is created to interpret them
+(contrast this with the execution of a shell script).”
 
-    sh echo-params.sh raz dwa trzy
-
-Wynik:
-
-    command-line parameter $1 = raz
-    command-line parameter $2 = dwa
-    command-line parameter $3 = trzy
-
-Skrypt *echo-params.sh*:
+Tradycyjnie pierwszą funkcją będzie `hello_world`.
 
     :::shell-unix-generic
     #!/bin/bash
     
-    params=$#              # liczba parametrów w linii poleceń
-    param=1                # zaczynamy od parametru 1.
+    JUST_A_SECOND=1
     
-    while [ "$param" -le "$params" ]
-    do
-      echo -n "command-line parameter "
-      echo -n \$$param     # wypisz tylko *nazwę* zmiennej
-    #         ^^^          # $1, $2, $3, itd.
-                           # dlaczego?
-                           # \$ cytuje pierwszy znak "$"
-                           # dlatego echo wypisuje $
-                           # i teraz $param *dereferences* "$param"
-      echo -n " = "
-      eval echo \$$param   # wypisz *wartość* zmiennej
-    # ^^^^      ^^^        # "eval" wymusza *evaluation* \$$param
+    hello_world ()
+    {
+      i=0
+      REPEATS=4
+
+      while [ $i -lt $REPEATS ]
+      do
+        echo "hello world"
+        let "i+=1"
+        sleep $JUST_A_SECOND    # poczekaj sekundkę    
+      done
+    }
     
-    (( param ++ ))         # przejdź do następnego parametru
-    done
+    # po zdefiniowaniu funkcji możemy ją wywołać
     
-    exit $?
+    hello_world
+    
+    exit 0
+
+Teraz kolej na trzy użyteczne funkcje:
+
+    :::shell-unix-generic
+    PROGRAM=$0
+    
+    usage()
+    {
+      cat <<EOF
+    Stosowanie: $PROGRAM [ --? ] [ --help ] [FILE]...
+    EOF
+    }
+    
+    usage_and_exit()
+    {
+      usage
+      exit $1  # jedyny argument powinien być małą liczbą
+    }
+    
+    error()
+    {
+      echo "$@" 1>&2  # sklejamy wszystkie argumenty; echo na stderr
+      usage_and_exit 1
+    }
+
+    # przykład użycia funkcji
+    usage
+    error "głupi błąd"
+
+Kilka poleceń wbudowanych:
+
+    declare -f
+    typeset -f
+    unset -f error
 
 
 ## Zmiana kolejności parametrów pozycyjnych
 
-W skrypcie korzystamy z polecenia wbudowanego powłoki `set`.
+W skrypcie korzystamy z polecenia wbudowanego `set`.
 
     :::shell-unix-generic
     #!/bin/bash
@@ -386,7 +465,14 @@ w plikach FILES.XXX i DIRECTORIES.XXX:
 
     filesdirectories.sh KATALOG
 
-A to sam skrypt:
+Cytat z książki: „W środowisku sieciowym nie wolno pomijać
+apektów bezieczeństwa. Jednym ze sposobów atakowania
+skryptów jest manipulowanie wartością separatora pól
+wejściowych, czyli wartością zmiennej IFS, wpływającego
+na sposób interpretowania wejścia skryptu.”
+Dlatego w skrypcie zabezpieczamy się sami ustawiając wartość `IFS`.
+
+A to skrypt w całej swej okazałości:
 
     :::shell-unix-generic
     #! /bin/sh -
@@ -396,7 +482,7 @@ A to sam skrypt:
      	'
     
     # security: ograniczamy wyszukiwanie tylko do wymienionych katalogów
-    PATH=/usr/local/bin:/bin:/usr/bin  # opcja -fprint dostępna tylko w GNU find
+    PATH=/usr/local/bin:/bin:/usr/bin
     export PATH
     
     if [ $# -ne 1 ]
@@ -429,6 +515,7 @@ A to sam skrypt:
     trap 'exit 1'		HUP INT PIPE QUIT TERM	# liczbowo: 1 2 3 13 15
     trap 'rm -f $TMPFILES'	EXIT			# liczbowo: 0
     
+    # opcja -fprint dostępna tylko w programie find GNU
     find . \
     	   -name DIRECTORIES.all -true \
     	-o -name 'DIRECTORIES.last[0-9][0-9]' -true \
@@ -457,6 +544,44 @@ A to sam skrypt:
     		LC_ALL=C sort > $TMP/$i.$$.tmp
         cmp -s $TMP/$i.$$.tmp $i || mv $TMP/$i.$$.tmp $i
     done
+
+## Echo argumentów wywołania skryptu
+
+Poniższy skrypt korzysta z `eval`.  Wywołaj go w taki sposób:
+
+    sh echo-params.sh raz dwa trzy
+
+Rezultat:
+
+    command-line parameter $1 = raz
+    command-line parameter $2 = dwa
+    command-line parameter $3 = trzy
+
+Skrypt *echo-params.sh*:
+
+    :::shell-unix-generic
+    #!/bin/bash
+    
+    params=$#              # liczba parametrów w linii poleceń
+    param=1                # zaczynamy od parametru 1.
+    
+    while [ "$param" -le "$params" ]
+    do
+      echo -n "command-line parameter "
+      echo -n \$$param     # wypisz tylko *nazwę* zmiennej
+    #         ^^^          # $1, $2, $3, itd.
+                           # dlaczego?
+                           # \$ cytuje pierwszy znak "$"
+                           # dlatego echo wypisuje $
+                           # i teraz $param *dereferences* "$param"
+      echo -n " = "
+      eval echo \$$param   # wypisz *wartość* zmiennej
+    # ^^^^      ^^^        # "eval" wymusza *evaluation* \$$param
+    
+    (( param ++ ))         # przejdź do następnego parametru
+    done
+    
+    exit $?
 
 
 ## Drukowanie listingów programów
