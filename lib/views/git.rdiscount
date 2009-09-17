@@ -62,12 +62,12 @@ po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 Łatwiej będzie nam porozumiewać się z Gitem, po dodaniu do pliku
 konfiguracyjnego kilku skrótów:
 
+    git config --global alias.br branch -a
     git config --global alias.co checkout
     git config --global alias.ci commit
-    git config --global alias.st status
-    git config --global alias.br branch
     git config --global alias.df diff
     git config --global alias.lg log -p
+    git config --global alias.st status
 
 Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
 
@@ -75,33 +75,38 @@ Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
     git config --global color.status auto
     git config --global color.branch auto
 
-Jeszcze trochę ręcznych robótek w pliku *~/.gitconfig*:
+Jeszcze trochę ręcznych robótek (czemy inie) w pliku
+i tak prezentuje się mój plik *~/.gitconfig*:
 
     :::ini
-    [color "branch"]
-      current = yellow reverse
-      local = yellow
-      remote = green
-    [color "diff"]
-      meta = yellow bold
-      frag = magenta bold
-      old = red bold
-      new = green bold
-    [color "status"]
-      added = yellow
-      changed = green
-      untracked = cyan
-    # highlight whitespace in diffs
+    [user]
+      email = matwb@univ.gda.pl
+      name = Wlodek Bzyl
+    
+    [color]
+      branch = auto
+      diff = auto
+      status = auto
+    
     [color]
       ui = true
+    
     [core]
       whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-
+    
+    [alias]
+      br = branch -a
+      co = checkout
+      ci = commit
+      df = diff
+      lg = log -p
+      st = status
+    
 i po konfiguracji.
-
+    
 Wygodnie też jest mieć kilka aliasów w bashu.
 Dopisujemy je do pliku *~/.bashrc*:
-
+    
     :::shell-unix-generic
     alias gb='git branch -a'
     alias gl='git log -p'
@@ -122,7 +127,10 @@ Dopisujemy je do pliku *~/.bashrc*:
  </p>
 </blockquote>
     
-## Zakładamy repozytorium
+
+## Podstawy
+
+### Zakładamy repozytorium
 
 Pierwsze repozytorium, zgodnie ze starą uniksową tradycją
 powinno mieć nazwę *hello-world*:
@@ -133,10 +141,23 @@ powinno mieć nazwę *hello-world*:
     touch .gitignore README.md Makefile hello.c
     git add .
     git commit -m "pierwsza wrzutka"
-    git log -p
+
+Każdy plik w systemie Git ma trzy życia: jedno w „working tree”,
+drugie w „index” i trzecie w „trunk”:
+
+    git diff           # shows you the differences from index to working tree
+    git diff HEAD      # shows you the differences from trunk to working tree
+    git diff --cached  # shows you the differences from trunk to index
 
 
-## Git na codzień
+### Git na codzień
+
+    ... edycja, edycja ...
+    git status
+    git add [nazwy plików albo .]
+    git commit -m "jakiś wpis do loga"
+    ... edycja, edycja ...
+
 
 <blockquote>
  <p>
@@ -146,26 +167,88 @@ powinno mieć nazwę *hello-world*:
  </p>
 </blockquote>
 
-    ... edycja, edycja ...
-    git status
-    git add [nazwy plików albo .]
-    git commit -m "jakiś wpis do loga"
-    ... edycja, edycja ...
+### Przeglądanie logów i nie tylko
 
-Każdy plik w systemie Git ma trzy życia: jedno w „working tree”,
-drugie w „index” i trzecie w „trunk”:
-
-    git diff           # shows you the differences from index to working tree
-    git diff HEAD      # shows you the differences from trunk to working tree
-    git diff --cached  # shows you the differences from trunk to index
-
-I na koniec pracy:
-
+    git log
+    git log -p
     git whatchanged -p # show logs with difference each commit introduces
-    gitk               # run the repository browser
+
+Użyteczne programy przeglądarki repozytoriów, na przykład
+
+    gitk
 
 
-## Proste rebase
+### Undo różnych rzeczy
+
+Zmieniamy **ostatni** wpis do logu: 
+
+    git commit --amend    
+
+Unstaging staged plik:
+
+    git add .
+    git status
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #       modified:   README.md
+
+Wycofwanie zmian w edytowanym pliku:
+
+    # Changed but not updated:
+    #   (use "git add <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #       modified:   README.md
+
+
+## Branching
+
+*Pytanie*: Czym jest gałąź? 
+
+*Odpowiedź*: A branch in Git is simply a lightweight movable pointer
+to one of these commits.
+
+Gałęzie Gita najlepiej rozrysował S. Chacon w swojej książce:
+[Pro Git] [progit branches]
+
+
+### Tworzenie gałęzi w projekcie i ich scalanie
+
+Przećwiczmy następujący scenariusz:
+
+* Tworzymy serwis www z dowcipami.
+* Tworzymy nową gałąź o nazwie *newidea* na nowy dowcip.
+* Przenosimy się na gałąź *newidea*.
+* Zaczynamy pisać nowy dowcip.
+
+W trakcie pracy nad dowcipem dostajemy wiadomość, 
+o krytycznym błędzie merytorycznym w serwisie. 
+Przerywamy pracę nad dowcipem i zabieramy się 
+za poprawienie błędu.
+
+<blockquote>
+  {%= image_tag "/images/spowrotem.jpg", :alt => "[z powrotem]" %}
+</blockquote>
+
+* Wracamy na główną gałąź.
+* Tworzymy nową gałąź o nazwie *hotfix*, 
+  gdzie będziemy robić poprawki.
+* Po przetestowaniu poprawek, 
+  scalamy gałąź *hotfix* z gałęzią główną.
+* Przenosimy się z powrotem na gałąź *newidea*
+  gdzie kończymy pisać nowy dowcip.
+
+
+### Remote branches
+
+Dodajemy oryginalny projekt jako remote.
+
+
+### Prostowanie historii, czyli rebasing
+
+Zobacz też [The Basic Rebase] (http://progit.org/book/ch3-6.html)
 
 Zakładamy repo:
 
@@ -209,7 +292,7 @@ Przechodzimy na newidea:
     git checkout master
     gitk
 
-Wracamy na główną gałąź i usuwamy newidea:
+Wracamy na główną gałąź i usuwamy gałąź *newidea*:
 
     git merge newidea      # powinno być fast-forward
     gitk
@@ -217,22 +300,10 @@ Wracamy na główną gałąź i usuwamy newidea:
     gitk
 
 
-## Remote rebase (działa?)
+## *Github* distributed workflow
 
-Przygotowania do rebase:
+Przykład: projekt jBlog.
 
-    git remote add wbzyl git://github.com/wbzyl/jblog.git
-    git fetch wbzyl
-    git branch -a  #-> powinno się pojawić: wbzyl/master
-
-Rebasing:
-
-    git checkout -b upstream
-    git diff wbzyl/master     # to lubię!
-    git rebase wbzyl/master   # rebase wykonujemy z gałęzi upstream
-    ... fix conflicts and git add . ...
-    git checkout master
-    git merge                 # powinno być: fast-forward    
 
 
 <blockquote>
@@ -268,3 +339,4 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 [torvalds on git]: http://www.youtube.com/watch?v=4XpnKHJAok8 "Tech Talk: Linus Torvalds on git"
 [schwartz on git]: http://www.youtube.com/watch?v=8dhZ9BXQgc4 "Git"
 [git-in-one-hour]: http://www.oreillynet.com/pub/e/1394 "Git in One Hour"
+[progit branches]: http://progit.org/book/ch3-1.html "What a Branch Is"
