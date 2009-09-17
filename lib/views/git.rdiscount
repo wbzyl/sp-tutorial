@@ -75,8 +75,8 @@ Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
     git config --global color.status auto
     git config --global color.branch auto
 
-Jeszcze trochę ręcznych robótek (czemy inie) w pliku
-i tak prezentuje się mój plik *~/.gitconfig*:
+Jeszcze trochę ręcznych robótek, bo czemu nie, w pliku konfiguracyjnym
+i oto rezultat — mój plik *~/.gitconfig* w całej okazałości:
 
     :::ini
     [user]
@@ -224,9 +224,9 @@ Przećwiczmy następujący scenariusz:
 * Zaczynamy pisać nowy dowcip.
 
 W trakcie pracy nad dowcipem dostajemy wiadomość, 
-o krytycznym błędzie merytorycznym w serwisie. 
-Przerywamy pracę nad dowcipem i zabieramy się 
-za poprawienie błędu.
+że kilka dowcipów na stronie nie jest śmiesznych. 
+Przerywamy pracę nad nowym dowcipem i zabieramy się 
+za odszukanie i poprawienie nieśmiesznych dowcipów.
 
 <blockquote>
   {%= image_tag "/images/spowrotem.jpg", :alt => "[z powrotem]" %}
@@ -303,6 +303,11 @@ Wracamy na główną gałąź i usuwamy gałąź *newidea*:
 ## *Github* distributed workflow
 
 Przykład: projekt jBlog.
+
+
+## Zalety *gołego* repozytorium
+
+Przykład.
 
 
 
