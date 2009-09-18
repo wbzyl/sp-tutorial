@@ -272,17 +272,17 @@ Na początek serwis www będzie się składał z jednej strony:
 
 2\. Nowa gałąź:
 
-    git chckout -b newidea
+    git checkout -b newidea
     cat >> index.html
     Webmaster wypełnia podanie o dowód.
     Data urodzenia: 31.11.1990
     Wzrost: 190
     ...
     
-3\. Dostajemy wiadomość
+3\. Dostajemy wiadomość…
 
-    git checkout maxter
-    git chckout -b hotfix
+    git checkout master
+    git checkout -b hotfix
 
 4\. Szybko znajdujemy wirusa. Zawirusowany tekst zastępujemy
 tekstem bez wirusa:
@@ -310,7 +310,7 @@ tekstem bez wirusa:
     Kolor oczu: #4040EE
 
 Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
-scalamy gałąź master z newidea i usuwamy tę ostatnią.
+scalamy *master* z *newidea* i usuwamy *newidea*.
 
 
 ### Remote branches
