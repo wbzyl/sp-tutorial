@@ -71,9 +71,9 @@ konfiguracyjnego kilku skrótów:
 
 Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
 
+    git config --global color.branch auto
     git config --global color.diff auto
     git config --global color.status auto
-    git config --global color.branch auto
 
 Jeszcze trochę ręcznych robótek, bo czemu nie, w pliku konfiguracyjnym
 i oto rezultat — mój plik *~/.gitconfig* w całej okazałości:
@@ -142,21 +142,31 @@ powinno mieć nazwę *hello-world*:
     git add .
     git commit -m "pierwsza wrzutka"
 
-Każdy plik w systemie Git ma trzy życia: jedno w „working tree”,
+Każdy plik w systemie Git może mieć aż trzy życia: jedno w „working tree”,
 drugie w „index” i trzecie w „trunk”:
 
     git diff           # shows you the differences from index to working tree
     git diff HEAD      # shows you the differences from trunk to working tree
     git diff --cached  # shows you the differences from trunk to index
 
+Na *indeks* mówimy też *staging*; *working tree* tłumaczymy 
+*kopia robocza*; *trunk* to *trunk*.
+
+Jak przetłumaczyć *staging area* — nie wiem;
+*punkt etapowy*, *punkt tranzytowy* — niezbyt dobre.
+
 
 ### Git na codzień
+
+Zazwyczaj praca z repozytorium wygląda tak:
 
     ... edycja, edycja ...
     git status
     git add [nazwy plików albo .]
     git commit -m "jakiś wpis do loga"
     ... edycja, edycja ...
+    git status
+    ... i tak w kółko ...
 
 
 <blockquote>
@@ -171,16 +181,15 @@ drugie w „index” i trzecie w „trunk”:
 
     git log
     git log -p
-    git whatchanged -p # show logs with difference each commit introduces
 
-Użyteczne programy przeglądarki repozytoriów, na przykład
+Użytecznymi programami są przeglądarki repozytoriów, na przykład
 
     gitk
 
 
 ### Undo różnych rzeczy
 
-Zmieniamy **ostatni** wpis do logu: 
+Zmieniamy **ostatni** wpis w logu: 
 
     git commit --amend    
 
@@ -194,7 +203,7 @@ Unstaging staged plik:
     #
     #       modified:   README.md
 
-Wycofwanie zmian w edytowanym pliku:
+Wycofanie zmian w edytowanym pliku:
 
     # Changed but not updated:
     #   (use "git add <file>..." to update what will be committed)
@@ -205,7 +214,7 @@ Wycofwanie zmian w edytowanym pliku:
 
 ## Branching
 
-*Pytanie*: Czym jest gałąź? 
+*Pytanie*: Czym jest gałąź? (odgałęzienie?)
 
 *Odpowiedź*: A branch in Git is simply a lightweight movable pointer
 to one of these commits.
@@ -240,10 +249,47 @@ za odszukanie i poprawienie nieśmiesznych dowcipów.
 * Przenosimy się z powrotem na gałąź *newidea*
   gdzie kończymy pisać nowy dowcip.
 
+A teraz konkrety. Serwis będzie dostępny z takiego URL:
+
+    http://sigma.inf.ug.edu.pl/~wbzyl/dowcipy/
+
+Na początek serwis www będzie się składał z jednej strony:
+*index.html*.
+
+Zakładamy repozytorium:
+
+    mkdir ~/public_html/dowcipy/
+    cd ~/public_html/dowcipy/
+    cat > index.html
+    
+
+    
+
 
 ### Remote branches
 
 Dodajemy oryginalny projekt jako *remote*.
+
+Forkujemy projekt 
+
+    http://github.com/technomancy/emacs-starter-kit
+
+Klonujemy sforkowany projekt na swój komputer:
+
+    git clone git@github.com:wbzyl/emacs-starter-kit.git
+
+i dodajemy oryginalny projekt jako *remote*:
+
+    git remote add technomancy git://github.com/technomancy/emacs-starter-kit.git
+
+Teraz polecenie:
+
+    git fetch technomancy
+
+ściąga na gałąź *technomancy* najnowszą wersję oryginalnego projektu.
+
+Teraz możemy porównać nową wersję ze swoja i scalić nową 
+wersję ze swoim projektem.
 
 
 ### Prostowanie historii, czyli rebasing
@@ -300,14 +346,60 @@ Wracamy na główną gałąź i usuwamy gałąź *newidea*:
     gitk
 
 
-## *Github* distributed workflow
+## Praca rozproszona z *Githubem*
 
-Przykład: projekt jBlog.
+Przykład: wspólna praca nad moim projektem *jBlog*.
+
+Wiesiek zakłada konto o nazwie *wp* na *github.com*
+i dodaje klucz publiczny ze swojego komputera
+do *SSH Public Keys* na swoim koncie *https://github.com/account*.
+
+1. Teraz, po zalogowaniu się na konto, przechodzi na
+   na stronę z moim projektem *http://github.com/wbzyl/jblog/*, 
+   gdzie klika w ikonkę *fork* forkując w ten sposób **mój** projekt.
+1. Po przejściu z powrotem na swoją stronę:
+   *http://github.com/wp/* widzi, że projekt 
+   *jblog* pojawił się na liście **jego** projektów.
+1. Po kliknięciu na link z nazwą *jblog* zostaje przekierowany
+   na stronę *http://github.com/wp/jblog*.
+   Na tej stronie jest link **Your Clone URL**: *git@github.com:wp/jblog.git*.
+1. Użwwając tego URL-a, Wiesiek klonuje sforkowane repozytorium na 
+   swój komputer.
+
+Teraz zaczyna robić się ciekawie.
+
+1. Wiesiek dodaje nowy wpis do bloga. W katalogu 
+   tworzy plik *2009-10-10-mercurial.markdown*,
+   umieszcza go w repozytorium, wykonuje commit
+   i push. 
+1. Teraz ze strony projektu: *http://github.com/wp/jblog*
+   klika w ikonkę *pull request*.
+
+Ja po otrzymaniu *pull request*, dodaję sforkowane
+repozytorium jako *remote*: `git add remote wp git://github.com/wp/jblog.git`.
+
+1. Ściągam remote repo: `git fetch wp`.
+1. Patrzę co zostało zrobione: `git diff wp/master`.
+1. Scalam oba projekty: `git merge wp/master`.
+1. Wykonuję commit i push.
 
 
-## Zalety *gołego* repozytorium
+## Zalety *nagich* repozytoriów
 
-Tłumaczenie *bare*: gołe, puste, minimalne, ogołocone?
+Jak utworzyć nagie repozytorium?
+Załóżmy, że w katalogu *~/tmp/* mamy repozytorium *photos*.
+Po wykonaniu polecenia:
+
+    git clone --bare ~/tmp/photos ~/public_git/photos.git
+
+Skąd takie określenie *nagi*. Wykonanie polecenia:
+
+    ls ~/public_git/photos.git
+
+powinno to wyjaśnić.
+
+Zaletą jest możliwość pracy rozproszonej, takiej jak 
+z repozytoriami githuba.
 
 
 <blockquote>
@@ -317,6 +409,7 @@ Tłumaczenie *bare*: gołe, puste, minimalne, ogołocone?
   — 127.0.0.1
  </p>
 </blockquote>
+
 
 ## Tak klonujemy projekty z *Sigmy*
 
