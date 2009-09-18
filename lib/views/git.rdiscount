@@ -228,14 +228,14 @@ Gałęzie Gita najlepiej rozrysował S. Chacon w swojej książce:
 Przećwiczmy następujący scenariusz:
 
 * Tworzymy serwis www z dowcipami.
-* Tworzymy nową gałąź o nazwie *newidea* na nowy dowcip.
-* Przenosimy się na gałąź *newidea*.
+* Tworzymy nową gałąź o nazwie *newidea* na nowy dowcip 
+  i przenosimy się na nią.
 * Zaczynamy pisać nowy dowcip.
 
 W trakcie pracy nad dowcipem dostajemy wiadomość, 
-że kilka dowcipów na stronie nie jest śmiesznych. 
+że strona główna jest zawirusowana.
 Przerywamy pracę nad nowym dowcipem i zabieramy się 
-za odszukanie i poprawienie nieśmiesznych dowcipów.
+za szukanie wirusa.
 
 <blockquote>
   {%= image_tag "/images/spowrotem.jpg", :alt => "[z powrotem]" %}
@@ -256,14 +256,61 @@ A teraz konkrety. Serwis będzie dostępny z takiego URL:
 Na początek serwis www będzie się składał z jednej strony:
 *index.html*.
 
-Zakładamy repozytorium:
+1\. Zakładamy repozytorium:
 
     mkdir ~/public_html/dowcipy/
     cd ~/public_html/dowcipy/
-    cat > index.html
-    
+    git init
+    cat  index.html
+    Jestem albańskim wirusem komputerowym, ale z uwagi 
+    na słabe zaawansowanie informatyczne mojego kraju 
+    nie mogę nic ci zrobić.
+    Proszę skasuj sobie jakiś plik i prześlij mnie dalej.
+    ...
+    git add index.html
+    git commit -m "pierwsza wrzutka"
 
+2\. Nowa gałąź:
+
+    git chckout -b newidea
+    cat >> index.html
+    Webmaster wypełnia podanie o dowód.
+    Data urodzenia: 31.11.1990
+    Wzrost: 190
+    ...
     
+3\. Dostajemy wiadomość
+
+    git checkout maxter
+    git chckout -b hotfix
+
+4\. Szybko znajdujemy wirusa. Zawirusowany tekst zastępujemy
+tekstem bez wirusa:
+
+    cat > index.html
+    Żona wysyła męża programistę do sklepu.
+    — Kup parówki, jak będą jajka, kup dziesięć.
+    Mąż w sklepie:
+    — Są jajka?
+    — Tak
+    — Poproszę dziesięć parówek.
+
+5\. Czytamy dowcip kolegom. Ponieważ teraz wydaje się,
+że wszystko jest OK, wykonujemy:
+
+    git commit -m "usunięto wirusa"
+    git checkout master
+    git merge hotfix
+    git branch -d hotfix
+
+6\. Kończymy nowy dowcip:
+
+    git checkout newidea
+    cat >> index.html
+    Kolor oczu: #4040EE
+
+Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
+scalamy gałąź master z newidea i usuwamy tę ostatnią.
 
 
 ### Remote branches

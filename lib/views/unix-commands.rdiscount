@@ -271,6 +271,8 @@ Zakładamy repozytorium:
 
 Edytory ASCII v. edytory non-ASCII.
 
+Emacs kontra Vi, zob. [Wojny edytorowe] [wojny edytorowe].
+
 Użyteczne linki:
 
 * [A Guided Tour of Emacs] [emacs-tour]
@@ -502,3 +504,5 @@ Też warte przeczytania:
 [jblog]: http://github.com/wbzyl/jblog "Jekyll-Blog dostosowany do Sigmy"
 
 [bespin]: https://bespin.mozilla.com/ "Bespin » Code in the Cloud"
+
+[wojny edytorowe]: http://pl.wikipedia.org/wiki/Wojny_edytorowe "Wojny edytorowe"
