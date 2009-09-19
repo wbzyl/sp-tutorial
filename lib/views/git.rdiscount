@@ -150,7 +150,7 @@ jedno w „drzewie roboczym”, drugie w „indeks” i trzecie w „trunk”:
     git diff --cached  # shows you the differences from trunk to index
 
 Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
-[The Thing About Git] [tomayko about git] 
+[The Thing About Git] [tomayko about git]. 
 
 
 <blockquote cite="http://www.gitready.com/beginner/2009/01/18/the-staging-area.html">
