@@ -269,9 +269,11 @@ Zakładamy repozytorium:
 
 ## Praca z *Emacsem* czystym relaksem
 
-Edytory ASCII v. edytory non-ASCII.
+Edytory ASCII i non-ASCII. [Emacs kontra Vi] [wojny edytorowe].
 
-Emacs kontra Vi, zob. [Wojny edytorowe] [wojny edytorowe].
+[**Real Programmers**](http://xkcd.com/378/)
+
+{%= image_tag "/images/real_programmers.png", :alt => "[real programmers comics]" %}
 
 Użyteczne linki:
 

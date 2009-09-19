@@ -142,18 +142,24 @@ powinno mieć nazwę *hello-world*:
     git add .
     git commit -m "pierwsza wrzutka"
 
-Każdy plik w systemie Git może mieć aż trzy życia: jedno w „working tree”,
-drugie w „index” i trzecie w „trunk”:
+Każdy plik w systemie Git może mieć aż trzy życia: 
+jedno w „drzewie roboczym”, drugie w „indeks” i trzecie w „trunk”:
 
     git diff           # shows you the differences from index to working tree
     git diff HEAD      # shows you the differences from trunk to working tree
     git diff --cached  # shows you the differences from trunk to index
 
-Na *indeks* mówimy też *staging*; *working tree* tłumaczymy 
-*kopia robocza*; *trunk* to *trunk*.
+Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
+[The Thing About Git] [tomayko about git] 
 
-Jak przetłumaczyć *staging area* — nie wiem;
-*punkt etapowy*, *punkt tranzytowy* — niezbyt dobre.
+
+<blockquote cite="http://www.gitready.com/beginner/2009/01/18/the-staging-area.html">
+  {%= image_tag "/images/staging_area.png", :alt => "[working tree / index / trunk]" %}
+</blockquote>
+
+Na *indeks* mówimy też *staging area* (punkt etapowy, punkt tranzytowy),
+*working tree* tłumaczymy na drzewo robocze (kopia robocza?), 
+a *trunk* to *trunk*.
 
 
 ### Git na codzień
@@ -317,26 +323,48 @@ scalamy *master* z *newidea* i usuwamy *newidea*.
 
 Dodajemy oryginalny projekt jako *remote*.
 
-Forkujemy projekt 
+Forkuję projekt 
 
     http://github.com/technomancy/emacs-starter-kit
 
-Klonujemy sforkowany projekt na swój komputer:
+i tworzę klon sforkowanego projektu na swoim komputerze:
 
     git clone git@github.com:wbzyl/emacs-starter-kit.git
 
-i dodajemy oryginalny projekt jako *remote*:
+Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
 
     git remote add technomancy git://github.com/technomancy/emacs-starter-kit.git
 
-Teraz polecenie:
+Po dodaniu gałęzi remote, wykonujemy polecenie:
 
     git fetch technomancy
 
-ściąga na gałąź *technomancy* najnowszą wersję oryginalnego projektu.
+ściągając na gałąź *technomancy* najnowszą wersję projektu
+z serwera *github.com*.
 
-Teraz możemy porównać nową wersję ze swoja i scalić nową 
-wersję ze swoim projektem.
+Sprawdzamy co zostało zrobione. Wykonujemy polecenie:
+
+    git remote 
+    origin
+    technomancy
+
+i widzimy że wszystko jest w porządku: mamy dwie gałęzie remote.
+
+Polecenie:
+
+    git branch -a
+
+daje nieco więcej informacji od poprzedniego polecenia:
+
+    * master
+    origin/HEAD
+    origin/master
+    technomancy/master
+    technomancy/personalizations
+
+
+Po co to zrobiliśmy? Teraz możemy porównać nową wersję ze swoja i
+scalić nową wersję ze swoim projektem.
 
 
 ### Prostowanie historii, czyli rebasing
@@ -395,39 +423,46 @@ Wracamy na główną gałąź i usuwamy gałąź *newidea*:
 
 ## Praca rozproszona z *Githubem*
 
-Przykład: wspólna praca nad moim projektem *jBlog*.
+Przykład: wspólna praca nad projektem *jBlog*.
 
-Wiesiek zakłada konto o nazwie *wp* na *github.com*
-i dodaje klucz publiczny ze swojego komputera
-do *SSH Public Keys* na swoim koncie *https://github.com/account*.
+Ala zakłada konto *as007* na serwerze *github.com*, a następnie
+loguje się na swoje nowe konto. 
 
-1. Teraz, po zalogowaniu się na konto, przechodzi na
-   na stronę z moim projektem *http://github.com/wbzyl/jblog/*, 
-   gdzie klika w ikonkę *fork* forkując w ten sposób **mój** projekt.
-1. Po przejściu z powrotem na swoją stronę:
-   *http://github.com/wp/* widzi, że projekt 
-   *jblog* pojawił się na liście **jego** projektów.
-1. Po kliknięciu na link z nazwą *jblog* zostaje przekierowany
-   na stronę *http://github.com/wp/jblog*.
-   Na tej stronie jest link **Your Clone URL**: *git@github.com:wp/jblog.git*.
-1. Użwwając tego URL-a, Wiesiek klonuje sforkowane repozytorium na 
+Po zalogowaniu wchodzi na stronę *https://github.com/account*, gdzie
+dodaje klucz publiczny swojego komputera do *SSH Public Keys*.
+W ten sposób, Ala zapewnia sobie możliwość wykonywania *push*
+ze swojego komputera na serwer *github.com*.
+
+1. Teraz wchodzi na na stronę z projektem
+   *http://github.com/wbzyl/jblog/*, gdzie klika w ikonkę *fork*.
+1. Po sforkowaniu projektu, wchodzi z powrotem na swoją stronę:
+   *http://github.com/as007/* i widzi, że projekt 
+   *jblog* pojawił się na liście **jej** projektów.
+1. Po kliknięciu na link z nazwą *jblog* zostaje przekierowana
+   na stronę *http://github.com/as007/jblog*.
+   Na tej stronie jest link **Your Clone URL**: 
+   *git@github.com:as007/jblog.git*.
+1. Używając tego URL-a, Ala klonuje sforkowane repozytorium na 
    swój komputer.
 
 Teraz zaczyna robić się ciekawie.
 
-1. Wiesiek dodaje nowy wpis do bloga. W katalogu 
-   tworzy plik *2009-10-10-mercurial.markdown*,
-   umieszcza go w repozytorium, wykonuje commit
-   i push. 
-1. Teraz ze strony projektu: *http://github.com/wp/jblog*
+1. Ala dodaje nowy wpis do bloga, tworząc w katalogu *_posts*
+   sforkowanego repozytorium plik *2009-10-10-mercurial.markdown*.  Plik
+   ten dodaje do repozytorium, wykonuje commit i push na
+   *github.com*.
+1. Teraz ze strony projektu: *http://github.com/as007/jblog*
    klika w ikonkę *pull request*.
 
-Ja po otrzymaniu *pull request*, dodaję sforkowane
-repozytorium jako *remote*: `git add remote wp git://github.com/wp/jblog.git`.
+W ten sposób Ala wysłała do mnie *pull request*.
+Ja po otrzymaniu *pull request* dodaję repozytorium Ali
+jako *remote* do mojego repozytrorium *jblog*:
 
-1. Ściągam remote repo: `git fetch wp`.
-1. Patrzę co zostało zrobione: `git diff wp/master`.
-1. Scalam oba projekty: `git merge wp/master`.
+    git add remote as007 git://github.com/as007/jblog.git
+
+1. Następnie ściągam remote repo: `git fetch as007`.
+1. Patrzę co zostało zrobione: `git diff as007/master`.
+1. Scalam oba projekty: `git merge as007/master`.
 1. Wykonuję commit i push.
 
 
@@ -445,8 +480,8 @@ Skąd takie określenie *nagi*. Wykonanie polecenia:
 
 powinno to wyjaśnić.
 
-Zaletą jest możliwość pracy rozproszonej, takiej jak 
-z repozytoriami githuba.
+Zaletą posiadania nagiego repozytorium jest możliwość pracy
+rozproszonej, takiej jak z repozytoriami githuba.
 
 
 <blockquote>
@@ -484,3 +519,5 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 [schwartz on git]: http://www.youtube.com/watch?v=8dhZ9BXQgc4 "Git"
 [git-in-one-hour]: http://www.oreillynet.com/pub/e/1394 "Git in One Hour"
 [progit branches]: http://progit.org/book/ch3-1.html "What a Branch Is"
+
+[tomayko about git]: http://tomayko.com/writings/the-thing-about-git "The Thing About Git"
