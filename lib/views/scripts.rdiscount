@@ -18,7 +18,7 @@ W podręczniku użytkownika programu *bash* znajdziesz wszystkie
 szczegóły dotyczące programowania powłoki.
 
 Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z 
-wbudowanego polecenia powłoki *help*, na przykład:
+polecenia *help*, na przykład:
 
     :::shell-unix-generic
     help if
@@ -487,7 +487,7 @@ w plikach FILES.XXX i DIRECTORIES.XXX:
     filesdirectories.sh KATALOG
 
 Cytat z książki: „W środowisku sieciowym nie wolno pomijać
-apektów bezieczeństwa. Jednym ze sposobów atakowania
+apektów bezpieczeństwa. Jednym ze sposobów atakowania
 skryptów jest manipulowanie wartością separatora pól
 wejściowych, czyli wartością zmiennej IFS, wpływającego
 na sposób interpretowania wejścia skryptu.”
