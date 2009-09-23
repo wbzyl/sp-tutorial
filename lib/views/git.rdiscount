@@ -206,6 +206,11 @@ Repozytorium git składa się z czterech rodzajów obiektów:
 Powyższe polecenia z *log* służą tylko do przeglądania
 obiektów typu *commit*.
 
+{%= image_tag "/images/commits.png", :alt => "[git log]" %}
+
+Źródło, S. Chacon, [Pro Git, What a Branch Is](http://progit.org/book/ch3-1.html).
+
+
 Polecenie `git show` służy do wypisywania zawartości obiektów
 dowolnego typu. Czasami używamy bardziej specjalizowanych
 poleceń:
