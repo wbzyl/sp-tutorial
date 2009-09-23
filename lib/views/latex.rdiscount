@@ -434,6 +434,16 @@ Skrypt *dod.sh* korzysta z programu *tex*.
 Czy zamiast programu *tex* można użyć programu *xetex*?
 
 
+## Pandoc
+
+[Cytat] [pandoc]: „Pandoc is a Haskell library for converting from one markup
+format to another, and a command-line tool that uses this library. It
+can read markdown and (subsets of) reStructuredText, HTML, and LaTeX,
+and it can write markdown, reStructuredText, HTML, LaTeX, ConTeXt,
+PDF, RTF, DocBook XML, OpenDocument XML, ODT, GNU Texinfo, MediaWiki
+markup, groff man pages, and S5 HTML slide shows.”
+
+
 #### Linki
 
 [gust doc]: http://www.gust.org.pl/doc "Dokumentacje — GUST"
@@ -441,3 +451,5 @@ Czy zamiast programu *tex* można użyć programu *xetex*?
 [mw keyboard]: http://marcinwolinski.pl/keyboard/ "Racjonalna polska klawiatura dla programisty…"
 
 [i-ching]: http://www.ctan.org/tex-archive/fonts/psfonts/i-ching/ "I-Ching Divinations" 
+
+[pandoc]: http://johnmacfarlane.net/pandoc/ "Pandoc"
