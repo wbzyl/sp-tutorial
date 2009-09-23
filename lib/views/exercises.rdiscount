@@ -46,24 +46,31 @@ Przygotować opis wyrażeń regularnych
 rozpoznawanych przez program *egrep* plus przykłady.
 
 
-
 ## Git
 
+1\. W zespołach 3–4 osobowych przygotować prosty projekt.
+Popracować wspólnie nad projektem. Na koniec
+zajęć przeanalizować kto co zrobił.
+
+2\. Napisać historyjkę pokazującą jak można
+wyszukać *commit* w którym po raz pierwszy
+pojawiła się określona funkcja.
+
+3\. Napisać historyjkę ilustrujacą użycie polecenia
+`git cherry-pick`.
 
 
 ## LaTeX
 
-1\. Przykładowy dokument korzystający z pakietów:
+1\. Przygotować przykłady dokumentów korzystających 
+z pakietów:
 
 * *geometry*
 * *floatlft* albo *photo* (pływające wstawki) 
 * *graphicx* (dokumentacja *epslatex.pdf*)
 
 Dorzucić bibliografię i skrypt powłoki kompilujący
-źródło do pdf-a.
-
-2\. Asymptote. Dokument z rysunkami przygotowanymi w tym programie.
-
+źródła do pdf-a.
 
 
 ## Skrypty powłoki

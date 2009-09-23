@@ -183,14 +183,44 @@ Zazwyczaj praca z repozytorium wygląda tak:
  </p>
 </blockquote>
 
+
 ### Przeglądanie logów i nie tylko
 
+Użytecznymi programami są przeglądarki repozytoriów.
+Na *Sigmie* jest zainstalowana przeglądarka *gitk*.
+
+W logach zapisane są „commit messages”, z których łatwo się
+wyczytać co zostało zrobione i przez kogo. Dlatego logi są często
+przeglądane. Kilka przykładów:
+
+    :::shell-unix-generic
     git log
     git log -p
+    git log --grep 'important'
+    git log -Sword                       # search thru history
+    git log --pickaxe-regex -S'\bword\b' # with regexp
+    git log origin/master..HEAD
 
-Użytecznymi programami są przeglądarki repozytoriów, na przykład
+Repozytorium git składa się z czterech rodzajów obiektów:
+**commit**, **tree**, **blob** i **tag**.
+Powyższe polecenia z *log* służą tylko do przeglądania
+obiektów typu *commit*.
 
-    gitk
+Polecenie `git show` służy do wypisywania zawartości obiektów
+dowolnego typu. Czasami używamy bardziej specjalizowanych
+poleceń:
+
+    :::shell-unix-generic
+    git ls-tree SHA1               # obiekt tree
+    git show -s --pretty=raw SHA1  # obiekt commit
+    git cat-file tag v1.0          # obiekt tag
+
+Obiekty są powiązane „wskaźnikami” SHA1. Tak to powiązanie możemy
+sobie wyobrażać:
+
+{%= image_tag "/images/objects-example.png", :alt => "[Powiązania między obiektami]" %}
+
+Źródło, [Git Community Book](http://book.git-scm.com/1_the_git_object_model.html).
 
 
 ### Undo różnych rzeczy
