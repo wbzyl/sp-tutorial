@@ -39,10 +39,10 @@ Kod należy umieścić w repozytorium git. Na przykład
 
 ## Bash
 
-Utworzyć puste pliki o nazwach *bad name* i *-badname*.
+1\. Utworzyć puste pliki o nazwach „*bad name*” i „*-badname*”.
 Usunąć je korzystając z polecenia *rm*.
 
-Przygotować opis wyrażeń regularnych
+1\. Przygotować opis wyrażeń regularnych
 rozpoznawanych przez program *egrep* plus przykłady.
 
 
@@ -75,5 +75,5 @@ Dorzucić bibliografię i skrypt powłoki kompilujący
 
 ## Skrypty powłoki
 
-Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
+1\. Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
 polskie litery.

@@ -25,11 +25,13 @@
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
    (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski). 
 1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
+1. Peter Norvig. [Teach Yourself Programming in Ten Years] [typ10].
 1. [TeX Live] [texlive].
 1. [TeXWorks IDE] [texworks].
 1. [GUST — Polska Grupa Użytkowników Systemu TeX] [gust].
 1. GNU Operating System. [Laugh along with GNU] [gnu os]. 
 1. J. Gruber. [Markdown] [markdown].
+
 
 #### Linki
 
@@ -40,3 +42,4 @@
 [texlive]: http://www.tug.org/texlive/ "TeX Live"
 [texworks]: http://www.tug.org/texworks/ "TeXworks: lowering the entry barrier to the TeX world"
 [gust]: http://www.gust.org.pl/ "Grupa Użytkowników Systemu TeX"
+[typ10]: http://norvig.com/21-days.html "Teach Yourself Programming in Ten Years"
