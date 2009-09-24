@@ -35,3 +35,8 @@ Przechodzimy do tego katalogu i uruchamiamy aplikację:
 Po uruchomieniu aplikacja jest dostępna z URL:
 
     http://localhost:3000/
+
+## TODO
+
+Dopisać kilka scenariuszy, 
+podobnych do [GitUsage](http://biopython.org/wiki/GitUsage).
