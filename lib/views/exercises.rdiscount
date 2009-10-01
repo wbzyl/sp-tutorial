@@ -42,7 +42,27 @@ Kod należy umieścić w repozytorium git. Na przykład
 1\. Utworzyć puste pliki o nazwach „*bad name*” i „*-badname*”.
 Usunąć je korzystając z polecenia *rm*.
 
-1\. Przygotować opis wyrażeń regularnych
+2\. W *jBlogu* jest kilka napisów, które należy wymienić
+(ang. *customize* — dostosować do swoich potrzeb).
+Na przykład, w pliku *index.html*:
+
+    title: WB_Blog
+
+w pliku *_layouts/default.html*:
+
+    <meta name="author" content="Włodek Bzyl" />
+    
+Znaleźć wszystkie takie napisy.
+Napisać prosty skrypt korzystający z programu *sed*
+wymieniający te napisy.
+
+Plik *images/logo.svg* zawiera tekst *WB@jBlog*, który
+należy też podmienić. Literki są składane fontem OTF
+{%= link_to "Cyklop", "/doc/Cyklop-otf-0_91.zip" %}.
+Zainstalować ten font i korzystając z programu
+*inkscape* zmienić tekst w logo.
+
+2\. Przygotować opis wyrażeń regularnych
 rozpoznawanych przez program *egrep* plus przykłady.
 
 
