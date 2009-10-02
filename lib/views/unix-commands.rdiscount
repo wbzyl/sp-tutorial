@@ -193,8 +193,8 @@ Jak podejrzeć co zawiera archiwum *.tar.gz*:
 
     tar ztf backup.tar.gz
 
-Zwykle w opcjach dopisujemy *v*, co onzacza
-*verbose* (gadatliwość?).
+Zwykle w opcjach dopisujemy *v*, co oznacza
+*verbose*, po polsku to chyba gadatliwość?
 
 
 ## Uprawnienia
