@@ -176,6 +176,27 @@ Polecenia: `wc`, `head` oraz `tail`.
 Zdalne kopiowanie plików: `scp`.
 
 
+## Korzystamy z archiwum plików
+
+Polecenia: *tar*, *gzip*, *gunzip*, *zip*, *unzip*.
+
+Jak utworzyć archiwum *.tar.gz*? Na przykład
+w katalogu nadrzędnym wykonujemy polecenie:
+
+    tar zcf backup.tar.gz public_git
+
+Jak rozpakować archiwum *backup.tar.gz*?
+
+    tar zxf backup.tar.gz
+
+Jak podejrzeć co zawiera archiwum *.tar.gz*:
+
+    tar ztf backup.tar.gz
+
+Zwykle w opcjach dopisujemy *v*, co onzacza
+*verbose* (gadatliwość?).
+
+
 ## Uprawnienia
 
 Polecenia `chmod` i `chown`. Przykład:
