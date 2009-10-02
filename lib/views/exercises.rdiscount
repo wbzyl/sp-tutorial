@@ -39,8 +39,15 @@ Kod należy umieścić w repozytorium git. Na przykład
 
 ## Bash
 
-1\. Utworzyć puste pliki o nazwach „*bad name*” i „*-badname*”.
-Usunąć je korzystając z polecenia *rm*.
+Zadania do wykonania w laboratoriach:
+
+* {%= link_to "Laboratorium 1", "/doc/ex/sp_lab01_zad.odt" %},
+* {%= link_to "Laboratorium 2", "/doc/ex/sp_lab02_zad.odt" %}
+* {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %}
+* {%= link_to "Laboratorium 4", "/doc/ex/sp_lab04_zad.odt" %}
+* {%= link_to "Laboratorium 5", "/doc/ex/sp_lab05_zad.odt" %}
+* {%= link_to "Laboratorium 6", "/doc/ex/sp_lab06_zad.odt" %}
+* {%= link_to "Laboratorium 7", "/doc/ex/sp_lab07_zad.odt" %}
 
 
 ## Edytory
@@ -77,9 +84,12 @@ Zainstalować ten font lokalnie i korzystając z programu
 Zapisać zmiany i wyeksportować obrazek
 *images/logo.png* w formacie *PNG*.
 
-
 2\. Przygotować prostą stronę www ze ściągą do wyrażeń regularnych
 rozpoznawanych przez program *egrep*.
+Ściąga powinna być dostępna pod takim URL:
+
+<pre>http://sigma.inf.ug.edu.pl/~TWÓJ_LOGIN/egrep.html
+</pre>
 
 
 ## Git
@@ -91,25 +101,53 @@ zajęć przeanalizować kto co zrobił.
 2\. Napisać historyjkę pokazującą jak można
 wyszukać *commit* w którym po raz pierwszy
 pojawiła się określona funkcja.
+Umieścić historyjkę na jBlogu pod *git-grep*. 
 
-3\. Napisać historyjkę ilustrujacą użycie polecenia
+3\. Napisać historyjkę ilustrującą użycie polecenia
 `git cherry-pick`.
+Umieścić historyjkę na jBlogu pod *git-cherry-pick*. 
 
 
-## LaTeX
 
-1\. Przygotować przykłady dokumentów korzystających 
-z pakietów:
+## XeLaTeX
 
-* *geometry*
-* *floatlft* albo *photo* (pływające wstawki) 
+1\. Zapoznajemy się z programem *TeXworks*:
+
+* wczytujemy gotowy szablon: File → New from Template
+* włączamy outlines: Window → Show → Tags
+* opanowujemy klika skrótów klawiszowych: 
+  * kompilacja: ctrl+t
+  * …
+
+2\. Przygotować po jednym dokumencie (1–2 strony wydruku) 
+pokazującym podstawowe możliwości pakietu:
+
 * *graphicx* (dokumentacja *epslatex.pdf*)
+* *floatlft* albo *photo* (pływające wstawki) 
+* *geometry*
 
-Dorzucić bibliografię i skrypt powłoki kompilujący
-źródła do pdf-a.
+3\. Tekst zadań do wykonania w laboratorium, na przykład 
+{%= link_to "Laboratorium 2", "/doc/ex/sp_lab02_zad.odt" %},
+to lista wypunktowana (otoczenia *enumerate*, *itemize*) 
+oraz tytularia (polecenia *section*, *paragraph*).
+Przygotować szablon oraz skróty klawiszowe ułatwiające
+wpisywanie takich tekstów. Przepisać jeden ze zestawów
+zadań korzystając z przygotowanego szablonu oraz ze
+skrótów klawiszowych. Opisać to co zostało zrobione
+na swoim jBlogu.
+
+Wskazówka do 3. Zajrzyj na strony Wiki:
+[Documentation of the code completion feature] [texworks code completion],
+[Some tips for using TeXworks] [texworks tips].
 
 
 ## Skrypty powłoki
 
 1\. Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
 polskie litery.
+
+
+#### Linki
+
+[texworks tips]: http://code.google.com/p/texworks/wiki/TipsAndTricks "Tips and Tricks"
+[texworks code completion]: http://code.google.com/p/texworks/wiki/CodeCompletion "Code completion"
