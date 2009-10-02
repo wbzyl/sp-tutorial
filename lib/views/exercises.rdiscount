@@ -42,9 +42,11 @@ Kod należy umieścić w repozytorium git. Na przykład
 1\. Utworzyć puste pliki o nazwach „*bad name*” i „*-badname*”.
 Usunąć je korzystając z polecenia *rm*.
 
-2\. W *jBlogu* jest kilka napisów, które należy wymienić
-(ang. *customize* — dostosować do swoich potrzeb).
-Na przykład, w pliku *index.html*:
+
+## Edytory
+
+2\. W *jBlogu* jest kilka napisów, które należy wymienić,
+na przykład, w pliku *index.html*:
 
     title: WB_Blog
 
@@ -56,14 +58,28 @@ Znaleźć wszystkie takie napisy.
 Napisać prosty skrypt korzystający z programu *sed*
 wymieniający te napisy.
 
-Plik *images/logo.svg* zawiera tekst *WB@jBlog*, który
-należy też podmienić. Literki są składane fontem OTF
-{%= link_to "Cyklop", "/doc/Cyklop-otf-0_91.zip" %}.
-Zainstalować ten font i korzystając z programu
-*inkscape* zmienić tekst w logo.
+Logo przygotowałem w programie *inkscape*. 
+Plik *images/logo.svg* w formacie *SVG* zawiera tekst *WB@jBlog*,
+który należy wymienić. 
 
-2\. Przygotować opis wyrażeń regularnych
-rozpoznawanych przez program *egrep* plus przykłady.
+<blockquote> 
+ {%= image_tag "/images/biuletyn-snall.jpg", :alt => "[]" %}
+ <p> 
+  W okresie międzywojennym font Cyklop był używany 
+  w tytulariach gazetowych i drukach akcydensowych.
+ </p>
+</blockquote>
+
+W pliku *images/logo.svg* literki składane są fontem *OTF*
+{%= link_to "Cyklop", "/doc/Cyklop-otf-0_91.zip" %}.
+Zainstalować ten font lokalnie i korzystając z programu
+*inkscape* zmienić tekst.
+Zapisać zmiany i wyeksportować obrazek
+*images/logo.png* w formacie *PNG*.
+
+
+2\. Przygotować prostą stronę www ze ściągą do wyrażeń regularnych
+rozpoznawanych przez program *egrep*.
 
 
 ## Git
