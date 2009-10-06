@@ -1,6 +1,28 @@
+/* font-face fonts works with Firefox and Opera */
+
 @font-face {
-  font-family: Header; 
-  src: url('fonts/Cyklop-Italic.otf') format('opentype');
+  font-family: "Cyklop"; 
+  src: url(fonts/Cyklop-Regular.otf) format("opentype");
+}
+ 
+@font-face {
+  font-family: "Cyklop";
+  src: url(fonts/Cyklop-Italic.otf) format("opentype");
+  font-style: italic;
+}
+
+#logo {
+  font: normal 256%/1 "Cyklop", "DejaVu Sans", sans-serif;
+  margin-bottom: 24px;
+}
+
+#logo a {
+  text-decoration: none;
+  color: #5A0405;
+}
+
+#logo a:focus, #logo a:hover {
+  color: #321494;
 }
 
 /* hack for RDiscount comments */
@@ -19,7 +41,7 @@ html {
 }
 
 body {
-  font-family: "DejaVu Sans", "PakTypeNaqsh", "Trebuchet MS", sans-serif ;
+  font-family: "DejaVu Sans", "Trebuchet MS", sans-serif ;
   line-height: 28px;
 }
 
@@ -54,7 +76,7 @@ a[href$=".rdf"], a[href^="aim:"] {
 h1 {
   font-weight: normal;
   font-size: 160%;
-  font-family: Header, "DejaVu Sans", "PakTypeNaqsh", serif;
+  font-family: "Cyklop", "DejaVu Sans", serif;
   font-style: italic;
   color: #D80000;
   padding-top: 16px;
@@ -66,7 +88,7 @@ h1 {
 }
 
 blockquote {
-  font: normal 14/1.5 "DejaVu Sans", PakTypeNaqsh, sans-serif;
+  font: normal 14/1.5 "DejaVu Sans", sans-serif;
   width: 297px;
   margin-top: 6px;
   margin-left: 528px;
