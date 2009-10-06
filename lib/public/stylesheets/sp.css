@@ -25,6 +25,11 @@
   color: #321494;
 }
 
+#logo span {
+  margin-left: 1em;
+  color: #B019BD;
+}
+
 /* hack for RDiscount comments */
 
 h4 {
