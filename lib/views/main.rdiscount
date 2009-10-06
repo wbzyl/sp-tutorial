@@ -12,8 +12,12 @@
 1. {%= link_to "Git jest git", "/git" %}
 1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/unix-guru" %}
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
-1. {%= link_to "Ćwiczenia", "/exercises" %}
-1. {%= link_to "Odpowiedzi", "/answers" %}
+
+Różne rzeczy:
+
+* {%= link_to "Wykłady", "/ll"%}
+* {%= link_to "Ćwiczenia", "/exercises" %}
+* {%= link_to "Odpowiedzi", "/answers" %}
 
 
 ## Literatura

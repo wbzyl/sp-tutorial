@@ -44,7 +44,6 @@ Zadania do wykonania w laboratoriach:
 * {%= link_to "Laboratorium 1", "/doc/ex/sp_lab01_zad.odt" %},
 * {%= link_to "Laboratorium 2", "/doc/ex/sp_lab02_zad.odt" %}
 * {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %}
-* {%= link_to "Laboratorium 4", "/doc/ex/sp_lab04_zad.odt" %}
 * {%= link_to "Laboratorium 5", "/doc/ex/sp_lab05_zad.odt" %}
 * {%= link_to "Laboratorium 6", "/doc/ex/sp_lab06_zad.odt" %}
 * {%= link_to "Laboratorium 7", "/doc/ex/sp_lab07_zad.odt" %}

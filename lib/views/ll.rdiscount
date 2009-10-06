@@ -1,0 +1,38 @@
+#### {% title "Streszczenie poprzedniego odcinka" %}
+
+# Wykłady
+
+<blockquote>
+  {%= image_tag "/images/gitk-branches.png", :alt => "[gitk view of anonymous project]" %}
+  <p class="author">{%= link_to "[anonymous git project]", "/images/wide-gitk.gif" %}</p>
+</blockquote>
+
+
+## 5.10.2009
+
+Było o przekierowaniach (ale tylko takich: >>, >), 
+potokach ( | ), kilka przykładów z 
+
+    ls  cd  cp  rm  mkdir  echo  cat  less
+
+Logowanie zdalne na sigmę, kopiowanie plików 
+między komputerami, secure shell.
+
+Zareklamowałem różne dystrybucje linuxa, *Ubuntu*
+*Fedora*. Wspomnialem o *VirtualBox* oraz
+o możliwości darmowego pobrania systemu XP
+z MSDN UG.
+
+Powiedziałem troche o symbolach specjalnych powłoki:
+`~`, `..` (zapomniałem powiedzieć o `.`).
+
+Na koniec zareklamowałem server *http://github.com*,
+Powiedziałem jak z niego korzystać, na przykładzie
+forkowania mojego repo *jblog*.
+
+To był trudniejszy kawałek wykładu.
+Na razie tylko kilkunastu studentów potrafiło 
+sforkować bloga.
+
+Na ćwiczeniach należy wyćwiczyć ścieżki
+względne. Zwykle sprawiają one studentom problemy.
