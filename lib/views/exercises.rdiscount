@@ -41,7 +41,7 @@ Kod należy umieścić w repozytorium git. Na przykład
 
 Zadania do wykonania w laboratoriach:
 
-* {%= link_to "Laboratorium 1", "/doc/ex/sp_lab01_zad.odt" %},
+* {%= link_to "Laboratorium 1", :"/labs01" %},
 * {%= link_to "Laboratorium 2", "/doc/ex/sp_lab02_zad.odt" %}
 * {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %}
 * {%= link_to "Laboratorium 5", "/doc/ex/sp_lab05_zad.odt" %}

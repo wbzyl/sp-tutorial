@@ -59,6 +59,11 @@ module WB
     get '/:section' do
       rdiscount :"#{params[:section]}"
     end
+
+# does not work with sub-uri; bug?    
+#    get '/labs/:section' do
+#      rdiscount "labs/#{params[:section]}".to_sym
+#    end
     
     error do
       e = request.env['sinatra.error']

@@ -1,0 +1,74 @@
+#### {% title "Laboratorium 1" %}
+
+# Laboratorium 1
+
+W żadnym z poniższych zadań nie wolno używać programu *mc*.
+
+1\. Wyświetl kalendarz na 2009 r., tak aby pierwszą kolumną był
+poniedziałek.  \(cal\)
+
+2\. Wyświetl nazwę dnia tygodnia z 25 maja 1975 r. \(date\)
+
+3\. Używając linii poleceń stwórz strukturę katalogów:  (mkdir, cd)
+
+    temp
+    |-- dom
+    |-- nauka
+    |   |-- c
+    |   |-- logo
+    |   `-- pascal
+    `-- praca
+        |-- dokumenty
+        `-- zlecenia
+            |-- niezrealizowane
+            `-- zrealizowane
+
+4\. Przejdź do katalogu *dom* i utwórz katalog *wazne-sprawy*.
+
+5\. Wejdź do katalogu *wazne-sprawy* i utwórz tam plik 
+*rachunki.txt* zawierający dokładnie 11 znaków.
+
+6\. Będąc w katalogu *wazne-sprawy* skopiuj plik *rachunki.txt* do
+katalogu *zrealizowane*.
+
+7\. Przejdź do katalogu *zrealizowane* i zmień nazwę pliku *rachunki.txt* na 
+*wykonano.txt*.
+
+8\. Podziel plik *wykonano.txt* na mniejsze pliki o wielkości 5 bajtów
+(plik *wykonano.txt* powinien mieć rozmiar 11 bajtów) – w ten sposób
+otrzymasz 3 pliki.
+
+9\. Będąc w katalogu *logo* skopiuj powyżej otrzymane 3 pliki do
+katalogu *dokumenty*.
+
+10\. Będąc w katalogu dokumenty połącz skopiowane 3 pliki
+w plik *odtworzono.txt*, tak aby otrzymać plik o zawartości identycznej 
+z *wykonano.txt*. Następnie plik *odtworzono.txt* skopiuj do katalogu *wazne-sprawy*.
+
+11\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
+zawartości plików *wykonano.txt* i *odtworzono.txt*.
+
+12\. W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10
+linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z
+sieci.)
+
+13\. Wyświetl na ekran 2 pierwsze wiersze pliku *program.c*.
+
+14\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*.
+
+15\. Wyświetl na ekran całą zawartość pliku *program.c*.
+
+16\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa „main”.
+
+17\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
+pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień.
+
+18\.Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do katalogu *praca*.
+
+19\. Zarchiwizuj cały katalog *temp*. \(zip, tar\)
+
+20\. Usuń katalog *temp*.
+
+21\. Odtwórz z archiwum katalog *temp*.
+
+22\. Posprzątaj na swoim koncie.
