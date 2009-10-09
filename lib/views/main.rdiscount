@@ -20,6 +20,12 @@ Różne rzeczy:
 * {%= link_to "Odpowiedzi", "/answers" %}
 
 
+## Terminy kolejnych wykładów
+
+* Październik: 5, 12, 19, 26
+* Listopad: 2, 9, 16 (ostatni wykład, 1h)
+
+
 ## Literatura
 
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
