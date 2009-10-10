@@ -36,3 +36,21 @@ sforkować bloga.
 
 Na ćwiczeniach należy wyćwiczyć ścieżki
 względne. Zwykle sprawiają one studentom problemy.
+
+
+## 5.10.2009
+
+Jest już powyżej 100 forków *jbloga*. Pomysł
+zastąpienia zeszytów blogiem chyba się sprzedał.
+
+Będzie o tworzeniu takiego drzewka:
+
+    |-- misc
+    |-- nauka
+    |   |-- blog
+    |   |-- bash
+    |   `-- latex
+
+dodawaniu i usuwaniu do niego plików itp.
+
+Pliki będę edytował w emacsie oraz vim.
