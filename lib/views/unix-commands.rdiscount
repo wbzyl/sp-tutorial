@@ -344,6 +344,13 @@ konto (do 300MB): zakładka *Pricing and Signup*.
 Po zalogowaniu się na swoje konto, klikamy w zakładkę *account*
 i dodajemy klucz publiczny z *Sigmy*: zakładka *SSH Public Keys*.
 
+<blockquote>
+ <p>
+  <em>fork</em> – widelec, widły, <b>rozwidlenie</b><br/>
+  <em>branch</em> – gałąź, odnoga; <b>odgałęzienie</b>
+ </p>
+</blockquote>
+
 Przechodzimy na konto: *http://github.com/wbzyl/*, gdzie klikamy
 w projekt *jblog*. Forkujemy projekt. Na koniec, klonujemy 
 sforkowany przed chwilą projekt na swój komputer. 
