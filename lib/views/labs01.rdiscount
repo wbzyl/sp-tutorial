@@ -5,11 +5,11 @@
 W żadnym z poniższych zadań nie wolno używać programu *mc*.
 
 1\. Wyświetl kalendarz na 2009 r., tak aby pierwszą kolumną był
-poniedziałek.  \(cal\)
+poniedziałek.  \(*cal*\)
 
-2\. Wyświetl nazwę dnia tygodnia z 25 maja 1975 r. \(date\)
+2\. Wyświetl nazwę dnia tygodnia z 25 maja 1975 r. \(*date*\)
 
-3\. Używając linii poleceń stwórz strukturę katalogów:  (mkdir, cd)
+3\. Używając linii poleceń stwórz strukturę katalogów:
 
     temp
     |-- dom
@@ -22,6 +22,8 @@ poniedziałek.  \(cal\)
         `-- zlecenia
             |-- niezrealizowane
             `-- zrealizowane
+
+\(*mkdir*, *cd*\)
 
 4\. Przejdź do katalogu *dom* i utwórz katalog *wazne-sprawy*.
 
@@ -36,39 +38,42 @@ katalogu *zrealizowane*.
 
 8\. Podziel plik *wykonano.txt* na mniejsze pliki o wielkości 5 bajtów
 (plik *wykonano.txt* powinien mieć rozmiar 11 bajtów) – w ten sposób
-otrzymasz 3 pliki.
+otrzymasz 3 pliki. (*split*)
 
 9\. Będąc w katalogu *logo* skopiuj powyżej otrzymane 3 pliki do
 katalogu *dokumenty*.
 
-10\. Będąc w katalogu dokumenty połącz skopiowane 3 pliki
-w plik *odtworzono.txt*, tak aby otrzymać plik o zawartości identycznej 
-z *wykonano.txt*. Następnie plik *odtworzono.txt* skopiuj do katalogu *wazne-sprawy*.
+10\. Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik
+*odtworzono.txt*, tak aby otrzymać plik o zawartości identycznej z
+*wykonano.txt*. Następnie plik *odtworzono.txt* skopiuj do katalogu
+*wazne-sprawy*.
 
 11\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
 zawartości plików *wykonano.txt* i *odtworzono.txt*.
 
-12\. W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10
+W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10
 linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z
 sieci.)
 
-13\. Wyświetl na ekran 2 pierwsze wiersze pliku *program.c*.
+12\. Wyświetl na ekran 2 pierwsze wiersze pliku *program.c*. (*head*)
 
-14\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*.
+13\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*. (*head*, *tail*)
 
-15\. Wyświetl na ekran całą zawartość pliku *program.c*.
+14\. Wyświetl na ekran całą zawartość pliku *program.c*.
 
-16\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa „main”.
+15\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa
+„main”. (*grep*)
 
-17\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
-pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień.
+16\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
+pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (*chmod*)
 
-18\.Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do katalogu *praca*.
+17\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
+katalogu *praca*.
 
-19\. Zarchiwizuj cały katalog *temp*. \(zip, tar\)
+18\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
 
-20\. Usuń katalog *temp*.
+19\. Usuń katalog *temp*.
 
-21\. Odtwórz z archiwum katalog *temp*.
+20\. Odtwórz z archiwum katalog *temp*. (*unzip* i *tar*)
 
-22\. Posprzątaj na swoim koncie.
+21\. Posprzątaj na swoim koncie.

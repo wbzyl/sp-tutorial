@@ -5,13 +5,12 @@
 1\. Wyświetl plik */etc/passwd* z podziałem na strony przyjmując, że
 strona na 5 linii tekstu.
 
-2\. Korzystając z polecenia *cat* utwórz plik *tekst3.txt*, który będzie
-składał się z zawartości pliku *tekst1.txt*, ciągu
-znaków podanego ze standardowego wejścia (klawiatury) i pliku *tekst2.txt*.
+2\. Korzystając z polecenia *cat* utwórz plik *tekst3.txt*, który
+będzie składał się z zawartości pliku *tekst1.txt*, ciągu znaków
+podanego ze standardowego wejścia (klawiatury) i pliku *tekst2.txt*.
 
 3\. Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu
-domowym w taki sposób, aby nie były wyświetlane ich
-nazwy.
+domowym w taki sposób, aby nie były wyświetlane ich nazwy.
 
 4\. Wyświetl linie o numerach 3, 4 i 5 z pliku */etc/passwd*.
 
@@ -19,17 +18,17 @@ nazwy.
 
 6\. Wyświetl zawartość pliku */etc/passwd* w jednej linii.
 
-7\. Za pomocą filtru *tr* wykonaj modyfikację pliku *plik.txt*, polegającą
-na umieszczeniu każdego słowa w osobnej linii.
+7\. Za pomocą filtru *tr* wykonaj modyfikację pliku *plik.txt*,
+polegającą na umieszczeniu każdego słowa w osobnej linii.
 
 8\. Zlicz wszystkie pliki znajdujące się w katalogu */etc* i jego
 podkatalogach.
 
-9\. Napisać polecenie zliczające ilość znaków z pierwszych trzech linii
-pliku */etc/passwd*.
+9\. Napisać polecenie zliczające ilość znaków z pierwszych trzech
+linii pliku */etc/passwd*.
 
-10\. Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie
-małe litery na duże.
+10\. Wyświetl listę plików z aktualnego katalogu, zamieniając
+wszystkie małe litery na duże.
 
 11\. Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich
 rozmiar i nazwę.
@@ -37,42 +36,31 @@ rozmiar i nazwę.
 12\. Wyświetl listę plików w aktualnym katalogu, posortowaną według
 rozmiaru pliku.
 
-13\. Wyświetl zawartość pliku */etc/passwd* posortowaną według numerów UID
-w kolejności od największego do najmniejszego.
+13\. Wyświetl zawartość pliku */etc/passwd* posortowaną według numerów
+UID w kolejności od największego do najmniejszego.
 
-14\. Wyświetl zawartość pliku */etc/passwd* posortowaną najpierw według
-numerów GID w kolejności od największego do
-najmniejszego, a następnie UID.
+14\. Wyświetl zawartość pliku */etc/passwd* posortowaną najpierw
+według numerów GID w kolejności od największego do najmniejszego, a
+następnie UID.
 
 15\. Podaj liczbę plików każdego użytkownika.
 
-16\. Sporządź statystykę praw dostępu (dla każdego z praw dostępu podaj
-ile razy zostało ono przydzielone).
+16\. Sporządź statystykę praw dostępu (dla każdego z praw dostępu
+podaj ile razy zostało ono przydzielone).
 
-Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych poleceń?
+Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych
+poleceń?
 
-1\. *ls -l > lsout.txt*
-
-2\. *ls -la >> lsout.txt*
-
-3\. *ps >> psout.txt*
-
-4\. *free -m >> ~/wynik*
-
-5\. *kill -1 1234 > killout.txt 2>killerr.txt*
-
-6\. *kill -1 1234 > killout.txt 2>&1*
-
-7\. *kill -1 1234 > /dev/null 2>&1*
-
-8\. *sort psout.txt > pssort.txt*
-
-9\. *ps | sort > pssort.txt*
-
-10\. *cat lsout.txt | sort > lssort.txt*
-
-11\. *who | sort | more*
-
-12\. *who | sort | less*
-
-13\. *sort*
+    :::shell-unix-generic
+    ls -l > lsout.txt                          #  1
+    ls -la >> lsout.txt                        #  2
+    ps >> psout.txt                            #  3
+    free -m >> ~/wynik                         #  4
+    kill -1 1234 > killout.txt 2>killerr.txt   #  5
+    kill -1 1234 > killout.txt 2>&1            #  6
+    kill -1 1234 > /dev/null 2>&1              #  7
+    sort psout.txt > pssort.txt                #  8
+    ps | sort > pssort.txt                     #  9
+    cat lsout.txt | sort > lssort.txt          # 10
+    who | sort | more                          # 11
+    who | sort | less                          # 12
