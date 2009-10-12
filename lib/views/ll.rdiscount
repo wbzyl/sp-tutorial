@@ -38,7 +38,7 @@ Na ćwiczeniach należy wyćwiczyć ścieżki
 względne. Zwykle sprawiają one studentom problemy.
 
 
-## 5.10.2009
+## 12.10.2009
 
 <blockquote>
  <h1>Ze skrzynki emailowej</h1>
@@ -51,6 +51,8 @@ względne. Zwykle sprawiają one studentom problemy.
 Jest już powyżej 120 forków *jbloga*. Pomysł
 zastąpienia zeszytów blogiem chyba się sprzedał.
 
+Było: zip, tar + gz
+
 Pokazałem kilka przykładów z: *mkdir* i *mkdir -p*,
 *rm* i *rm -rf*, *mv*.
 
@@ -62,3 +64,10 @@ reszta *emacs*.
 
 Na ćwiczeniach jest już chyba czas na przyswojenia
 podstaw: vi albo emacs-a. 
+
+
+## 19.10.2009
+
+Wyrażenia regularne: *egrep*. Programy *find* i *diff*.
+
+Zmienne powłoki: *PATH*, *LANG*.
