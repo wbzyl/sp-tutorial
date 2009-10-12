@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sp-tutorial}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wlodek Bzyl"]
-  s.date = %q{2009-09-11}
+  s.date = %q{2009-10-09}
   s.description = %q{Notatki do frameworka Rails3
 }
   s.email = %q{matwb@univ.gda.pl}
@@ -22,18 +22,37 @@ Gem::Specification.new do |s|
      "VERSION.yml",
      "config.ru",
      "lib/config.ru",
+     "lib/public/doc/Cyklop-otf-0_91.zip",
+     "lib/public/doc/ex/sp_lab01_zad.odt",
+     "lib/public/doc/ex/sp_lab02_zad.odt",
+     "lib/public/doc/ex/sp_lab03_zad.odt",
+     "lib/public/doc/ex/sp_lab04_zad.odt",
+     "lib/public/doc/survival.pdf",
+     "lib/public/images/Thatll_Flat_Git_It_Vol_20.jpg",
      "lib/public/images/alan_kay.jpg",
      "lib/public/images/alan_perlis.jpg",
      "lib/public/images/albert_einstein.jpg",
+     "lib/public/images/algorithm.png",
+     "lib/public/images/biuletyn-snall.jpg",
+     "lib/public/images/bop.jpg",
      "lib/public/images/borenstein.jpg",
+     "lib/public/images/commits.png",
+     "lib/public/images/gitk-branches.png",
+     "lib/public/images/jkew.jpg",
      "lib/public/images/jwz.gif",
      "lib/public/images/knuth.jpg",
+     "lib/public/images/marcin_wolinski.jpg",
+     "lib/public/images/objects-example.png",
      "lib/public/images/perlis.gif",
+     "lib/public/images/real_programmers.png",
      "lib/public/images/richard_stallman.jpg",
      "lib/public/images/sp.png",
      "lib/public/images/sp.svg",
+     "lib/public/images/spowrotem.jpg",
+     "lib/public/images/staging_area.png",
      "lib/public/images/the_thinker.jpg",
      "lib/public/images/tparr.jpg",
+     "lib/public/images/wide-gitk.gif",
      "lib/public/javascripts/sp.js",
      "lib/public/stylesheets/fonts/Cyklop-Italic.otf",
      "lib/public/stylesheets/icons/doc.png",
@@ -52,12 +71,14 @@ Gem::Specification.new do |s|
      "lib/public/stylesheets/uv.css",
      "lib/sp-tutorial.rb",
      "lib/views/answers.rdiscount",
-     "lib/views/awk.txt",
      "lib/views/exercises.rdiscount",
      "lib/views/favicon.ico.rdiscount",
      "lib/views/git.rdiscount",
+     "lib/views/labs01.rdiscount",
+     "lib/views/labs02.rdiscount",
      "lib/views/latex.rdiscount",
      "lib/views/layout.rdiscount",
+     "lib/views/ll.rdiscount",
      "lib/views/main.rdiscount",
      "lib/views/scripts.rdiscount",
      "lib/views/unix-commands.rdiscount",

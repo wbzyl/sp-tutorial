@@ -41,12 +41,10 @@ Kod należy umieścić w repozytorium git. Na przykład
 
 Zadania do wykonania w laboratoriach:
 
-* {%= link_to "Laboratorium 1", "/labs01" %}
-* {%= link_to "Laboratorium 2", "/labs02" %}
-* {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %}
-* {%= link_to "Laboratorium 5", "/doc/ex/sp_lab05_zad.odt" %}
-* {%= link_to "Laboratorium 6", "/doc/ex/sp_lab06_zad.odt" %}
-* {%= link_to "Laboratorium 7", "/doc/ex/sp_lab07_zad.odt" %}
+* {%= link_to "Laboratorium 1", "/labs01" %} (polecenia powłoki)
+* {%= link_to "Laboratorium 2", "/labs02" %} (kontynuacja)
+* {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %} (polecenia *find*, *grep*)
+* {%= link_to "Laboratorium 4, 5, 6", "/doc/ex/sp_lab04_zad.odt" %} (skrypty)
 
 
 ## Edytory
