@@ -7,6 +7,16 @@
   <p class="author">— John von Neumann</p>
 </blockquote>
 
+## jBlog i Github
+
+Dzisiaj 13.10.2009 *jBlog* pojawił się na stronie 
+[Popular Forked Repositories – GitHub](http://github.com/popular/forked).
+Cieszę się, że pomysł zastąpienia notatek w zeszytach notatkami
+w komputerze tak się Wam spodobał.
+
+
+## Notatki do wykładów
+
 1. {%= link_to "Przegląd poleceń Uniksowych", "/unix-commands" %}
 1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
 1. {%= link_to "Git jest git", "/git" %}
