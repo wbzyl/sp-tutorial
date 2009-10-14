@@ -68,6 +68,11 @@ podstaw: vi albo emacs-a.
 
 ## 19.10.2009
 
-Wyrażenia regularne: *egrep*. Programy *find* i *diff*.
+Co robić jak strona wykładu nie działa?
+Trochę o repozytoriach gita, błędach
+początkujących etc. Jak umieścić swoją
+zmienioną wersję na *github.com*.
 
-Zmienne powłoki: *PATH*, *LANG*.
+Zmienna powłoki: *PATH*
+
+Wyrażenia regularne: *egrep*. Programy *find* i *diff*.
