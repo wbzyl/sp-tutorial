@@ -85,8 +85,9 @@ Domyślne ustawienie drzewek techowych:
 ### tlmgr – TeX Live package manager
 
 System uaktualniamy korzystając z programu 
-[tlmgr](http://www.tug.org/texlive/tlmgr.html).
+[tlmgr](http://www.tug.org/texlive/tlmgr.html):
 
+    tlmgr update --all
 
 
 <blockquote>
