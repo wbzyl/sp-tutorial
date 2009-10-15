@@ -70,11 +70,7 @@ pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (*chmod*)
 17\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
 katalogu *praca*.
 
-<<<<<<< HEAD
 18\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
-=======
-19\. Zarchiwizuj cały katalog *temp*. (*zip*, *tar*)
->>>>>>> f5dfedad1b59663e909b40db6ba42a48ebd9a962
 
 19\. Usuń katalog *temp*.
 

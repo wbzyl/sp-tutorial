@@ -45,6 +45,7 @@ Różne rzeczy:
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
    (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski). 
 1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
+1. [LaTeX2ε Cheatsheet] [latex2e cheatsheet]
 1. Peter Norvig. [Teach Yourself Programming in Ten Years] [typ10].
 1. [TeX Live] [texlive].
 1. [TeXWorks IDE] [texworks].
@@ -63,3 +64,4 @@ Różne rzeczy:
 [texworks]: http://www.tug.org/texworks/ "TeXworks: lowering the entry barrier to the TeX world"
 [gust]: http://www.gust.org.pl/ "Grupa Użytkowników Systemu TeX"
 [typ10]: http://norvig.com/21-days.html "Teach Yourself Programming in Ten Years"
+[latex2e cheatsheet]: http://stdout.org/~winston/latex/latexsheet.pdf "LaTeX2ε Cheat Sheet"
