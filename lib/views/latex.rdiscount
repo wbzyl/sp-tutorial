@@ -18,7 +18,7 @@ Dokumentację do systemu można pobrać z serwera
 System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
 
 W pracowniach będziemy korzystać z najnowszej wersji 
-systemu TeX, TeXLive 2009 zawierającego program
+systemu TeX zawartej w „TeXLive 2009” z programem
 *xetex* w wersji 0.999.6. Do pracy z dokumentami 
 techowymi będziemy używać programu *TeXworks* w wersji
 co najmniej 0.1 (r.416).
