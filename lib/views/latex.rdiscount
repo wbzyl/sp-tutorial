@@ -26,7 +26,7 @@ co najmniej 0.1 (r.416).
 
 ## Konfiguracja TeX Live
 
-TeX Live to ok. 35000 plików (razem, mniej więcej 1GB).
+TeX Live to ok. 35000 plików (razem, +1GB).
 Pliki te są umieszczone w drzewkach. Listę drzewek otrzymamy
 wykonując polecenie:
 

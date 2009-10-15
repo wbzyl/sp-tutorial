@@ -50,30 +50,3 @@ katalogu *dokumenty*.
 
 11\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
 zawartości plików *wykonano.txt* i *odtworzono.txt*.
-
-W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10
-linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z
-sieci.)
-
-12\. Wyświetl na ekran 2 pierwsze wiersze pliku *program.c*. (*head*)
-
-13\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*. (*head*, *tail*)
-
-14\. Wyświetl na ekran całą zawartość pliku *program.c*.
-
-15\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa
-„main”. (*grep*)
-
-16\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
-pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (*chmod*)
-
-17\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
-katalogu *praca*.
-
-18\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
-
-19\. Usuń katalog *temp*.
-
-20\. Odtwórz z archiwum katalog *temp*. (*unzip* i *tar*)
-
-21\. Posprzątaj na swoim koncie.

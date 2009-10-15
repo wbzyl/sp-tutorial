@@ -43,8 +43,12 @@ Zadania do wykonania w laboratoriach:
 
 * {%= link_to "Laboratorium 1", "/labs01" %} (polecenia powłoki)
 * {%= link_to "Laboratorium 2", "/labs02" %} (kontynuacja)
-* {%= link_to "Laboratorium 3", "/doc/ex/sp_lab03_zad.odt" %} (polecenia *find*, *grep*)
-* {%= link_to "Laboratorium 4, 5, 6", "/doc/ex/sp_lab04_zad.odt" %} (skrypty)
+* {%= link_to "Laboratorium 3", "/labs01" %} (— " —)
+* {%= link_to "Laboratorium 4", "/labs02" %} (— " —)
+* {%= link_to "Laboratorium 5, 6", "/doc/ex/sp_lab03_zad.odt" %} (polecenia *find*, *grep*)
+* {%= link_to "Laboratorium 7, 8, 9, 10", "/doc/ex/sp_lab04_zad.odt" %} (skrypty)
+* LaTeX, Git: Laboratoria 11, 12, 13
+* Zaliczenia: Laboratoria 14, 15
 
 
 ## Edytory

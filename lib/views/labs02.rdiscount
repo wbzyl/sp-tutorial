@@ -2,65 +2,31 @@
 
 # Laboratorium 2
 
-1\. Wyświetl plik */etc/passwd* z podziałem na strony przyjmując, że
-strona na 5 linii tekstu.
+W żadnym z poniższych zadań nie wolno używać programu *mc*.
 
-2\. Korzystając z polecenia *cat* utwórz plik *tekst3.txt*, który
-będzie składał się z zawartości pliku *tekst1.txt*, ciągu znaków
-podanego ze standardowego wejścia (klawiatury) i pliku *tekst2.txt*.
+W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10
+linii kodu napisanego w języku C. (Sam kod należy wyszukać i pobrać z
+sieci.)
 
-3\. Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu
-domowym w taki sposób, aby nie były wyświetlane ich nazwy.
+1\. Wyświetl na ekran 2 pierwsze wiersze pliku *program.c*. (*head*)
 
-4\. Wyświetl linie o numerach 3, 4 i 5 z pliku */etc/passwd*.
+2\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*. (*head*, *tail*)
 
-5\. Wyświetl linie o numerach 7, 6 i 5 od końca pliku */etc/passwd*.
+3\. Wyświetl na ekran całą zawartość pliku *program.c*.
 
-6\. Wyświetl zawartość pliku */etc/passwd* w jednej linii.
+4\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa
+„main”. (*grep*)
 
-7\. Za pomocą filtru *tr* wykonaj modyfikację pliku *plik.txt*,
-polegającą na umieszczeniu każdego słowa w osobnej linii.
+5\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
+pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (*chmod*)
 
-8\. Zlicz wszystkie pliki znajdujące się w katalogu */etc* i jego
-podkatalogach.
+6\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
+katalogu *praca*.
 
-9\. Napisać polecenie zliczające ilość znaków z pierwszych trzech
-linii pliku */etc/passwd*.
+7\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
 
-10\. Wyświetl listę plików z aktualnego katalogu, zamieniając
-wszystkie małe litery na duże.
+8\. Usuń katalog *temp*.
 
-11\. Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich
-rozmiar i nazwę.
+9\. Odtwórz z archiwum katalog *temp*. (*unzip* i *tar*)
 
-12\. Wyświetl listę plików w aktualnym katalogu, posortowaną według
-rozmiaru pliku.
-
-13\. Wyświetl zawartość pliku */etc/passwd* posortowaną według numerów
-UID w kolejności od największego do najmniejszego.
-
-14\. Wyświetl zawartość pliku */etc/passwd* posortowaną najpierw
-według numerów GID w kolejności od największego do najmniejszego, a
-następnie UID.
-
-15\. Podaj liczbę plików każdego użytkownika.
-
-16\. Sporządź statystykę praw dostępu (dla każdego z praw dostępu
-podaj ile razy zostało ono przydzielone).
-
-Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych
-poleceń?
-
-    :::shell-unix-generic
-    ls -l > lsout.txt                          #  1
-    ls -la >> lsout.txt                        #  2
-    ps >> psout.txt                            #  3
-    free -m >> ~/wynik                         #  4
-    kill -1 1234 > killout.txt 2>killerr.txt   #  5
-    kill -1 1234 > killout.txt 2>&1            #  6
-    kill -1 1234 > /dev/null 2>&1              #  7
-    sort psout.txt > pssort.txt                #  8
-    ps | sort > pssort.txt                     #  9
-    cat lsout.txt | sort > lssort.txt          # 10
-    who | sort | more                          # 11
-    who | sort | less                          # 12
+10\. Posprzątaj na swoim koncie.
