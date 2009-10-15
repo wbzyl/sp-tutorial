@@ -17,23 +17,18 @@ Dokumentację do systemu można pobrać z serwera
 
 System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
 
+W pracowniach będziemy korzystać z najnowszej wersji 
+systemu TeX, TeXLive 2009 zawierającego program
+*xetex* w wersji 0.996. Do pracy z dokumentami 
+techowymi będziemy używać programu *TeXworks* w wersji
+co najmniej 0.1 (r.416).
+
+
 ## Konfiguracja TeX Live
 
 TeX Live to ok. 35000 plików (razem, mniej więcej 1GB).
 Pliki te są umieszczone w drzewkach. Listę drzewek otrzymamy
 wykonując polecenie:
-
-    kpsexpand \$TEXMF
-    ~/.texlive2009/texmf-config,
-    ~/.texlive2009/texmf-var,
-    /usr/share/texlive/texmf-config,
-    /usr/share/texlive/texmf-var,
-    /usr/share/texlive/texmf,
-    /usr/share/texmf-local,
-    /usr/share/texlive/texmf-dist
-
-Powyższa lista, to drzewka na moim komputerze.
-Na *Sigmie* mamy takie drzewka:
 
     /home/pracinf/wbzyl/.texlive2008/texmf-config,
     /var/lib/texmf,
@@ -44,19 +39,54 @@ Na *Sigmie* mamy takie drzewka:
     /usr/share/texmf,  # bug! zamienić na texmf-local
     /usr/share/texmf-dist
 
+(lista drzewek na na *Sigmie*).
+
 System TeX konfigurujemy edytując plik *texmf.cnf*.
 Plik ten odszukujemy w systemie w taki sposób:
 
     kpsewhich texmf.cnf
-    /usr/share/texlive/texmf/web2c/texmf.cnf
-
-Ścieżka do tego pliku na *Sigmie*: 
-
     /usr/share/texmf/web2c/texmf.cnf
 
 Zawartość tego pliku podejrzymy tak:
 
     less $(kpsewhich texmf.cnf)
+
+### Instalacja TeXLive bezpośrednio z internetu
+
+Na stronie [TeX Live availability](http://www.tug.org/texlive/acquire.html)
+znajdziemy link do instalki systemu bezpośrednio z internetu
+„TeX Live installation over the Internet”:
+[Linux](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl-unx.tar.gz)
+[Windows](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl.zip).
+
+Po rozpakowaniu archiwum, uruchamiamy skrypt:
+
+    sudo ./install-tl
+
+i po chwili widzimy, że będziemy musieli czekać z tydzień, zanim
+zostaną ściągnięte wszystkie pakiety. Aby przyspieszyć instalację
+wymieniamy domyślnie ustawiony serwer z którego pobierane są pakiety:
+
+    sudo ./install-tl -location ftp://ftp.gust.org.pl/tex-archive/systems/texlive/tlnet/2008/tlpkg/
+
+Domyślne ustawienie drzewek techowych:
+
+    TEXDIR (the main TeX directory):
+      /usr/local/texlive/2008
+    TEXMFLOCAL (directory for site-wide local files):
+      /usr/local/texlive/texmf-local
+    TEXMFSYSVAR (directory for variable and automatically generated data):
+      /usr/local/texlive/2008/texmf-var
+    TEXMFSYSCONFIG (directory for local config):
+      /usr/local/texlive/2008/texmf-config
+    TEXMFHOME (directory for user-specific files):
+      ~/texmf
+
+### tlmgr – TeX Live package manager
+
+System uaktualniamy korzystając z programu 
+[tlmgr](http://www.tug.org/texlive/tlmgr.html).
+
 
 
 <blockquote>
