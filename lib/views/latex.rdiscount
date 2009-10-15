@@ -92,15 +92,16 @@ System uaktualniamy korzystając z programu
 
 <blockquote>
   {%= image_tag "/images/bop.jpg", :alt => "[autorzy Latin Modern]" %}
-  <p class="center">B. Jackowski, J. M. Nowacki, P.&nbsp;Strzelczyk</p>
+  <p class="center">od lewej: P.&nbsp;Strzelczyk, B. Jackowski, J.&nbsp;M. Nowacki</p>
 </blockquote>
 
 ## Fonty Latin Modern 
 
 [Rodzina fontów Latin Modern w formacie OTF] [lm].
-Jak zainstalować w systemie? Kopiujemy archiwum do drzewka
+Ręczna instalacja w systemie? Kopiujemy archiwum do drzewka
 *lokalnego* i tam je rozpakowujemy. Na koniec wykonujemy
 polecenie: `mktexlsr` (albo `texhash`).
+
 
 
 ## Format *LaTeX*
