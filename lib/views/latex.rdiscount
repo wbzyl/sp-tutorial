@@ -19,7 +19,7 @@ System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
 
 W pracowniach będziemy korzystać z najnowszej wersji 
 systemu TeX, TeXLive 2009 zawierającego program
-*xetex* w wersji 0.996. Do pracy z dokumentami 
+*xetex* w wersji 0.999.6. Do pracy z dokumentami 
 techowymi będziemy używać programu *TeXworks* w wersji
 co najmniej 0.1 (r.416).
 
