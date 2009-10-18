@@ -28,6 +28,20 @@ Tworzenie aliasów:
     :::shell-unix-generic
     alias l='ls -l'
 
+Polecenie *alias*:
+
+    alias ls
+    alias rm
+
+Aliasy nazw plików: *ln*. Przykłady:
+
+    ln -s TARGET LINK_NAME
+    ln -s TARGET... DIRECTORY
+    ls -s LINK
+    rm LINK
+
+## SSH: secure shell
+
 Generujemy klucze: prywatny i publiczny:
 
     :::shell-unix-generic
@@ -104,6 +118,50 @@ w sekcji *QUOTING*. Mały przykład:
     echo {0..4}
 
 
+## Jedno po drugim
+
+Wykonywanie kilku poleceń kolejno:
+
+    ls ; ls -l
+
+
+## Przekierowanie
+
+Standard input, output i error: STDIN, STDOUT, STDERR. 
+Przykłady:
+
+    echo 'hello world' > test.txt
+    read x
+    good bye
+    echo $x
+    good bye
+    read x < test.txt
+    echo $x
+    hello world
+
+
+## Dopisywanie
+
+Przykład:
+
+    echo 'ala > test.txt
+    echo 'ma kota' >> test.txt
+    cat test.txt
+    ala
+    ma kota
+    tac test.txt
+
+Inny przykład:
+
+    nl test.txt
+
+
+## Grupowanie 
+
+Przykład:
+
+    (ls ; df -h; who) > result.txt
+
 
 ## Potoki
 
@@ -114,6 +172,8 @@ Zestawianie poleceń w potok:
     who | wc -l
     ls | wc -l
     who | grep wbzyl
+    echo 'czas na przerwę' | tee result.txt
+
 
 <blockquote>
   <h1>Bashowy hardcore</h1>
@@ -125,11 +185,6 @@ kill -9 $( ps augxww | \
   awk '{print $2}' )
 </pre>
 </blockquote>
-
-Inne przykłady (mało użyteczne, teraz używam git-a a nie svn):
-
-    grep pattern $(find . | grep -v .svn)
-    grep pattern $(find -name .svn -prune -o -print)
 
 Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
 
@@ -413,6 +468,16 @@ Znajdź pliki puste lub nie otwierane od ponad roku:
 
     :::shell-unix-generic
     find . -size 0 -o -atime +365
+
+Więcej przykładów:
+
+    :::shell-unix-generic
+    find . -name "*.c" -print
+    find . -mmin -5  # pliki modyfikowane w ostatnich 5 minutach 
+    find . -mmin +5  # ?
+    find . -name "*.c" | xargs ls -l
+
+Polecenie *locate*.
 
 
 ## Polecenie diff
