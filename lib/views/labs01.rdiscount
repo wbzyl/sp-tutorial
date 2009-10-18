@@ -4,12 +4,10 @@
 
 W żadnym z poniższych zadań nie wolno używać programu *mc*.
 
-1\. Wyświetl kalendarz na 2009 r., tak aby pierwszą kolumną był
-poniedziałek.  \(*cal*\)
+Polecenia: mkdir, cp, mv, touch, tree. 
+Ścieżki względne i bezwzględne: `~`, `..`, `.`.
 
-2\. Wyświetl nazwę dnia tygodnia z 25 maja 1975 r. \(*date*\)
-
-3\. Używając linii poleceń stwórz strukturę katalogów:
+1\. Używając linii poleceń stwórz strukturę katalogów:
 
     temp
     |-- dom
@@ -23,30 +21,34 @@ poniedziałek.  \(*cal*\)
             |-- niezrealizowane
             `-- zrealizowane
 
-\(*mkdir*, *cd*\)
+2\. Przejdź do katalogu *dom* i utwórz katalog *wazne-sprawy*.
 
-4\. Przejdź do katalogu *dom* i utwórz katalog *wazne-sprawy*.
+3\. Wejdź do katalogu *wazne-sprawy* i utwórz tam pusty plik 
+*rachunki.txt*.
 
-5\. Wejdź do katalogu *wazne-sprawy* i utwórz tam plik 
-*rachunki.txt* zawierający dokładnie 11 znaków.
-
-6\. Będąc w katalogu *wazne-sprawy* skopiuj plik *rachunki.txt* do
+4\. Będąc w katalogu *wazne-sprawy* skopiuj plik *rachunki.txt* do
 katalogu *zrealizowane*.
 
-7\. Przejdź do katalogu *zrealizowane* i zmień nazwę pliku *rachunki.txt* na 
+5\. Przejdź do katalogu *zrealizowane* i zmień nazwę pliku *rachunki.txt* na 
 *wykonano.txt*.
 
-8\. Podziel plik *wykonano.txt* na mniejsze pliki o wielkości 5 bajtów
-(plik *wykonano.txt* powinien mieć rozmiar 11 bajtów) – w ten sposób
-otrzymasz 3 pliki. (*split*)
+Polecenia: split, cat, diff
 
-9\. Będąc w katalogu *logo* skopiuj powyżej otrzymane 3 pliki do
+6\. Utwórz plik *wykonano.txt* wielkości 11 bajtów, 
+następnie podziel go pliki wielkości 5 bajtów.
+W ten sposób otrzymasz 3 pliki. (*split*)
+
+7\. Będąc w katalogu *logo* skopiuj powyżej otrzymane 3 pliki do
 katalogu *dokumenty*.
 
-10\. Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik
+8\. Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik
 *odtworzono.txt*, tak aby otrzymać plik o zawartości identycznej z
 *wykonano.txt*. Następnie plik *odtworzono.txt* skopiuj do katalogu
 *wazne-sprawy*.
 
-11\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
+9\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
 zawartości plików *wykonano.txt* i *odtworzono.txt*.
+
+10\. Wyświetl kalendarz na październik 2009 r. (*cal*)
+
+11\. Jaki był dzień tygodnia 25 maja 1975 r. (*cal* i *date*)
