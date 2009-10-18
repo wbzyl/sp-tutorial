@@ -87,7 +87,18 @@ Domyślne ustawienie drzewek techowych:
 System uaktualniamy korzystając z programu 
 [tlmgr](http://www.tug.org/texlive/tlmgr.html):
 
+Kilka poleceń na dobry początek:
+
     tlmgr update --all
+      Make your local TeX installation correspond to what 
+      is in the package repository (typically on CTAN).
+    tlmgr update --list
+      Report what would be updated without actually updating anything.
+    tlmgr show pkgname 
+      Display detailed information about pkgname, 
+      such as the installation status and description
+
+\([dokumentacja](http://www.tug.org/texlive/doc/tlmgr.html)\)
 
 
 <blockquote>
