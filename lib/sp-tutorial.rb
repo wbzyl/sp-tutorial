@@ -7,7 +7,7 @@ gem 'sinatra'
 gem 'wbzyl-sinatra-rdiscount'
 
 gem 'emk-sinatra-url-for'
-gem 'wbzyl-sinatra-static-assets'
+gem 'sinatra-static-assets'
 
 require 'rdiscount'
 require 'sinatra/base'
