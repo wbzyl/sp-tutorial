@@ -17,7 +17,7 @@
   <body>
     <div class="span-21" id="header">
       <div id="logo" class="push-1 span-7">
-        <a href="/sp/">WB@SP</a><span>2dc87f0d…</span>
+        <%= link_to "WB@SP", "/" %><span>2dc87f0d…</span>
       </div>
       <div class="span-13 last">
         <div class="append-1" id="links">
