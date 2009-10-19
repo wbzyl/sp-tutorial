@@ -6,8 +6,7 @@ Gem zawierający notatki do wykładu z „Środowiska Programisty”.
 
 Wykonać polecenie:
 
-    gem install wbzyl-sp-ii -s http://gems.github.com
-
+    gem install sp-tutorial -s http://gemcutter.org
 
 
 ### Zależności
@@ -19,14 +18,14 @@ które należy zainstalować:
 * sinatra
 * rdiscount
 * wbzyl-sinatra-rdiscount    
-* wbzyl-rack-codehighlighter
+* rack-codehighlighter
 * ultraviolet
 
 ### Uruchamianie
 
 Sprawdzamy gdzie w systemie został zainstalowany gem *sp-ii*:
 
-    gem which wbzyl-sp-ii
+    gem which sp-tutorial
 
 Przechodzimy do tego katalogu i uruchamiamy aplikację:
 
