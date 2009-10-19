@@ -1,9 +1,9 @@
 $:.unshift('lib') unless $:.include?('lib')
 
-gem 'wbzyl-sp-tutorial'
+gem 'sp-tutorial'
 require 'sp-tutorial'
 
-gem 'wbzyl-rack-codehighlighter'
+gem 'rack-codehighlighter'
 require 'rack/codehighlighter'
 
 gem 'ultraviolet'
