@@ -5,3 +5,4 @@ pkg
 .\#*
 \#*
 README.html
+*.gem
