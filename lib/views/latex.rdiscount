@@ -477,6 +477,16 @@ Skrypt *dod.sh* korzysta z programu *tex*.
 Czy zamiast programu *tex* można użyć programu *xetex*?
 
 
+## Inkscape
+
+Z manuala: „Inkscape − an SVG (Scalable Vector Graphics) editing program.”
+
+Od siebie dodam, że program jest łatwy w obsłudze,
+a obejrzenie kilku tutoriali ze strony
+[Inkscape tutorials for the novice artist](http://screencasters.heathenx.org/)
+powinno przekonać do programu niedowiarków.
+
+
 ## Pandoc
 
 [Cytat] [pandoc]: „Pandoc is a Haskell library for converting from one markup
