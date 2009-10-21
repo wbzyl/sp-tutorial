@@ -14,16 +14,8 @@
   <p class="author">— Albert Einstein</p>
 </blockquote>
 
-Rozwiązania ćwiczeń należy umieścić na swoim blogu.
-Na przykład, rozwiązania ćwiczeń LaTeX-owych, powinny
-być dostępne pod jakimś takim URL:
-
-    http://sigma.ug.edu.pl/~wbzyl/2009-11-22-latex.html
-
-(Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
-no i data będzie inna.)
-
-Kod należy umieścić w repozytorium git. Na przykład
+Skrypty należy umieścić w repozytorium git. Na przykład, można
+to zrobić w taki sposób:
 
     cd ~/tmp
     mkdir latex
@@ -48,14 +40,44 @@ Zadania do wykonania w laboratoriach:
 * {%= link_to "Laboratorium 5", "/labs05" %} (*find*)
 * {%= link_to "Laboratorium 6", "/labs06" %} (*grep*)
 * {%= link_to "Laboratorium 7", "/labs07" %} (skrypty)
-* {%= link_to "Laboratoria 8, 9, 10", "/doc/ex/sp_lab04_zad.odt" %} (skrypty)
+
+TODO:
+
+* Laboratoria 8, 9, 10 (skrypty)
 * LaTeX, Git: Laboratoria 11, 12, 13
 * Zaliczenia: Laboratoria 14, 15
 
 
-## Edytory
+# Zadania opisowe
 
-2\. W *jBlogu* jest kilka napisów, które należy wymienić,
+Rozwiązania zadań opisowych należy umieścić na swoim blogu.
+Na przykład, rozwiązania ćwiczeń XeLaTeX-owych, powinny
+być dostępne pod jakimś takim URL:
+
+    http://sigma.ug.edu.pl/~wbzyl/sp/2009-11-22-latex.html
+
+Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
+no i data będzie też inna.
+
+
+## Edytor & notacja Markdown
+
+1\. Przygotować post ze ściągą do wyrażeń regularnych
+rozpoznawanych przez program *egrep*.
+
+
+## Bash
+
+1\. Wymyśl dwa zadania używające polecenia *egrep* i&nbsp;nietrywialne
+wyrażenie regularne.
+
+
+## TODO: Skrypty
+
+1\. Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
+polskie litery. Opisać jak ten skrypt działa.
+
+1\. W *jBlogu* jest kilka napisów, które należy wymienić,
 na przykład, w pliku *index.html*:
 
     title: WB_Blog
@@ -87,15 +109,8 @@ Zainstalować ten font lokalnie i korzystając z programu
 Zapisać zmiany i wyeksportować obrazek
 *images/logo.png* w formacie *PNG*.
 
-2\. Przygotować prostą stronę www ze ściągą do wyrażeń regularnych
-rozpoznawanych przez program *egrep*.
-Ściąga powinna być dostępna pod takim URL:
 
-<pre>http://sigma.inf.ug.edu.pl/~TWÓJ_LOGIN/egrep.html
-</pre>
-
-
-## Git
+## TODO: Git
 
 1\. W zespołach 3–4 osobowych przygotować prosty projekt.
 Popracować wspólnie nad projektem. Na koniec
@@ -111,8 +126,7 @@ Umieścić historyjkę na jBlogu pod *git-grep*.
 Umieścić historyjkę na jBlogu pod *git-cherry-pick*. 
 
 
-
-## XeLaTeX
+## TODO: XeLaTeX
 
 1\. Zapoznajemy się z programem *TeXworks*:
 
@@ -142,12 +156,6 @@ na swoim jBlogu.
 Wskazówka do 3. Zajrzyj na strony Wiki:
 [Documentation of the code completion feature] [texworks code completion],
 [Some tips for using TeXworks] [texworks tips].
-
-
-## Skrypty powłoki
-
-1\. Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
-polskie litery.
 
 
 #### Linki
