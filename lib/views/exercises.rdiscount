@@ -14,7 +14,7 @@
   <p class="author">— Albert Einstein</p>
 </blockquote>
 
-Skrypty należy umieścić w repozytorium git. Na przykład, można
+Skrypty należy umieścić w repozytorium git. Można
 to zrobić w taki sposób:
 
     cd ~/tmp
