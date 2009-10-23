@@ -68,7 +68,7 @@ Korzystamy z szablonów.
     |-- templates
     |   |-- Basic XeLaTeX documents         # miejsce na nasze szablony
     |   |   |-- article-hyperref.tex
-    |   |   `-- article-graphics.tex
+    |   |   `-- article-bibliography.tex
     |   |-- Basic LaTeX documents           # standardowe szablony
     |   |   |-- article.tex
     |   |   `-- letter.tex
