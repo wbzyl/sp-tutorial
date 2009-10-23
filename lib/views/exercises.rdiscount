@@ -29,9 +29,10 @@ to zrobić w taki sposób:
     git clone --bare latex ~/public_git/latex.git
     rm -rf ~/tmp/latex
 
+
 ## Bash
 
-Zadania do wykonania w laboratoriach:
+Zadania do wykonania w laboratorium:
 
 * {%= link_to "Laboratorium 1", "/labs01" %} (polecenia powłoki)
 * {%= link_to "Laboratorium 2", "/labs02" %} (kontynuacja)
@@ -41,11 +42,28 @@ Zadania do wykonania w laboratoriach:
 * {%= link_to "Laboratorium 6", "/labs06" %} (*grep*)
 * {%= link_to "Laboratorium 7", "/labs07" %} (skrypty)
 
-TODO:
 
-* Laboratoria 8, 9, 10 (skrypty)
-* LaTeX, Git: Laboratoria 11, 12, 13
-* Zaliczenia: Laboratoria 14, 15
+## LaTeX
+
+Zadania do wykonania w laboratorium:
+
+* {%= link_to "Laboratorium 10", "/labs10" %}
+
+
+## Git
+
+Zadania do wykonania w laboratorium:
+
+* {%= link_to "Laboratorium 12", "/labs12" %}
+
+
+## TODO
+
+* Laboratoria 8, 9 (skrypty)
+* LaTeX: Laboratorium 11
+* Git: Laboratorium 13 (zakładanie repozytoriów na Sigmie)
+
+Na laboratoriach 14, 15 – zaliczenia.
 
 
 # Zadania opisowe
@@ -72,12 +90,12 @@ rozpoznawanych przez program *egrep*.
 wyrażenie regularne.
 
 
-## TODO: Skrypty
+## Skrypty
 
-1\. Poprawić skrypt *makedict.sh* tak, aby rozpoznawał 
+1\. Poprawić skrypt *makedict.sh* z wykładu tak, aby rozpoznawał 
 polskie litery. Opisać jak ten skrypt działa.
 
-1\. W *jBlogu* jest kilka napisów, które należy wymienić,
+2\. W *jBlogu* jest kilka napisów, które należy wymienić,
 na przykład, w pliku *index.html*:
 
     title: WB_Blog
@@ -86,76 +104,37 @@ w pliku *_layouts/default.html*:
 
     <meta name="author" content="Włodek Bzyl" />
     
-Znaleźć wszystkie takie napisy.
 Napisać prosty skrypt korzystający z programu *sed*
-wymieniający te napisy.
-
-Logo przygotowałem w programie *inkscape*. 
-Plik *images/logo.svg* w formacie *SVG* zawiera tekst *WB@jBlog*,
-który należy wymienić. 
-
-<blockquote> 
- {%= image_tag "/images/biuletyn-snall.jpg", :alt => "[]" %}
- <p> 
-  W okresie międzywojennym font Cyklop był używany 
-  w tytulariach gazetowych i drukach akcydensowych.
- </p>
-</blockquote>
-
-W pliku *images/logo.svg* literki składane są fontem *OTF*
-{%= link_to "Cyklop", "/doc/Cyklop-otf-0_91.zip" %}.
-Zainstalować ten font lokalnie i korzystając z programu
-*inkscape* zmienić tekst.
-Zapisać zmiany i wyeksportować obrazek
-*images/logo.png* w formacie *PNG*.
+wymieniający wszystkie takie napisy.
 
 
-## TODO: Git
+## LaTeX
 
-1\. W zespołach 3–4 osobowych przygotować prosty projekt.
-Popracować wspólnie nad projektem. Na koniec
-zajęć przeanalizować kto co zrobił.
+1\. Tekst zadań do wykonania w laboratorium, na przykład 
+Laboratorium 2, to lista wypunktowana 
+(otoczenia *enumerate*, *itemize*) 
+oraz tytularia (polecenia *section*, *paragraph*).
+* Przygotować szablon oraz skróty klawiszowe ułatwiające
+  wpisywanie takich tekstów. 
+* Przepisać jeden ze zestawów
+  zadań korzystając z przygotowanego szablonu oraz ze
+  skrótów klawiszowych.
 
-2\. Napisać historyjkę pokazującą jak można
+Wskazówka: Zajrzyj na strony Wiki:
+[Documentation of the code completion feature] [texworks code completion],
+[Some tips for using TeXworks] [texworks tips].
+
+
+## Git
+
+1\. Napisać historyjkę pokazującą jak można
 wyszukać *commit* w którym po raz pierwszy
 pojawiła się określona funkcja.
 Umieścić historyjkę na jBlogu pod *git-grep*. 
 
-3\. Napisać historyjkę ilustrującą użycie polecenia
+2\. Napisać historyjkę ilustrującą użycie polecenia
 `git cherry-pick`.
 Umieścić historyjkę na jBlogu pod *git-cherry-pick*. 
-
-
-## TODO: XeLaTeX
-
-1\. Zapoznajemy się z programem *TeXworks*:
-
-* wczytujemy gotowy szablon: File → New from Template
-* włączamy outlines: Window → Show → Tags
-* opanowujemy klika skrótów klawiszowych: 
-  * kompilacja: ctrl+t
-  * …
-
-2\. Przygotować po jednym dokumencie (1–2 strony wydruku) 
-pokazującym podstawowe możliwości pakietu:
-
-* *graphicx* (dokumentacja *epslatex.pdf*)
-* *floatlft* albo *photo* (pływające wstawki) 
-* *geometry*
-
-3\. Tekst zadań do wykonania w laboratorium, na przykład 
-{%= link_to "Laboratorium 2", "/doc/ex/sp_lab02_zad.odt" %},
-to lista wypunktowana (otoczenia *enumerate*, *itemize*) 
-oraz tytularia (polecenia *section*, *paragraph*).
-Przygotować szablon oraz skróty klawiszowe ułatwiające
-wpisywanie takich tekstów. Przepisać jeden ze zestawów
-zadań korzystając z przygotowanego szablonu oraz ze
-skrótów klawiszowych. Opisać to co zostało zrobione
-na swoim jBlogu.
-
-Wskazówka do 3. Zajrzyj na strony Wiki:
-[Documentation of the code completion feature] [texworks code completion],
-[Some tips for using TeXworks] [texworks tips].
 
 
 #### Linki
