@@ -2,3 +2,16 @@
 
 # Laboratorium 10 (*latex*)
 
+1\. Zapoznajemy się z środowiskiem *TeXworks*:
+
+* wczytujemy gotowy szablon: File → New from Template
+* włączamy outlines: Window → Show → Tags
+* opanowujemy klika skrótów klawiszowych: 
+  * kompilacja: `ctrl+t`
+  * inne ważne skróty klawiszowe
+
+2\. Przygotować po jednym dokumencie (1–2 strony wydruku) 
+pokazującym podstawowe możliwości każdego z pakietów:
+
+* *graphicx* (dokumentacja *epslatex.pdf*)
+* *floatlft* albo *photo* (pływające wstawki) 
