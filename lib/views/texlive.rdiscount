@@ -2,7 +2,7 @@
 
 # TeXLive i inne różne rzeczy
 
-Na *Sigmie* zainstalowany jest system TeX z paczki *texlive*.
+Na *Sigmie* zainstalowany jest system TeX z paczki *TeXLive*.
 Dokumentację do systemu można pobrać z serwera
 [Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
 
@@ -60,7 +60,7 @@ wymieniamy domyślnie ustawiony serwer z którego pobierane są pakiety:
 
     sudo ./install-tl -location ftp://ftp.gust.org.pl/tex-archive/systems/texlive/tlnet/2008/tlpkg/
 
-Domyślne ustawienie drzewek techowych:
+Domyślne ustawienie drzewek techowych w TeXLive:
 
     TEXDIR (the main TeX directory):
       /usr/local/texlive/2008
@@ -93,23 +93,9 @@ Kilka poleceń na dobry początek:
 
 
 <blockquote>
-  {%= image_tag "/images/bop.jpg", :alt => "[autorzy Latin Modern]" %}
-  <p class="center">od lewej: P.&nbsp;Strzelczyk, B. Jackowski, J.&nbsp;M. Nowacki</p>
-</blockquote>
-
-
-## Fonty Latin Modern 
-
-[Rodzina fontów Latin Modern w formacie OTF] [lm].
-Ręczna instalacja w systemie? Kopiujemy archiwum do drzewka
-*lokalnego* i tam je rozpakowujemy. Na koniec wykonujemy
-polecenie: `mktexlsr` (albo `texhash`).
-
-<blockquote>
   {%= image_tag "/images/marcin_wolinski.jpg", :alt => "[Marcin Woliński]" %}
   <p class="center">Marcin Woliński</p>
 </blockquote>
-
 
 ## Obłożenie klawiatury dla programisty
 
@@ -152,6 +138,19 @@ Z terminala można aktywować nasz układ klawiatury dla bieżącej sesji polece
 
 Dla trwałego efektu trzeba by je dodać do jakiegoś skryptu
 inicjującego sesję X Window.
+
+
+<blockquote>
+  {%= image_tag "/images/bop.jpg", :alt => "[autorzy Latin Modern]" %}
+  <p class="center">od lewej: P.&nbsp;Strzelczyk, B. Jackowski, J.&nbsp;M. Nowacki</p>
+</blockquote>
+
+## Fonty Latin Modern 
+
+[Rodzina fontów Latin Modern w formacie OTF] [lm].
+Ręczna instalacja w systemie? Kopiujemy archiwum do drzewka
+*lokalnego* i tam je rozpakowujemy. Na koniec wykonujemy
+polecenie: `mktexlsr` (albo `texhash`).
 
 
 ## I-Ching
