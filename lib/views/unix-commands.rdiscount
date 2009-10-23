@@ -517,13 +517,40 @@ Nakładamy łatę:
  </p>
 </blockquote>
 
+
 ## Wyrażenia regularne 
 
-Samouczek: [Learning to Use Regular Expressions] [regexp tutorial].
+Zaczynamy od lektury:
 
-Program <kbd>egrep</kbd>.
+    man egrep 
+    /REGULAR EXP
 
-Testowanie wyrażeń regularnych: [Regular Expression Tester] [regexp tester]
+Różne implementacje wyrażeń regularnych:
+
+* Javascript: [Regular Expression Tester] [regexp tester]
+* Ruby: [Rubular](http://rubular.com/). Fajne! Można 
+  zrobić *permalink*.
+
+Wchodzimy na *Rubular*, aby przyjrzeć się tym przykładom:
+
+* nazwy zmiennych: `[a-zA-Z_][a-zA-Z_0-9]*`
+* "napis": `"[^"]"` (użyteczne, ale czasami potrzebujemy 
+  czegoś bardziej użytecznego)
+* cena w dolarach + opcjonalnie centy: `\$[0-9]+(\.[0-9][0-9])?`
+  (naiwne, w zupełności wystarczy: `\$[0-9]+`);
+  niemniej użyteczne, chociaż nie dopasowuje się do `$.46`;
+  zamiana `+` na `*`, czyli takie wyrażenie 
+  `\$[0-9]*(\.[0-9][0-9])?` nie jest rozwiązaniem! dlaczego?
+
+Na koniec, kilka wyrażeń regularnych dopasowujących się
+do godzin zapisywanych w taki formacie: `8:15`, `22:04`.
+
+* `[0-9]?[0-9]:[0-9][0-9]` użyteczne, ale mało **dokładne**: 99:99
+* `(1[012]|0?[0-9])|[0-5][0-9]` ok, ale tylko 00:00–12:59
+* `[01]?[0-9]|2[0-3]` ok, jeśli dołożymy minuty
+* `[01]?[4-9]|[012]?[0-3]` ok, j.w. (ale jak to wyjaśnić?)
+
+Samouczek [Learning to Use Regular Expressions] [regexp tutorial].
 
 
 ## Fuse filesystem
