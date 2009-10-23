@@ -54,14 +54,14 @@ Zadania do wykonania w laboratorium:
 
 Zadania do wykonania w laboratorium:
 
-* {%= link_to "Laboratorium 12", "/labs12" %}
+* {%= link_to "Laboratorium 12", "/labs12" %} (praca w zespołach)
+* {%= link_to "Laboratorium 13", "/labs13" %} (gałęzie, scalanie)
 
 
 ## TODO
 
 * Laboratoria 8, 9 (skrypty)
 * LaTeX: Laboratorium 11
-* Git: Laboratorium 13 (zakładanie repozytoriów na Sigmie)
 
 Na laboratoriach 14, 15 – zaliczenia.
 
