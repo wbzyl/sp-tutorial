@@ -12,7 +12,7 @@
 </blockquote>
 
 System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
-Od tego czasu system jest stale rozwijany, udoskonalany.
+Od tego czasu system jest stale rozwijany i udoskonalany.
 
 Co to jest TeX? Krótko: TeX jest systemem do składu dokumentów.
 Długo: [Najkrótsze wprowadzenie do systemu TeX](http://www.gust.org.pl/doc/tex_whatisit/).
@@ -295,7 +295,7 @@ Uwagi:
   z opcjonalna notką.
 
 
-## Więcej LaTeX-a
+## Korzystamy z pakietów: polecenie \usepackage
 
 Na koniec ,,groch z kapustą'', czyli wstawianie obrazków,
 tabelek, korzystanie z koloru, notacja do wpisywania matematyki...
@@ -416,7 +416,6 @@ Uwaga: brakujący obrazek *diagram* przygotować w trakcie wykładu:
 ### Inkscape
 
 Z manuala: „Inkscape − an SVG (Scalable Vector Graphics) editing program.”
-
 Od siebie dodam, że program jest łatwy w obsłudze,
 a obejrzenie kilku tutoriali ze strony
 [Inkscape tutorials for the novice artist](http://screencasters.heathenx.org/)
