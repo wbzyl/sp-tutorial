@@ -82,8 +82,28 @@ Tymczasowy URL strony:
 
 ## 26.10.2009
 
-Programy *find* i *diff*.
+Środowisko. Wypisywanie zmiennych i ich wartości,
+polecenia *env* i *set*.
+Zmienne powłoki: *PATH*, *LANG_XX*.
 
-Wyrażenia regularne: *egrep*. 
+Program *find*, kilka przykładów. Wyrażenia regularne:
+przykład z godzinami w formacie: 15:10. Testowanie
+prostego wyrażenia na stronie *Rubular*.
+Zadanie domowe: przeczytać ze strony manuala
+polecenia *grep* rozdział „REGULAR EXPRESSIONS”.
+W laboratorium należy wyjaśnić pozostałe przykłady z wykładu.
 
-Zmienne powłoki: *PATH*, *LANG_XX* (powtórka).
+Polecenie *diff*. Różne sposoby pokazywania
+różnic między plikami: standardowy, kontekstowy
+oraz unified. Info o programie *kdiff3* oraz
+o „three-way diff”.
+
+
+## 2.11.2009
+
+LaTeX.
+
+
+## 9.11.2009
+
+Skrypty.
