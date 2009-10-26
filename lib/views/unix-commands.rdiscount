@@ -483,7 +483,7 @@ Jeszcze jeden przykład z *xargs*:
 Polecenia *locate* i *updatedb*.
 
 
-## Polecenie diff
+## Polecenia *diff* i *patch*
 
 Tworzymy dwa pliki testowe:
 
