@@ -464,20 +464,23 @@ Proste przykłady:
     getconf ARG_MAX
     find /usr/include -type f | xargs grep POSIX_OPEN_MAX /dev/null
 
-Znajdź pliki puste lub nie otwierane od ponad roku:
-
-    :::shell-unix-generic
-    find . -size 0 -o -atime +365
-
 Więcej przykładów:
 
     :::shell-unix-generic
     find . -name "*.c" -print
     find . -mmin -5  # pliki modyfikowane w ostatnich 5 minutach 
     find . -mmin +5  # ?
-    find . -name "*.c" | xargs ls -l
 
-Polecenie *locate*.
+Znajdź pliki puste lub nie otwierane od ponad roku:
+
+    :::shell-unix-generic
+    find . -size 0 -o -atime +365
+
+Jeszcze jeden przykład z *xargs*:
+
+    find . -name "*.c" | xargs wc
+
+Polecenia *locate* i *updatedb*.
 
 
 ## Polecenie diff
