@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sp-tutorial}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wlodek Bzyl"]
-  s.date = %q{2009-10-09}
+  s.date = %q{2009-10-19}
   s.description = %q{Notatki do frameworka Rails3
 }
   s.email = %q{matwb@univ.gda.pl}
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "lib/public/doc/ex/sp_lab02_zad.odt",
      "lib/public/doc/ex/sp_lab03_zad.odt",
      "lib/public/doc/ex/sp_lab04_zad.odt",
+     "lib/public/doc/latexsheet.pdf",
      "lib/public/doc/survival.pdf",
      "lib/public/images/Thatll_Flat_Git_It_Vol_20.jpg",
      "lib/public/images/alan_kay.jpg",
@@ -76,6 +77,8 @@ Gem::Specification.new do |s|
      "lib/views/git.rdiscount",
      "lib/views/labs01.rdiscount",
      "lib/views/labs02.rdiscount",
+     "lib/views/labs03.rdiscount",
+     "lib/views/labs04.rdiscount",
      "lib/views/latex.rdiscount",
      "lib/views/layout.rdiscount",
      "lib/views/ll.rdiscount",

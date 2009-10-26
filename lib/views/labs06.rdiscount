@@ -1,0 +1,18 @@
+#### {% title "Laboratorium 6" %}
+
+# Laboratorium 6 (*grep*)
+
+1\. W pliku &bdquo;plik.txt&rdquo; znajdź wiersze zawierające co
+najmniej jeden znak.
+
+2\. Znajdź w plikach &bdquo;pl*&rdquo; wiersze rozpoczynające się od
+cyfry.
+
+3\. Znajdź pliki, w których na 9&nbsp;pozycji występuje litera
+&bdquo;r&rdquo;.
+
+4\. Policz, ilu użytkowników systemu używa powłoki bash (zgodnie
+z&nbsp;zapisami w pliku /etc/passwd).
+
+5\. Znajdź wiersze zawierające liczby rzymskie w pliku
+&bdquo;plik.txt&rdquo;.

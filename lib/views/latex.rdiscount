@@ -11,184 +11,97 @@
   <p class="author">— Donald E. Knuth</p>
 </blockquote>
 
-Na *Sigmie* zainstalowany jest system TeX z paczki *texlive*.
-Dokumentację do systemu można pobrać z serwera
-[Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
-
 System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
+Od tego czasu system jest stale rozwijany i udoskonalany.
 
-W pracowniach będziemy korzystać z najnowszej wersji 
-systemu TeX zawartej w „TeXLive 2009” z programem
-*xetex* w wersji 0.999.6. Do pracy z dokumentami 
-techowymi będziemy używać programu *TeXworks* w wersji
-co najmniej 0.1 (r.416).
+Co to jest TeX? Krótko: TeX jest systemem do składu dokumentów.
+Długo: [Najkrótsze wprowadzenie do systemu TeX](http://www.gust.org.pl/doc/tex_whatisit/).
 
+Skompilować jakiś dokument z [arXiv] [].
 
-## Konfiguracja TeX Live
+W systemie TeX znajdziemy około 300 różnych programów.
+Najważniejsze z nich to: latex, pdflatex, **xelatex**.
 
-TeX Live to ok. 35000 plików (razem, +1GB).
-Pliki te są umieszczone w drzewkach. Listę drzewek otrzymamy
-wykonując polecenie:
+Najważniejsze biblioteki do języka *TeX*:
 
-    /home/pracinf/wbzyl/.texlive2008/texmf-config,
-    /var/lib/texmf,
-    /home/pracinf/wbzyl/texmf, # tutaj trzymamy prywatne pliki
-    /etc/texlive,
-    /var/lib/texmf,
-    /usr/share/texmf,
-    /usr/share/texmf,  # bug! zamienić na texmf-local
-    /usr/share/texmf-dist
-
-(lista drzewek na na *Sigmie*).
-
-System TeX konfigurujemy edytując plik *texmf.cnf*.
-Plik ten odszukujemy w systemie w taki sposób:
-
-    kpsewhich texmf.cnf
-    /usr/share/texmf/web2c/texmf.cnf
-
-Zawartość tego pliku podejrzymy tak:
-
-    less $(kpsewhich texmf.cnf)
-
-### Instalacja TeXLive bezpośrednio z internetu
-
-Na stronie [TeX Live availability](http://www.tug.org/texlive/acquire.html)
-znajdziemy link do instalki systemu bezpośrednio z internetu
-„TeX Live installation over the Internet”:
-[Linux](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl-unx.tar.gz)
-[Windows](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl.zip).
-
-Po rozpakowaniu archiwum, uruchamiamy skrypt:
-
-    sudo ./install-tl
-
-i po chwili widzimy, że będziemy musieli czekać z tydzień, zanim
-zostaną ściągnięte wszystkie pakiety. Aby przyspieszyć instalację
-wymieniamy domyślnie ustawiony serwer z którego pobierane są pakiety:
-
-    sudo ./install-tl -location ftp://ftp.gust.org.pl/tex-archive/systems/texlive/tlnet/2008/tlpkg/
-
-Domyślne ustawienie drzewek techowych:
-
-    TEXDIR (the main TeX directory):
-      /usr/local/texlive/2008
-    TEXMFLOCAL (directory for site-wide local files):
-      /usr/local/texlive/texmf-local
-    TEXMFSYSVAR (directory for variable and automatically generated data):
-      /usr/local/texlive/2008/texmf-var
-    TEXMFSYSCONFIG (directory for local config):
-      /usr/local/texlive/2008/texmf-config
-    TEXMFHOME (directory for user-specific files):
-      ~/texmf
-
-### tlmgr – TeX Live package manager
-
-System uaktualniamy korzystając z programu 
-[tlmgr](http://www.tug.org/texlive/tlmgr.html):
-
-Kilka poleceń na dobry początek:
-
-    tlmgr update --all
-      Make your local TeX installation correspond to what 
-      is in the package repository (typically on CTAN).
-    tlmgr update --list
-      Report what would be updated without actually updating anything.
-    tlmgr show pkgname 
-      Display detailed information about pkgname, 
-      such as the installation status and description
-
-\([dokumentacja](http://www.tug.org/texlive/doc/tlmgr.html)\)
-
-
-<blockquote>
-  {%= image_tag "/images/bop.jpg", :alt => "[autorzy Latin Modern]" %}
-  <p class="center">od lewej: P.&nbsp;Strzelczyk, B. Jackowski, J.&nbsp;M. Nowacki</p>
-</blockquote>
-
-## Fonty Latin Modern 
-
-[Rodzina fontów Latin Modern w formacie OTF] [lm].
-Ręczna instalacja w systemie? Kopiujemy archiwum do drzewka
-*lokalnego* i tam je rozpakowujemy. Na koniec wykonujemy
-polecenie: `mktexlsr` (albo `texhash`).
-
-
-
-## Format *LaTeX*
-
-Format *LaTeX* jest najczęściej używaną biblioteką makr.
-Autorem tej biblioteki jest Leslie Lamport.
-
-Inne biblioteki to:
-
+* **latex**
 * *plain*
 * *eplain*
 * *context*
 
-Najciekawszym projektem jest *LuaTeX*.
+Biblioteka *LaTeX* (mówimy też format *LaTeX*) jest najczęściej
+używana.  Autorem tej biblioteki jest Leslie Lamport.
 
-Na zajęciach będziemy korzystać z programu *xetex*.
+Kilka zdań o rozszerzeniach w nazwach plików: 
+.tex, .sty, .pdf, .eps, .ps, .png, .jpg.
+
+
+Co będzie?
+
+* Dlaczego TeX?
+* Praca z programem *texworks*
+* Budowa typowego dokumentu latechowego
+* Rozszerzanie funkcjonalności latexa za pomocą 
+  dodatkowych bibliotek:
+   *  `\usepackage{hyperref}`
+   *  `\usepackage{graphics}`
+
+
+## Dlaczego TeX a nie… ?
+
+* [TeX Users Group] [tug] (*TUG*)
+* [Polska Grupa Użytkowników Systemu TeX] [gust] (*GUST*)
+* [arXiv.org e-Print archive] [arxiv] (*arXiv*)
+
+
+
+## Praca z programem *texworks*
+
+Cykl: edycja, kompilacja, podgląd. 
+
+Kod z błędami.
+
+Korzystamy z szablonów.
+
+    ~/.TeXworks/
+    ...
+    |-- templates
+    |   |-- Basic XeLaTeX documents         # miejsce na nasze szablony
+    |   |   |-- article-hyperref.tex
+    |   |   `-- article-bibliography.tex
+    |   |-- Basic LaTeX documents           # standardowe szablony
+    |   |   |-- article.tex
+    |   |   `-- letter.tex
+    |   |-- Beamer presentations
+    |   |   |-- conference-ornate-20min.en.tex
+    |   |   |-- generic-ornate-15min-45min.en.tex
+    |   |   `-- speaker_introduction-ornate-2min.en.tex
+    |   `-- XeLaTeX documents
+    |       `-- article-fontspec.tex
+    ...
+
+Konfigurujemy *texworks*. Gotowe szablony do pobrania:
+
+* {%= link_to "article-hyperref.tex", "/doc/templates/article-hyperref.tex" %}
+* {%= link_to "article-bibliography.tex", "/doc/templates/article-bibliography.tex" %}
+
+Na koniec dwie uwagi:
+
+1\. Na zajęciach będziemy korzystać z programu *xetex*.
 Program ten potrafi czytać pliki w kodowaniu UTF-8 
-(domyślne kodowanie na *Sigmie*) oraz 
-potrafi użyć każdy font zainstalowany w systemie.
+(domyślne kodowanie na *Sigmie*).
+
+2\. Program *xetex* potrafi użyć do składu każdy font 
+zainstalowany w systemie. Nie potrafi tego program *tex*.
 
 Listę zainstalowanych fontów otrzymamy wykonując polecenie:
 
     fc-list
 
-Aby zainstalować font kopiujemy plik z fontem do katalogu
-*~/.fonts* i wykonujemy polecenie:
+Aby zainstalować lokalnie nowy font kopiujemy plik 
+z fontem do katalogu *~/.fonts* i wykonujemy polecenie:
 
     fc-cache -v -f ~/.fonts
-
-
-<blockquote>
-  {%= image_tag "/images/marcin_wolinski.jpg", :alt => "[Marcin Woliński]" %}
-  <p class="center">Marcin Woliński</p>
-</blockquote>
-
-## Obłożenie klawiatury dla programisty
-
-„Starannie zaprojektowane obłożenie klawiatury, zapewniające dostęp do
-wszystkich potrzebnych symboli, jest istotnym elementem wygodnego
-środowiska pracy osoby zajmującej się składem tekstu. W wypadku TeX-a
-wiele symboli można uzyskać za pomocą poleceń, ale ponieważ powoli
-standardem kodowania tekstu staje się Unicode, tych znaków, które
-zostały uwzględnione w Unikodzie, wygodniej jest używać
-bezpośrednio. Oczywiście pod warunkiem, że nie wymaga to szukania
-znaków w «tablicy symboli».”
-Marcin Woliński. [Racjonalna polska klawiatura dla programisty i&nbsp;typografa] [mw keyboard].
-
-Opis instalacji dla Ubuntu (i dla Fedory) łatki ze strony autora.
-
-W terminalu przejść do katalogu */usr/share/X11/xkb/*:
-
-    cd /usr/share/X11/xkb/
-
-Nałożyć pobraną łatę na pliki definicyjne klawiatury poleceniem *patch*:
-
-    sudo patch -b -p1 < ...ścieżka/do/mwplkeyb.ubuntu9.04.diff
-
-Dla bezpieczeństwa można najprzód wykonać powyższe polecenie na próbę:
-
-    patch --dry-run -b -p1 < ...ścieżka/do/mwplkeyb.ubuntu9.04.diff
-
-i dopiero jeśli odpowie, że może z powodzeniem nałożyć wszystkie
-łatki, wykonać polecenie powyżej.
-
-Uaktywnić ten układ klawiatury w sposób właściwy dla danego środowiska
-graficznego. W GNOME można go wyklikać z menu 
-
-    System ↦ Preferencje ↦ Klawiatura 
-      Układy ↦ Dodaj ↦ Kraj: Polska, Wariant: «International (with dead keys)». 
-
-Z terminala można aktywować nasz układ klawiatury dla bieżącej sesji poleceniem:
-
-    setxkbmap 'pl(intl)'
-
-Dla trwałego efektu trzeba by je dodać do jakiegoś skryptu
-inicjującego sesję X Window.
 
 
 <blockquote>
@@ -196,22 +109,19 @@ inicjującego sesję X Window.
   <p class="center">Jonathan Kew autor XeTeX-a</p>
 </blockquote>
 
-## Przykładowy dokument w formacie LaTeX
+## Budowa typowego dokumentu latechowego
 
-Dokument pokazuje jak zmienić wielkość fontu, jak ustawić rozmiar strony,
-jak zmienić font. Kompilujemy go tak:
-
-    xelatex xarticle.tex
-
-A to zawartość tego przykładowgo dokumentu *xarticle.tex*:
+Szablon *article-hyperref.tex* pokazuje jak zmieniać wielkość fontu,
+jak ustawia się rozmiar strony, jak zmieniać font,
+jak wstawić spis treści (aby się złożył musimy 
+dwukrotnie skompilować dokument).
 
     :::latex
     % !TEX TS-program = xelatex
     % !TEX encoding = UTF-8
     
-    % Przykładowy szablon dokumentu XeLaTeX 
-    % korzystajacego z klasy „article” oraz pakietu 
-    % „fontspec” ułatwiającego wybieranie fontów.
+    % Szablon dokumentu:
+    % XeLaTeX + klasa article + pakiet hyperref
     
     \documentclass[12pt]{article} % domyślne 10pt jest za małe
     
@@ -223,40 +133,44 @@ A to zawartość tego przykładowgo dokumentu *xarticle.tex*:
     \setmainfont{DejaVu Serif} % zmień font na „DejaVu Serif”
                                % font powinien byc zainstalowany w systemie?
 
-    \usepackage{geometry} % zobacz „geometry.pdf”
+    \usepackage{geometry} % dokumentacja „geometry.pdf”
     \geometry{a4paper}
+
+    \usepackage{hyperref} % wstaw odsyłacze
     
     \usepackage{graphicx} % polecenie \includegraphics, dokumentacja „epslatex.pdf”
     
     \usepackage[polish]{polyglossia} % najważniejszy pakiet
     
-    \title{Krótki tytuł}
+    \title{Historia mojej rodziny}
     \author{Hieronim Brzęczyszczykiewicz}
     %\date{} % odkomentuj aby usunąć datę lub wstaw jakąś datę między {}
              % jeśli tego nie zrobisz będzie drukowana aktualna data
     
     \begin{document}
     \maketitle % drukuj tytuł
+
+    \tableofcontents % drukuj spis treści
     
     \section{Pierwsza sekcja}
  
     Akapity oddzielamy
 
-    \em{pustym wierszem}.
+    pustym wierszem.
     
     \subsection{Pierwsza podsekcja}
     
-    Nieco tekstu…
+    Więcej tekstu.
     
     \end{document}
 
-Wpisując tekst w powinniśmy zwrócić uwagę, że LaTeX rezerwuje
-niektóre ze znaków:
+Wpisując swój tekst w powinniśmy zwrócić uwagę na to, 
+że LaTeX rezerwuje te znaki do swoich celów:
 
     %   $   #   &   \   {   }   ^   _   ~
 
 Są to tzw. *znaki specjalne*. Jeśli chcemy wydrukować
-te znaki, to wklepujemy je odpowiednio jako
+któryś z tych znaków, to wklepujemy odpowiednio:
 
     \%  \$  \#  \& 
 
@@ -264,167 +178,75 @@ Poniższe cztery znaki
 
     "   |   <   >
 
-też są znakami specjalnymi. Jeśli je wpiszesz, to zostaną wydrukowane
-zupełnie inne znaki.
+też są znakami specjalnymi. Jeśli je wpiszesz, 
+to zostaną wydrukowane zupełnie inne rzeczy.
 
 
-## Więcej LaTeX-a
+## Bibliografia albo Literatura
 
-Teraz pora na bardziej skomplikowany dokument pkazujący jak wstawiać obrazki,
-tabelki, listy wypunktowane, jak wpisywać matematykę, 
-jak przygotowywać bibliografię. Plik *pracka.tex* zawierający
-wszystkie te rzeczy kompilujemy w taki sposób (4 przebiegi):
-
-    xelatex pracka
-    bibtex pracka
-    xelatex pracka
-    xelatex pracka
-
-A to zawartość tego pliku:
+Teraz przyjrzymy się bardziej skomplikowanemu dokumentowi.
+Pokazuje on jak przygotowywać bibliografię w systemie LaTeX.
 
     :::latex
     % !TEX TS-program = xelatex
     % !TEX encoding = UTF-8 Unicode
     
     \documentclass[12pt]{article}
-    
     \usepackage{geometry}
     \geometry{a4paper}
-
-    % Tak zmieniamy fonty, kiedy korzystamy z programu TeX + format LaTeX
-    %\usepackage{lmodern}    % domyślna rodzina fontów to Latin Modern
-    \usepackage{euler}      % zmień fonty matematyczne na Euler
-
-    % Tak zmieniamy fonty, kiedy korzystamy z programu XeTeX + format LaTeX    
+    
     \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \setmainfont{TeX Gyre Schola} % URW Century Schoolbook L from TeX Gyre collection
-    % fc-list | egrep "TeX Gyre Schola"
-    % TeX Gyre Schola:style=Bold
-    % TeX Gyre Schola:style=Italic
-    % TeX Gyre Schola:style=Bold Italic
-    % TeX Gyre Schola:style=Regular
-    %
-    % albo tak
-    \setromanfont[Mapping=tex-text]{TeX Gyre Schola}
-    \setsansfont[Mapping=tex-text]{Myriad Pro}
-    \setmonofont{DejaVu LGC Sans Mono}
-
-    \usepackage{xunicode}   % akcentowane znaki / … / „ / ” / – / —
-    \usepackage{xltxtra}    % XeTeX logo
-    
     \usepackage{hyperref}
-    \usepackage{color}
-    \usepackage{url}
-    \usepackage{graphicx}   % polecenie \includegraphics
-    
-    \usepackage[polish]{polyglossia}  % najważniejszy pakiet
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    \usepackage{url}  % do przełamywania url
+    \usepackage[polish]{polyglossia}
     
     \bibliographystyle{unsrt}
     
-    \title{\color{red}{Przykładowy dokument w formacie \LaTeX}}
-    \author{Anonim \and Minoma}
-    \date{\color{blue}{Styczeń 2004}}
+    \title{Bibliografia do przedmiotu\\,,Środowisko Programisty''}
+    \author{Włodzimierz Bzyl}
+    \date{20 października 2009}
     
     \begin{document}
+    \maketitle
+    \tableofcontents
     
-      \maketitle
-      \tableofcontents
-      \listoffigures
-      \listoftables
+    \section{Podstawy}\label{sec:basics}
     
-    \section{Podstawy}\label{sec:podstawy}
-    Książka ,,Sekunda komputera'' przedstawia to, co komputer
-    robi w~ciągu jednej sekundy -- taki jest \emph{bynajmniej} główny
-    kierunek rozważań.
-
-    Uwaga: akapity odzielamy \textit{pustym wierszem}.
+    W fontach maszynowych, ang. \emph{monospaced fonts},
+    wszystkie znaki mają taką samą  szerokość. Za pomocą takich 
+    fontów składane są listingi lub kod programów.
     
-    \section{Otoczenie verbatim}\label{sec:verbatim}
+    \section{Poziom średnio zaawansowany}\label{sec:intermediate}
     
-    W fontach maszynowych wszystki znaki mają taką samą
-    szerokość. Za pomocą takich fontów składane
-    są listingi lub kod programów, na przykład
-     
-    \begin{verbatim}
-    $ fc-list | egrep "TeX Gyre Schola"
-    TeX Gyre Schola:style=Bold
-    TeX Gyre Schola:style=Italic
-    TeX Gyre Schola:style=Bold Italic
-    TeX Gyre Schola:style=Regular
-    \end{verbatim}
-        
-    \section{Matematyka}\label{sec:wzory}
-    Ten wzór wszyscy znają: \(2+2=4\), a~ten jest znany tylko
-    niektórym: \[ e^{2\pi i}=-1 \] Oba wzory wpisujemy w prosty
-    sposób z~klawiatury: \verb|\(2+2=4\)| oraz
-    \begin{verbatim}
-    \[ e^{2\pi i}=-1 \]
-    \end{verbatim}
+    W książce ,,\LaTeX\ Web Companion'' opisano
+    format \LaTeX\ i podstawowe pakiety do niego.
     
-    \section{Więcej matematyki}
-    Kilka wzorów ze strony~\cite{jsMath.examples}:
+    \section{Rzeczy zaawansowane}\label{sec:advanced}
     
-    \[ 
-      \int_0^1 f(x)\,dx = 1 
-    \]
-    \[ 
-      {n\choose k} \equiv {\lfloor n/p\rfloor \choose \lfloor k/p\rfloor}
-         {{n\bmod p} \choose {k\bmod p}} \pmod p
-    \]
-    \[
-      A = \pmatrix{x-\lambda & 1 & 0\cr
-                     0 & x-\lambda & 1\cr
-                     0 & 0 & x-\lambda\cr}
-       \qquad\qquad
-      \left\lgroup\matrix{a&b&c\cr d&e&f}\right\rgroup
-      \left\lgroup\matrix{u&x\cr v&y\cr w&z}\right\rgroup
-    \]
+    DocBookXsl jest ciekawym projektem. Więcej na ten temat
+    można poczytać w~\cite{wiki.docbookxsl}.
     
-    \section{Listy}\label{sec:ksiazki}
-    Inne pozycje o których wspomniano w~[\ref{sec:podstawy}] to:
-    \begin{enumerate}
-    \item ,,The Twenty First Century'';
-    \item ,,The Upside-Down Evolution''. 
-    \end{enumerate}
+    Do konwersji dokumentu z formatu latex na html najlepszym narzędziem
+    jest~\cite[uwaga, system szuka nowego opiekuna]{Gurari.TeX4ht}.
     
-    \section{Ilustracje}\label{sec:ilustracje}
+    O fontach maszynowych już było na stronie~\pageref{sec:basics}.
     
-    Ilustracja o której mowa w tym rozdziale znajduje się u góry
-    strony~\cite{wiki.docbookxsl}.
-    \begin{figure}
-    \caption{Całkowita wariacja (wg Bull 2004, s.~44)}
-    \label{fig:wariacje}
-    \begin{center}
-    \includegraphics[width=.75\textwidth]{diagram}
-    \end{center}
-    \end{figure}
-    
-    \section{Tabelki}\label{sec:tabelki}
-    
-    Tabelka o której mowa w tym rozdziale znajduje się u góry
-    strony.
-    \begin{table}
-    \caption{Wydatki}
-    \label{tab:wydatki}
-    \begin{center}
-    \begin{tabular}{clr}
-      &Pozycja&Kwota\\
-    \hline
-    1.&Opłaty&2,000\\
-      &Oprogramowanie&500\\
-    2.&Światło&1,000\\
-    \cline{3-3}
-      &Razem&3,500
-    \end{tabular}
-    \end{center}
-    \end{table}
-    
-    \bibliography{pd}
+    \bibliography{sp}
     
     \end{document}
 
-Plik z bibliografią *pd.bib*:
+Powyższy kod, po zapisaniu w pliku kompilujemy w taki sposób:
+
+    xelatex pracka
+    bibtex pracka
+    xelatex pracka
+    xelatex pracka
+
+Potrzebne są 4 przebiegi. Dlaczego?
+
+Plik z bibliografią użyty powyżej, *sp.bib*:
 
     :::bibtex
     @Book{Goossens.lwc,
@@ -462,37 +284,149 @@ Plik z bibliografią *pd.bib*:
       year         = 2009,
     }
 
+Uwagi: 
 
-## I-Ching
-
-Ściągamy mój pakiet [I-ching Divinations] [i-ching].
-Instalujemy go i poprawiamy skrypt *dod.sh*, tak
-aby korzystał z fontów PFB (a nie z fontów PK).
-
-Teraz uruchamiamy skrypt i po jego wykonaniu oglądamy wróżbę:
-
-    gv your-divination.ps
-
-Skrypt *dod.sh* korzysta z programu *tex*.
-Czy zamiast programu *tex* można użyć programu *xetex*?
+* polecenie *\ref{marker}* drukuje liczbę generowaną przez 
+  polecenie *\label{marker}*;
+  jest to zwykle numer rozdziału, obrazka, równania, lub tabelki
+* polecenie *\pageref{marker}* drukuje numer strony na której
+  umieszczono *\label{marker}*
+* *\cite[note]{key}* wypisuje odpowiedni numer z bibliografii
+  z opcjonalna notką.
 
 
-## Pandoc
+## Korzystamy z pakietów: polecenie \usepackage
 
-[Cytat] [pandoc]: „Pandoc is a Haskell library for converting from one markup
-format to another, and a command-line tool that uses this library. It
-can read markdown and (subsets of) reStructuredText, HTML, and LaTeX,
-and it can write markdown, reStructuredText, HTML, LaTeX, ConTeXt,
-PDF, RTF, DocBook XML, OpenDocument XML, ODT, GNU Texinfo, MediaWiki
-markup, groff man pages, and S5 HTML slide shows.”
+Na koniec ,,groch z kapustą'', czyli wstawianie obrazków,
+tabelek, korzystanie z koloru, notacja do wpisywania matematyki...
+
+    :::latex
+    % !TEX TS-program = xelatex
+    % !TEX encoding = UTF-8 Unicode
+    
+    \documentclass[12pt]{article}
+    
+    \usepackage{geometry}
+    \geometry{a4paper}
+
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    %\setmainfont{Lucida}
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    \usepackage{hyperref}
+    \usepackage{color}
+    \usepackage{url}
+    \usepackage{graphicx} % polecenie \includegraphics
+    
+    \usepackage[polish]{polyglossia}
+    
+    \title{\color{red}{Grafika, tabelki...}}
+    \author{Włodzimierz Bzyl}
+    \date{\color{blue}{20 października 2009}}
+    
+    \begin{document}
+    
+      \maketitle
+      \tableofcontents
+      \listoffigures
+      \listoftables
+    
+    \section{Podstawy}\label{sec:podstawy}
+    Książka ,,Sekunda komputera'' przedstawia to, co komputer
+    robi w~ciągu jednej sekundy -- taki jest \emph{bynajmniej} główny
+    kierunek rozważań.
+    
+    \section{Otoczenie verbatim}\label{sec:verbatim}
+    
+    W otoczeniu \emph{verbatim} umieszczamy kod programu,
+    wynik wykonania polecenia powloki itp.
+    \begin{verbatim}
+    $ fc-list | egrep "TeX Gyre Schola"
+    TeX Gyre Schola:style=Bold
+    TeX Gyre Schola:style=Italic
+    TeX Gyre Schola:style=Bold Italic
+    TeX Gyre Schola:style=Regular
+    \end{verbatim}
+        
+    \section{Matematyka}\label{sec:wzory}
+    Ten wzór wszyscy znają: \(2+2=4\), a~ten jest znany tylko
+    niektórym: \[ e^{2\pi i}=-1 \] 
+    Oba wzory wpisujemy w prosty sposób z~klawiatury: 
+    \verb|\(2+2=4\)| oraz
+    \begin{verbatim}
+    \[ e^{2\pi i}=-1 \]
+    \end{verbatim}
+    
+    \section{Więcej matematyki}
+    Jeszcze kilka wzorów:
+    \[ 
+      \int_0^1 f(x)\,dx = 1 
+    \]
+    \[ 
+      {n\choose k} \equiv {\lfloor n/p\rfloor \choose \lfloor k/p\rfloor}
+         {{n\bmod p} \choose {k\bmod p}} \pmod p
+    \]
+    \[
+      A = \pmatrix{x-\lambda & 1 & 0\cr
+                     0 & x-\lambda & 1\cr
+                     0 & 0 & x-\lambda\cr}
+       \qquad\qquad
+      \left\lgroup\matrix{a&b&c\cr d&e&f}\right\rgroup
+      \left\lgroup\matrix{u&x\cr v&y\cr w&z}\right\rgroup
+    \]
+    
+    \section{Ilustracje}\label{sec:ilustracje}
+    
+    Fajna ilustracja:
+    \begin{figure}
+      \caption{Całkowita wariacja}
+      \label{fig:wariacje}
+      \begin{center}
+      \includegraphics[width=.75\textwidth]{diagram}
+      \end{center}
+    \end{figure}
+    
+    \section{Tabelki}\label{sec:tabelki}
+    
+    Moje wydatki umiesciłem w~tabelce:
+    \begin{table}
+    \caption{Wydatki}
+    \label{tab:wydatki}
+    \begin{center}
+    \begin{tabular}{clr}
+      &Pozycja&Kwota\\
+    \hline
+    1.&Książki&2,000\\
+      &Oprogramowanie&500\\
+    2.&Prąd&1,000\\
+    \cline{3-3}
+      &Razem&3,500
+    \end{tabular}
+    \end{center}
+    \end{table}
+    
+    \end{document}
+
+Uwaga: brakujący obrazek *diagram* przygotować w trakcie wykładu:
+
+* korzystając z programu *inkscape*
+* wstawić jakąś grafikę pobraną z internetu
+
+### Inkscape
+
+Z manuala: „Inkscape − an SVG (Scalable Vector Graphics) editing program.”
+Od siebie dodam, że program jest łatwy w obsłudze,
+a obejrzenie kilku tutoriali ze strony
+[Inkscape tutorials for the novice artist](http://screencasters.heathenx.org/)
+powinno przekonać do programu niedowiarków.
 
 
 #### Linki
 
+[gust]: http://www.gust.org.pl "GUST"
 [gust doc]: http://www.gust.org.pl/doc "Dokumentacje — GUST"
-[lm]: http://www.gust.org.pl/projects/e-foundry/latin-modern/download "Latin Modern collection"
-[mw keyboard]: http://marcinwolinski.pl/keyboard/ "Racjonalna polska klawiatura dla programisty…"
 
-[i-ching]: http://www.ctan.org/tex-archive/fonts/psfonts/i-ching/ "I-Ching Divinations" 
+[tug]: http://www.tug.org/ "TUG"
 
-[pandoc]: http://johnmacfarlane.net/pandoc/ "Pandoc"
+[arxiv]: http://arxiv.org/ "arXiv.org"

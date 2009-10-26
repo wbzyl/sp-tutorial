@@ -28,6 +28,7 @@ Notatki do frameworka Rails3
   
     gemspec.rubyforge_project = 'sp-tutorial'
   end
+  Jeweler::GemcutterTasks.new  
 rescue LoadError
   puts "Jeweler not available."
   puts "Install it with:"

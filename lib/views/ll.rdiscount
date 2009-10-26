@@ -73,6 +73,17 @@ Trochę o repozytoriach gita, błędach
 początkujących etc. Jak umieścić swoją
 zmienioną wersję na *github.com*.
 
-Zmienna powłoki: *PATH*
+Powtórka, dużo przykładów do „Przetrwać z uniksem”.
 
-Wyrażenia regularne: *egrep*. Programy *find* i *diff*.
+Tymczasowy URL strony:
+
+    http://sigma.inf.ug.edu.pl:8002/
+
+
+## 26.10.2009
+
+Programy *find* i *diff*.
+
+Wyrażenia regularne: *egrep*. 
+
+Zmienne powłoki: *PATH*, *LANG_XX* (powtórka).

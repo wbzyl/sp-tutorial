@@ -21,6 +21,7 @@ w komputerze tak się Wam spodobał.
 1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
 1. {%= link_to "Git jest git", "/git" %}
 1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/unix-guru" %}
+1. {%= link_to "TeXLive i inne różne rzeczy", "/texlive" %}
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
 
 Różne rzeczy:
@@ -28,6 +29,7 @@ Różne rzeczy:
 * {%= link_to "Wykłady", "/ll"%}
 * {%= link_to "Ćwiczenia", "/exercises" %}
 * {%= link_to "Odpowiedzi", "/answers" %}
+* {%= link_to "Blogi studentów", "/blogs" %}
 
 
 ## Terminy kolejnych wykładów

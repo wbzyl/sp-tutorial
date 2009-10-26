@@ -3,6 +3,7 @@
 @font-face {
   font-family: "Cyklop"; 
   src: url(fonts/Cyklop-Regular.otf) format("opentype");
+  font-weight: normal;
 }
  
 @font-face {
@@ -79,10 +80,10 @@ a[href$=".rdf"], a[href^="aim:"] {
 }
 
 h1 {
-  font-weight: normal;
   font-size: 160%;
   font-family: "Cyklop", "DejaVu Sans", serif;
   font-style: italic;
+  font-weight: normal;
   color: #D80000;
   padding-top: 16px;
   padding-bottom: 16px;
