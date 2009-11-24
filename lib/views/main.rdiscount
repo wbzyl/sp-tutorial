@@ -32,11 +32,6 @@ Różne rzeczy:
 * {%= link_to "Blogi studentów", "/blogs" %}
 
 
-## Terminy kolejnych wykładów
-
-* Listopad: 2, 9, 16.
-
-
 ## Literatura
 
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.

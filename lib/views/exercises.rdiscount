@@ -62,12 +62,6 @@ Zadania do wykonania w laboratorium:
 Laboratoria 14, 15.
 
 
-## TODO
-
-* Laboratoria 8, 9 (skrypty)
-* LaTeX: Laboratorium 11
-
-
 # Zadania opisowe
 
 Rozwiązania zadań opisowych należy umieścić na swoim blogu.
@@ -86,7 +80,7 @@ no i data będzie też inna.
 rozpoznawanych przez program *egrep*.
 
 
-## Bash
+## Grep
 
 1\. Wymyśl dwa zadania używające polecenia *egrep* i&nbsp;nietrywialne
 wyrażenie regularne.
