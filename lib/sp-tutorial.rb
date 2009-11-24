@@ -19,7 +19,7 @@ require 'sinatra/static_assets'
 module WB
   class SPTutorial < Sinatra::Base
     helpers Sinatra::UrlForHelper
-    helpers Sinatra::StaticAssets
+    register Sinatra::StaticAssets
 
     # disable overriding public and views dirs
     set :app_file, __FILE__
