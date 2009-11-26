@@ -18,7 +18,7 @@ Sprawdzamy gdzie w systemie został zainstalowany gem *sp-tutorial*:
 
 Przechodzimy do tego katalogu i uruchamiamy aplikację:
 
-<pre>rackup /<i> ścieżka do katalogu z gemem </i>/lib/config.ru -p 8008
+<pre>rackup /«<i>ścieżka do katalogu z gemem</i>»/lib/config.ru -p 8008
 </pre>
 
 Po uruchomieniu aplikacja jest dostępna z URL:
