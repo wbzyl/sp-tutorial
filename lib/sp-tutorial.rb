@@ -2,12 +2,11 @@
 
 # Zobacz przykład: http://gist.github.com/38605
 
-gem 'rdiscount'
-gem 'sinatra'
-gem 'wbzyl-sinatra-rdiscount'
-
-gem 'emk-sinatra-url-for'
-gem 'sinatra-static-assets'
+#gem 'rdiscount'
+#gem 'sinatra'
+#gem 'sinatra-rdiscount'
+#gem 'emk-sinatra-url-for'
+#gem 'sinatra-static-assets'
 
 require 'rdiscount'
 require 'sinatra/base'
