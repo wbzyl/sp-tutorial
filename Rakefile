@@ -31,5 +31,5 @@ Notatki do frameworka Rails3
 rescue LoadError
   puts "Jeweler not available."
   puts "Install it with:"
-  puts "  sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+  puts "  sudo gem install jeweler -s http://gemcutter.com"
 end
