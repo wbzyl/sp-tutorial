@@ -14,4 +14,13 @@
 pokazującym podstawowe możliwości każdego z pakietów:
 
 * *graphicx* (dokumentacja *epslatex.pdf*)
-* *floatlft* albo *photo* (pływające wstawki) 
+* [floatlft][] albo [photo] (pływające wstawki) 
+
+Zobacz też artykuł w Wikipedii 
+[LaTeX/Floats, Figures and Captions](http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions).
+
+3\. [Jeopardy!][jeopardy]
+
+[floatlft]: http://tug.ctan.org/tex-archive/macros/latex/contrib/floatflt/
+[photo]: http://tug.ctan.org/tex-archive/macros/latex/contrib/photo/
+[jeopardy]: http://tug.ctan.org/tex-archive/macros/latex/contrib/jeopardy/
