@@ -353,6 +353,7 @@ Edytory ASCII i non-ASCII. [Emacs kontra Vi] [wojny edytorowe].
 
 Użyteczne linki:
 
+* [emacs-fu](http://emacs-fu.blogspot.com/)
 * [A Guided Tour of Emacs] [emacs-tour]
 * {%= link_to "Skróty klawiszowe edytora Emacs", "/doc/survival.pdf" %}
 * [Emacs Wiki] [emacs-wiki]
