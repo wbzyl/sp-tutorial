@@ -1,41 +1,42 @@
 # Środowisko Programisty
 
-Gem zawierający notatki do wykładu z „Środowiska Programisty”.
+Gem zawierający notatki do wykładu „Środowisko Programisty”.
 
-### Instalacja
+
+## Instalacja
 
 Wykonać polecenie:
 
     gem install sp-tutorial -s http://gemcutter.org
 
 
-### Zależności
+## Uruchamianie
 
-*sp-tutorial* zależy od następujących gemów, 
-które należy zainstalować:
-
-* rack 
-* sinatra
-* rdiscount
-* wbzyl-sinatra-rdiscount    
-* rack-codehighlighter
-* ultraviolet
-
-### Uruchamianie
-
-Sprawdzamy gdzie w systemie został zainstalowany gem *sp-ii*:
+Sprawdzamy gdzie w systemie został zainstalowany gem *sp-tutorial*:
 
     gem which sp-tutorial
 
-Przechodzimy do tego katalogu i uruchamiamy aplikację:
+Aplikację uruchamiamy w takis sposób:
 
-    thin --rackup config.ru -p 3000 start
+<pre>rackup /«<i>ścieżka do katalogu z gemem</i>»/lib/config.ru -p 8008
+</pre>
+
+Na przykład:
+
+    rackup rackup /usr/lib/ruby/gems/1.8/gems/sp-tutorial-0.3.0/lib/config.ru -p 8008
 
 Po uruchomieniu aplikacja jest dostępna z URL:
 
-    http://localhost:3000/
+    http://localhost:8008/
 
-## TODO
 
-Dopisać kilka scenariuszy, 
-podobnych do [GitUsage](http://biopython.org/wiki/GitUsage).
+## Zależności
+
+*sp-tutorial* zależy od następujących gemów:
+
+* rack 
+* sinatra
+* ultraviolet
+* rdiscount
+* sinatra-rdiscount    
+* rack-codehighlighter

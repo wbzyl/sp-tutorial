@@ -1,6 +1,0 @@
-
-Tagging:
-
-  git tag -a -m "tagging version 0.1.0" 0.1.0
-  git push --tags
-
