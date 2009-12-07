@@ -14,4 +14,6 @@
 pokazującym podstawowe możliwości każdego z pakietów:
 
 * *graphicx* (dokumentacja *epslatex.pdf*)
-* *floatlft* albo *photo* (pływające wstawki) 
+* *floatlft* albo *photo* (pływające wstawki)
+  albo coś prostego 
+  [*wrapfigure*](http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
