@@ -58,7 +58,7 @@ i po chwili widzimy, że będziemy musieli czekać z tydzień, zanim
 zostaną ściągnięte wszystkie pakiety. Aby przyspieszyć instalację
 wymieniamy domyślnie ustawiony serwer z którego pobierane są pakiety:
 
-    sudo ./install-tl -location ftp://ftp.gust.org.pl/tex-archive/systems/texlive/tlnet/2008/tlpkg/
+    sudo ./install-tl -location ftp://ftp.gust.org.pl/tex-archive/systems/texlive/tlnet/tlpkg/
 
 Domyślne ustawienie drzewek techowych w TeXLive:
 
