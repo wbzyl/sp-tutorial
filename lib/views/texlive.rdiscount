@@ -47,8 +47,8 @@ Zawartość tego pliku podejrzymy tak:
 Na stronie [TeX Live availability](http://www.tug.org/texlive/acquire.html)
 znajdziemy link do instalki systemu bezpośrednio z internetu
 „TeX Live installation over the Internet”:
-[Linux](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl-unx.tar.gz)
-[Windows](http://mirror.ctan.org/systems/texlive/tlnet/2008/install-tl.zip).
+[Linux](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz)
+[Windows](http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip).
 
 Po rozpakowaniu archiwum, uruchamiamy skrypt:
 
