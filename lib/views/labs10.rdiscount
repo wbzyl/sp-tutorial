@@ -13,8 +13,10 @@
 2\. Przygotować po jednym dokumencie (1–2 strony wydruku) 
 pokazującym podstawowe możliwości każdego z pakietów:
 
-* *graphicx* (dokumentacja *epslatex.pdf*)
-* [floatlft][] albo [photo] (pływające wstawki) 
+* grafika: *graphicx* (dokumentacja *epslatex.pdf*)
+* pływające wstawki:
+  [*wrapfigure*](http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
+  (podstawowa funkcjonalność) [floatlft][] albo [photo] (więcej możliwości).
 
 Zobacz też artykuł w Wikipedii 
 [LaTeX/Floats, Figures and Captions](http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions).
