@@ -1,0 +1,234 @@
+#### {% title "Bash w przykładach" %}
+
+<!-- opracował Robert Fidytek -->
+
+# Bash w przykładach
+
+<blockquote>
+  {%= image_tag "/images/algorithm.png", :alt => "[Rozwiązanie…]" %}
+</blockquote>
+
+1\. Podaj przykład skryptu wykorzystującego zmienne i
+zmienne środowiskowa np. $USER, $PWD, $HOME.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo "Czesc $USER"
+    echo "twoj aktualny katalog to $PWD"
+    zmienna="a to twoj katalog domowy to $HOME"
+    echo $zmienna
+    echo "nazwa twojego hosta to: $HOSTNAME"
+    echo "korzystasz z systemu operacyjnego: $OSTYPE"
+    zmienna2=$(pwd)
+    echo "\"Ciapki\" – przyklad: $zmienna2"
+    exit 0
+
+2\. Podaj przykład skryptu korzystującego ze zmiennych
+specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo "Nazwa biezacego skryptu: $0"
+    echo "Pierwszy przekazany parametr do skryptu: $1"
+    echo "Drugi przekazany parametr do skryptu: $2"
+    echo "..."
+    echo "Dziewiaty przekazany parametr do skryptu: $9"
+    #separatorem będzie spacja
+    echo "Skrypt uruchomiono z parametrami: $@"
+    #separator okresla zmienna $IFS
+    echo "Skrypt uruchomiono z parametrami: $*"
+    echo "Kod powrotu ostanio wykonywanego polecenia: $?"
+    echo "PID procesu biezacej powloki: $$"
+    exit 0
+
+3\. Podać przykład skryptu korzystającego z tablic 
+(Użyj declare, unset, *, @, # ).
+
+    :::shell-unix-generic
+    owoc[0]="jablko"
+    owoc[1]="gruszka"
+    owoc[2]="sliwka"
+    owoc[3]="wisnia"
+    echo "Pierwszy element tablicy owoc to: ${owoc[0]}"
+    echo "Wszystkie elementy tablicy owoc to: ${owoc[*]}"
+    echo "Wszystkie elementy tablicy owoc to: ${owoc[@]}"
+    echo "Drugi element tablicy owoc ma ${#owoc[1]} znakow"
+    echo "Tablica owoc ma ${#owoc[*]} elementy"
+    imie=(Jola Ania Kasia Basia Magda)
+    echo "Wszystkie elementy tablicy imie to: ${imie[@]}"
+    unset imie  # usuniecie tablicy
+    echo "Tablica imie ma ${#imie[*]} elementow"
+    tab1=(`cat /etc/passwd`)
+    echo "Tablica tab1 ma ${#tab1[*]} elementow"
+    declare tab2=(`cat /etc/passwd`)
+    echo "Tablica tab2 ma ${#tab2[*]} elementow"
+    exit 0
+
+4\. Napisać skrypt obliczający sumę, różnicę i iloczyn dwóch
+wczytanych liczb całkowitych. (Użyj polecenia read.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo -n "Podaj pierwsza liczbe: "
+    read liczba1
+    echo -n "Podaj druga liczbe: "
+    read liczba2
+    echo
+    suma=$[liczba1 + liczba2] #1 sposob
+    echo "Suma liczb wynosi: $suma"
+    roznica=$((liczba1-liczba2)) #2 sposob
+    echo "Roznica liczb wynosi: $roznica"
+    let iloczyn=liczba1*liczba2 #3 sposob
+    echo "Iloczyn liczb wynosi: $iloczyn"
+    iloraz=$[liczba1/liczba2]
+    echo "Iloraz liczb wynosi: $iloraz" #czesc calkowita
+    modulo=$[liczba1%liczba2]
+    echo "Modulo liczb wynosi: $modulo" #reszta
+    exit 0
+
+5\. Napisać skrypt sprawdzający, czy w katalogu głównym użytkownika
+istnieje plik *.bashrc*. (Użyj instrukcji warunkowej if.)
+
+    :::shell-unix-generic
+    if [ -e ~/.bashrc ]
+    # lub rownowaznie: if test -e ~/.bashrc
+    then echo "Masz plik .bashrc"
+    else echo "Nie masz pliku .bashrc"
+    fi
+    exit 0
+
+Krótka ściąga z pozostałych warunków:
+
+    -d plik, plik jest katalogiem
+    -e plik, plik istnieje
+    -f plik, plik jest plikiem regularnym
+    -g plik, plik ma przypisany set-gropu-id
+    -r plik, plik daje się odczytac
+    -s plik, plik ma niezerowy rozmiar
+    -u plik, plik ma przypisany set-user-id
+    -w plik, plik można edytowac (można pisac))
+    -x plik, plik wykonywalny
+
+6\. Napisać skrypt pytający się czy już jest wieczór. Dla odpowiedzi
+„tak” powinien wypisać „Dobry wieczor”, dla odpowiedzi „nie” – 
+„Dzien dobry”, dla pozostałych odpowiedzi „Nie rozpoznana odpowiedz: ” 
+i przytoczyć treść odpowiedzi. (Użyj instrukcji warunkowej if-elif.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo -n "Czy jest wieczor? Odpowiedz tak lub nie: "
+    read odp
+    if [ "$odp" = "tak" ]
+    then echo "Dobry wieczor"
+    elif [ "$odp" = "nie" ]
+    then echo "Dzien dobry"
+    else
+      echo "Nie rozpoznana odpowiedz: $odp"
+      exit 1
+    fi
+    exit 0
+
+Jeszcze jedna ściąga:
+
+    ciag, ciag jest niepusty
+    ciag1=ciag2, ciagi sa jednakowe
+    ciag1!=ciag2, ciagi nie sa rowne
+    -n ciag, ciag nie jest NULL
+    -z ciag, ciag jest NULL (pusty)
+
+7\. Napisać skrypt pobierający numer dnia tygodnia i wypisujący jego
+nazwę lub informację „Nie rozumiem”. (Użyj polecenia read i
+instrukcji warunkowej case.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo "Podaj numer dnia tygodnia: "
+    read dzien
+    case "$dzien" in
+      "1") echo "poniedzialek" ;;
+      "2") echo "wtorek" ;;
+      "3") echo "sroda" ;;
+      "4") echo "czwartek" ;;
+      "5") echo "piatek" ;;
+      "6") echo "sobota" ;;
+      "7") echo "niedziela" ;;
+      *) echo "Nie rozumiem"
+    esac
+    exit 0
+
+8\. Wyświetlić z bieżącego katalogu nazwy wszystkich plików: 
+\*.html, \*.htm, *.php, *.css, *.gif, *.jpg. (Użyj pętli for.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    for nazwa in *.html *.htm *.php *.css *.gif *.jpg
+    do
+    echo $nazwa
+    done
+    exit 0
+
+To samo, ale bez rozróżniania małych i dużych liter.
+
+9\. Napisać skrypt wykonujący pętlę 15 razy i wypisujący za każdym
+razem numer obiegu pętli. (Użyj pętli while.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    n=1;
+    # gdy warunek stanie się fałszywy to petla zakonczy dzialanie
+    while [ $n -le 15 ]
+    do
+      echo "Petla wykonuje sie po raz: $n"
+      n=$[n + 1]
+    done
+    exit 0
+
+Ściąga z operatorów wykorzystywanych w warunkach:
+
+    -eq (==)    -ne (!=)   -lt (<)
+    -le (<=)    -gt (>)    -ge (>=)
+
+10\. Napisać skrypt sprawdzający, czy użytkownik, którego login został
+podany jako parametr skryptu zalogował się. (Użyj pętli until.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    until who | grep "$1" > /dev/null
+    # gdy warunek stanie się prawdziwy to petla zakonczy dzialanie
+    do
+      sleep 60
+    done
+    echo -e \\a
+    echo "$1 wlasnie sie zalogowal !!! "
+    exit 0
+
+11\. Napisać skrypt pytający się użytkownika co wybiera: kawe,
+herbate, sok, quit. Po dokonaniu wyboru powinna się pojawić
+informacja co zostało wybrane. Po wybraniu quit skrypt powinien
+zakończyć działanie. (Użyj pętli select i instrukcji warunkowej case.)
+
+    :::shell-unix-generic
+    #!/bin/bash
+    echo "Co wybierasz?"
+    select x in kawe herbate sok quit
+    do
+      case $x in
+        "kawe") echo "Wybrales kawe." ;;
+        "herbate") echo "Wybrales herbate." ;;
+        "sok") echo "Wybrales sok." ;;
+        "quit") echo "Wybrales quit."; break ;;
+        *) echo "Nic nie wybrales."
+      esac
+    done
+    exit 0
+
+12\. Zmienić nazwy plików i katalogów pisane dużymi literami na nazwy
+pisane małymi literami.
+
+    :::shell-unix-generic
+    #!/bin/bash
+    for nazwa in *
+    do
+      mv $nazwa $(echo $nazwa | tr '[A-Z]' '[a-z]')
+    done
+    exit 0
