@@ -29,7 +29,6 @@ Różne rzeczy:
 
 * {%= link_to "Wykłady", "/ll"%}
 * {%= link_to "Ćwiczenia", "/exercises" %}
-* {%= link_to "Odpowiedzi", "/answers" %}
 * {%= link_to "Blogi studentów", "/blogs" %}
 
 
