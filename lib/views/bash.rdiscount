@@ -99,15 +99,52 @@ istnieje plik *.bashrc*. (Użyj instrukcji warunkowej if.)
 
 Krótka ściąga z pozostałych warunków:
 
-    -d plik, plik jest katalogiem
-    -e plik, plik istnieje
-    -f plik, plik jest plikiem regularnym
-    -g plik, plik ma przypisany set-gropu-id
-    -r plik, plik daje się odczytac
-    -s plik, plik ma niezerowy rozmiar
-    -u plik, plik ma przypisany set-user-id
-    -w plik, plik można edytowac (można pisac))
-    -x plik, plik wykonywalny
+<table class="span-19" summary="Scaffold">
+  <colgroup>
+    <col class="table1"/>
+    <col class="table2"/>
+  </colgroup>
+<tbody>
+ <tr>
+ <td>-d plik</td>
+ <td>plik jest katalogiem</td>
+ </tr>
+ <tr>
+ <td>-e plik</td>
+ <td>plik istnieje</td>
+ </tr>
+ <tr>
+ <td>-f plik</td>
+ <td>plik jest plikiem regularnym</td>
+ </tr>
+ <tr>
+ <td>-g plik</td>
+ <td>plik ma przypisany set-group-id</td>
+ </tr>
+ <tr>
+ <td>-r plik</td>
+ <td>plik daje się odczytac</td>
+ </tr>
+ <tr>
+ <td>-s plik</td>
+ <td>plik ma niezerowy rozmiar</td>
+ </tr>
+ <tr>
+ <td>-u plik</td>
+ <td>plik ma przypisany set-user-id</td>
+ </tr>
+ <tr>
+ <td>-w plik</td>
+ <td>plik można edytowac (można pisac))</td>
+ </tr>
+ <tr>
+ <td>-x plik</td>
+ <td>plik wykonywalny</td>
+ </tr>
+</tbody>
+</table>
+
+
 
 6\. Napisać skrypt pytający się czy już jest wieczór. Dla odpowiedzi
 „tak” powinien wypisać „Dobry wieczor”, dla odpowiedzi „nie” – 
@@ -130,11 +167,35 @@ i przytoczyć treść odpowiedzi. (Użyj instrukcji warunkowej if-elif.)
 
 Jeszcze jedna ściąga:
 
-    ciag, ciag jest niepusty
-    ciag1=ciag2, ciagi sa jednakowe
-    ciag1!=ciag2, ciagi nie sa rowne
-    -n ciag, ciag nie jest NULL
-    -z ciag, ciag jest NULL (pusty)
+<table class="span-19" summary="Scaffold">
+  <colgroup>
+    <col class="table1"/>
+    <col class="table2"/>
+  </colgroup>
+<tbody>
+ <tr>
+ <td>ciąg</td>
+ <td>ciąg jest niepusty</td>
+ </tr>
+ <tr>
+ <td>ciąg1=ciąg2</td>
+ <td>ciągi sa jednakowe</td>
+ </tr>
+ <tr>
+ <td>ciąg1!=ciąg2</td>
+ <td>ciągi nie sa rowne</td>
+ </tr>
+ <tr>
+ <td>-n ciąg</td>
+ <td>ciąg nie jest NULL</td>
+ </tr>
+ <tr>
+ <td>-z ciąg</td>
+ <td>ciąg jest NULL (pusty)</td>
+ </tr>
+</tbody>
+</table>
+
 
 7\. Napisać skrypt pobierający numer dnia tygodnia i wypisujący jego
 nazwę lub informację „Nie rozumiem”. (Użyj polecenia read i
@@ -185,8 +246,9 @@ razem numer obiegu pętli. (Użyj pętli while.)
 
 Ściąga z operatorów wykorzystywanych w warunkach:
 
-    -eq (==)    -ne (!=)   -lt (<)
-    -le (<=)    -gt (>)    -ge (>=)
+<pre>-eq (==)    -ne (!=)   -lt (&lt;)
+-le (&lt;=)    -gt (>)    -ge (>=)
+</pre>
 
 10\. Napisać skrypt sprawdzający, czy użytkownik, którego login został
 podany jako parametr skryptu zalogował się. (Użyj pętli until.)
