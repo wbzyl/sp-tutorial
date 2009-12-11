@@ -33,9 +33,9 @@ specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
     echo "Drugi przekazany parametr do skryptu: $2"
     echo "..."
     echo "Dziewiaty przekazany parametr do skryptu: $9"
-    #separatorem będzie spacja
+    # separatorem będzie spacja
     echo "Skrypt uruchomiono z parametrami: $@"
-    #separator okresla zmienna $IFS
+    # separator okresla zmienna $IFS
     echo "Skrypt uruchomiono z parametrami: $*"
     echo "Kod powrotu ostanio wykonywanego polecenia: $?"
     echo "PID procesu biezacej powloki: $$"
