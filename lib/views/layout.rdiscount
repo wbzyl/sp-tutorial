@@ -16,10 +16,10 @@
   </head>
   <body>
     <div class="span-21" id="header">
-      <div id="logo" class="push-1 span-7">
-        <%= link_to "WB@SP", "/" %><span>2dc87f0d…</span>
+      <div id="logo" class="push-1 span-13">
+        <%= link_to "WB@SP", "/" %><span>2dc87f…</span>
       </div>
-      <div class="span-13 last">
+      <div class="span-7 last">
         <div class="append-1" id="links">
           <a href="http://inf.ug.edu.pl/~wbzyl/">home</a>
           <a href="http://inf.ug.edu.pl/~wbzyl/galeria/zakopane/2009-08-28-zawrat/">galeria</a>
