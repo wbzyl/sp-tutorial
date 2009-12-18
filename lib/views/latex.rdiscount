@@ -308,10 +308,13 @@ tabelek, korzystanie z koloru, notacja do wpisywania matematyki...
     
     \usepackage{geometry}
     \geometry{a4paper}
-
+    
     \usepackage{fontspec}
     \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    %\setmainfont{Lucida}
+    \setmainfont[Mapping=tex-text]{Minion Pro:+onum}
+    \setsansfont[Mapping=tex-text]{Myriad Pro}
+    \setmonofont{Monaco}
+    
     \usepackage{xunicode}
     \usepackage{xltxtra}
     \usepackage{hyperref}
