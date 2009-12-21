@@ -182,7 +182,12 @@ też są znakami specjalnymi. Jeśli je wpiszesz,
 to zostaną wydrukowane zupełnie inne rzeczy.
 
 
-## Bibliografia albo Literatura
+## Bibliografia – pakiet *amsrefs*
+
+TODO: [The amsrefs package](http://www.ams.org/tex/amsrefs.html)
+
+
+## Bibliografia klasycznie, czyli bibtex
 
 Teraz przyjrzymy się bardziej skomplikowanemu dokumentowi.
 Pokazuje on jak przygotowywać bibliografię w systemie LaTeX.
