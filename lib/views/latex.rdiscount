@@ -148,9 +148,9 @@ dwukrotnie skompilować dokument).
              % jeśli tego nie zrobisz będzie drukowana aktualna data
     
     \begin{document}
-    \maketitle % drukuj tytuł
+    \maketitle % składaj tytuł
 
-    \tableofcontents % drukuj spis treści
+    \tableofcontents % składaj spis treści
     
     \section{Pierwsza sekcja}
  
@@ -184,7 +184,98 @@ to zostaną wydrukowane zupełnie inne rzeczy.
 
 ## Bibliografia – pakiet *amsrefs*
 
-TODO: [The amsrefs package](http://www.ams.org/tex/amsrefs.html)
+Na stronie [The amsrefs package] [amsrefs] umieszczono
+link do dokumentacji oraz przykładów.
+
+Prosty przykład może wyglądać tak, plik *szablon.tex*:
+
+    :::latex
+    % !TEX TS-program = xelatex
+    % !TEX encoding = UTF-8 Unicode
+    
+    \documentclass[12pt]{article}
+    \usepackage{amsrefs}
+    
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text}
+    \usepackage{hyperref}
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    \usepackage{url} % do przełamywania url
+    \usepackage[polish]{polyglossia}
+    
+    \begin{document}
+    
+    \section{Pierwszy rozdział}
+    SGML~\cite{Goldfarb2002} jest to \emph{metajęzyk}
+    służący do opisywania struktury i~zawartości dokumentów.
+        
+    \section{Drugi rozdział}
+    
+    Typowy proces produkcji dokumentów w~standardzie SGML
+    podzielony jest na kilka części. Najważniejsze elementy tego
+    procesu są opisane w~\cite{Eisenberg2002}.
+
+    \begin{bibdiv}
+    \begin{biblist}
+      \bibselect{literatura}
+    \end{biblist}
+    \end{bibdiv}
+
+    \end{document}
+
+Plik z bibliografią może wyglądać tak, *literatura.ltb*:
+
+    :::latex
+    % !TEX TS-program = xelatex
+    % !TEX encoding = UTF-8 Unicode
+    
+    \documentclass[12pt]{amsbook}
+    \usepackage{amsrefs}
+
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text}
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    \usepackage[polish]{polyglossia}
+    
+    \raggedbottom
+    
+    \begin{document}
+    
+    \begin{bibdiv}
+    \begin{biblist}
+    
+    \bib{Goldfarb2002}{book}{
+        author={Charles F. Goldfarb},
+        author={Paul Prescod},
+         title={Charles F. Goldfarb's XML handbook},
+       edition={Fourth},
+     publisher={Princeton-Hall},
+       address={Englewood Cliffs, NJ 07632, USA},
+          date={2002},
+          ISBN={0-13-065198-2; 978-0-13-065198-3},
+    }
+    \bib{Eisenberg2002}{article}{
+        author={Andrew Eisenberg},
+        author={Jim Melton},
+         title={SQL\slash XML is making good progress},
+          date={2002},
+          ISSN={0000-0000},
+       journal={SIGMOD},
+        volume={31},
+        number={2},
+         pages={101\ndash 108},
+    }
+    
+    \end{biblist}
+    \end{bibdiv}
+    \end{document}
+
+Dokument *szablon.tex* kompilujemy dwukrotnie:
+
+    xelatex szablon
+    xelatex szablon 
 
 
 ## Bibliografia klasycznie, czyli bibtex
@@ -438,3 +529,5 @@ powinno przekonać do programu niedowiarków.
 [tug]: http://www.tug.org/ "TUG"
 
 [arxiv]: http://arxiv.org/ "arXiv.org"
+
+[amsrefs]: http://www.ams.org/tex/amsrefs.html "amsrefs doc"
