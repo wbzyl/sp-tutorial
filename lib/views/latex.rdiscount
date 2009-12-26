@@ -207,6 +207,7 @@ Prosty przykład może wyglądać tak, plik *szablon.tex*:
     \begin{document}
     
     \section{Pierwszy rozdział}
+    
     SGML~\cite{Goldfarb2002} jest to \emph{metajęzyk}
     służący do opisywania struktury i~zawartości dokumentów.
         
