@@ -5,14 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sp-tutorial}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wlodek Bzyl"]
-  s.date = %q{2009-11-26}
-  s.description = %q{Notatki do frameworka Rails3
+  s.date = %q{2009-12-27}
+  s.description = %q{Notatki do wykladu: Srodowisko Programisty
 }
-  s.email = %q{matwb@univ.gda.pl}
+  s.email = %q{matwb@ug.edu.pl}
   s.extra_rdoc_files = [
     "README.markdown"
   ]
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
      "lib/public/doc/survival.pdf",
      "lib/public/doc/templates/article-bibliography.tex",
      "lib/public/doc/templates/article-hyperref.tex",
+     "lib/public/doc/xetex-pl.pdf",
      "lib/public/images/Thatll_Flat_Git_It_Vol_20.jpg",
      "lib/public/images/alan_kay.jpg",
      "lib/public/images/alan_perlis.jpg",
@@ -73,6 +74,7 @@ Gem::Specification.new do |s|
      "lib/public/stylesheets/uv.css",
      "lib/sp-tutorial.rb",
      "lib/views/answers.rdiscount",
+     "lib/views/bash.rdiscount",
      "lib/views/blogs.rdiscount",
      "lib/views/exercises.rdiscount",
      "lib/views/favicon.ico.rdiscount",
@@ -102,7 +104,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{sp-tutorial}
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Notatki do wykladu z Srodowiska Programisty.}
+  s.summary = %q{Notatki do wykladu Srodowisko Programisty.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
@@ -113,23 +115,26 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<rdiscount>, [">= 0"])
       s.add_runtime_dependency(%q<ultraviolet>, [">= 0"])
-      s.add_runtime_dependency(%q<sinatra-rdiscount>, [">= 0"])
       s.add_runtime_dependency(%q<rack-codehighlighter>, [">= 0"])
+      s.add_runtime_dependency(%q<sinatra-rdiscount>, [">= 0"])
+      s.add_runtime_dependency(%q<sinatra-static-assets>, [">= 0"])
     else
       s.add_dependency(%q<rack>, [">= 0"])
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<rdiscount>, [">= 0"])
       s.add_dependency(%q<ultraviolet>, [">= 0"])
-      s.add_dependency(%q<sinatra-rdiscount>, [">= 0"])
       s.add_dependency(%q<rack-codehighlighter>, [">= 0"])
+      s.add_dependency(%q<sinatra-rdiscount>, [">= 0"])
+      s.add_dependency(%q<sinatra-static-assets>, [">= 0"])
     end
   else
     s.add_dependency(%q<rack>, [">= 0"])
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<rdiscount>, [">= 0"])
     s.add_dependency(%q<ultraviolet>, [">= 0"])
-    s.add_dependency(%q<sinatra-rdiscount>, [">= 0"])
     s.add_dependency(%q<rack-codehighlighter>, [">= 0"])
+    s.add_dependency(%q<sinatra-rdiscount>, [">= 0"])
+    s.add_dependency(%q<sinatra-static-assets>, [">= 0"])
   end
 end
 

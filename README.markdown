@@ -28,15 +28,3 @@ Na przykład:
 Po uruchomieniu aplikacja jest dostępna z URL:
 
     http://localhost:8008/
-
-
-## Zależności
-
-*sp-tutorial* zależy od następujących gemów:
-
-* rack 
-* sinatra
-* ultraviolet
-* rdiscount
-* sinatra-rdiscount    
-* rack-codehighlighter
