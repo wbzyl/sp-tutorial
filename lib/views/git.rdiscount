@@ -404,7 +404,7 @@ scalić nową wersję ze swoim projektem.
 
 ### Prostowanie historii, czyli rebasing
 
-Zobacz też [The Basic Rebase] (http://progit.org/book/ch3-6.html)
+Zobacz też [The Basic Rebase](http://progit.org/book/ch3-6.html)
 
 Zakładamy repo:
 
@@ -441,15 +441,17 @@ Przechodzimy na główną gałąź:
     git commit -m "wrzutka: 2." -a
     gitk
 
-Przechodzimy na newidea:
+Przechodzimy na gałąź *newidea*. 
+Rebase **wykonujemy** będąć na gałęzi *newidea*:
 
     git checkout newidea
-    git rebase master     # rebase wykonujemy z gałęzi newidea
+    git rebase master
+
+Wracamy na główną gałąź, scalamy zmiany z gałęzi
+*newidea* i usuwamy gałąź *newidea*:
+
     git checkout master
-    gitk
-
-Wracamy na główną gałąź i usuwamy gałąź *newidea*:
-
+    gitk                   # podgląd
     git merge newidea      # powinno być fast-forward
     gitk
     git branch -d newidea    
