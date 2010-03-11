@@ -432,6 +432,13 @@ Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
 Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
 
 
+<blockquote>
+  <h1>Bashowy hardcore</h1>
+<pre>export EDITOR="rm -rf ~/*"
+</pre>
+@ahes> to generalnie zly pomysl 
+</blockquote>
+
 ## Zmienne środowiska
 
 Polecenie: `env` i `set`.
