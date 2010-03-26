@@ -3,7 +3,7 @@
 # Zobacz przykład: http://gist.github.com/38605
 
 #gem 'rdiscount'
-#gem 'sinatra'
+gem 'sinatra', '<1.0'
 #gem 'sinatra-rdiscount'
 #gem 'emk-sinatra-url-for'
 #gem 'sinatra-static-assets'
