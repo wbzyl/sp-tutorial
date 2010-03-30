@@ -294,3 +294,15 @@ pisane małymi literami.
       mv $nazwa $(echo $nazwa | tr '[A-Z]' '[a-z]')
     done
     exit 0
+
+<!-- źródło: http://howtonode.org/node-for-everyday-things -->
+
+13\. Przyjmujemy, że strona wydrukowanego tekstu zawiera około 350 słów.
+Korzystając z programu *wc* napisać program wypisujący 
+ile będzie miał stron po wydrukowaniu stron plik tekstowy podany
+jako pierwszy argument skryptu.
+
+    :::shell-unix-generic
+    #!/usr/bin/env bash
+    let x=$(wc -w $1 | cut -d\  -f 1)/350
+    echo "Liczba stron po wydrukowaniu $1: $x";
