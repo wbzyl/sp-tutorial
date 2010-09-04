@@ -306,3 +306,8 @@ jako pierwszy argument skryptu.
     #!/usr/bin/env bash
     let x=$(wc -w $1 | cut -d\  -f 1)/350
     echo "Liczba stron po wydrukowaniu $1: $x";
+
+14\. Przykład z *xargs* i *find*:
+
+    :::shell-unix-generic
+    find -type f -print0 | xargs -0 egrep *pattern*
