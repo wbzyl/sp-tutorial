@@ -2,6 +2,13 @@
 
 # TeXLive i inne różne rzeczy
 
+<blockquote>
+  {%= image_tag "/images/forgetting-curve.png", :alt => "[Hermann Ebbinghaus forgetting curve]" %}
+  <p>The forgetting curve illustrates the decline of memory retention in time. […]
+    In 1885, <a href="http://en.wikipedia.org/wiki/Forgetting_curve">Hermann Ebbinghaus</a> 
+    discovered the exponential nature of forgetting.</p>
+</blockquote>
+
 Na *Sigmie* zainstalowany jest system TeX z paczki *TeXLive*.
 Dokumentację do systemu można pobrać z serwera
 [Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
