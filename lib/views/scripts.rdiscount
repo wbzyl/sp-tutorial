@@ -604,11 +604,60 @@ Skrypt *echo-params.sh*:
     
     exit $?
 
+## Weasel words
+
+Skrypt z artykułu Matta Mighta,
+[3 shell scripts to improve your writing](http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/).
+
+Na początek definicja. 
+„**Weasel words** -- phrases or words that sound good without conveying information.”
+These words obscure precision.
+
+There three kinds of weasel words
+
+* salt and pepper words; examples: various, a number of, fairly, and quite
+* beholder words; examples: interestingly, surprisingly, remarkably, clearly
+* lazy words; examples: very, extremely, several, exceedingly, many, most, few, vast
+* adverbs
+
+Skrypt znajdujący wszystkie takie słowa w pliku:
+
+    :::shell-unix-generic
+    #!/bin/bash
+
+    weasels="many|various|very|fairly|several|extremely\
+    |exceedingly|quite|remarkably|few|surprisingly\
+    |mostly|largely|huge|tiny|((are|is) a number)\
+    |excellent|interestingly|significantly\
+    |substantially|clearly|vast|relatively|completely"
+
+    wordfile=""
+
+    # Check for an alternate weasel file
+    if [ -f $HOME/.words/weasels ]; then
+        wordfile="$HOME/.words/weasels"
+    fi
+    if [ ! "$wordfile" = "" ]; then
+        weasels="xyzabc123";
+        for w in `cat $wordfile`; do
+            weasels="$weasels|$w"
+        done
+    fi
+    if [ "$1" = "" ]; then
+     echo "usage: `basename $0` <file> ..."
+     exit
+    fi
+
+    egrep -i -n --color "\\b($weasels)\\b" $*
+    exit $?
+
+Napisać w bashu skrypt „to find lexical illusions”
+(trzeci skrypt z artykułu).
+
 
 ## Drukowanie listingów programów
 
 Zwykle korzystam z programu [a2ps] [a2ps].
-Kiedyś używałem programu [Enscript] [enscript].
 
 
 #### Linki
