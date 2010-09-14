@@ -394,13 +394,13 @@ Teraz każdy, korzystając z protokołu git, może sklonować na swój
 komputer repo *test.git*:
 
     :::shell-unix-generic
-    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
+    git clone git://sigma.ug.edu.pl/~wbzyl/test.git
 
 Właściciel repo, czyli ja, klonuje repo korzystając z protokołu
 **ssh**:
 
     :::shell-unix-generic
-    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+    git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/test.git
 
 Właściciel repo może wykonać `pull` i `push`, a pozostali
 tylko `pull`.
