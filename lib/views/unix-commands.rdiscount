@@ -68,6 +68,22 @@ Konfiguracja przeglądarki: zmiana wielkości pamięci podręcznej
 przeglądarki (ang. *cache*).
 
 
+<blockquote>
+  <h1>Bashowy hardcore</h1>
+<pre>&lt;macnow>echo `expr \`date +%d\`\
+  + \`expr 7 - \\\`date +%u\\\`\
+  \``-`date +%m-%Y`
+&lt;ahes>co to ma byc?
+&lt;macnow>pokazuje najblizsza 
+  niedziele
+&lt;ahes>a nie lepiej:
+  date --date sunday?
+
+<i>źródło:</i> 
+  http://bash.org.pl/642327/
+</pre>
+</blockquote>
+
 ## Znaki specjalne powłoki
 
 Wklepując polecenia powinniśmy zwrócić uwagę, że *Bash* rezerwuje
