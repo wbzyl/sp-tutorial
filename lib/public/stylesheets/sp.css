@@ -95,7 +95,7 @@ h1 {
 }
 
 blockquote {
-  font: normal 14/1.5 "DejaVu Sans", sans-serif;
+  font: normal "DejaVu Sans" 14/1.5 sans-serif;
   width: 297px;
   margin-top: 6px;
   margin-left: 528px;
@@ -183,7 +183,7 @@ li ul {
 blockquote h1 {
   font-weight: bold;
   font-size: 100%;
-  font-family: "DejaVu Sans", "PakTypeNaqsh", serif;
+  font-family: Cyklop, serif;
   color: #D80000;
   padding-top: 16px;
   padding-bottom: 16px;
