@@ -1,1 +1,1 @@
-ssh wbzyl@sigma.inf.ug.edu.pl "cd repos/tutorials/sp-ii/ ; git pull"
+ssh wbzyl@sigma.ug.edu.pl "cd repos/tutorials/sp-tutorial/ ; git pull"

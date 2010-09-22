@@ -14,29 +14,32 @@ Dokumentację do systemu można pobrać z serwera
 [Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
 
 W pracowniach będziemy korzystać z najnowszej wersji 
-systemu TeX zawartej w „TeXLive 2009” z programem
-*xetex* w wersji 0.999.6. 
+systemu TeX zawartej w „TeXLive 2010” z programem
+*xetex* w wersji 3.1415926-2.2-0.9995.2
+i biblioteką kpathsea version 5.1.0.
 
 Do pracy z dokumentami techowymi będziemy używać programu 
-*texworks* w wersji co najmniej 0.1 (r.416).
+*texworks* w wersji co najmniej 0.3 (r.511).
 
 
-## Konfiguracja TeXLive
+## Konfiguracja systemu TeXLive
 
 Tylko podstawowe informacje.
 
 TeX Live to ok. 35000 plików (razem, +1GB).
-Pliki te są umieszczone w drzewkach. Listę drzewek otrzymamy
-wykonując polecenie:
+Pliki te są umieszczone w „drzewach katalogów” o korzeniach:
 
-    /home/pracinf/wbzyl/.texlive2008/texmf-config,
-    /var/lib/texmf,
-    /home/pracinf/wbzyl/texmf, # tutaj trzymamy prywatne pliki
-    /etc/texlive,
-    /var/lib/texmf,
-    /usr/share/texmf,
-    /usr/share/texmf,  # bug! zamienić na texmf-local
-    /usr/share/texmf-dist
+    /home/wbzyl/.texlive2010/texmf-config
+    /home/wbzyl/.texlive2010/texmf-var
+    !!/usr/local/texlive/2010/texmf-config
+    !!/usr/local/texlive/2010/texmf-var
+    !!/usr/local/texlive/2010/texmf
+    !!/usr/local/texlive/2010/../texmf-local
+    !!/usr/local/texlive/2010/texmf-dist
+
+Listę korzeni drzewek otrzymamy wykonując polecenie:
+
+    kpsewhich -expand-var \$TEXMF
 
 System TeX konfigurujemy edytując plik *texmf.cnf*.
 Plik ten odszukujemy w systemie w taki sposób:
