@@ -102,6 +102,39 @@ Kilka poleceń na dobry początek:
 \([dokumentacja](http://www.tug.org/texlive/doc/tlmgr.html)\)
 
 
+## TeXworks – IDE dla systemu TeX
+
+Do kompilacji programu *texworks* będą potrzebne pakiety devel:
+
+    x-software-development 
+    development-tools
+    poppler-devel poppler-qt4-devel 
+    qt-devel 
+    hunspell-devel 
+    dbus-devel
+
+oraz system kontroli wersji *subversion*.
+
+Zaczynamy od pobrania z repozytorium najnowszej wersji:
+
+    svn checkout http://texworks.googlecode.com/svn/trunk/ texworks-read-only
+
+Zmieniamy katalog, generujemy plik *Makefile*, kompilujemy sam program:
+
+    cd texworks-read-only
+    qmake-qt4
+    make
+
+Jeśli nie było błędów uruchamiamy program:
+
+    ./texworks
+
+Na koniec kopiujemy ikonkę programu oraz ikonkę na pulpit:
+
+    sudo cp ./res/images/TeXworks-doc-48.png /usr/share/pixmaps/
+    cp ./texworks.desktop ~/Desktop/
+
+
 <blockquote>
   {%= image_tag "/images/marcin_wolinski.jpg", :alt => "[Marcin Woliński]" %}
   <p class="center">Marcin Woliński</p>
