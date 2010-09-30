@@ -102,6 +102,10 @@ Kilka poleceń na dobry początek:
 \([dokumentacja](http://www.tug.org/texlive/doc/tlmgr.html)\)
 
 
+<blockquote>
+  {%= image_tag "/images/TeXworks.png", :alt => "[TeXworks]" %}
+</blockquote>
+
 ## TeXworks – IDE dla systemu TeX
 
 Do kompilacji programu *texworks* będą potrzebne pakiety devel:
@@ -129,8 +133,9 @@ Jeśli nie było błędów uruchamiamy program:
 
     ./texworks
 
-Na koniec kopiujemy ikonkę programu oraz ikonkę na pulpit:
+Na koniec kopiujemy program, ikonkę programu oraz ikonkę na pulpit:
 
+    sudo cp ./texworks /usr/local/bin/
     sudo cp ./res/images/TeXworks-doc-48.png /usr/share/pixmaps/
     cp ./texworks.desktop ~/Desktop/
 
