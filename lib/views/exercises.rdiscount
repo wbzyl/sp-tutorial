@@ -33,7 +33,7 @@ Dla użytkownika *wbzyl* zakładanie repozytorium „bare” z systemem
     rm -rf latex
 
 Ponieważ repozytoria w katalogu **public_git** są publiczne,
-każdy może je klonować tak (system „wte”):
+każdy może je klonować (system „wte”):
 
     git clone git://sigma.ug.edu.pl/~wbzyl/latex.git
 
