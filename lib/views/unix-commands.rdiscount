@@ -387,7 +387,8 @@ Użyteczne linki:
 * [Programming in Emacs Lisp (Second Edition)] [emacs-lisp-intro]
 * [An Introduction to Programming in Emacs Lisp] [elisp]
 
-Zobacz też edytor [Bespin » Code in the Cloud] [bespin].
+Zobacz też edytor [Skywriter » Code in the Cloud] [skywriter]
+oraz [bespin server][].
 
 
 ## Przykład: udostępniamy repozytorium Git
@@ -661,6 +662,7 @@ Też warte przeczytania:
 
 [jblog]: http://github.com/wbzyl/jblog "Jekyll-Blog dostosowany do Sigmy"
 
-[bespin]: https://bespin.mozilla.com/ "Bespin » Code in the Cloud"
+[skywriter]: https://mozillalabs.com/skywriter "Skywriter » Code in the Cloud"
+[bespin server]: https://bespin.mozillalabs.com/ "Bespin Server"
 
 [wojny edytorowe]: http://pl.wikipedia.org/wiki/Wojny_edytorowe "Wojny edytorowe"
