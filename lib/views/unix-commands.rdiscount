@@ -347,7 +347,7 @@ Zobacz też [HTML5 ★ Boilerplate](http://html5boilerplate.com/)
 
 ## Przykład: repozytorium Git
 
-Zakładamy repozytorium:
+Zakładamy repozytorium z systemem „wte”:
 
     :::shell-unix-generic
     cd ~/tmp
@@ -358,6 +358,9 @@ Zakładamy repozytorium:
     git add .
     git commit -m "pierwsza wrzutka"
     ... edycja README.md, add – zmiany, commit – co zostało zrobione
+
+O repozytoriach z systemem „wtewewte” będzie na wykładzie
+dotyczącym systemu Git.
 
 
 ## Praca z *Emacsem* czystym relaksem
