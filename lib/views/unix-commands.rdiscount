@@ -347,10 +347,12 @@ Zobacz też [HTML5 ★ Boilerplate](http://html5boilerplate.com/)
 
 ## Przykład: repozytorium Git
 
+Jaką funkcję na *Sigmie* spełnia katalog **public_git**?
+
 Zakładamy repozytorium z systemem „wte”:
 
     :::shell-unix-generic
-    cd ~/tmp
+    cd ~/public_git
     mkdir test
     cd test
     touch README.md
@@ -358,6 +360,8 @@ Zakładamy repozytorium z systemem „wte”:
     git add .
     git commit -m "pierwsza wrzutka"
     ... edycja README.md, add – zmiany, commit – co zostało zrobione
+
+Kilka zdań o użyteczności takich repozytoriów.
 
 O repozytoriach z systemem „wtewewte” będzie na wykładzie
 dotyczącym systemu Git.
