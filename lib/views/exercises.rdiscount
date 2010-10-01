@@ -14,20 +14,42 @@
   <p class="author">— Albert Einstein</p>
 </blockquote>
 
-Skrypty należy umieścić w repozytorium git. Można
-to zrobić w taki sposób:
+Skrypty należy umieścić w repozytorium git. Nazwa repozytorium
+dla konkretnego zestawu zadań powinna być jedna dla całej
+grupy laboratoryjnej.
 
-    cd ~/tmp
+Dla użytkownika *wbzyl* zakładanie repozytorium „bare” z systemem
+„wtewewte” może wyglądać tak:
+
     mkdir latex
     cd latex
-    touch README.md
     git init
-    ... dodajemy pliki z kodem/rozwiązaniem ...
+    touch README.markdown
+    # ... dodajemy pozostałe pliki z kodem/rozwiązaniem ...
     git add .
     git commit -m "gotowe"
     cd ..
     git clone --bare latex ~/public_git/latex.git
-    rm -rf ~/tmp/latex
+    rm -rf latex
+
+Ponieważ repozytoria w katalogu **public_git** są publiczne,
+każdy może je klonować tak (system „wte”):
+
+    git clone git://sigma.ug.edu.pl/~wbzyl/latex.git
+
+Ale właściciel repozytorium powinien klonować swoje repozytoria tak
+(system „wtewewte”):
+
+    git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/latex.git
+
+Oczywiście tylko dla repozytoriów „wtewewte” można wykonać
+polecenie *push*:
+
+    cd latex
+    # ... edytujemy jakiś plik ... dodajemy nowe pliki ...
+    git add .
+    git commit -m "nowa wersja"
+    git push
 
 
 ## Bash
