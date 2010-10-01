@@ -33,6 +33,16 @@ Polecenie *alias*:
     alias ls
     alias rm
 
+<blockquote>
+  <h1>Bashowe dziwadełka</h1>
+<pre>alias kitty=cat
+alias dir=ls
+alias erase=rm
+alias process_table=ps
+setenv DISPLAY=vt100
+</pre>
+</blockquote>
+
 Aliasy nazw plików: *ln*. Przykłady:
 
     ln -s TARGET LINK_NAME
@@ -213,16 +223,6 @@ Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
 
 Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
 Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
-
-<blockquote>
-  <h1>Bashowe dziwadełka</h1>
-<pre>alias kitty=cat
-alias dir=ls
-alias erase=rm
-alias process_table=ps
-setenv DISPLAY=vt100
-</pre>
-</blockquote>
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
 Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
