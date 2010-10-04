@@ -33,6 +33,34 @@ Polecenie *alias*:
     alias ls
     alias rm
 
+
+## Operacje na plikach
+
+Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
+Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
+
+Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
+Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
+
+Rozwijanie nazw plików: globbing.
+
+*Pliki ukryte*, to pliki których nazwy zaczynają się od kropki:
+
+    :::shell-unix-generic
+    ls -la | egrep ' \.'
+
+Wyświetlanie zawartości pliku: `cat`:
+
+    :::shell-unix-generic
+    cat /etc/bashrc
+    cat -n /etc/bashrc
+    cat /etc/bashrc /etc/passwd > ~/tmp/etc.txt
+    cat /etc/passwd | tr a-z A-Z
+    tr a-z A-Z < /etc/passwd
+
+Polecenia: `wc`, `head` oraz `tail`.
+
+
 <blockquote>
   <h1>Bashowe dziwadełka</h1>
 <pre>alias kitty=cat
@@ -50,6 +78,7 @@ Aliasy nazw plików: *ln*. Przykłady:
     ls -s LINK
     rm LINK
 
+
 ## SSH: secure shell
 
 Generujemy klucze: prywatny i publiczny:
@@ -59,7 +88,10 @@ Generujemy klucze: prywatny i publiczny:
     ... Enter, Enter…
     cat ~/.ssh/id_rsa.pub
 
+Zdalne kopiowanie plików: `scp`.
+
 Przykłady użycia?
+
 
 ## Limity dyskowe
 
@@ -217,35 +249,6 @@ Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
 
     :::shell-unix-generic
     du -m ~ | sort -k1nr | head
-
-
-## Operacje na plikach
-
-Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
-Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
-
-Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
-Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
-
-Rozwijanie nazw plików: globbing.
-
-*Pliki ukryte*, to pliki których nazwy zaczynają się od kropki:
-
-    :::shell-unix-generic
-    ls -la | egrep ' \.'
-
-Wyświetlanie zawartości pliku: `cat`:
-
-    :::shell-unix-generic
-    cat /etc/bashrc
-    cat -n /etc/bashrc
-    cat /etc/bashrc /etc/passwd > ~/tmp/etc.txt
-    cat /etc/passwd | tr a-z A-Z
-    tr a-z A-Z < /etc/passwd
-
-Polecenia: `wc`, `head` oraz `tail`.
-
-Zdalne kopiowanie plików: `scp`.
 
 
 ## Korzystamy z archiwum plików
