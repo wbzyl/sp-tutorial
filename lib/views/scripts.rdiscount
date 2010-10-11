@@ -243,7 +243,7 @@ Sam skrypt jest prosty:
     :::shell-unix-generic
     #!/bin/sh
     FILES="
-    	/usr/local/share/dict/doroszewski.words
+    	/usr/share/dict/words-doroszewski
           "
     pattern="$1"
     shift
