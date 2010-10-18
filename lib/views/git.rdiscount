@@ -26,17 +26,16 @@ screencast [Schwartz on Git] [] jest wart obejrzenia.
 Można się z niego dowiedzieć jak Git może zmienić życie
 programisty.
 
-Tom Preston-Werner w [Git Przypowieści] [the-git-parable] napisał:
+Tom Preston-Werner w [The Git Parable] [the-git-parable] napisał:
 „Most people try to teach Git by demonstrating a few dozen commands
 and then yelling “tadaaaaa.” I believe this method is flawed. Such
 a treatment may leave you with the ability to use Git to perform
 simple tasks, but the Git commands will still feel like magical
 incantations.”
-
 Przypowieść ta opisuje perypetie czeladnika tworzącego system
 gitopodobny od podstaw.
 
-Różne: S. Chacon, [Git in One Hour] [git-in-one-hour].
+Też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
 
 
 ## Konfiguracja
