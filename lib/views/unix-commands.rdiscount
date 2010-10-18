@@ -372,9 +372,7 @@ Zobacz też edytor [Skywriter » Code in the Cloud] [skywriter]
 oraz [bespin server][].
 
 
-## Przykład: repozytorium Git
-
-Jaką funkcję na *Sigmie* spełnia katalog **public_git**?
+## Przykład: repozytorium Git z systemem „wte”
 
 Zakładamy repozytorium z systemem „wte”:
 
@@ -388,13 +386,17 @@ Zakładamy repozytorium z systemem „wte”:
     git commit -m "pierwsza wrzutka"
     ... edycja README.md, add – zmiany, commit – co zostało zrobione
 
-Kilka zdań o użyteczności takich repozytoriów.
+Korzystając z protokołu git, każdy użytkownik może sklonować na swój
+komputer repo *test*:
 
-O repozytoriach z systemem „wtewewte” będzie na wykładzie
-dotyczącym systemu Git.
+    :::shell-unix-generic
+    git clone git://sigma.ug.edu.pl/~wbzyl/test
+
+Kilka zdań o katalogu *public_git* oraz o małej użyteczności takich
+repozytoriów.
 
 
-## Przykład: udostępniamy repozytorium Git
+## Przykład: repozytorium Git z systemem „wtewewte”
 
 Tworzymy *bare* repo *test.git* z repozytorium *test*:
 
@@ -402,20 +404,20 @@ Tworzymy *bare* repo *test.git* z repozytorium *test*:
     mkdir ~/public_git  # katalog na publiczne repozytoria
     git clone --bare ~/tmp/test ~/public_git/test.git
 
-Teraz każdy, korzystając z protokołu git, może sklonować na swój
+Korzystając z protokołu git, każdy użytkownik może sklonować na swój
 komputer repo *test.git*:
 
     :::shell-unix-generic
     git clone git://sigma.ug.edu.pl/~wbzyl/test.git
 
-Właściciel repo, czyli ja, klonuje repo korzystając z protokołu
-**ssh**:
+A **właściciel repozytorium**, czyli ja, klonuje repo korzystając z
+protokołu **ssh**:
 
     :::shell-unix-generic
     git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/test.git
 
-Właściciel repo może wykonać `pull` i `push`, a pozostali
-tylko `pull`.
+Właściciel repozytorium może wykonać `pull` i `push`
+(system wtewewte), a pozostali tylko `pull` (system wte).
 
 
 ## Przykład: blog
