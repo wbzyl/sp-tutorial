@@ -372,7 +372,7 @@ Zobacz też edytor [Skywriter » Code in the Cloud] [skywriter]
 oraz [bespin server][].
 
 
-## Przykład: repozytorium Git z systemem „wte”
+## Repozytorium Git z systemem „wte”
 
 Zakładamy repozytorium z systemem „wte”:
 
@@ -396,7 +396,7 @@ Kilka zdań o katalogu *public_git* oraz o małej użyteczności takich
 repozytoriów.
 
 
-## Przykład: repozytorium Git z systemem „wtewewte”
+## Repozytorium Git z systemem „wtewewte”
 
 Tworzymy *bare* repo *test.git* z repozytorium *test*:
 
@@ -426,10 +426,10 @@ Skorzystamy z gotowego bloga [Jekyll-Bloga] [jblog]
 który specjalnie przygotowałem na tę okazję.
 
 Wchodzimy na serwer *http://github.com*, gdzie zakładamy darmowe publiczne
-konto (do 300MB): zakładka *Pricing and Signup*.
+konto: zakładka *Pricing and Signup*.
 
 Po zalogowaniu się na swoje konto, klikamy w zakładkę *account*
-i dodajemy klucz publiczny z *Sigmy*: zakładka *SSH Public Keys*.
+i **dodajemy klucz publiczny** z *Sigmy*: zakładka *SSH Public Keys*.
 
 <blockquote>
  <p>
