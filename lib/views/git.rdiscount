@@ -21,9 +21,10 @@ dla pracowników Google powinno wyjaśnić dlaczego powstał Git
 i dlaczego Google więcej już nie poprosi LT o wygłoszenie referatu.
 
 Randal L. Schwartz “Guru-On-Demand” jest autorem najlepszego
-wprowadzenia do języka Perl jakie czytałem. Z jego
-screencastu [Git] [schwartz on git] można dowiedzieć się 
-jak Git zmienił jego życie.
+wprowadzenia do języka (Perl) jakie czytałem. Jego
+screencast [Schwartz on Git] [] jest wart obejrzenia. 
+Można się z niego dowiedzieć jak Git może zmienić życie
+programisty.
 
 Tom Preston-Werner w [Git Przypowieści] [the-git-parable] napisał:
 „Most people try to teach Git by demonstrating a few dozen commands

@@ -392,8 +392,8 @@ komputer repo *test*:
     :::shell-unix-generic
     git clone git://sigma.ug.edu.pl/~wbzyl/test
 
-Kilka zdań o katalogu *public_git* oraz o małej użyteczności takich
-repozytoriów.
+Kilka zdań o magiczności katalogu *public_git* na Sigmie oraz o małej
+użyteczności repozytoriów z systemem „wte”.
 
 
 ## Repozytorium Git z systemem „wtewewte”
@@ -403,6 +403,7 @@ Tworzymy *bare* repo *test.git* z repozytorium *test*:
     :::shell-unix-generic
     mkdir ~/public_git  # katalog na publiczne repozytoria
     git clone --bare ~/tmp/test ~/public_git/test.git
+    rm -rf test  # usuwamy niepotrzebne już repozytorium
 
 Korzystając z protokołu git, każdy użytkownik może sklonować na swój
 komputer repo *test.git*:
@@ -410,8 +411,8 @@ komputer repo *test.git*:
     :::shell-unix-generic
     git clone git://sigma.ug.edu.pl/~wbzyl/test.git
 
-A **właściciel repozytorium**, czyli ja, klonuje repo korzystając z
-protokołu **ssh**:
+A **właściciel repozytorium**, czyli ja, klonuje repo korzystając 
+z protokołu **ssh** w taki sposób:
 
     :::shell-unix-generic
     git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/test.git
