@@ -153,8 +153,8 @@ caption {
   text-align: right;
 }
 
-pre, code {
-  font-family: "DejaVu Sans Mono", PakTypeNaqsh, monospace; 
+pre, code, tt {
+  font-family: 'Anonymous Pro', 'Monaco', monospace; 
 }
 
 /* tabele */
