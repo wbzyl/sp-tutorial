@@ -51,6 +51,11 @@ polecenie *push*:
     git commit -m "nowa wersja"
     git push
 
+<blockquote>
+  <p>Uważaj na człowieka, którego nie interesują szczegóły.
+  </p>
+  <p class="author">— William Feather</p>
+</blockquote>
 
 ## Bash
 
@@ -88,6 +93,12 @@ Laboratoria 14, 15.
 
 
 # Zadania opisowe
+
+<blockquote>
+  <p>Jeśli chodzi o obserwację, los nagradza tylko przygotowane umysły.
+  </p>
+  <p class="author">— Louis Pasteur</p>
+</blockquote>
 
 Rozwiązania zadań opisowych należy umieścić na swoim blogu.
 Na przykład, rozwiązania ćwiczeń LaTeX-owych, powinny
