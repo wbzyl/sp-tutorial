@@ -19,7 +19,6 @@
 
 Różne rzeczy:
 
-* {%= link_to "Wykłady", "/ll"%}
 * {%= link_to "Ćwiczenia", "/exercises" %}
 
 
