@@ -375,7 +375,7 @@ Możemy nieco oczyścić gałęzie w taki sposób:
     git gc
 
 
-### Remote branches
+## Remote branches
 
 Dodajemy oryginalny projekt jako *remote*.
 
@@ -423,7 +423,7 @@ Po co to zrobiliśmy? Teraz możemy porównać nową wersję ze swoja i
 scalić nową wersję ze swoim projektem.
 
 
-### Prostowanie historii, czyli rebasing
+## Prostowanie historii, czyli rebasing
 
 Zobacz też [The Basic Rebase](http://progit.org/book/ch3-6.html)
 
@@ -463,7 +463,7 @@ Przechodzimy na główną gałąź:
     gitk
 
 Przechodzimy na gałąź *newidea*. 
-Rebase **wykonujemy** będąć na gałęzi *newidea*:
+Rebase **wykonujemy** z gałęzi *newidea*:
 
     git checkout newidea
     git rebase master
