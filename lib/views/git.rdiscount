@@ -252,6 +252,10 @@ Wycofanie zmian w edytowanym pliku:
     #
     #       modified:   README.md
 
+Undo merge:
+
+    git reset --hard ORIG_HEAD
+
 
 ## Branching
 
@@ -522,6 +526,16 @@ jako *remote* do mojego repozytrorium *jblog*:
 1. Patrzę co zostało zrobione: `git diff as007/master`.
 1. Scalam oba projekty: `git merge as007/master`.
 1. Wykonuję commit i push.
+
+
+## My typical Git day
+
+Przeanalizować przykłady ze strony
+[Everyday GIT With 20 Commands Or So](http://www.kernel.org/pub/software/scm/git/docs/everyday.html)
+
+Wspomnieć o *git-bisect*:
+
+    man git-bisect
 
 
 ## Zalety *nagich* repozytoriów
