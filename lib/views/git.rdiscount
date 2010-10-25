@@ -531,7 +531,7 @@ jako *remote* do mojego repozytrorium *jblog*:
 ## My typical Git day
 
 … to przykład ze strony
-[Everyday GIT With 20 Commands Or So](http://www.kernel.org/pub/software/scm/git/docs/everyday.html)
+[Everyday GIT With 20 Commands Or So](http://www.kernel.org/pub/software/scm/git/docs/everyday.html).
 
 Jak znaleźć bug w kodzie za pomocą *git-bisect*? Zaczynamy od lektury:
 
