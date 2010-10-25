@@ -297,38 +297,42 @@ A teraz konkrety. Serwis będzie dostępny z takiego URL:
 Na początek serwis www będzie się składał z jednej strony:
 *index.html*.
 
-1\. Zakładamy repozytorium:
+1\. Zakładamy repozytorium. Do pliku *index.html*
+wpisujemy dowcip:
 
     mkdir ~/public_html/dowcipy/
     cd ~/public_html/dowcipy/
     git init
-    cat  index.html
+    cat > index.html
     Jestem albańskim wirusem komputerowym, ale z uwagi 
     na słabe zaawansowanie informatyczne mojego kraju 
     nie mogę nic ci zrobić.
     Proszę skasuj sobie jakiś plik i prześlij mnie dalej.
-    ...
-    git add index.html
-    git commit -m "pierwsza wrzutka"
 
-2\. Nowa gałąź:
+Dodajemy plik do repozytorium i umieszczamy go w repozytorium
+
+    git add index.html
+    git commit -m "dodałem albański dowcip"
+
+2\. Tworzymy nową gałąź i zaczynamy wpisywać nowy dowcip:
 
     git checkout -b newidea
     cat >> index.html
     Webmaster wypełnia podanie o dowód.
     Data urodzenia: 31.11.1990
     Wzrost: 190
-    ...
-    
-3\. Dostajemy wiadomość…
 
+3\. W trakcie wpisywania dowcipu dostajemy wiadomość o wirusie:
+
+    git status
+    git stash
+    git status
     git checkout master
     git checkout -b hotfix
 
-4\. Szybko znajdujemy wirusa. Zawirusowany tekst zastępujemy
-tekstem bez wirusa:
+4\. Szybko znajdujemy wirusa. Zawirusowany dowcip zastępujemy
+nowym dowcipem:
 
-    cat > index.html
     Żona wysyła męża programistę do sklepu.
     — Kup parówki, jak będą jajka, kup dziesięć.
     Mąż w sklepie:
@@ -339,7 +343,7 @@ tekstem bez wirusa:
 5\. Czytamy dowcip kolegom. Ponieważ teraz wydaje się,
 że wszystko jest OK, wykonujemy:
 
-    git commit -m "usunięto wirusa"
+    git commit -m "usunięto wirusa" -a
     git checkout master
     git merge hotfix
     git branch -d hotfix
@@ -351,7 +355,24 @@ tekstem bez wirusa:
     Kolor oczu: #4040EE
 
 Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
-scalamy *master* z *newidea* i usuwamy *newidea*.
+scalamy *master* z *newidea* i usuwamy *newidea*:
+
+    git merge master
+    git checkout master
+    git merge newidea
+    git branch -d newidea
+
+Zostajemy z pokrętną historią:
+
+    gitk --all 
+
+Jak przejść powyższy scenariusz, tak aby na końcu otrzymać „prostą
+historię”?
+
+Możemy nieco oczyścić gałęzie w taki sposób:
+
+    git stash clear
+    git gc
 
 
 ### Remote branches
