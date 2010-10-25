@@ -530,10 +530,10 @@ jako *remote* do mojego repozytrorium *jblog*:
 
 ## My typical Git day
 
-Przeanalizować przykłady ze strony
+… to przykład ze strony
 [Everyday GIT With 20 Commands Or So](http://www.kernel.org/pub/software/scm/git/docs/everyday.html)
 
-Wspomnieć o *git-bisect*:
+Jak znaleźć bug w kodzie za pomocą *git-bisect*? Zaczynamy od lektury:
 
     man git-bisect
 
