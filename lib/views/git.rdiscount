@@ -355,16 +355,26 @@ nowym dowcipem:
 6\. Kończymy nowy dowcip:
 
     git checkout newidea
+    git stash apply
     cat >> index.html
     Kolor oczu: #4040EE
 
 Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
 scalamy *master* z *newidea* i usuwamy *newidea*:
 
-    git merge master
-    git checkout master
-    git merge newidea
+    git add index.html
+    git commit -m "raczej słaby dowcip"
+   
+Teraz kolejno wykonujemy:
+
+    git merge master        # najpierw scalanie
+    git checkout master     # następnie zmieniamy gałąź 
+    git merge newidea       # i na konie jeszcze raz scalanie
     git branch -d newidea
+
+**Uwaga:** Najpierw wykonujemy na gałęzi *newidea* scalanie z *master*.
+Jeśli pominiemy ten krok, to scalenie z *newidea*
+daje konflikt. Dlaczego?
 
 Zostajemy z pokrętną historią:
 
