@@ -80,6 +80,30 @@ polecenia *help*, na przykład:
   </tbody>
 </table>
 
+### Przykład wyjaśniający co nieco
+
+Poniżej użyjemy z użytecznego polecenia *set*.
+Użyjemy go do ustawienia parametrów pozycyjnych:
+
+    set -- raz dwa trzy
+
+Po wykonaniu tego polecenia *$1 == raz*, *$2 == dwa*, *$3 == trzy*.
+Możemy się o tym przekonać w taki sposób:
+
+    echo $1 $2 $3
+
+A teraz obiecany powyżej przykład:
+
+    set -- raz "dwa trzy" cztery
+    echo Mamy $# argumenty
+    for i in $* ; do echo i to $i ; done
+    for i in $@ ; do echo i to $i ; done    # to samo co powyżej
+    for i in "$*" ; do echo i to $i ; done  # jeden napis
+    for i in "$@" ; do echo i to $i ; done  # zazwyczaj o to nam chodzi
+    shift
+    echo o jeden argument mniej: $#
+    for i in "$@" ; do echo i to $i ; done
+
 
 ## Rot13
 
