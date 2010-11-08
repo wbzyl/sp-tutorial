@@ -87,7 +87,7 @@ Użyjemy go do ustawienia parametrów pozycyjnych:
 
     set -- raz dwa trzy
 
-Po wykonaniu tego polecenia *$1 == raz*, *$2 == dwa*, *$3 == trzy*.
+Po wykonaniu tego polecenia *$1==raz*, *$2==dwa*, *$3==trzy*.
 Możemy się o tym przekonać w taki sposób:
 
     echo $1 $2 $3
