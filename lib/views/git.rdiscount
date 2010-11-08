@@ -393,7 +393,7 @@ Możemy nieco oczyścić gałęzie w taki sposób:
 
 Dodajemy oryginalny projekt jako *remote*.
 
-Forkuję projekt 
+Forkuję projekt Phil Hagelberga (nick: technomancy):
 
     http://github.com/technomancy/emacs-starter-kit
 
@@ -432,9 +432,24 @@ daje nieco więcej informacji od poprzedniego polecenia:
     technomancy/master
     technomancy/personalizations
 
+Po co to zrobiliśmy? Teraz możemy porównać nową wersję ze swoją:
 
-Po co to zrobiliśmy? Teraz możemy porównać nową wersję ze swoja i
-scalić nową wersję ze swoim projektem.
+    git diff technomancy/master
+
+i scalić nową wersję ze swoim projektem:
+
+    git merge technomancy/master
+
+Albo, możemy postąpić ostrożniej:
+
+    git checkout -b technomancy
+    git merge technomancy/master
+
+Od czasu do czasu wykonujemy:
+
+    git fetch technomancy
+
+pobierając nową wersję (jeśli były jakieś zmiany).
 
 
 ## Prostowanie historii, czyli rebasing
