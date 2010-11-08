@@ -82,7 +82,7 @@ polecenia *help*, na przykład:
 
 ### Przykład wyjaśniający co nieco
 
-Poniżej użyjemy z użytecznego polecenia *set*.
+Poniżej użyjemy użytecznego polecenia *set*.
 Użyjemy go do ustawienia parametrów pozycyjnych:
 
     set -- raz dwa trzy
