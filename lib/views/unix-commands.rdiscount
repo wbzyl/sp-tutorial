@@ -34,9 +34,19 @@ Polecenie *alias*:
     alias rm
 
 
+
+<blockquote>
+  <p>
+    The ~ us just a show way of saying “your home directory”, 
+    which is just a geek way of saying “your default folder”, 
+    which is still kind of geeky anyway. And I’m OK with that.
+  </p>
+  <p class="author">— Chris Pine</p>
+</blockquote>
+
 ## Operacje na plikach
 
-Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`.
+Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`, `~`.
 Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
