@@ -12,21 +12,19 @@ sieci.)
 
 2\. Wyświetl na ekran 4 ostatnie wiersze pliku *program.c*. (*head*, *tail*)
 
-3\. Wyświetl na ekran całą zawartość pliku *program.c*.
-
-4\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa
+3\. W pliku *program.c* znajdź wszystkie wiersze z wystąpieniem słowa
 „main”. (*grep*)
 
-5\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
+4\. Plikowi *program.c* nadaj następujące uprawnienia: właściciel – czytanie,
 pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (*chmod*)
 
-6\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
+5\. Będąc w katalogu *temp* przenieś katalog *wazne-sprawy* do
 katalogu *praca*.
 
-7\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
+6\. Zarchiwizuj cały katalog *temp*. (*zip* i *tar*)
 
-8\. Usuń katalog *temp*.
+7\. Usuń katalog *temp*.
 
-9\. Odtwórz z archiwum katalog *temp*. (*unzip* i *tar*)
+8\. Odtwórz z archiwum katalog *temp*. (*unzip* i *tar*)
 
-10\. Posprzątaj na swoim koncie.
+9\. Posprzątaj na swoim koncie.
