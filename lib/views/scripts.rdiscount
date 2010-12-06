@@ -17,7 +17,7 @@
 W podręczniku użytkownika programu *bash* znajdziesz wszystkie
 szczegóły dotyczące programowania powłoki.
 
-Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z 
+Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z
 polecenia *help*, na przykład:
 
     :::shell-unix-generic
@@ -119,13 +119,13 @@ Plik *rot13.sh*:
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     # "a" na "n", "b" na "o", itd
     cat "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'
-    
+
     exit 0
 
-Uwaga: konstrukacja `cat "$@"` umożliwia pobieranie 
+Uwaga: konstrukacja `cat "$@"` umożliwia pobieranie
 tekstu ze *stdin* lub z pliku.
 
 
@@ -133,7 +133,7 @@ tekstu ze *stdin* lub z pliku.
 
 <blockquote>
  <p>
-  S.E.S.J.A. = System Eliminacji Studentów Już Aktywny 
+  S.E.S.J.A. = System Eliminacji Studentów Już Aktywny
  </p>
 </blockquote>
 
@@ -142,16 +142,16 @@ kolorować wypisywany tekst:
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     red='\e[31m'
     end_color='\e[0m'
-    
+
     echo -e "${red}Listing katalogu:${end_color}" `pwd`
     ls --color -lt
-    
+
     exit 0
 
-A ten skrypt pokazuje jak zmieniać kolor tła 
+A ten skrypt pokazuje jak zmieniać kolor tła
 i znaki normalne na znaki pobgrubione:
 
     :::shell-unix-generic
@@ -180,7 +180,7 @@ podkreślenia *_*.
     #!/bin/bash
     number=0             # licznik plików, którym zmieniono nazwy
     FOUND=0              # zmienna: aby kod się lepiej czytał
-    
+
     for filename in *    # przejrzyj wszystkie pliki w katalogu
     do
          echo "$filename" | grep -q " "         # sprawdź czy nazwa pliku
@@ -191,8 +191,8 @@ podkreślenia *_*.
            mv "$fname" "$n"                     # zmieniamy nazwę pliku
            let "number += 1"
          fi
-    done   
-    
+    done
+
     echo "Liczba plików, którym zmieniono nazwy: $number"
     exit 0
 
@@ -221,11 +221,11 @@ opcji: `-f`, `-v` i `-q`.
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     file=
     verbose=
     quiet=
-    
+
     while [ $# -gt 0 ]
     do
       case $1 in
@@ -233,7 +233,7 @@ opcji: `-f`, `-v` i `-q`.
            shift  # dlaczego?
            ;;
       -v)  verbose=true
-           quiet=     
+           quiet=
            ;;
       -q)  quiet=true
            verbose=
@@ -255,7 +255,7 @@ przetwarzania opcji korzystając z polecenia wbudowanego `getopts`.
 
 ## Szaradzista
 
-Skrypt *szaradzista.sh* dopasowuje wzorzec zadany wyrażeniem 
+Skrypt *szaradzista.sh* dopasowuje wzorzec zadany wyrażeniem
 regularnym programu *egrep* do zbioru słowników:
 
     szaradzista.sh wzorzec-egrep [pliki-slownikow]
@@ -271,7 +271,7 @@ Sam skrypt jest prosty:
           "
     pattern="$1"
     shift
-    # jeśli użytkownik wskaże własne słowniki, 
+    # jeśli użytkownik wskaże własne słowniki,
     # to słowniki wymienione w FILES są ignorowane
     test $# -gt 0 && FILES="$@"
     egrep -h -i "$pattern" $FILES 2> /dev/null | sort -u -f
@@ -293,23 +293,23 @@ polskich liter: ą, ć, ę, itd.
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     E_BADARGS=64
     if [ ! -r "$1" ]                    #  Need at least one
     then                                #  valid file argument.
       echo "Usage: $0 files-to-process"
       exit $E_BADARGS
-    fi  
+    fi
     cat $* |                            # Contents of specified files to stdout.
             tr A-Z a-z |                # Convert to lowercase.
             tr ' ' '\012' |             # New: change spaces to newlines.
             tr -c '\012a-z'  '\012' |   # Rather than deleting non-alpha chars,
                                         #  change them to newlines.
-            sort |                      # 
+            sort |                      #
             uniq |                      # Remove duplicates.
             grep -v '^#' |              # Delete lines beginning with a hashmark.
             grep -v '^$'                # Delete blank lines.
-    
+
     exit 0
 
 W manualu polecenia *test* opisano opcję *-r* (i pozostałe też).
@@ -326,27 +326,27 @@ Gdzie podziały się znaki kontynuacji wiersza \(&nbsp;\\&nbsp;\)?
 
 ## Backup plików zmienionych w ostatnich 24h
 
-Tworzymy archiwum ze wszystkich plików zmienionych w ostatnich 
+Tworzymy archiwum ze wszystkich plików zmienionych w ostatnich
 24 godzinach. Archiwum, to plik "tarball" (tarred i gzipped).
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     BACKUPFILE=backup-$(date +%m-%d-%Y)
     #                 wstaw datę do nazwy pliku
     archive=${1:-$BACKUPFILE}
     # jeśli w wierszu poleceń nie podano nazwy pliku na archiwum
     # użyj nazwy "backup-MM-DD-YYYY.tar.gz."
-    
+
     tar cvf - `find . -mtime -1 -type f -print` > $archive.tar
     gzip $archive.tar
     echo "Directory $PWD backed up in archive file \"$archive.tar.gz\"."
-    
+
     exit 0
 
 Powyższy kod nie działa jeśli jest dużo plików do zarchiwizowania
 lub nazwy plików zawierają spacje. Tak można to poprawić:
-     
+
     find . -mtime -1 -type f -print0 | xargs -0 tar rvf "$archive.tar"
 
 
@@ -357,7 +357,7 @@ Czasami, technika ta jest użyteczna.
 Program *rpm-check.sh* odpytuje plik rpm:
 
 * description
-* listing 
+* listing
 * czy może być zainstalowany w systemie
 
 i zapisuje rezultat do pliku.
@@ -366,16 +366,16 @@ Opcje programu *rpm* są opisane w manualu.
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     SUCCESS=0
     E_NOARGS=64
-    
+
     if [ -z "$1" ]
     then
       echo "Usage: `basename $0` rpm-file"
       exit $E_NOARGS
-    fi  
-    
+    fi
+
     {                   # początek bloku
       echo
       echo "Archive Description:"
@@ -390,12 +390,12 @@ Opcje programu *rpm* są opisane w manualu.
         echo "Można instalować: $1"
       else
         echo "Nie można instalować: $1"
-      fi  
+      fi
       echo              # koniec bloku
     } > "$1.test"       # przekierowanie całego wyjścia z bloku do pliku
-    
+
     echo "Wyniki testu pliku rpm zapisano do pliku $1.test"
-    
+
     exit 0
 
 Wynik podobny do:
@@ -418,9 +418,9 @@ Tradycyjnie pierwszą funkcją będzie `hello_world`.
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     JUST_A_SECOND=1
-    
+
     hello_world ()
     {
       i=0
@@ -430,49 +430,69 @@ Tradycyjnie pierwszą funkcją będzie `hello_world`.
       do
         echo "hello world"
         let "i+=1"
-        sleep $JUST_A_SECOND    # poczekaj sekundkę    
+        sleep $JUST_A_SECOND    # poczekaj sekundkę
       done
     }
-    
+
     # po zdefiniowaniu funkcji możemy ją wywołać
-    
+
     hello_world
-    
+
     exit 0
 
 Teraz kolej na trzy użyteczne funkcje:
 
     :::shell-unix-generic
     PROGRAM=$0
-    
+
     usage()
     {
-      cat <<EOF
-    Stosowanie: $PROGRAM [ --? ] [ --help ] [FILE]...
-    EOF
+      cat << KONIEC
+    Użycie: $PROGRAM [ --? ] [ --help ] [FILE]...
+    KONIEC
     }
-    
+
     usage_and_exit()
     {
       usage
       exit $1  # jedyny argument powinien być małą liczbą
     }
-    
+
     error()
     {
       echo "$@" 1>&2  # sklejamy wszystkie argumenty; echo na stderr
       usage_and_exit 1
     }
 
-    # przykład użycia funkcji
-    usage
-    error "głupi błąd"
+    # przykład użycia
+    error "ERROR 128"
 
-Kilka poleceń wbudowanych:
+Dwa polecenia wbudowane:
 
     declare -f
-    typeset -f
     unset -f error
+
+
+## Funkcje powłoki a funkcje C
+
+Wartościami zwracanymi z funkcji powłoki mogą być małe liczby całkowite.
+Zwyczajowo zero oznacz pomyślne wykonanie funkcji, a wartość niezerowa
+sygnalizuje błąd.
+
+Jeśli funkcja ma przekazywać jakąś inną wartość, to może to zrobić
+ustawiając jakąś zmienną globalną skryptu albo wypisując tę wartość
+na wyjście. Wartość tę możemy przechwycić korzystając z podstawiania
+wartości poleceń:
+
+    :::shell-unix-generic
+    function foo() {
+      printf "bar $1"
+      return 0
+    }
+    echo $(foo "mleczny")  # bar mleczny
+    echo $?                # 0
+
+Wymienić co najmniej 4 rzeczy różniące funkcje powłoki od funkcji C.
 
 
 ## Zmiana kolejności parametrów pozycyjnych
@@ -481,18 +501,18 @@ W skrypcie korzystamy z polecenia wbudowanego `set`.
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     variable="raz dwa trzy cztery"
-    
+
     # przypisujemy zmiennym pozycyjnym wartość zmiennej "$variable"
     set -- $variable
-    
+
     first_param=$1
     second_param=$2
     shift; shift        # usuń $1 i $2 – pierwsze dwa parametry
     # shift 2           # to też działa
     remaining_params="$*"
-    
+
     echo "pierwszy parameter   = $first_param"        # raz
     echo "drugi parameter      = $second_param"       # dwa
     echo "pozostałe parametery = $remaining_params"   # trzy cztery
@@ -504,7 +524,7 @@ Na koniec skrypt *filesdirectories.sh* z książki
 A. Robbinsa & N. H. F. Beebe, [Programowanie skryptów powloki] [psp].
 Pokazuje zastosowanie polecenia wbudowanego *trap*.
 
-Skrypt przegląda wszystkie pliki i katalogi, grupuje je 
+Skrypt przegląda wszystkie pliki i katalogi, grupuje je
 wedle dat ostatniej modyfikacji, zapisujac wyniki
 w plikach FILES.XXX i DIRECTORIES.XXX:
 
@@ -525,19 +545,19 @@ A to skrypt w całej swej okazałości:
     # <newline> <space> <tab>
     IFS='
      	'
-    
+
     # security: ograniczamy wyszukiwanie tylko do wymienionych katalogów
     PATH=/usr/local/bin:/bin:/usr/bin
     export PATH
-    
+
     if [ $# -ne 1 ]
     then
     	echo "Stosowanie: $0 katalog" >&2
     	exit 1
     fi
-    
+
     umask 077             # gwarantuje prywatność tworzonych plików
-    
+
     TMP=${TMPDIR:-/tmp}   # uwzględnia alternatywne katalogi plików tymczasowych
     TMPFILES="
     	$TMP/DIRECTORIES.all.$$ $TMP/DIRECTORIES.all.$$.tmp
@@ -553,13 +573,13 @@ A to skrypt w całej swej okazałości:
     	$TMP/FILES.last14.$$ $TMP/FILES.last14.$$.tmp
     	$TMP/FILES.last31.$$ $TMP/FILES.last31.$$.tmp
     	"
-    
+
     WD=$1
     cd $WD || exit 1
-    
+
     trap 'exit 1'		HUP INT PIPE QUIT TERM	# liczbowo: 1 2 3 13 15
     trap 'rm -f $TMPFILES'	EXIT			# liczbowo: 0
-    
+
     # opcja -fprint dostępna tylko w programie find GNU
     find . \
     	   -name DIRECTORIES.all -true \
@@ -579,7 +599,7 @@ A to skrypt w całej swej okazałości:
     	-a         -mtime  -7 -fprint $TMP/DIRECTORIES.last07.$$ \
     	-a         -mtime  -2 -fprint $TMP/DIRECTORIES.last02.$$ \
     	-a         -mtime  -1 -fprint $TMP/DIRECTORIES.last01.$$
-    
+
     for i in FILES.all FILES.last31 FILES.last14 FILES.last07 \
     	FILES.last02 FILES.last01 DIRECTORIES.all \
     	DIRECTORIES.last31 DIRECTORIES.last14 \
@@ -606,10 +626,10 @@ Skrypt *echo-params.sh*:
 
     :::shell-unix-generic
     #!/bin/bash
-    
+
     params=$#              # liczba parametrów w linii poleceń
     param=1                # zaczynamy od parametru 1.
-    
+
     while [ "$param" -le "$params" ]
     do
       echo -n "command-line parameter "
@@ -622,10 +642,10 @@ Skrypt *echo-params.sh*:
       echo -n " = "
       eval echo \$$param   # wypisz *wartość* zmiennej
     # ^^^^      ^^^        # "eval" wymusza *evaluation* \$$param
-    
+
     (( param ++ ))         # przejdź do następnego parametru
     done
-    
+
     exit $?
 
 ## Weasel words
@@ -633,7 +653,7 @@ Skrypt *echo-params.sh*:
 Skrypt z artykułu Matta Mighta,
 [3 shell scripts to improve your writing](http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/).
 
-Na początek definicja. 
+Na początek definicja.
 „**Weasel words** -- phrases or words that sound good without conveying information.”
 These words obscure precision.
 
