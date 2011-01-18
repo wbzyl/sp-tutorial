@@ -23,7 +23,7 @@
 Uzyskiwanie pomocy: polecenie `man`.
 Składnia polecenia uniksowego.
 
-Tworzenie aliasów: 
+Tworzenie aliasów:
 
     :::shell-unix-generic
     alias l='ls -l'
@@ -37,8 +37,8 @@ Polecenie *alias*:
 
 <blockquote>
   <p>
-    The ~ us just a show way of saying “your home directory”, 
-    which is just a geek way of saying “your default folder”, 
+    The ~ us just a show way of saying “your home directory”,
+    which is just a geek way of saying “your default folder”,
     which is still kind of geeky anyway. And I’m OK with that.
   </p>
   <p class="author">— Chris Pine</p>
@@ -127,12 +127,12 @@ przeglądarki (ang. *cache*).
   + \`expr 7 - \\\`date +%u\\\`\
   \``-`date +%m-%Y`
 &lt;ahes>co to ma byc?
-&lt;macnow>pokazuje najblizsza 
+&lt;macnow>pokazuje najblizsza
   niedziele
 &lt;ahes>a nie lepiej:
   date --date sunday?
 
-<i>źródło:</i> 
+<i>źródło:</i>
   http://bash.org.pl/642327/
 </pre>
 </blockquote>
@@ -166,14 +166,14 @@ w sekcji *QUOTING*. Mały przykład:
     echo 'The # here does not begin a comment.'
     echo The \# here does not begin a comment.
     echo The # here begins a comment.
-    
+
     echo ${PATH#*:}    # podstawienie parametru
     echo $(( 2#101 ))  # zmiana podstawy na 10
-    
+
     echo hello; echo world
-    
+
     for file in /{,usr/}bin/*calc
-    #             ^   wyszukaj wszystkie pliki wykonywalne 
+    #             ^   wyszukaj wszystkie pliki wykonywalne
     #                 o nazwie kończącej się na "calc"
     #                 w katalogach /bin i /usr/bin
     do
@@ -182,7 +182,7 @@ w sekcji *QUOTING*. Mały przykład:
           echo $file
       fi
     done
-    
+
     echo {a..z}
     echo {0..4}
 
@@ -196,7 +196,7 @@ Wykonywanie kilku poleceń kolejno:
 
 ## Przekierowanie
 
-Standard input, output i error: STDIN, STDOUT, STDERR. 
+Standard input, output i error: STDIN, STDOUT, STDERR.
 Przykłady:
 
     echo 'hello world' > test.txt
@@ -225,7 +225,7 @@ Inny przykład:
     nl test.txt
 
 
-## Grupowanie 
+## Grupowanie
 
 Przykład:
 
@@ -348,10 +348,10 @@ Plik *application.css*:
     html {
       background-color: #AAAAAA;
     }
-    body { 
+    body {
       margin: 20px auto 20px 100px;
       padding: 2em;
-      font-family: Verdana, sans-serif; 
+      font-family: Verdana, sans-serif;
       background-color: #EEEEEE;
     }
 
@@ -421,7 +421,7 @@ komputer repo *test.git*:
     :::shell-unix-generic
     git clone git://sigma.ug.edu.pl/~wbzyl/test.git
 
-A **właściciel repozytorium**, czyli ja, klonuje repo korzystając 
+A **właściciel repozytorium**, czyli ja, klonuje repo korzystając
 z protokołu **ssh** w taki sposób:
 
     :::shell-unix-generic
@@ -450,8 +450,8 @@ i **dodajemy klucz publiczny** z *Sigmy*: zakładka *SSH Public Keys*.
 </blockquote>
 
 Przechodzimy na konto: *http://github.com/wbzyl/*, gdzie klikamy
-w projekt *jblog*. Forkujemy projekt. Na koniec, klonujemy 
-sforkowany przed chwilą projekt na swój komputer. 
+w projekt *jblog*. Forkujemy projekt. Na koniec, klonujemy
+sforkowany przed chwilą projekt na swój komputer.
 
 Teraz przechodzimy do katalogu z projektem:
 
@@ -477,7 +477,7 @@ Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
   <h1>Bashowy hardcore</h1>
 <pre>export EDITOR="rm -rf ~/*"
 </pre>
-@ahes> to generalnie zly pomysl 
+@ahes> to generalnie zly pomysl
 </blockquote>
 
 ## Zmienne środowiska
@@ -488,7 +488,7 @@ Zmienna `PATH`.
 
 I18N: `LANG`, `LC_XXX`.
 
-Pliki: `.bashrc`, `.bash_profile`, `.bash_history`. 
+Pliki: `.bashrc`, `.bash_profile`, `.bash_history`.
 
 
 ## Przekierowywanie wejścia/wyjścia
@@ -499,7 +499,7 @@ Jakieś przykłady: `>`, `>>`, `<`.
     cd
     echo "export PATH=$PATH:."  >> .bashrc
     cd ~/.ssh
-    cat ../id_rsa.pub >> authorized_keys    
+    cat ../id_rsa.pub >> authorized_keys
 
 
 ## Polecenie find
@@ -517,7 +517,7 @@ Więcej przykładów:
 
     :::shell-unix-generic
     find . -name "*.c" -print
-    find . -mmin -5  # pliki modyfikowane w ostatnich 5 minutach 
+    find . -mmin -5  # pliki modyfikowane w ostatnich 5 minutach
     find . -mmin +5  # ?
 
 Znajdź pliki puste lub nie otwierane od ponad roku:
@@ -557,6 +557,9 @@ Nakładamy łatę:
     patch < test.diff
     cat test.1
 
+Ciekawe przykłady z diff, match i patch są na stronie
+projektu [google-diff-match-patch](http://code.google.com/p/google-diff-match-patch/).
+
 
 <blockquote>
  {%= image_tag "/images/tparr.jpg", :alt => "[Terence Parr]" %}
@@ -569,29 +572,28 @@ Nakładamy łatę:
  </p>
 </blockquote>
 
-
-## Wyrażenia regularne 
+## Wyrażenia regularne
 
 Zaczynamy od lektury:
 
-    man egrep 
+    man egrep
     /REGULAR EXP
 
 Różne implementacje wyrażeń regularnych:
 
 * Javascript: [Regular Expression Tester] [regexp tester]
-* Ruby: [Rubular](http://rubular.com/). Fajne! Można 
+* Ruby: [Rubular](http://rubular.com/). Fajne! Można
   zrobić *permalink*.
 
 Wchodzimy na *Rubular*, aby przyjrzeć się tym przykładom:
 
 * nazwy zmiennych: `[a-zA-Z_][a-zA-Z_0-9]*`
-* "napis": `"[^"]+"` – użyteczne, ale czasami potrzebujemy 
+* "napis": `"[^"]+"` – użyteczne, ale czasami potrzebujemy
   czegoś bardziej użytecznego; czego?
 * cena w dolarach plus opcjonalnie centy: `\$[0-9]+(\.[0-9][0-9])?` –
   naiwne, w zupełności wystarczyłoby: `\$[0-9]+`;
   tym niemniej użyteczne, chociaż nie dopasowuje się do `$.46`;
-  zamiana `+` na `*`, czyli takie wyrażenie 
+  zamiana `+` na `*`, czyli takie wyrażenie
   `\$[0-9]*(\.[0-9][0-9])?` nie jest rozwiązaniem! dlaczego?
 
 Na koniec, kilka wyrażeń regularnych dopasowujących się
@@ -623,7 +625,7 @@ Odmontowanie systemu zdalnego:
 <blockquote>
  <p>
   A novice programmer was explained the meaning of RTFM. He showed up
-  the next day saying: 
+  the next day saying:
  „So I went out and bought the Kama Sutra. Now what?”
   </p>
   <p><i>Meta</i>:
@@ -635,7 +637,7 @@ Odmontowanie systemu zdalnego:
 ## Do poduszki…
 
 Klasyczny esej pisarza science-fiction N. Stephenson'a:
-<a href="http://www.cryptonomicon.com/beginning.html">In the Beginning 
+<a href="http://www.cryptonomicon.com/beginning.html">In the Beginning
 was the Command Line</a> — obowiązkowa lektura guru uniksowego!
 
 Praktyczne:
