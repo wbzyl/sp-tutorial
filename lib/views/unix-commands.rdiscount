@@ -529,7 +529,20 @@ Jeszcze jeden przykład z *xargs*:
 
     find . -name "*.c" | xargs wc
 
-Polecenia *locate* i *updatedb*.
+Użyteczny skrót do ostatnio wykonanego *find* (bash):
+
+    !find
+
+I jeszcze kilka przykładów:
+
+    find . -mtime -1  # modyfikowane dzisiaj
+    find . -perm 777
+    find . -maxdepth 1 -type f -newer hello.c  # przeszukiwanie bez podkatalogów
+    find . -type f -newer hello.c -prune       # –"–
+
+Zamiast przeszukiwać dysk, co zawsze jest wolen,
+można skorzystać z polecenia *locate*, które przeszukuje bazę
+plików wcześniej utworzoną/uaktualnioną przez polecenie *updatedb*.
 
 
 ## Polecenia *diff* i *patch*
