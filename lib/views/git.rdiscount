@@ -114,6 +114,30 @@ Dopisujemy je do pliku *~/.bashrc*:
     alias gt='git status'
 
 
+### Nazwa gałęzi w prompt basha
+
+Po sklonowaniu repozytorium samego Gita:
+
+    git clone git://git.kernel.org/pub/scm/git/git.git
+
+z katalogu *contrib/completion]* kopiujemy plik (*Fedora*):
+
+    cp git-completion.bash /etc/profile.d/git-completion.sh
+
+Następnie do pliku *.bashrc* dopisujemy, coś w stylu:
+
+    :::shell-unix-generic
+    if [ "$PS1" ]; then
+      [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \w]"' $(__git_ps1 "(%s)")'"\n→ "
+      export PS1
+    fi
+
+Teraz powinniśmy mieć taki „znak zachęty”:
+
+    [wbzyl@localhost ~/github.com/git] (master)
+    →
+
+
 <blockquote>
  <h1>Zasłyszane</h1>
  <p>
@@ -127,7 +151,6 @@ Dopisujemy je do pliku *~/.bashrc*:
   Call it the poor man’s approach to usability.
  </p>
 </blockquote>
-
 
 ## Podstawy
 
