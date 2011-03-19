@@ -22,7 +22,7 @@ i dlaczego Google więcej już nie poprosi LT o wygłoszenie referatu.
 
 Randal L. Schwartz “Guru-On-Demand” jest autorem najlepszego
 wprowadzenia do języka (Perl) jakie czytałem. Jego
-screencast [Schwartz on Git] [] jest wart obejrzenia. 
+screencast [Schwartz on Git] [] jest wart obejrzenia.
 Można się z niego dowiedzieć jak Git może zmienić życie
 programisty.
 
@@ -42,7 +42,7 @@ Też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
 
 <blockquote>
  <p>
-  Podchodzi informatyk do fortepianu i ogląda go wnikliwie: 
+  Podchodzi informatyk do fortepianu i ogląda go wnikliwie:
   — Hmm, tylko 84
   klawisze, z czego 1/3 funkcyjnych, wszystkie nieopisane,
   chociaż… shift naciskany nogą. Oryginalnie.
@@ -54,7 +54,7 @@ Pracę z gitem zaczynamy od przedstawienia się:
     git config -l
     git config --global user.name "Wlodek Bzyl"
     git config --global user.email "matwb@univ.gda.pl"
-    
+
 po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 
     cat ~/.gitconfig
@@ -62,12 +62,15 @@ po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 Łatwiej będzie nam porozumiewać się z Gitem, po dodaniu do pliku
 konfiguracyjnego kilku skrótów:
 
-    git config --global alias.br branch -a
-    git config --global alias.co checkout
-    git config --global alias.ci commit
-    git config --global alias.df diff
-    git config --global alias.lg log -p
-    git config --global alias.st status
+    git config --global alias.br    "branch -a"
+    git config --global alias.co    "checkout"
+    git config --global alias.ci    "commit"
+    git config --global alias.df    "diff"
+    git config --global alias.lg    "log -p"
+    git config --global alias.lol   "log --graph --decorate --pretty=oneline --abbrev-commit"
+    git config --global alias.lola  "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+    git config --global alias.ls    "ls-files"
+    git config --global alias.st    "status"
 
 Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
 
@@ -82,31 +85,29 @@ i oto rezultat — mój plik *~/.gitconfig* w całej okazałości:
     [user]
       email = matwb@univ.gda.pl
       name = Wlodek Bzyl
-    
+
     [color]
       branch = auto
       diff = auto
       status = auto
-    
+
     [color]
       ui = true
-    
+
     [core]
       whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    
+
     [alias]
       br = branch -a
       co = checkout
       ci = commit
-      df = diff
-      lg = log -p
-      st = status
-    
-i po konfiguracji.
-    
+      ...
+
+I już po konfiguracji.
+
 Wygodnie też jest mieć kilka aliasów w bashu.
 Dopisujemy je do pliku *~/.bashrc*:
-    
+
     :::shell-unix-generic
     alias gb='git branch -a'
     alias gl='git log -p'
@@ -118,7 +119,7 @@ Dopisujemy je do pliku *~/.bashrc*:
  <p>
   Q: Couldn't this be done using a Git repo?<br/>
   A: What's that “Git” thing?
-  Diversion system is developed using “Mother Driven Development”. 
+  Diversion system is developed using “Mother Driven Development”.
   With this system, you keep asking yourself:
   <em>Would my mother understand this?</em>
  </p>
@@ -126,7 +127,7 @@ Dopisujemy je do pliku *~/.bashrc*:
   Call it the poor man’s approach to usability.
  </p>
 </blockquote>
-    
+
 
 ## Podstawy
 
@@ -142,7 +143,7 @@ powinno mieć nazwę *hello-world*:
     git add .
     git commit -m "pierwsza wrzutka"
 
-Każdy plik w systemie Git może mieć aż trzy życia: 
+Każdy plik w systemie Git może mieć aż trzy życia:
 jedno w „drzewie roboczym”, drugie w „indeks” i trzecie w „trunk”:
 
     git diff           # shows you the differences from index to working tree
@@ -150,7 +151,7 @@ jedno w „drzewie roboczym”, drugie w „indeks” i trzecie w „trunk”:
     git diff --cached  # shows you the differences from trunk to index
 
 Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
-[The Thing About Git] [tomayko about git]. 
+[The Thing About Git] [tomayko about git].
 
 
 <blockquote cite="http://www.gitready.com/beginner/2009/01/18/the-staging-area.html">
@@ -158,7 +159,7 @@ Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
 </blockquote>
 
 Na *indeks* mówimy też *staging area* (punkt etapowy, punkt tranzytowy),
-*working tree* tłumaczymy na drzewo robocze (kopia robocza?), 
+*working tree* tłumaczymy na drzewo robocze (kopia robocza?),
 a *trunk* to *trunk*.
 
 
@@ -230,9 +231,9 @@ sobie wyobrażać:
 
 ### Undo różnych rzeczy
 
-Zmieniamy **ostatni** wpis w logu: 
+Zmieniamy **ostatni** wpis w logu:
 
-    git commit --amend    
+    git commit --amend
 
 Unstaging staged plik:
 
@@ -273,13 +274,13 @@ Gałęzie Gita najlepiej rozrysował S. Chacon w swojej książce:
 Przećwiczmy następujący scenariusz:
 
 * Tworzymy serwis www z dowcipami.
-* Tworzymy nową gałąź o nazwie *newidea* na nowy dowcip 
+* Tworzymy nową gałąź o nazwie *newidea* na nowy dowcip
   i przenosimy się na nią.
 * Zaczynamy pisać nowy dowcip.
 
-W trakcie pracy nad dowcipem dostajemy wiadomość, 
+W trakcie pracy nad dowcipem dostajemy wiadomość,
 że strona główna jest zawirusowana.
-Przerywamy pracę nad nowym dowcipem i zabieramy się 
+Przerywamy pracę nad nowym dowcipem i zabieramy się
 za szukanie wirusa.
 
 <blockquote>
@@ -287,9 +288,9 @@ za szukanie wirusa.
 </blockquote>
 
 * Wracamy na główną gałąź.
-* Tworzymy nową gałąź o nazwie *hotfix*, 
+* Tworzymy nową gałąź o nazwie *hotfix*,
   gdzie będziemy robić poprawki.
-* Po przetestowaniu poprawek, 
+* Po przetestowaniu poprawek,
   scalamy gałąź *hotfix* z gałęzią główną.
 * Przenosimy się z powrotem na gałąź *newidea*
   gdzie kończymy pisać nowy dowcip.
@@ -308,8 +309,8 @@ wpisujemy dowcip:
     cd ~/public_html/dowcipy/
     git init
     cat > index.html
-    Jestem albańskim wirusem komputerowym, ale z uwagi 
-    na słabe zaawansowanie informatyczne mojego kraju 
+    Jestem albańskim wirusem komputerowym, ale z uwagi
+    na słabe zaawansowanie informatyczne mojego kraju
     nie mogę nic ci zrobić.
     Proszę skasuj sobie jakiś plik i prześlij mnie dalej.
 
@@ -364,11 +365,11 @@ scalamy *master* z *newidea* i usuwamy *newidea*:
 
     git add index.html
     git commit -m "raczej słaby dowcip"
-   
+
 Teraz kolejno wykonujemy:
 
     git merge master        # najpierw scalanie
-    git checkout master     # następnie zmieniamy gałąź 
+    git checkout master     # następnie zmieniamy gałąź
     git merge newidea       # i na konie jeszcze raz scalanie
     git branch -d newidea
 
@@ -378,7 +379,7 @@ daje konflikt. Dlaczego?
 
 Zostajemy z pokrętną historią:
 
-    gitk --all 
+    gitk --all
 
 Jak przejść powyższy scenariusz, tak aby na końcu otrzymać „prostą
 historię”?
@@ -414,7 +415,7 @@ z serwera *github.com*.
 
 Sprawdzamy co zostało zrobione. Wykonujemy polecenie:
 
-    git remote 
+    git remote
     origin
     technomancy
 
@@ -491,7 +492,7 @@ Przechodzimy na główną gałąź:
     git commit -m "wrzutka: 2." -a
     gitk
 
-Przechodzimy na gałąź *newidea*. 
+Przechodzimy na gałąź *newidea*.
 Rebase **wykonujemy** z gałęzi *newidea*:
 
     git checkout newidea
@@ -504,7 +505,7 @@ Wracamy na główną gałąź, scalamy zmiany z gałęzi
     gitk                   # podgląd
     git merge newidea      # powinno być fast-forward
     gitk
-    git branch -d newidea    
+    git branch -d newidea
     gitk
 
 
@@ -513,7 +514,7 @@ Wracamy na główną gałąź, scalamy zmiany z gałęzi
 Przykład: wspólna praca nad projektem *jBlog*.
 
 Ala zakłada konto *as007* na serwerze *github.com*, a następnie
-loguje się na swoje nowe konto. 
+loguje się na swoje nowe konto.
 
 Po zalogowaniu wchodzi na stronę *https://github.com/account*, gdzie
 dodaje klucz publiczny swojego komputera do *SSH Public Keys*.
@@ -523,13 +524,13 @@ ze swojego komputera na serwer *github.com*.
 1. Teraz wchodzi na na stronę z projektem
    *http://github.com/wbzyl/jblog/*, gdzie klika w ikonkę *fork*.
 1. Po sforkowaniu projektu, wchodzi z powrotem na swoją stronę:
-   *http://github.com/as007/* i widzi, że projekt 
+   *http://github.com/as007/* i widzi, że projekt
    *jblog* pojawił się na liście **jej** projektów.
 1. Po kliknięciu na link z nazwą *jblog* zostaje przekierowana
    na stronę *http://github.com/as007/jblog*.
-   Na tej stronie jest link **Your Clone URL**: 
+   Na tej stronie jest link **Your Clone URL**:
    *git@github.com:as007/jblog.git*.
-1. Używając tego URL-a, Ala klonuje sforkowane repozytorium na 
+1. Używając tego URL-a, Ala klonuje sforkowane repozytorium na
    swój komputer.
 
 Teraz zaczyna robić się ciekawie.
@@ -610,7 +611,7 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 ## Różne
 
 * [Hunting bugs thru history](http://phunkwork.com/post/460924983/hunting-bugs-thru-history)
-  ([An example repository that can be used to play with git-bisect, bugs and 
+  ([An example repository that can be used to play with git-bisect, bugs and
   rspec](http://github.com/phunkwork/Bisect-bug-hunt))
 
 
