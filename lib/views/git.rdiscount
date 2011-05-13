@@ -576,6 +576,8 @@ jako *remote* do mojego repozytrorium *jblog*:
 1. Scalam oba projekty: `git merge as007/master`.
 1. Wykonuję commit i push.
 
+Zob. też John Resig. [Pulley: Easy Github Pull Request Landing](http://ejohn.org/blog/pulley/).
+
 
 ## My typical Git day
 
