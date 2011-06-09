@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    {%= stylesheet_link_tag "/stylesheets/screen.css", "/stylesheets/uv.css", "/stylesheets/sp.css" %}
+    {%= stylesheet_link_tag "/stylesheets/print.css", :media => "print" %}
+    <!--[if IE]>
+      {%= stylesheet_link_tag "css/blueprint/ie.css" %}
+    <![endif]-->
+
+    <title>{%= filler_for?(:title) ? "WB@SP//" + output_filler_for(:title) : "WB@SP" %}</title>
+  </head>
+
+  <body>
+    <div class="span-21" id="header">
+      <div id="logo" class="push-1 span-13">
+        <%= link_to "WB@SP", "/" %><span>2dc87f…</span>
+      </div>
+      <div class="span-7 last">
+        <div class="append-1" id="links">
+          <a href="http://tao.inf.ug.edu.pl">home</a>
+          <a href="http://inf.ug.edu.pl/~wbzyl/galeria/zakopane/2009-08-28-zawrat/">galeria</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="span-21 container"><!-- showgrid -->
+      <div class="push-1 span-12" id="content">
+
+      {% if filler_for?(:title) && show_title? %}
+      <h1>{%= output_filler_for(:title) %}</h1>
+      {% end %}
+      {%= yield %}
+
+      </div>
+      <div class="span-8 last">
+      </div>
+    </div>
+
+  </body>
+</html>

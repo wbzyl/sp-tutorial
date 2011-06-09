@@ -1,0 +1,8 @@
+#### {% title "Laboratorium 13" %}
+
+1\. [TODO]
+W rozdziale [Git Branching](http://progit.org/book/ch3-0.html)
+książki [ProGit](http://progit.org/book/)
+jest kilka fajnych przykładów.
+
+Rozwinąć przykład z wykładu?

@@ -1,0 +1,41 @@
+#### {% title "Blogi studentów" %}
+
+# Blogi studentów
+
+<!-- http://wiseheartdesign.com/articles/2010/01/18/the-demise-of-css-why-sass-and-languages-like-it-will-triumph/ -->
+
+<blockquote>
+  {%= image_tag "/images/john-long.jpg", :alt => "[John W. Long]" %}
+  <p>Programmers have almost made code simplicity an art form while
+  designers are known for spending vast amounts of time doing very
+  tedious and repetitive work to get the effect that they want.</p>
+  <p class="author">— John W. Long</p>
+</blockquote>
+
+## Grupa B
+
+<!--
+1. <a href="http://sigma.inf.ug.edu.pl/~bberda/sp/">Berda, Bartłomiej</a>
+  bb (czyli brak bloga)
+1. <a href="http://sigma.inf.ug.edu.pl/~mwanta/sp/">Wanta, Marcin</a> bb
+1. <a href="http://sigma.inf.ug.edu.pl/~azmuda/sp/">Żmuda, Adam</a> br 16.11 23.11 30.11 7.12
+-->
+
+1. <a href="http://sigma.inf.ug.edu.pl/~kbasinski/sp/">Basiński, Krzysztof</a> 16.11 14.12
+1. <a href="http://sigma.inf.ug.edu.pl/~msienkiewicz/sp/">Sienkiewicz, Marcin</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~kskowronski/sp/">Skowroński, Krzysztof</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~mskorb/sp/">Skorb, Mateusz</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~pslaski/sp/">Śląski, Paweł</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~jsobol/sp/">Soból, Jan</a> bb
+1. <a href="http://sigma.inf.ug.edu.pl/~dszafranek/sp/">Szafranek, Damian</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~aszulc/sp/">Szulc, Adrian</a> 
+  br (czyli brak rozwiązań z lab 1, 2)
+1. <a href="http://sigma.inf.ug.edu.pl/~aszulinski/sp/">Szuliński, Adam</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~mszygenda/sp/">Szygenda, Mateusz</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~wszymanski/sp/">Szymański, Wojciech</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~lwasak/sp/">Wasak, Łukasz</a>
+1. <a href="http://sigma.inf.ug.edu.pl/~dwisniewski/sp/">Wiśniewski, Dawid</a> br
+1. <a href="http://sigma.inf.ug.edu.pl/~dwojkiewicz/sp/">Wojkiewicz, Daniel</a> lab4 (16.11)
+1. <a href="http://sigma.inf.ug.edu.pl/~pzawodny/sp/">Zawodny, Paweł</a> br
+1. <a href="http://sigma.inf.ug.edu.pl/~dzduniak/sp/">Zduniak, Daniel</a> br 16.11
+

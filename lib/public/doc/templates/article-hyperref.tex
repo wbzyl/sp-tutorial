@@ -1,0 +1,45 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+% Szablon dokumentu XeLaTeX + klasa article + pakiet hyperref
+
+\documentclass[12pt]{article} % domyślne 10pt jest za małe
+
+\usepackage{fontspec} % dokumentacja „fontspec.pdf” 
+\defaultfontfeatures{Mapping=tex-text} % konwencja: -- --- ,, ''
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+\setmainfont{DejaVu Serif} % zmień font na „DejaVu Serif”
+                           % font powinien byc zainstalowany w systemie?
+
+\usepackage{geometry} % dokumentacja „geometry.pdf”
+\geometry{a4paper}
+
+\usepackage{hyperref} % wstaw odsyłacze
+
+\usepackage{graphicx} % polecenie \includegraphics, dokumentacja „epslatex.pdf”
+
+\usepackage[polish]{polyglossia} % najważniejszy pakiet
+
+\title{Historia mojej rodziny}
+\author{Hieronim Brzęczyszczykiewicz}
+%\date{} % odkomentuj aby usunąć datę lub wstaw jakąś datę między {}
+         % jeśli tego nie zrobisz będzie drukowana aktualna data
+
+\begin{document}
+\maketitle         % drukuj tytuł
+
+\tableofcontents   % drukuj spis treści
+
+\section{Pierwsza sekcja}
+
+Akapity oddzielamy
+
+pustym wierszem.
+
+\subsection{Pierwsza podsekcja}
+
+Więcej tekstu.
+
+\end{document}

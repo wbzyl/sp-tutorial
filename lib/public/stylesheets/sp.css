@@ -1,0 +1,216 @@
+/* font-face fonts works with Firefox and Opera */
+
+@font-face {
+  font-family: "Cyklop";
+  src: url(fonts/Cyklop-Regular.otf) format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Cyklop";
+  src: url(fonts/Cyklop-Italic.otf) format("opentype");
+  font-style: italic;
+}
+
+#logo {
+  font: italic 256%/1 "Cyklop", "DejaVu Sans", sans-serif;
+  margin-bottom: 24px;
+}
+
+#logo a {
+  text-decoration: none;
+  color: #5A0405;
+  border-bottom: none;
+}
+
+#logo a:focus, #logo a:hover {
+  color: #321494;
+}
+
+#logo span {
+  margin-left: 1em;
+  color: #B019BD;
+}
+
+/* links, images */
+
+a {
+  text-decoration: none;
+}
+a img {
+  border: none;
+}
+a:link, a:visited {
+  color: #555;
+  border-bottom: 1px solid #555;
+}
+html body a:hover {
+  color: #000;
+  background-color: #F4F2E4;
+  border-bottom: 1px solid #9A8E51;
+}
+
+/* hack for RDiscount comments */
+
+h4 {
+  display: none;
+}
+
+html {
+  /* http://www.hicksdesign.co.uk/journal/forcing-scrollbars-now-even-better */
+  height: 100%;
+  margin-bottom: 1px;
+
+  background-color: #E3E6F7;
+  margin: 24px auto 24px 44px;
+}
+
+body {
+  font-family: "DejaVu Sans", "Trebuchet MS", sans-serif ;
+  line-height: 28px;
+  width: 869px;
+}
+
+#header {
+  padding-top: 24px;
+  padding-bottom: 0px;
+  background-color: #F07818;
+  /* border: solid #888; */
+  /* border-width: 1px 1px 0px 1px; */
+}
+
+#links {
+  float: right;
+}
+
+#links a {
+  text-decoration: none;
+  border-bottom: none;
+  color: #A00;
+}
+
+.container {
+  /* border: 1px solid #888; */
+  background-color: #FEF9F0;
+}
+
+a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited,
+a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"],
+a[href$=".rdf"], a[href^="aim:"] {
+  padding:2px 16px 2px 0;
+}
+
+h1 {
+  font-size: 160%;
+  font-family: "Cyklop", "DejaVu Sans", serif;
+  font-style: italic;
+  font-weight: normal;
+  color: #D80000;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #F0D800;
+  width: 869px;
+  margin-left: -44px;
+  padding-left: 44px;
+}
+
+blockquote {
+  font: normal "DejaVu Sans" 14/1.5 sans-serif;
+  width: 297px;
+  margin-top: 6px;
+  margin-left: 528px;
+  padding: 18px 22px 18px 22px;
+  position: absolute;
+  background: #99ff99;
+  -moz-border-radius: 4px;
+  color: #800;
+}
+
+blockquote img {
+  margin: 0 auto 12px auto;
+  display: block;
+}
+
+blockquote p.author {
+  margin-top: -1em;
+  padding-right: 44px;
+  color: #800;
+  font-style: italic;
+  text-align: right;
+}
+
+h2 {
+  font-size: 140%;
+  padding-bottom: 6px;
+  border-bottom: 2px dotted #D80000;
+  color: #D80000;
+}
+
+h3 {
+  font-size: 120%;
+  color: #D80000;
+}
+
+pre.dawn {
+  margin-left: -50px;
+  padding: 8px 0 8px 39px;
+  border-left: 11px solid rgb(237,0,86);
+}
+
+pre code, li pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+code {
+  margin: 0 2px;
+  padding: 0.06em 0.125em;
+  border: 1px solid #403B33;
+}
+
+caption {
+  text-align: right;
+}
+
+pre, code, tt {
+  font-family: 'Anonymous Pro', 'Monaco', monospace;
+}
+
+/* tabele */
+
+thead th {
+  background-color: #ADD8C7;
+}
+li ul {
+  margin-bottom: 1.5em;
+}
+
+.table1 {
+  background-color: #EB7C7C;
+}
+
+.table2 {
+  background-color: #ECB39F;
+}
+
+/* różne */
+
+.center {
+  text-align: center;
+}
+
+blockquote h1 {
+  font-weight: bold;
+  font-size: 100%;
+  font-family: Cyklop, serif;
+  color: #D80000;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #00A800;
+  color: white;
+  width: 100%;
+  margin-left: -22px;
+  margin-top: -18px;
+  -moz-border-radius: 4px;
+}

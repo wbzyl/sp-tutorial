@@ -1,0 +1,60 @@
+# ROZKŁAD JAZDY
+
+<blockquote>
+  {%= image_tag "/images/the_thinker.jpg", :alt => "[The Thinker]" %}
+  <p>There's no sense in being precise when you don't even know what
+     you're talking about.</p>
+  <p class="author">— John von Neumann</p>
+</blockquote>
+
+## Notatki do wykładów
+
+1. {%= link_to "Przetrwać z Unixem", "/unix-commands" %}
+1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
+1. {%= link_to "Git jest git", "/git" %}
+1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/unix-guru" %}
+1. {%= link_to "Nie tylko TeXLive", "/texlive" %}
+1. {%= link_to "Skryptologia stosowana", "/scripts" %}
+1. {%= link_to "Bash w przykładach", "/bash" %}
+
+Różne rzeczy:
+
+* {%= link_to "Ćwiczenia", "/exercises" %}
+
+
+## Literatura
+
+1. [FreeBSD Man Pages] [freebsd].
+1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
+1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
+1. S. Chacon. [Pro Git – professional version control] [progit].
+1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
+   [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
+   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
+1. P. Flynn.
+   [Formatting Information](http://www.ctan.org/tex-archive/info/beginlatex/),
+   Version 3.6, March 2005.
+   [Wersja HTML](http://www.tex.ac.uk/tex-archive/info/beginlatex/html/).
+1. M. Downes. {%= link_to "Short Math Guide for LaTeX", "/doc/short-math-guide.pdf" %}.
+1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
+1. [LaTeX2ε Cheatsheet] [latex2e cheatsheet].
+1. Peter Norvig. [Teach Yourself Programming in Ten Years] [typ10].
+1. [TeX Live] [texlive].
+1. [TeXWorks IDE] [texworks].
+1. [GUST — Polska Grupa Użytkowników Systemu TeX] [gust].
+1. GNU Operating System. [Laugh along with GNU] [gnu os].
+1. J. Gruber. [Markdown] [markdown].
+
+
+#### Linki
+
+[freebsd]: http://www.freebsd.org/cgi/man.cgi "FreeBSD Man Pages: Index Page"
+[lshort2e]: ftp://ftp.gust.org.pl/pub/CTAN/info/lshort/polish/lshort2e.pdf "Wprowadzenie do systemu LaTeX2e"
+[gnu os]: http://www.gnu.org/fun/fun.html "Laugh along with GNU - GNU Project - Free Software Foundation (FSF)"
+[progit]: http://progit.org/book/ "Pro Git – professional version control"
+[markdown]: http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"
+[texlive]: http://www.tug.org/texlive/ "TeX Live"
+[texworks]: http://www.tug.org/texworks/ "TeXworks: lowering the entry barrier to the TeX world"
+[gust]: http://www.gust.org.pl/ "Grupa Użytkowników Systemu TeX"
+[typ10]: http://norvig.com/21-days.html "Teach Yourself Programming in Ten Years"
+[latex2e cheatsheet]: http://stdout.org/~winston/latex/latexsheet.pdf "LaTeX2ε Cheat Sheet"

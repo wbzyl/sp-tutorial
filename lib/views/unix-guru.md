@@ -1,0 +1,700 @@
+#### {% title "Jak zostać Uniksowym guru w kwadrans" %}
+
+[unix guru]: http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html "How To Look Like A UNIX Guru"
+
+<blockquote>
+  {%= image_tag "/images/richard_stallman.jpg", :alt => "[Richard Stallman]" %}
+  <p>
+   Richard M. Stallman, Linus Torvalds,
+   and Donald E. Knuth engage in a discussion on whose impact
+   on the computerized world was the greatest.<br/>
+   Stallman: "God told me I have programmed
+   the best editor in the world!"
+   Torvalds: "Well, God told *me* that I have programmed
+   the best operating system in the world!"
+   Knuth: "Wait, wait &#x2013; I never said that."
+  </p>
+  <p class="author">[from rec.humor.funny]</p>
+</blockquote>
+
+UNIX is an extremely popular platform for deploying server software
+partly because of its security and stability, but also because it has
+a rich set of command line and scripting tools. Programmers use these
+tools for manipulating the file system, processing log files, and
+generally automating as much as possible.
+
+If you want to be a serious server developer, you will need to have a
+certain facility with a number of UNIX tools; about 15. You will start
+to see similarities among them, particularly regular expressions, and
+soon you will feel very comfortable. Combining the simple commands,
+you can build very powerful tools very quickly—much faster than you
+could build the equivalent functionality in C or Java, for example.
+
+
+## Wszystko jest strumieniem
+
+The first thing you need to know is that UNIX is based upon the idea
+of a *stream*.  Everything is a *stream*, or appears to be. Device
+drivers look like streams, terminals look like streams, processes
+communicate via streams, etc…  The input and output of a program are
+streams that you can redirect into a device, a file, or another
+program.
+
+Here is an example device, the null device, that lets you throw output
+away.  For example, you might want to run a program but ignore the
+output.
+
+    :::shell-unix-generic
+    ls > /dev/null # ignore output of ls
+
+where "`# ignore output of ls`" is a comment.
+
+Most of the commands covered in this lecture process `stdin`
+and send results to `stdout`.  In this manner, you can
+incrementally process a data stream by hooking the output of one tool
+to the input of another via a *pipe*.  For example, the
+following piped sequence prints the number of files in the current
+directory modified in August.
+
+    :::shell-unix-generic
+    ls -l | grep ' 10-' | wc -l
+
+Imagine how long it would take you to write the equivalent C or Java
+program.  You can become an extremely productive UNIX programmer if
+you learn to combine the simple command-line tools.  Even when
+programming on a PC, I use MKS's UNIX shell and command library to
+make it look like a UNIX box.  Worth the cash.
+
+
+<blockquote>
+ <p>Powiedzieć komuś, że jest w błędzie, to jedno,
+  a przedstawić mu prawdę, to zupełnie coś innego.
+ </p>
+ <p class="author">— John Locke</p>
+</blockquote>
+
+## Uzyskiwanie pomocy
+
+If you need to know about a command, ask for the "man" page.  For
+example, to find out about the `ls` command, type
+
+    :::shell-unix-generic
+    man ls
+    LS(1)       User Commands       LS(1)
+
+    NAME
+         ls - list directory contents
+
+    SYNOPSIS
+         ls [OPTION]... [FILE]...
+
+    DESCRIPTION
+         List information about the FILEs (the current directory
+         by default). Sort entries alphabetically if none
+         of -cftuvSUX nor --sort.
+    ...
+
+You will get a summary of the command and any arguments.
+
+If you cannot remember the command's name, try using `apropos`
+which finds commands and library routines related to that word.
+For example, to find out how to do checksums, type
+
+    apropos '\bgit\b'
+    gitrepository [] (5)  - layout - Git Repository Layout
+    gittutorial []   (7)  - A tutorial introduction to git
+    gitworkflows []  (7)  - An overview of recommended workflows with git
+
+
+## Special Directories and files
+
+A shortcut for my home directory, `/home/pracinf/wbzyl`, is
+`~wbzyl`.
+
+When you are using the shell, there is the notion of <em>current
+directory</em>.  The dot '`.`' character is a shorthand for the current
+directory and '`..`' is a shorthand for the directory above the
+current.  So to access file `test` in the current directory, `./test`
+is the same as plain `test`.  If `test` is a directory above, use
+`../test`.
+
+`/` is the root directory; there is no drive specification in UNIX.
+
+The `.bash_profile` file is very important as it is how your shell
+session is initialized including your ever-important `PATH`
+environment variable.  My `bash` shell initialization file is
+`~wbzyl/.bash_profile` and has set up code like the following:
+
+    :::shell-unix-generic
+    PATH=$PATH:$HOME/bin
+    export PATH
+
+The `export` means that the assignment to `PATH` is visible to
+all child processes (that is, visible to all programs you run from the
+shell).
+
+
+## Podstawowe polecenia
+
+### cd
+
+Changing a directory is done with `cd` <em>dir</em> where <em>dir</em> can be "." or
+".." to move to current directory (do nothing) or go up a directory.
+
+### ls
+
+Display files in a directory with `ls`.  The `-l` option is used to
+display details of the files:
+
+    :::shell-unix-generic
+    total 1234
+    drwxr-xr-x  5 wbzyl pracinf      4096 08-04 00:08 public_git
+    drwx--x--x  2 wbzyl pracinf      4096 08-02 20:20 public_html
+    drwxr-xr-x  7 wbzyl pracinf      4096 08-02 10:10 rpm
+    drwx--x--x  2 wbzyl pracinf      4096 08-02 10:00 tmp
+    ...
+
+"pracinfo" is wbzyl's group.
+
+If you want to see hidden files (those starting with "."), use `-a`.
+
+Combinations are possible: use `ls -la` to see details of all files
+including hidden ones.
+
+### wyświetlanie zawartości plików
+
+There are 4 useful ways to display the contents or portions of a file.
+The first is the very commonly used command `cat`.  For example, to
+display my email box, type:
+
+    :::shell-unix-generic
+    cat /var/mail/wbzyl
+
+If a file is really big, you will probably want to use `more`,
+which spits the file out in screen-size chunks.
+
+    :::shell-unix-generic
+    more /var/mail/wbzyl
+
+If you only want to see the first few lines of a file or the last few
+lines use `head` and `tail`.
+
+    :::shell-unix-generic
+    head /var//mail/wbzyl
+    tail /var/mail/wbzyl
+
+You can specify a number as an argument to get a specific number of
+lines:
+
+    :::shell-unix-generic
+    head -30 /var/mail/wbzyl
+
+The most useful incantation of `tail` prints the last few lines of a
+file and then waits, printing new lines as they are appended to the
+file.  This is great for watching a log file:
+
+    :::shell-unix-generic
+    tail -f /var/mail/wbzyl
+
+If you need to know how many characters, words, or lines are in a
+file, use `wc`:
+
+    :::shell-unix-generic
+     wc /var/mail/mail
+     100    1000   40000 /var/mail/wbzyl
+
+Where the numbers are, in order, lines, words, then characters.  For
+clarity, you can use `wc -l` to print just the number of lines.
+
+### pushd, popd
+
+Instead of `cd` you can use `pushd` to save the current
+dir and then automatically `cd` to the specified directory.
+For example,
+
+    :::shell-unix-generic
+    pwd
+    /home/pracinf/wbzyl
+    pushd /tmp
+    /tmp ~
+    pwd
+    /tmp
+    popd
+    ~
+    pwd
+    /home/pracinf/wbzyl
+
+### top (htop)
+
+To watch a dynamic display of the processes on your box in action, use
+`top` or `htop`.
+
+### ps
+
+To print out (wide display) all processes running on a box, use
+
+    :::shell-unix-generic
+    ps auxww  # double w
+
+### chmod
+
+To change the privileges of a file or directory, use `chmod`.  The
+privileges are 3 digit octal words with 3 bits per digit: rwxrwxrwx
+where the first digit is for the file owner, the 2nd for the group,
+and 3rd for anybody.  644 is a common word value file which means
+110100100 or
+
+    :::shell-unix-generic
+    rw-r--r--
+
+When you do `ls -l` you will see these bits.
+
+755 is a common word value for directories:
+
+    :::shell-unix-generic
+    rwxr-xr-x
+
+where directories need to be executable for `cd` to be able to enter that
+dir. 755 is a shorthand for the more readable argument
+
+    u=rwx,go=rx
+
+u is user, g is group, o is other.
+
+Use `chmod -R` for recursively applying to all the dirs below the
+argument as well.
+
+
+## Searching streams
+
+One of the most useful tools available on UNIX and the one you may use
+the most is `grep`.  This tool matches regular expressions
+(which includes simple words) and prints matching lines to
+`stdout`.
+
+The simplest incantation looks for a particular character sequence in
+a set of files.  Here is an example that looks for
+lines begining with 'Return-Path:' in the IMAP mails
+in the current directory.
+
+    :::shell-unix-generic
+    grep '^Return-Path:' *,{S,RS,ST,FRST}
+
+You may find the dot '.' regular expression useful.  It matches any
+single character but is typically combined with the star, which
+matches zero or more of the preceding item.  Be careful to enclose the
+expression in single quotes so the command-line expansion doesn't
+modify the argument.  The following example, looks for references to
+any a forum page in a server log file:
+
+    :::shell-unix-generic
+    sudo egrep '/forum/.*' /var/log/httpd/access_log
+
+or equivalently:
+
+    :::shell-unix-generic
+    sudo cat /var/log/access_log | grep '/forum/.*'
+
+The second form is useful when you want to process a collection of
+files as a single stream as in:
+
+    :::shell-unix-generic
+    sudo cat /var/log/httpd/*_log | grep '/forum/.*'
+
+If you need to look for a string at the beginning of a line, use caret '^':
+
+    :::shell-unix-generic
+     grep '^153.19.7.230' /var/log/httpd/access_log
+
+This finds all lines in all access logs that begin with IP address
+153.19.7.230.
+
+If you would like to invert the pattern matching to find lines that do
+not match a pattern, use `-v`.  Here is an example that finds
+references to non image `GET`s in a log file:
+
+    :::shell-unix-generic
+    sudo cat /var/log/access_log | grep -v '/images'
+
+Now imagine that you have an http log file and you would like to
+filter out page requests made by nonhuman spiders.  If you have a file
+called `spider.ips`, you can find all nonspider page views via:
+
+    :::shell-unix-generic
+    cat /var/log/httpd/access_log | grep -v -f /tmp/spider.ips
+
+Finally, to ignore the case of the input stream, use `-i`.
+
+
+## Przekształcanie strumieni tekstu
+
+Morphing a text stream is a fundamental UNIX operation.
+
+### tr
+
+For manipulating whitespace, you will find `tr` very useful.
+
+If you have columns of data separated by spaces and you would like the
+columns to collapse so there is a single column of data, tell
+`tr` to replace space with newline `tr ' ' '\n'`.
+Consider input file `falski.txt`:
+
+    :::shell-unix-generic
+    ala ma kota
+    ola ma psa
+
+To get all those names in a column, use
+
+    :::shell-unix-generic
+    cat falski.txt | tr ' ' '\n'
+
+If you would like to collapse all sequences of spaces into one single
+space, use `tr -s ' '`.
+
+To convert a PC file to UNIX, you have to get rid of the '\r'
+characters.  Use `tr -d '\r'`.
+
+### sed
+
+If dropping or translating single characters is not enough, you can
+use `sed` (stream editor) to replace or delete text chunks matched by
+regular expressions.  For example, to replace all references to text
+*TT* by *kbd* in the file *ug.rdiscount*, use
+
+    :::shell-unix-generic
+    cat /ug.rdiscount | sed -r 's/TT/kbd/g'
+
+If there are multiple references to *TT* on a single line, use the `g`
+suffix to indicate "global" on that line otherwise only the first
+occurrence will be removed:
+
+    :::shell-unix-generic
+    ... |  sed -r 's/TT/kbd/g'
+
+If you would like to replace references to *view.html* with
+*index.html*, use
+
+    :::shell-unix-generic
+    ... | sed 's/view.html/index.html/'
+
+If you want any `.pas` file converted to `.p`, you must match the file
+name with a regular expression and refer to it via `\1`:
+
+    :::shell-unix-generic
+    ... | sed 's/\(.*\).pas/\1.p/'
+
+The `\(...\)` grouping collects text that you can refer to with `\1`.
+
+If you want to kill everything from the ',' character to end of line,
+use the end-of-line marker `$`:
+
+    :::shell-unix-generic
+    ... | sed 's/,.*$//' # kill from comma to end of line
+
+
+## Tarballs
+
+Note: *The name comes from a similar word, **hairball** (stuff that
+cats throw up), I'm pretty sure.*
+
+To collect a bunch of files and directories together, use
+`tar`.  To tar up and gzip your entire home directory and
+put the gzipped tarball into `/tmp`, do this
+
+    :::shell-unix-generic
+    cd ~/.. # go one dir above dir you want to tar.gz; why?
+    tar zcvf /tmp/wbzyl.backup.tar.gz wbzyl
+
+By convention, use `.tar.gz` as the extension.
+To ungzip and untar this file use
+
+    :::shell-unix-generic
+    cd ~/tmp
+    tar zxvf /tmp/wbzyl.backup.tar.gz
+
+`tar` untars things in the **current** directory!
+
+After running the untar, you will find a new directory,
+`~/tmp/wbzyl`, that is a copy of your home directory.  Note that
+the way you tar things up dictates the directory structure when
+untarred.  The fact that I mentioned `wbzyl` in the tar
+creation means that I'll have that dir when untarred.  In contrast,
+the following will also make a copy of my home directory, but without
+having a `parrt` root dir:
+
+    :::shell-unix-generic
+    cd ~wbzyl
+    tar cvf /tmp/wbzyl.backup.tar *
+
+It is a good idea to tar things up with a root directory so that when
+you untar you don't generate a million files in the current directly.
+To see what's in a tarball, use
+
+    :::shell-unix-generic
+    tar ztvf /tmp/wbzyl.backup.tar.gz
+
+If you have a big file to compress, use `gzip`:
+
+    :::shell-unix-generic
+    gzip bigfile
+
+After execution, your file will have been renamed `bigfile.gz`.
+To uncompress, use
+
+    :::shell-unix-generic
+    gzip -d bigfile.gz
+
+To display a text file that is currently `gzip`'d, use `zcat`:
+
+    :::shell-unix-generic
+    zcat bigfile.gz
+
+
+## Kopiowanie plików między komputerami
+
+### rsync
+
+When you need to have a directory on one machine mirrored on another
+machine, use `rsync`.  It compares all the files in a directory
+subtree and copies over any that have changed to the mirrored
+directory on the other machine.  For example, here is how you could
+"pull" all css screencasts files from `renia.local` to the box from
+which you execute the `rsync` command:
+
+    :::shell-unix-generic
+    hostname -f
+    wlodek.local
+    rsync -raz -e ssh -v wlodek@renia.local:screencasts/css-tricks.com \
+        ~/backup/
+    ls ~/backup/css-tricks.com/
+      VideoCast-57-css3.m4v
+      ...
+
+`rsync` will delete or truncate files to ensure the files stay
+the same.  This is bad if you erase a file by mistake--it will wipe
+out your backup file.  Change the options above to `-rabz` to
+tell `rsync` to make a copy of any existing file before it
+overwrites it. Or change a filename of any existing file:
+
+    :::shell-unix-generic
+    rsync -rabz -e ssh -v --suffix .rsync_`date '+%Y%m%d'` \
+        wlodek@renia.local:screencasts/css-tricks.com ~/backup/
+
+where ``date '+%Y%m%d'`` (in reverse single quotes) means
+"execute this `date` command".
+
+To exclude certain patterns from the sync, use `--exclude`:
+
+    :::shell-unix-generic
+    rsync -rabz --exclude=tmp/ --suffix .rsync_`date '+%Y%m%d'` \
+        -e ssh -v wbzyl@renia.local:screencasts/css-tricks.com' ~/backup/
+
+### scp
+
+To copy a file or directory manually, use `scp`:
+
+    :::shell-unix-generic
+    scp lecture.html wbzyl@sigma.ug.edu.pl:public_html/
+
+Just like `cp`, use `-r` to copy a directory recursively.
+
+
+## Pozostałe programy
+
+### find
+
+Most GUIs for Linux or PCs have a search facility, but from the
+command-line you can use `find`.  To find all files with suffix
+`.c` starting in directory `~/projects`, use:
+
+    :::shell-unix-generic
+    find  ~/projects -name '.c'
+
+The default "action" is to `-print`.
+
+You can specify a globbing pattern to match.  For example, to look
+under your home directory for any xml files, use:
+
+    :::shell-unix-generic
+    find ~ -name '*.xml' -print
+
+Note the use of the single quotes to prevent command-line
+expansion--you want the '*' to go to the `find` command.
+
+You can execute a command for every file or directory found that
+matches a name.  For example, do delete all xml files, do this:
+
+    :::shell-unix-generic
+    find ~ -name '*.xml' -exec rm {} \;
+
+where "{}" stands for "current file that matches".  The end of the
+command must be terminated with ';' but because of the command-line
+expansion, you'll need to escape the ';'.
+
+You can also specify time information in your query.  Here is a shell
+script that uses `find` to delete all files older than 14 days.
+
+    :::shell-unix-generic
+    #!/bin/sh
+    BACKUP_DIR=$HOME/backup
+    # number of days to keep backups
+    AGE=14 # days
+    AGE_MINS=$[ $AGE * 60 * 24 ]
+    # delete dirs/files
+    find $BACKUP_DIR/* -cmin +$AGE_MINS -type d -exec rm -rf {} \;
+
+### fuser
+
+If you want to know who is using a port such as HTTP (80), use
+`fuser`.  You must be root to use this:
+
+    :::shell-unix-generic
+    sudo /sbin/fuser -n tcp 80
+    80/tcp:              1812 1884 1892 1898
+
+The output indicates the list of processes associated with that port.
+
+### whereis
+
+Sometimes you want to use a command but it's not in your `PATH`
+and you can't remember where it is.  Use `whereis` to look in
+standard unix locations for the command.
+
+    :::shell-unix-generic
+    whereis fuser
+    fuser: /sbin/fuser /usr/man/man1/fuser.1 /usr/man/man1/fuser.1.gz
+    whereis ls
+    ls: /bin/ls /usr/man/man1/ls.1 /usr/man/man1/ls.1.gz
+
+`whereis` also shows `man` pages.
+
+### which, type
+
+Sometimes you might be executing the wrong version of a command and
+you want to know which version of the command your `PATH`
+indicates should be run. Use `which` to ask:
+
+    :::shell-unix-generic
+    which ls
+    alias ls='ls --color=tty'
+        /bin/ls
+    type ls
+    ls is aliased to `ls --color=auto'
+
+If nothing is found in your path, you'll see:
+
+    :::shell-unix-generic
+    which fuser
+    /usr/bin/which: no fuser in (/usr/local/bin:/usr/X11R6/bin)
+
+### kill, pkill
+
+To send a signal to a process, use `kill`.  Typically you'll
+want to just say `kill pid` where `pid` can be found
+from `ps` or `top` (see below).
+
+Use `kill -9 pid` when you can't get the process to die;
+this means kill it with "extreme prejudice".
+
+### tracepath, traceroute
+
+If you are having trouble getting to a site, use `traceroute`
+to watch the sequence of hops used to get to a site:
+
+    :::shell-unix-generic
+    /usr/sbin/tracepath sigma.ug.edu.pl
+    1:  wlodek.local                                          0.391ms pmtu 1500
+        ...
+    5:  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)           10.854ms asymm  6
+    6:  TP-tp-edu-gw.task.gda.pl (153.19.0.2)                 42.373ms asymm 13
+    7:  tp-jra10ge.task.gda.pl (153.19.252.33)                34.889ms asymm 12
+    8:  area1-ug1-swr.task.gda.pl (153.19.254.228)            34.365ms asymm 12
+    9:  sigma.ug.edu.pl (153.19.7.230)                        36.318ms reached
+        Resume: pmtu 1500 hops 9 back 52
+
+    sudo /bin/traceroute sigma.ug.edu.pl
+    traceroute to sigma.ug.edu.pl (153.19.7.230), 30 hops max, 60 byte packets
+    1  wlodek.local  1.708 ms  2.529 ms  3.330 ms
+       ...
+    5  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)  21.905 ms  22.052 ms  30.636 ms
+    6  TP-tp-edu-gw.task.gda.pl (153.19.0.2)  42.546 ms  33.290 ms  33.401 ms
+    7  tp-jra10ge.task.gda.pl (153.19.252.33)  38.472 ms  38.876 ms  39.371 ms
+    8  area1-ug1-swr.task.gda.pl (153.19.254.228)  41.536 ms  41.720 ms  41.916 ms
+    9  sigma.ug.edu.pl (153.19.7.230)  39.618 ms  39.921 ms  40.236 ms
+
+
+### Jaki jest mój adres IP?
+
+    :::shell-unix-generic
+    /sbin/ifconfig
+
+or
+
+    :::shell-unix-generic
+    /sbin/ifconfig eth0
+
+Under the `eth0` interface, you'll see the `inet addr`:
+
+    :::shell-unix-generic
+    eth0      Link encap:Ethernet  HWaddr 00:0E:35:95:80:44
+              inet addr:192.188.100.1  Bcast:192.188.100.255  Mask:255.255.255.0
+              inet6 addr: fe00::40a:32ca:c950:1234/64 Scope:Link
+
+
+## Użyteczne potoki: generowanie histogramu
+
+A histogram is set of count, value pairs indicating how often the
+value occurs.  The basic operation will be to sort, then count how
+many values occur in a row and then reverse sort so that the value
+with the highest count is at the top of the report.
+
+    :::shell-unix-generic
+    ... | sort |uniq -c|sort -r -n
+
+Note that `sort` sorts on the whole line, but the first column
+is obviously significant just as the first letter in someone's last
+name significantly positions their name in a sorted list.
+
+`uniq -c` collapses all repeated sequences of values but prints
+the number of occurrences in front of the value.  Recall the previous
+sorting:
+
+    :::shell-unix-generic
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
+    sort | \
+    uniq
+    /sp/
+    /sp/exercises
+    /sp/git
+    /sp/images/alan_kay.jpg
+    /sp/images/alan_perlis.jpg
+    /sp/images/albert_einstein.jpg
+    ...
+
+Now add `-c` to `uniq`:
+
+    :::shell-unix-generic
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
+    sort | \
+    uniq -c
+       22 /sp/
+        6 /sp/exercises
+        2 /sp/git
+        1 /sp/images/alan_kay.jpg
+        2 /sp/images/alan_perlis.jpg
+        4 /sp/images/albert_einstein.jpg
+        ...
+
+Now all you have to do is reverse sort the lines according to the first column numerically.
+
+    :::shell-unix-generic
+    cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
+    sort | \
+    uniq -c | \
+    sort -r -n
+       51 /sp/stylesheets/uv.css
+       51 /sp/stylesheets/sp.css
+       51 /sp/stylesheets/screen.css
+       51 /sp/stylesheets/print.css
+       50 /sp/stylesheets/icons/external.png
+       ...
