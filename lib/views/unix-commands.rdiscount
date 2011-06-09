@@ -1,6 +1,4 @@
-#### {% title "Przegląd poleceń Uniksowych" %}
-
-# Przetrwać z uniksem
+#### {% title "Przetrwać z Uniksem" %}
 
 <blockquote>
   {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}

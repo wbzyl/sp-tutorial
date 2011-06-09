@@ -1,0 +1,74 @@
+GIT
+  remote: git://github.com/emk/sinatra-url-for.git
+  revision: a19bac86311029a2bb6c7df940cc905686adc9cd
+  specs:
+    sinatra-url-for (0.2.1)
+      sinatra (>= 0.9.1.1)
+
+GIT
+  remote: git://github.com/spox/ultraviolet.git
+  revision: 5591ac27784b783cd1a4dbe941f6e7f3a4eff65b
+  specs:
+    ultraviolet (0.10.5)
+      spox-textpow
+
+GIT
+  remote: git://github.com/wbzyl/rack-codehighlighter.git
+  revision: ec441d44b66821adf3762c712f3b4c9ac4ec37a0
+  branch: pre-caption
+  specs:
+    rack-codehighlighter (0.4.7.2)
+      nokogiri (>= 1.4.1)
+      rack (>= 1.0.0)
+
+GIT
+  remote: git://github.com/wbzyl/sinatra-filler.git
+  revision: 9de8e81ba967daa81e093d25a936eb38bf4ded7c
+  specs:
+    sinatra-filler (0.0.3)
+      sinatra (>= 1.1)
+      sinatra-static-assets (>= 0.5.0)
+
+GIT
+  remote: git://github.com/wbzyl/sinatra-static-assets.git
+  revision: 6051157ac0ec844e79204fe57c52011fa536ad4d
+  specs:
+    sinatra-static-assets (0.5.1)
+      rack (>= 1.0.0)
+      sinatra (>= 0.9.1)
+      sinatra-url-for (>= 0.2.1)
+
+PATH
+  remote: .
+  specs:
+    sp-tutorial (0.4.0)
+      erubis
+      rack
+      rdiscount
+      sinatra
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    erubis (2.7.0)
+    nokogiri (1.4.4)
+    rack (1.3.0)
+    rdiscount (1.6.8)
+    sinatra (1.2.6)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    spox-plist (3.0.1)
+    spox-textpow (0.10.3)
+      spox-plist
+    tilt (1.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack-codehighlighter!
+  sinatra-filler!
+  sinatra-static-assets!
+  sinatra-url-for!
+  sp-tutorial!
+  ultraviolet!
