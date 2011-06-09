@@ -1,7 +1,5 @@
 #### {% title "Laboratorium 12" %}
 
-# Laboratorium 12 (*git*)
-
 1\. W zespołach 2 osobowych rozwinąć projekt
 [simple](/doc/git/simple.tar.gz).
 Projekt składa się z czterech plików:

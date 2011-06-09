@@ -1,7 +1,5 @@
 #### {% title "Streszczenie poprzedniego odcinka" %}
 
-# Wykłady
-
 <blockquote>
   {%= image_tag "/images/gitk-branches.png", :alt => "[gitk view of anonymous project]" %}
   <p class="author">{%= link_to "[anonymous git project]", "/images/wide-gitk.gif" %}</p>
@@ -10,12 +8,12 @@
 
 ## 5.10.2009
 
-Było o przekierowaniach (ale tylko takich: >>, >), 
-potokach (&nbsp;|&nbsp;), kilka przykładów z 
+Było o przekierowaniach (ale tylko takich: >>, >),
+potokach (&nbsp;|&nbsp;), kilka przykładów z
 
     ls  cd  cp  rm  mkdir  echo  cat  less
 
-Logowanie zdalne na sigmę, kopiowanie plików 
+Logowanie zdalne na sigmę, kopiowanie plików
 między komputerami, secure shell.
 
 Zareklamowałem różne dystrybucje linuxa, *Ubuntu*
@@ -31,7 +29,7 @@ Powiedziałem jak z niego korzystać, na przykładzie
 forkowania mojego repo *jblog*.
 
 To był trudniejszy kawałek wykładu.
-Na razie tylko kilkunastu studentów potrafiło 
+Na razie tylko kilkunastu studentów potrafiło
 sforkować bloga.
 
 Na ćwiczeniach należy wyćwiczyć ścieżki
@@ -60,10 +58,10 @@ Opowiedziałem o *chmod* oraz jak umieścić prostą
 stronę www na Sigmie.
 
 Końcówka wykładu: kilka zdań na temat *vi*,
-reszta *emacs*. 
+reszta *emacs*.
 
 Na ćwiczeniach jest już chyba czas na przyswojenia
-podstaw: vi albo emacs-a. 
+podstaw: vi albo emacs-a.
 
 
 ## 19.10.2009
@@ -97,7 +95,7 @@ Polecenie *diff*. Różne sposoby pokazywania
 różnic między plikami: standardowy, kontekstowy
 oraz unified. Info o programie *kdiff3* oraz
 o „three-way diff”.
-W laboratorium powiedzieć do czego służy program 
+W laboratorium powiedzieć do czego służy program
 *patch* + przykład.
 
 

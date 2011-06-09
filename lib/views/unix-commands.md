@@ -8,6 +8,8 @@
   <p class="author">— Alan Perlis</p>
 </blockquote>
 
+Dlaczego?
+
 
 ## Logowanie i wylogowywanie
 

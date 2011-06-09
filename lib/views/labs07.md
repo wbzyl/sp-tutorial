@@ -1,7 +1,5 @@
 #### {% title "Laboratorium 7" %}
 
-# Laboratorium 7 (skrypty)
-
 1\. W bieżącym katalogu zamienić rozszerzenia wszystkich plików z
 rozszerzeniem *htm* na *html*.  Jeżeli w nazwie pliku istnieje spacja,
 to należy zamienić ją na znak podkreślenia.

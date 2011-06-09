@@ -1,7 +1,5 @@
 #### {% title "Skryptologia stosowana" %}
 
-# Skryptologia stosowana
-
 <blockquote>
   {%= image_tag "/images/borenstein.jpg", :alt => "[Nathaniel S. Borenstein]" %}
   <p>

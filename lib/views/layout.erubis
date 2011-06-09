@@ -1,7 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<!doctype html>
+<html>
 
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -12,8 +10,9 @@
       {%= stylesheet_link_tag "css/blueprint/ie.css" %}
     <![endif]-->
 
-    <title>{%= "WB/SP" + page_title %}</title>
+    <title>{%= filler_for?(:title) ? "WB@SP//" + output_filler_for(:title) : "WB@SP" %}</title>
   </head>
+
   <body>
     <div class="span-21" id="header">
       <div id="logo" class="push-1 span-13">
@@ -21,7 +20,7 @@
       </div>
       <div class="span-7 last">
         <div class="append-1" id="links">
-          <a href="http://inf.ug.edu.pl/~wbzyl/">home</a>
+          <a href="http://tao.inf.ug.edu.pl">home</a>
           <a href="http://inf.ug.edu.pl/~wbzyl/galeria/zakopane/2009-08-28-zawrat/">galeria</a>
         </div>
       </div>
@@ -30,7 +29,10 @@
     <div class="span-21 container"><!-- showgrid -->
       <div class="push-1 span-12" id="content">
 
-        {%= yield %}
+      {% if filler_for?(:title) && show_title? %}
+      <h1>{%= output_filler_for(:title) %}</h1>
+      {% end %}
+      {%= yield %}
 
       </div>
       <div class="span-8 last">

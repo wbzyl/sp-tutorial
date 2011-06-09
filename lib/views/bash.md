@@ -1,9 +1,5 @@
 #### {% title "Bash w przykładach" %}
 
-<!-- opracował Robert Fidytek -->
-
-# Bash w przykładach
-
 <blockquote>
   {%= image_tag "/images/algorithm.png", :alt => "[Rozwiązanie…]" %}
 </blockquote>
@@ -41,7 +37,7 @@ specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
     echo "PID procesu biezacej powloki: $$"
     exit 0
 
-3\. Podać przykład skryptu korzystającego z tablic 
+3\. Podać przykład skryptu korzystającego z tablic
 (Użyj declare, unset, *, @, # ).
 
     :::shell-unix-generic
@@ -147,8 +143,8 @@ Krótka ściąga z pozostałych warunków:
 
 
 6\. Napisać skrypt pytający się czy już jest wieczór. Dla odpowiedzi
-„tak” powinien wypisać „Dobry wieczor”, dla odpowiedzi „nie” – 
-„Dzien dobry”, dla pozostałych odpowiedzi „Nie rozpoznana odpowiedz: ” 
+„tak” powinien wypisać „Dobry wieczor”, dla odpowiedzi „nie” –
+„Dzien dobry”, dla pozostałych odpowiedzi „Nie rozpoznana odpowiedz: ”
 i przytoczyć treść odpowiedzi. (Użyj instrukcji warunkowej if-elif.)
 
     :::shell-unix-generic
@@ -217,7 +213,7 @@ instrukcji warunkowej case.)
     esac
     exit 0
 
-8\. Wyświetlić z bieżącego katalogu nazwy wszystkich plików: 
+8\. Wyświetlić z bieżącego katalogu nazwy wszystkich plików:
 \*.html, \*.htm, *.php, *.css, *.gif, *.jpg. (Użyj pętli for.)
 
     :::shell-unix-generic
@@ -298,7 +294,7 @@ pisane małymi literami.
 <!-- źródło: http://howtonode.org/node-for-everyday-things -->
 
 13\. Przyjmujemy, że strona wydrukowanego tekstu zawiera około 350 słów.
-Korzystając z programu *wc* napisać program wypisujący 
+Korzystając z programu *wc* napisać program wypisujący
 ile będzie miał stron po wydrukowaniu stron plik tekstowy podany
 jako pierwszy argument skryptu.
 

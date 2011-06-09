@@ -1,7 +1,5 @@
 #### {% title "Git jest git" %}
 
-# Git jest git
-
 <blockquote>
   {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
   <p>

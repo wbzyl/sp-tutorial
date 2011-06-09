@@ -2,9 +2,6 @@
 
 [unix guru]: http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html "How To Look Like A UNIX Guru"
 
-
-# Jak zostać Uniksowym guru w kwadrans
-
 <blockquote>
   {%= image_tag "/images/richard_stallman.jpg", :alt => "[Richard Stallman]" %}
   <p>
@@ -66,7 +63,7 @@ Imagine how long it would take you to write the equivalent C or Java
 program.  You can become an extremely productive UNIX programmer if
 you learn to combine the simple command-line tools.  Even when
 programming on a PC, I use MKS's UNIX shell and command library to
-make it look like a UNIX box.  Worth the cash.  
+make it look like a UNIX box.  Worth the cash.
 
 
 <blockquote>
@@ -84,23 +81,23 @@ example, to find out about the `ls` command, type
     :::shell-unix-generic
     man ls
     LS(1)       User Commands       LS(1)
-    
+
     NAME
          ls - list directory contents
-    
+
     SYNOPSIS
          ls [OPTION]... [FILE]...
-    
+
     DESCRIPTION
-         List information about the FILEs (the current directory 
-         by default). Sort entries alphabetically if none 
+         List information about the FILEs (the current directory
+         by default). Sort entries alphabetically if none
          of -cftuvSUX nor --sort.
     ...
 
 You will get a summary of the command and any arguments.
 
 If you cannot remember the command's name, try using `apropos`
-which finds commands and library routines related to that word.  
+which finds commands and library routines related to that word.
 For example, to find out how to do checksums, type
 
     apropos '\bgit\b'
@@ -112,7 +109,7 @@ For example, to find out how to do checksums, type
 ## Special Directories and files
 
 A shortcut for my home directory, `/home/pracinf/wbzyl`, is
-`~wbzyl`. 
+`~wbzyl`.
 
 When you are using the shell, there is the notion of <em>current
 directory</em>.  The dot '`.`' character is a shorthand for the current
@@ -229,12 +226,12 @@ For example,
 
 ### top (htop)
 
-To watch a dynamic display of the processes on your box in action, use 
+To watch a dynamic display of the processes on your box in action, use
 `top` or `htop`.
 
 ### ps
 
-To print out (wide display) all processes running on a box, use 
+To print out (wide display) all processes running on a box, use
 
     :::shell-unix-generic
     ps auxww  # double w
@@ -250,15 +247,15 @@ and 3rd for anybody.  644 is a common word value file which means
     :::shell-unix-generic
     rw-r--r--
 
-When you do `ls -l` you will see these bits. 
+When you do `ls -l` you will see these bits.
 
-755 is a common word value for directories: 
+755 is a common word value for directories:
 
     :::shell-unix-generic
-    rwxr-xr-x 
+    rwxr-xr-x
 
 where directories need to be executable for `cd` to be able to enter that
-dir. 755 is a shorthand for the more readable argument 
+dir. 755 is a shorthand for the more readable argument
 
     u=rwx,go=rx
 
@@ -276,8 +273,8 @@ the most is `grep`.  This tool matches regular expressions
 `stdout`.
 
 The simplest incantation looks for a particular character sequence in
-a set of files.  Here is an example that looks for 
-lines begining with 'Return-Path:' in the IMAP mails 
+a set of files.  Here is an example that looks for
+lines begining with 'Return-Path:' in the IMAP mails
 in the current directory.
 
     :::shell-unix-generic
@@ -296,7 +293,7 @@ any a forum page in a server log file:
 or equivalently:
 
     :::shell-unix-generic
-    sudo cat /var/log/access_log | grep '/forum/.*' 
+    sudo cat /var/log/access_log | grep '/forum/.*'
 
 The second form is useful when you want to process a collection of
 files as a single stream as in:
@@ -408,7 +405,7 @@ put the gzipped tarball into `/tmp`, do this
     cd ~/.. # go one dir above dir you want to tar.gz; why?
     tar zcvf /tmp/wbzyl.backup.tar.gz wbzyl
 
-By convention, use `.tar.gz` as the extension.  
+By convention, use `.tar.gz` as the extension.
 To ungzip and untar this file use
 
     :::shell-unix-generic
@@ -566,7 +563,7 @@ standard unix locations for the command.
     :::shell-unix-generic
     whereis fuser
     fuser: /sbin/fuser /usr/man/man1/fuser.1 /usr/man/man1/fuser.1.gz
-    whereis ls   
+    whereis ls
     ls: /bin/ls /usr/man/man1/ls.1 /usr/man/man1/ls.1.gz
 
 `whereis` also shows `man` pages.
@@ -579,7 +576,7 @@ indicates should be run. Use `which` to ask:
 
     :::shell-unix-generic
     which ls
-    alias ls='ls --color=tty' 
+    alias ls='ls --color=tty'
         /bin/ls
     type ls
     ls is aliased to `ls --color=auto'
@@ -596,7 +593,7 @@ To send a signal to a process, use `kill`.  Typically you'll
 want to just say `kill pid` where `pid` can be found
 from `ps` or `top` (see below).
 
-Use `kill -9 pid` when you can't get the process to die; 
+Use `kill -9 pid` when you can't get the process to die;
 this means kill it with "extreme prejudice".
 
 ### tracepath, traceroute
@@ -608,13 +605,13 @@ to watch the sequence of hops used to get to a site:
     /usr/sbin/tracepath sigma.ug.edu.pl
     1:  wlodek.local                                          0.391ms pmtu 1500
         ...
-    5:  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)           10.854ms asymm  6 
-    6:  TP-tp-edu-gw.task.gda.pl (153.19.0.2)                 42.373ms asymm 13 
-    7:  tp-jra10ge.task.gda.pl (153.19.252.33)                34.889ms asymm 12 
-    8:  area1-ug1-swr.task.gda.pl (153.19.254.228)            34.365ms asymm 12 
+    5:  do.gda-ar3.z.gda-r2.tpnet.pl (213.25.12.95)           10.854ms asymm  6
+    6:  TP-tp-edu-gw.task.gda.pl (153.19.0.2)                 42.373ms asymm 13
+    7:  tp-jra10ge.task.gda.pl (153.19.252.33)                34.889ms asymm 12
+    8:  area1-ug1-swr.task.gda.pl (153.19.254.228)            34.365ms asymm 12
     9:  sigma.ug.edu.pl (153.19.7.230)                        36.318ms reached
-        Resume: pmtu 1500 hops 9 back 52 
-    
+        Resume: pmtu 1500 hops 9 back 52
+
     sudo /bin/traceroute sigma.ug.edu.pl
     traceroute to sigma.ug.edu.pl (153.19.7.230), 30 hops max, 60 byte packets
     1  wlodek.local  1.708 ms  2.529 ms  3.330 ms
@@ -639,7 +636,7 @@ or
 Under the `eth0` interface, you'll see the `inet addr`:
 
     :::shell-unix-generic
-    eth0      Link encap:Ethernet  HWaddr 00:0E:35:95:80:44  
+    eth0      Link encap:Ethernet  HWaddr 00:0E:35:95:80:44
               inet addr:192.188.100.1  Bcast:192.188.100.255  Mask:255.255.255.0
               inet6 addr: fe00::40a:32ca:c950:1234/64 Scope:Link
 
@@ -652,7 +649,7 @@ many values occur in a row and then reverse sort so that the value
 with the highest count is at the top of the report.
 
     :::shell-unix-generic
-    ... | sort |uniq -c|sort -r -n 
+    ... | sort |uniq -c|sort -r -n
 
 Note that `sort` sorts on the whole line, but the first column
 is obviously significant just as the first letter in someone's last

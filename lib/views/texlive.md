@@ -1,11 +1,9 @@
-#### {% title "TeXLive…" %}
-
-# TeXLive i inne różne rzeczy
+#### {% title "Nie tylko TeXLive" %}
 
 <blockquote>
   {%= image_tag "/images/forgetting-curve.png", :alt => "[Hermann Ebbinghaus forgetting curve]" %}
   <p>The forgetting curve illustrates the decline of memory retention in time. […]
-    In 1885, <a href="http://en.wikipedia.org/wiki/Forgetting_curve">Hermann Ebbinghaus</a> 
+    In 1885, <a href="http://en.wikipedia.org/wiki/Forgetting_curve">Hermann Ebbinghaus</a>
     discovered the exponential nature of forgetting.</p>
 </blockquote>
 
@@ -13,12 +11,12 @@ Na *Sigmie* zainstalowany jest system TeX z paczki *TeXLive*.
 Dokumentację do systemu można pobrać z serwera
 [Polskiej Grupy Użytkowników Systemu TeX] [gust doc].
 
-W pracowniach będziemy korzystać z najnowszej wersji 
+W pracowniach będziemy korzystać z najnowszej wersji
 systemu TeX zawartej w „TeXLive 2010” z programem
 *xetex* w wersji 3.1415926-2.2-0.9995.2
 i biblioteką kpathsea version 5.1.0.
 
-Do pracy z dokumentami techowymi będziemy używać programu 
+Do pracy z dokumentami techowymi będziemy używać programu
 *texworks* w wersji co najmniej 0.3 (r.511).
 
 
@@ -85,18 +83,18 @@ Domyślne ustawienie drzewek techowych w TeXLive:
 
 ### tlmgr – TeX Live package manager
 
-System uaktualniamy korzystając z programu 
+System uaktualniamy korzystając z programu
 [tlmgr](http://www.tug.org/texlive/tlmgr.html):
 
 Kilka poleceń na dobry początek:
 
     tlmgr update --all
-      Make your local TeX installation correspond to what 
+      Make your local TeX installation correspond to what
       is in the package repository (typically on CTAN).
     tlmgr update --list
       Report what would be updated without actually updating anything.
-    tlmgr show pkgname 
-      Display detailed information about pkgname, 
+    tlmgr show pkgname
+      Display detailed information about pkgname,
       such as the installation status and description
 
 \([dokumentacja](http://www.tug.org/texlive/doc/tlmgr.html)\)
@@ -110,11 +108,11 @@ Kilka poleceń na dobry początek:
 
 Do kompilacji programu *texworks* będą potrzebne pakiety devel:
 
-    x-software-development 
+    x-software-development
     development-tools
-    poppler-devel poppler-qt4-devel 
-    qt-devel 
-    hunspell-devel 
+    poppler-devel poppler-qt4-devel
+    qt-devel
+    hunspell-devel
     dbus-devel
 
 oraz system kontroli wersji *subversion*.
@@ -175,10 +173,10 @@ i dopiero jeśli odpowie, że może z powodzeniem nałożyć wszystkie
 łatki, wykonać polecenie powyżej.
 
 Uaktywnić ten układ klawiatury w sposób właściwy dla danego środowiska
-graficznego. W GNOME można go wyklikać z menu 
+graficznego. W GNOME można go wyklikać z menu
 
-    System ↦ Preferencje ↦ Klawiatura 
-      Układy ↦ Dodaj ↦ Kraj: Polska, Wariant: «International (with dead keys)». 
+    System ↦ Preferencje ↦ Klawiatura
+      Układy ↦ Dodaj ↦ Kraj: Polska, Wariant: «International (with dead keys)».
 
 Z terminala można aktywować nasz układ klawiatury dla bieżącej sesji poleceniem:
 
@@ -193,7 +191,7 @@ inicjującego sesję X Window.
   <p class="center">od lewej: P.&nbsp;Strzelczyk, B. Jackowski, J.&nbsp;M. Nowacki</p>
 </blockquote>
 
-## Fonty Latin Modern 
+## Fonty Latin Modern
 
 [Rodzina fontów Latin Modern w formacie OTF] [lm].
 Ręczna instalacja w systemie? Kopiujemy archiwum do drzewka
@@ -241,6 +239,6 @@ markup, groff man pages, and S5 HTML slide shows.”
 [lm]: http://www.gust.org.pl/projects/e-foundry/latin-modern/download "Latin Modern collection"
 [mw keyboard]: http://marcinwolinski.pl/keyboard/ "Racjonalna polska klawiatura dla programisty…"
 
-[i-ching]: http://www.ctan.org/tex-archive/fonts/psfonts/i-ching/ "I-Ching Divinations" 
+[i-ching]: http://www.ctan.org/tex-archive/fonts/psfonts/i-ching/ "I-Ching Divinations"
 
 [pandoc]: http://johnmacfarlane.net/pandoc/ "Pandoc"

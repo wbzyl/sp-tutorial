@@ -9,11 +9,11 @@
 
 ## Notatki do wykładów
 
-1. {%= link_to "Przegląd poleceń Uniksowych", "/unix-commands" %}
+1. {%= link_to "Przetrwać z Unixem", "/unix-commands" %}
 1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
 1. {%= link_to "Git jest git", "/git" %}
 1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/unix-guru" %}
-1. {%= link_to "TeXLive i inne różne rzeczy", "/texlive" %}
+1. {%= link_to "Nie tylko TeXLive", "/texlive" %}
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
 1. {%= link_to "Bash w przykładach", "/bash" %}
 
@@ -28,9 +28,9 @@ Różne rzeczy:
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
 1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
 1. S. Chacon. [Pro Git – professional version control] [progit].
-1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl. 
+1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
-   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski). 
+   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
 1. P. Flynn.
    [Formatting Information](http://www.ctan.org/tex-archive/info/beginlatex/),
    Version 3.6, March 2005.
@@ -42,7 +42,7 @@ Różne rzeczy:
 1. [TeX Live] [texlive].
 1. [TeXWorks IDE] [texworks].
 1. [GUST — Polska Grupa Użytkowników Systemu TeX] [gust].
-1. GNU Operating System. [Laugh along with GNU] [gnu os]. 
+1. GNU Operating System. [Laugh along with GNU] [gnu os].
 1. J. Gruber. [Markdown] [markdown].
 
 

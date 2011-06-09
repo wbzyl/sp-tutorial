@@ -1,7 +1,5 @@
 #### {% title "Laboratorium 5" %}
 
-# Laboratorium 5 (*find*)
-
 1\. Znajdź w swoim katalogu domowym (bez podkatalogów) wszystkie
 pliki, które zostały zmodyfikowane w&nbsp;ciągu ostatnich dziesięciu
 dni i&nbsp;wyświetl ich nazwy.

@@ -1,7 +1,5 @@
 #### {% title "Laboratorium 2" %}
 
-# Laboratorium 2
-
 W żadnym z poniższych zadań nie wolno używać programu *mc*.
 
 W katalogu *c* utwórz plik *program.c* zawierający co najmniej 10

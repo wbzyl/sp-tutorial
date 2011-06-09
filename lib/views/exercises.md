@@ -1,7 +1,5 @@
 #### {% title "Ćwiczenia" %}
 
-# Ćwiczenia
-
 <blockquote>
   {%= image_tag "/images/albert_einstein.jpg", :alt => "[Albert Einstein]" %}
   <p>
@@ -76,7 +74,7 @@ Zadania do wykonania w laboratorium:
 
 * {%= link_to "Laboratorium 10", "/labs10" %}
 
-<!-- 
+<!--
 
 ## Git
 
@@ -124,7 +122,7 @@ wyrażenie regularne.
 
 ## Skrypty
 
-1\. Poprawić skrypt *makedict.sh* z wykładu tak, aby rozpoznawał 
+1\. Poprawić skrypt *makedict.sh* z wykładu tak, aby rozpoznawał
 polskie litery. Opisać jak ten skrypt działa.
 
 2\. W *jBlogu* jest kilka napisów, które należy wymienić,
@@ -135,20 +133,20 @@ na przykład, w pliku *index.html*:
 a w pliku *_layouts/default.html*:
 
     <meta name="author" content="Włodek Bzyl" />
-    
+
 Napisać prosty skrypt korzystający z programu *sed*
 wymieniający wszystkie takie napisy.
 
 
 ## LaTeX
 
-1\. Zadania rozwiązywane w laboratoriach, na przykład 
+1\. Zadania rozwiązywane w laboratoriach, na przykład
 zadania z „Laboratorium 2”, to tekst z listą wypunktowaną
-(otoczenia *enumerate*, *itemize*) 
+(otoczenia *enumerate*, *itemize*)
 oraz tytulariami (polecenia *section*, *paragraph*).
 
-* Przygotować szablon dla programu *texworks* oraz 
-  skróty klawiszowe ułatwiające wpisywanie takich tekstów. 
+* Przygotować szablon dla programu *texworks* oraz
+  skróty klawiszowe ułatwiające wpisywanie takich tekstów.
 * Przepisać jeden ze zestawów
   zadań korzystając z przygotowanego szablonu oraz z
   przygotowanych skrótów klawiszowych.
@@ -163,14 +161,14 @@ Wskazówka: Zajrzyj na strony Wiki:
 1\. Napisać historyjkę pokazującą jak można
 wyszukać *commit* w którym po raz pierwszy
 pojawiła się określona funkcja.
-Umieścić historyjkę na jBlogu pod *git-grep*. 
+Umieścić historyjkę na jBlogu pod *git-grep*.
 
 2\. Napisać historyjkę ilustrującą użycie polecenia
 `git cherry-pick`.
-Umieścić historyjkę na jBlogu pod *git-cherry-pick*. 
+Umieścić historyjkę na jBlogu pod *git-cherry-pick*.
 
 3\. Przeczytać [Git Repo Hosting via SSH](http://rfelix.com/2010/04/06/git-repo-hosting-via-ssh/)
-i zastosować w praktyce. (dobrać jakiś projekt na 2–3 osoby). 
+i zastosować w praktyce. (dobrać jakiś projekt na 2–3 osoby).
 
 
 #### Linki
