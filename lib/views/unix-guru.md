@@ -44,7 +44,7 @@ Here is an example device, the null device, that lets you throw output
 away.  For example, you might want to run a program but ignore the
 output.
 
-    :::shell-unix-generic
+    :::bash
     ls > /dev/null # ignore output of ls
 
 where "`# ignore output of ls`" is a comment.
@@ -56,7 +56,7 @@ to the input of another via a *pipe*.  For example, the
 following piped sequence prints the number of files in the current
 directory modified in August.
 
-    :::shell-unix-generic
+    :::bash
     ls -l | grep ' 10-' | wc -l
 
 Imagine how long it would take you to write the equivalent C or Java
@@ -78,7 +78,7 @@ make it look like a UNIX box.  Worth the cash.
 If you need to know about a command, ask for the "man" page.  For
 example, to find out about the `ls` command, type
 
-    :::shell-unix-generic
+    :::bash
     man ls
     LS(1)       User Commands       LS(1)
 
@@ -125,7 +125,7 @@ session is initialized including your ever-important `PATH`
 environment variable.  My `bash` shell initialization file is
 `~wbzyl/.bash_profile` and has set up code like the following:
 
-    :::shell-unix-generic
+    :::bash
     PATH=$PATH:$HOME/bin
     export PATH
 
@@ -146,7 +146,7 @@ Changing a directory is done with `cd` <em>dir</em> where <em>dir</em> can be ".
 Display files in a directory with `ls`.  The `-l` option is used to
 display details of the files:
 
-    :::shell-unix-generic
+    :::bash
     total 1234
     drwxr-xr-x  5 wbzyl pracinf      4096 08-04 00:08 public_git
     drwx--x--x  2 wbzyl pracinf      4096 08-02 20:20 public_html
@@ -167,39 +167,39 @@ There are 4 useful ways to display the contents or portions of a file.
 The first is the very commonly used command `cat`.  For example, to
 display my email box, type:
 
-    :::shell-unix-generic
+    :::bash
     cat /var/mail/wbzyl
 
 If a file is really big, you will probably want to use `more`,
 which spits the file out in screen-size chunks.
 
-    :::shell-unix-generic
+    :::bash
     more /var/mail/wbzyl
 
 If you only want to see the first few lines of a file or the last few
 lines use `head` and `tail`.
 
-    :::shell-unix-generic
+    :::bash
     head /var//mail/wbzyl
     tail /var/mail/wbzyl
 
 You can specify a number as an argument to get a specific number of
 lines:
 
-    :::shell-unix-generic
+    :::bash
     head -30 /var/mail/wbzyl
 
 The most useful incantation of `tail` prints the last few lines of a
 file and then waits, printing new lines as they are appended to the
 file.  This is great for watching a log file:
 
-    :::shell-unix-generic
+    :::bash
     tail -f /var/mail/wbzyl
 
 If you need to know how many characters, words, or lines are in a
 file, use `wc`:
 
-    :::shell-unix-generic
+    :::bash
      wc /var/mail/mail
      100    1000   40000 /var/mail/wbzyl
 
@@ -212,7 +212,7 @@ Instead of `cd` you can use `pushd` to save the current
 dir and then automatically `cd` to the specified directory.
 For example,
 
-    :::shell-unix-generic
+    :::bash
     pwd
     /home/pracinf/wbzyl
     pushd /tmp
@@ -233,7 +233,7 @@ To watch a dynamic display of the processes on your box in action, use
 
 To print out (wide display) all processes running on a box, use
 
-    :::shell-unix-generic
+    :::bash
     ps auxww  # double w
 
 ### chmod
@@ -244,14 +244,14 @@ where the first digit is for the file owner, the 2nd for the group,
 and 3rd for anybody.  644 is a common word value file which means
 110100100 or
 
-    :::shell-unix-generic
+    :::bash
     rw-r--r--
 
 When you do `ls -l` you will see these bits.
 
 755 is a common word value for directories:
 
-    :::shell-unix-generic
+    :::bash
     rwxr-xr-x
 
 where directories need to be executable for `cd` to be able to enter that
@@ -277,7 +277,7 @@ a set of files.  Here is an example that looks for
 lines begining with 'Return-Path:' in the IMAP mails
 in the current directory.
 
-    :::shell-unix-generic
+    :::bash
     grep '^Return-Path:' *,{S,RS,ST,FRST}
 
 You may find the dot '.' regular expression useful.  It matches any
@@ -287,23 +287,23 @@ expression in single quotes so the command-line expansion doesn't
 modify the argument.  The following example, looks for references to
 any a forum page in a server log file:
 
-    :::shell-unix-generic
+    :::bash
     sudo egrep '/forum/.*' /var/log/httpd/access_log
 
 or equivalently:
 
-    :::shell-unix-generic
+    :::bash
     sudo cat /var/log/access_log | grep '/forum/.*'
 
 The second form is useful when you want to process a collection of
 files as a single stream as in:
 
-    :::shell-unix-generic
+    :::bash
     sudo cat /var/log/httpd/*_log | grep '/forum/.*'
 
 If you need to look for a string at the beginning of a line, use caret '^':
 
-    :::shell-unix-generic
+    :::bash
      grep '^153.19.7.230' /var/log/httpd/access_log
 
 This finds all lines in all access logs that begin with IP address
@@ -313,14 +313,14 @@ If you would like to invert the pattern matching to find lines that do
 not match a pattern, use `-v`.  Here is an example that finds
 references to non image `GET`s in a log file:
 
-    :::shell-unix-generic
+    :::bash
     sudo cat /var/log/access_log | grep -v '/images'
 
 Now imagine that you have an http log file and you would like to
 filter out page requests made by nonhuman spiders.  If you have a file
 called `spider.ips`, you can find all nonspider page views via:
 
-    :::shell-unix-generic
+    :::bash
     cat /var/log/httpd/access_log | grep -v -f /tmp/spider.ips
 
 Finally, to ignore the case of the input stream, use `-i`.
@@ -339,13 +339,13 @@ columns to collapse so there is a single column of data, tell
 `tr` to replace space with newline `tr ' ' '\n'`.
 Consider input file `falski.txt`:
 
-    :::shell-unix-generic
+    :::bash
     ala ma kota
     ola ma psa
 
 To get all those names in a column, use
 
-    :::shell-unix-generic
+    :::bash
     cat falski.txt | tr ' ' '\n'
 
 If you would like to collapse all sequences of spaces into one single
@@ -361,26 +361,26 @@ use `sed` (stream editor) to replace or delete text chunks matched by
 regular expressions.  For example, to replace all references to text
 *TT* by *kbd* in the file *ug.rdiscount*, use
 
-    :::shell-unix-generic
+    :::bash
     cat /ug.rdiscount | sed -r 's/TT/kbd/g'
 
 If there are multiple references to *TT* on a single line, use the `g`
 suffix to indicate "global" on that line otherwise only the first
 occurrence will be removed:
 
-    :::shell-unix-generic
+    :::bash
     ... |  sed -r 's/TT/kbd/g'
 
 If you would like to replace references to *view.html* with
 *index.html*, use
 
-    :::shell-unix-generic
+    :::bash
     ... | sed 's/view.html/index.html/'
 
 If you want any `.pas` file converted to `.p`, you must match the file
 name with a regular expression and refer to it via `\1`:
 
-    :::shell-unix-generic
+    :::bash
     ... | sed 's/\(.*\).pas/\1.p/'
 
 The `\(...\)` grouping collects text that you can refer to with `\1`.
@@ -388,7 +388,7 @@ The `\(...\)` grouping collects text that you can refer to with `\1`.
 If you want to kill everything from the ',' character to end of line,
 use the end-of-line marker `$`:
 
-    :::shell-unix-generic
+    :::bash
     ... | sed 's/,.*$//' # kill from comma to end of line
 
 
@@ -401,14 +401,14 @@ To collect a bunch of files and directories together, use
 `tar`.  To tar up and gzip your entire home directory and
 put the gzipped tarball into `/tmp`, do this
 
-    :::shell-unix-generic
+    :::bash
     cd ~/.. # go one dir above dir you want to tar.gz; why?
     tar zcvf /tmp/wbzyl.backup.tar.gz wbzyl
 
 By convention, use `.tar.gz` as the extension.
 To ungzip and untar this file use
 
-    :::shell-unix-generic
+    :::bash
     cd ~/tmp
     tar zxvf /tmp/wbzyl.backup.tar.gz
 
@@ -422,7 +422,7 @@ creation means that I'll have that dir when untarred.  In contrast,
 the following will also make a copy of my home directory, but without
 having a `parrt` root dir:
 
-    :::shell-unix-generic
+    :::bash
     cd ~wbzyl
     tar cvf /tmp/wbzyl.backup.tar *
 
@@ -430,23 +430,23 @@ It is a good idea to tar things up with a root directory so that when
 you untar you don't generate a million files in the current directly.
 To see what's in a tarball, use
 
-    :::shell-unix-generic
+    :::bash
     tar ztvf /tmp/wbzyl.backup.tar.gz
 
 If you have a big file to compress, use `gzip`:
 
-    :::shell-unix-generic
+    :::bash
     gzip bigfile
 
 After execution, your file will have been renamed `bigfile.gz`.
 To uncompress, use
 
-    :::shell-unix-generic
+    :::bash
     gzip -d bigfile.gz
 
 To display a text file that is currently `gzip`'d, use `zcat`:
 
-    :::shell-unix-generic
+    :::bash
     zcat bigfile.gz
 
 
@@ -461,7 +461,7 @@ directory on the other machine.  For example, here is how you could
 "pull" all css screencasts files from `renia.local` to the box from
 which you execute the `rsync` command:
 
-    :::shell-unix-generic
+    :::bash
     hostname -f
     wlodek.local
     rsync -raz -e ssh -v wlodek@renia.local:screencasts/css-tricks.com \
@@ -476,7 +476,7 @@ out your backup file.  Change the options above to `-rabz` to
 tell `rsync` to make a copy of any existing file before it
 overwrites it. Or change a filename of any existing file:
 
-    :::shell-unix-generic
+    :::bash
     rsync -rabz -e ssh -v --suffix .rsync_`date '+%Y%m%d'` \
         wlodek@renia.local:screencasts/css-tricks.com ~/backup/
 
@@ -485,7 +485,7 @@ where ``date '+%Y%m%d'`` (in reverse single quotes) means
 
 To exclude certain patterns from the sync, use `--exclude`:
 
-    :::shell-unix-generic
+    :::bash
     rsync -rabz --exclude=tmp/ --suffix .rsync_`date '+%Y%m%d'` \
         -e ssh -v wbzyl@renia.local:screencasts/css-tricks.com' ~/backup/
 
@@ -493,7 +493,7 @@ To exclude certain patterns from the sync, use `--exclude`:
 
 To copy a file or directory manually, use `scp`:
 
-    :::shell-unix-generic
+    :::bash
     scp lecture.html wbzyl@sigma.ug.edu.pl:public_html/
 
 Just like `cp`, use `-r` to copy a directory recursively.
@@ -507,7 +507,7 @@ Most GUIs for Linux or PCs have a search facility, but from the
 command-line you can use `find`.  To find all files with suffix
 `.c` starting in directory `~/projects`, use:
 
-    :::shell-unix-generic
+    :::bash
     find  ~/projects -name '.c'
 
 The default "action" is to `-print`.
@@ -515,7 +515,7 @@ The default "action" is to `-print`.
 You can specify a globbing pattern to match.  For example, to look
 under your home directory for any xml files, use:
 
-    :::shell-unix-generic
+    :::bash
     find ~ -name '*.xml' -print
 
 Note the use of the single quotes to prevent command-line
@@ -524,7 +524,7 @@ expansion--you want the '*' to go to the `find` command.
 You can execute a command for every file or directory found that
 matches a name.  For example, do delete all xml files, do this:
 
-    :::shell-unix-generic
+    :::bash
     find ~ -name '*.xml' -exec rm {} \;
 
 where "{}" stands for "current file that matches".  The end of the
@@ -534,7 +534,7 @@ expansion, you'll need to escape the ';'.
 You can also specify time information in your query.  Here is a shell
 script that uses `find` to delete all files older than 14 days.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/sh
     BACKUP_DIR=$HOME/backup
     # number of days to keep backups
@@ -548,7 +548,7 @@ script that uses `find` to delete all files older than 14 days.
 If you want to know who is using a port such as HTTP (80), use
 `fuser`.  You must be root to use this:
 
-    :::shell-unix-generic
+    :::bash
     sudo /sbin/fuser -n tcp 80
     80/tcp:              1812 1884 1892 1898
 
@@ -560,7 +560,7 @@ Sometimes you want to use a command but it's not in your `PATH`
 and you can't remember where it is.  Use `whereis` to look in
 standard unix locations for the command.
 
-    :::shell-unix-generic
+    :::bash
     whereis fuser
     fuser: /sbin/fuser /usr/man/man1/fuser.1 /usr/man/man1/fuser.1.gz
     whereis ls
@@ -574,7 +574,7 @@ Sometimes you might be executing the wrong version of a command and
 you want to know which version of the command your `PATH`
 indicates should be run. Use `which` to ask:
 
-    :::shell-unix-generic
+    :::bash
     which ls
     alias ls='ls --color=tty'
         /bin/ls
@@ -583,7 +583,7 @@ indicates should be run. Use `which` to ask:
 
 If nothing is found in your path, you'll see:
 
-    :::shell-unix-generic
+    :::bash
     which fuser
     /usr/bin/which: no fuser in (/usr/local/bin:/usr/X11R6/bin)
 
@@ -601,7 +601,7 @@ this means kill it with "extreme prejudice".
 If you are having trouble getting to a site, use `traceroute`
 to watch the sequence of hops used to get to a site:
 
-    :::shell-unix-generic
+    :::bash
     /usr/sbin/tracepath sigma.ug.edu.pl
     1:  wlodek.local                                          0.391ms pmtu 1500
         ...
@@ -625,17 +625,17 @@ to watch the sequence of hops used to get to a site:
 
 ### Jaki jest mój adres IP?
 
-    :::shell-unix-generic
+    :::bash
     /sbin/ifconfig
 
 or
 
-    :::shell-unix-generic
+    :::bash
     /sbin/ifconfig eth0
 
 Under the `eth0` interface, you'll see the `inet addr`:
 
-    :::shell-unix-generic
+    :::bash
     eth0      Link encap:Ethernet  HWaddr 00:0E:35:95:80:44
               inet addr:192.188.100.1  Bcast:192.188.100.255  Mask:255.255.255.0
               inet6 addr: fe00::40a:32ca:c950:1234/64 Scope:Link
@@ -648,7 +648,7 @@ value occurs.  The basic operation will be to sort, then count how
 many values occur in a row and then reverse sort so that the value
 with the highest count is at the top of the report.
 
-    :::shell-unix-generic
+    :::bash
     ... | sort |uniq -c|sort -r -n
 
 Note that `sort` sorts on the whole line, but the first column
@@ -659,7 +659,7 @@ name significantly positions their name in a sorted list.
 the number of occurrences in front of the value.  Recall the previous
 sorting:
 
-    :::shell-unix-generic
+    :::bash
     cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq
@@ -673,7 +673,7 @@ sorting:
 
 Now add `-c` to `uniq`:
 
-    :::shell-unix-generic
+    :::bash
     cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq -c
@@ -687,7 +687,7 @@ Now add `-c` to `uniq`:
 
 Now all you have to do is reverse sort the lines according to the first column numerically.
 
-    :::shell-unix-generic
+    :::bash
     cut -d ' ' -f 7  access_log | egrep '^/sp/' | \
     sort | \
     uniq -c | \

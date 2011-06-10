@@ -24,7 +24,7 @@ podaj ile razy zostało ono przydzielone).
 Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych
 poleceń?
 
-    :::shell-unix-generic
+    :::bash
     ls -l > lsout.txt                          #  1
     ls -la >> lsout.txt                        #  2
     ps >> psout.txt                            #  3

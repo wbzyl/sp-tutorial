@@ -7,7 +7,7 @@
 1\. Podaj przykład skryptu wykorzystującego zmienne i
 zmienne środowiskowa np. $USER, $PWD, $HOME.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo "Czesc $USER"
     echo "twoj aktualny katalog to $PWD"
@@ -22,7 +22,7 @@ zmienne środowiskowa np. $USER, $PWD, $HOME.
 2\. Podaj przykład skryptu korzystującego ze zmiennych
 specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo "Nazwa biezacego skryptu: $0"
     echo "Pierwszy przekazany parametr do skryptu: $1"
@@ -40,7 +40,7 @@ specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
 3\. Podać przykład skryptu korzystającego z tablic
 (Użyj declare, unset, *, @, # ).
 
-    :::shell-unix-generic
+    :::bash
     owoc[0]="jablko"
     owoc[1]="gruszka"
     owoc[2]="sliwka"
@@ -63,7 +63,7 @@ specjalnych, czyli użyj $0, $1, $2, …, $9, $@, $*, $?, $$.
 4\. Napisać skrypt obliczający sumę, różnicę i iloczyn dwóch
 wczytanych liczb całkowitych. (Użyj polecenia read.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo -n "Podaj pierwsza liczbe: "
     read liczba1
@@ -85,7 +85,7 @@ wczytanych liczb całkowitych. (Użyj polecenia read.)
 5\. Napisać skrypt sprawdzający, czy w katalogu głównym użytkownika
 istnieje plik *.bashrc*. (Użyj instrukcji warunkowej if.)
 
-    :::shell-unix-generic
+    :::bash
     if [ -e ~/.bashrc ]
     # lub rownowaznie: if test -e ~/.bashrc
     then echo "Masz plik .bashrc"
@@ -147,7 +147,7 @@ Krótka ściąga z pozostałych warunków:
 „Dzien dobry”, dla pozostałych odpowiedzi „Nie rozpoznana odpowiedz: ”
 i przytoczyć treść odpowiedzi. (Użyj instrukcji warunkowej if-elif.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo -n "Czy jest wieczor? Odpowiedz tak lub nie: "
     read odp
@@ -197,7 +197,7 @@ Jeszcze jedna ściąga:
 nazwę lub informację „Nie rozumiem”. (Użyj polecenia read i
 instrukcji warunkowej case.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo "Podaj numer dnia tygodnia: "
     read dzien
@@ -216,7 +216,7 @@ instrukcji warunkowej case.)
 8\. Wyświetlić z bieżącego katalogu nazwy wszystkich plików:
 \*.html, \*.htm, *.php, *.css, *.gif, *.jpg. (Użyj pętli for.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     for nazwa in *.html *.htm *.php *.css *.gif *.jpg
     do
@@ -229,7 +229,7 @@ To samo, ale bez rozróżniania małych i dużych liter.
 9\. Napisać skrypt wykonujący pętlę 15 razy i wypisujący za każdym
 razem numer obiegu pętli. (Użyj pętli while.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     n=1;
     # gdy warunek stanie się fałszywy to petla zakonczy dzialanie
@@ -249,7 +249,7 @@ razem numer obiegu pętli. (Użyj pętli while.)
 10\. Napisać skrypt sprawdzający, czy użytkownik, którego login został
 podany jako parametr skryptu zalogował się. (Użyj pętli until.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     until who | grep "$1" > /dev/null
     # gdy warunek stanie się prawdziwy to petla zakonczy dzialanie
@@ -265,7 +265,7 @@ herbate, sok, quit. Po dokonaniu wyboru powinna się pojawić
 informacja co zostało wybrane. Po wybraniu quit skrypt powinien
 zakończyć działanie. (Użyj pętli select i instrukcji warunkowej case.)
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     echo "Co wybierasz?"
     select x in kawe herbate sok quit
@@ -283,7 +283,7 @@ zakończyć działanie. (Użyj pętli select i instrukcji warunkowej case.)
 12\. Zmienić nazwy plików i katalogów pisane dużymi literami na nazwy
 pisane małymi literami.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     for nazwa in *
     do
@@ -298,12 +298,12 @@ Korzystając z programu *wc* napisać program wypisujący
 ile będzie miał stron po wydrukowaniu stron plik tekstowy podany
 jako pierwszy argument skryptu.
 
-    :::shell-unix-generic
+    :::bash
     #!/usr/bin/env bash
     let x=$(wc -w $1 | cut -d\  -f 1)/350
     echo "Liczba stron po wydrukowaniu $1: $x";
 
 14\. Przykład z *xargs* i *find*:
 
-    :::shell-unix-generic
+    :::bash
     find -type f -print0 | xargs -0 egrep *pattern*

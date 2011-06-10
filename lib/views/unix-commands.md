@@ -25,7 +25,7 @@ Składnia polecenia uniksowego.
 
 Tworzenie aliasów:
 
-    :::shell-unix-generic
+    :::bash
     alias l='ls -l'
 
 Polecenie *alias*:
@@ -56,12 +56,12 @@ Rozwijanie nazw plików: globbing.
 
 *Pliki ukryte*, to pliki których nazwy zaczynają się od kropki:
 
-    :::shell-unix-generic
+    :::bash
     ls -la | egrep ' \.'
 
 Wyświetlanie zawartości pliku: `cat`:
 
-    :::shell-unix-generic
+    :::bash
     cat /etc/bashrc
     cat -n /etc/bashrc
     cat /etc/bashrc /etc/passwd > ~/tmp/etc.txt
@@ -93,7 +93,7 @@ Aliasy nazw plików: *ln*. Przykłady:
 
 Generujemy klucze: prywatny i publiczny:
 
-    :::shell-unix-generic
+    :::bash
     ssh-keygen
     ... Enter, Enter…
     cat ~/.ssh/id_rsa.pub
@@ -109,7 +109,7 @@ Polecenia: `quota`, `du -h` i `du -sh`, `df -h`.
 
 Do wypróbowania:
 
-    :::shell-unix-generic
+    :::bash
     df -k
     df -m
     df -h
@@ -161,7 +161,7 @@ Niecytowane *metaznaki* oddzielają słowa.
 Cytowanie znaków jest opisane w manualu programu *bash*
 w sekcji *QUOTING*. Mały przykład:
 
-    :::shell-unix-generic
+    :::bash
     echo "The # here does not begin a comment."
     echo 'The # here does not begin a comment.'
     echo The \# here does not begin a comment.
@@ -236,7 +236,7 @@ Przykład:
 
 Zestawianie poleceń w potok:
 
-    :::shell-unix-generic
+    :::bash
     who | sort
     who | wc -l
     ls | wc -l
@@ -257,7 +257,7 @@ kill -9 $( ps augxww | \
 
 Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
 
-    :::shell-unix-generic
+    :::bash
     du -m ~ | sort -k1nr | head
 
 
@@ -286,7 +286,7 @@ Zwykle w opcjach dopisujemy *v*, co oznacza
 
 Polecenia `chmod` i `chown`. Przykład:
 
-    :::shell-unix-generic
+    :::bash
     cd ~/tmp
     mkdir xxx
     ls -ld xxx
@@ -303,7 +303,7 @@ Polecenia `chmod` i `chown`. Przykład:
 
 Dlaczego nie ma przykładów dla polecenia `chown`:
 
-    :::shell-unix-generic
+    :::bash
     groups
 
 
@@ -311,7 +311,7 @@ Dlaczego nie ma przykładów dla polecenia `chown`:
 
 Własna strona na *Sigmie* krok po kroku:
 
-    :::shell-unix-generic
+    :::bash
     cd
     chmod 711 ../wbzyl
     mkdir public_html
@@ -386,7 +386,7 @@ oraz [bespin server][].
 
 Zakładamy repozytorium z systemem „wte”:
 
-    :::shell-unix-generic
+    :::bash
     cd ~/public_git
     mkdir test
     cd test
@@ -399,7 +399,7 @@ Zakładamy repozytorium z systemem „wte”:
 Korzystając z protokołu git, każdy użytkownik może sklonować na swój
 komputer repo *test*:
 
-    :::shell-unix-generic
+    :::bash
     git clone git://sigma.ug.edu.pl/~wbzyl/test
 
 Kilka zdań o magiczności katalogu *public_git* na Sigmie oraz o małej
@@ -410,7 +410,7 @@ użyteczności repozytoriów z systemem „wte”.
 
 Tworzymy *bare* repo *test.git* z repozytorium *test*:
 
-    :::shell-unix-generic
+    :::bash
     mkdir ~/public_git  # katalog na publiczne repozytoria
     git clone --bare ~/tmp/test ~/public_git/test.git
     rm -rf test  # usuwamy niepotrzebne już repozytorium
@@ -418,13 +418,13 @@ Tworzymy *bare* repo *test.git* z repozytorium *test*:
 Korzystając z protokołu git, każdy użytkownik może sklonować na swój
 komputer repo *test.git*:
 
-    :::shell-unix-generic
+    :::bash
     git clone git://sigma.ug.edu.pl/~wbzyl/test.git
 
 A **właściciel repozytorium**, czyli ja, klonuje repo korzystając
 z protokołu **ssh** w taki sposób:
 
-    :::shell-unix-generic
+    :::bash
     git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/test.git
 
 Właściciel repozytorium może wykonać `pull` i `push`
@@ -455,17 +455,17 @@ sforkowany przed chwilą projekt na swój komputer.
 
 Teraz przechodzimy do katalogu z projektem:
 
-    :::shell-unix-generic
+    :::bash
     cd jblog
 
 i dodajemy oryginalne repozytorium jako **remote**:
 
-    :::shell-unix-generic
+    :::bash
     git remote add wbzyl git://github.com/wbzyl/jblog.git
 
 Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
 
-    :::shell-unix-generic
+    :::bash
     git fetch wbzyl
     git diff wbzyl/master
     git merge wbzyl/master
@@ -495,7 +495,7 @@ Pliki: `.bashrc`, `.bash_profile`, `.bash_history`.
 
 Jakieś przykłady: `>`, `>>`, `<`.
 
-    :::shell-unix-generic
+    :::bash
     cd
     echo "export PATH=$PATH:."  >> .bashrc
     cd ~/.ssh
@@ -506,7 +506,7 @@ Jakieś przykłady: `>`, `>>`, `<`.
 
 Proste przykłady:
 
-    :::shell-unix-generic
+    :::bash
     find | LC_ALL=C sort
     find -ls | sort -k11
     grep POSIX_OPEN_MAX /dev/null $(find /usr/include -type f | sort)
@@ -515,14 +515,14 @@ Proste przykłady:
 
 Więcej przykładów:
 
-    :::shell-unix-generic
+    :::bash
     find . -name "*.c" -print
     find . -mmin -5  # pliki modyfikowane w ostatnich 5 minutach
     find . -mmin +5  # ?
 
 Znajdź pliki puste lub nie otwierane od ponad roku:
 
-    :::shell-unix-generic
+    :::bash
     find . -size 0 -o -atime +365
 
 Jeszcze jeden przykład z *xargs*:
@@ -549,24 +549,24 @@ plików wcześniej utworzoną/uaktualnioną przez polecenie *updatedb*.
 
 Tworzymy dwa pliki testowe:
 
-    :::shell-unix-generic
+    :::bash
     echo Test 1 > test.1
     echo Test 2 > test.2
 
 Sprawdzamy różnice:
 
-    :::shell-unix-generic
+    :::bash
     diff test.[12]
     diff -c test.[12]
 
 Tworzymy łatę (ang. patch):
 
-    :::shell-unix-generic
+    :::bash
     diff -c test.1 test.2 > test.diff
 
 Nakładamy łatę:
 
-    :::shell-unix-generic
+    :::bash
     patch < test.diff
     cat test.1
 
@@ -626,12 +626,12 @@ Krótka ściąga z [Fuse filesystem] [fuse].
 
 Łączenie ze zdalnym hostem:
 
-    :::shell-unix-generic
+    :::bash
     sshfs username@host: mountpoint
 
 Odmontowanie systemu zdalnego:
 
-    :::shell-unix-generic
+    :::bash
     fusermount -u mountpoint
 
 
@@ -670,7 +670,7 @@ Też warte przeczytania:
 
 [Ruby shell] [rush]. Instalacja:
 
-    :::shell-unix-generic
+    :::bash
     gem install rush
 
 

@@ -18,7 +18,7 @@ szczegóły dotyczące programowania powłoki.
 Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z
 polecenia *help*, na przykład:
 
-    :::shell-unix-generic
+    :::bash
     help if
     help case
     help help
@@ -107,7 +107,7 @@ A teraz obiecany powyżej przykład:
 
 Prosty program kodujący. Użycie:
 
-    :::shell-unix-generic
+    :::bash
     ./rot13.sh filename
     ./rot13.sh < filename
     ./rot13.sh
@@ -115,7 +115,7 @@ Prosty program kodujący. Użycie:
 
 Plik *rot13.sh*:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     # "a" na "n", "b" na "o", itd
@@ -138,7 +138,7 @@ tekstu ze *stdin* lub z pliku.
 Program *listing.sh* pokazuje jak za pomocą *ANSI escape sequences*
 kolorować wypisywany tekst:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     red='\e[31m'
@@ -152,7 +152,7 @@ kolorować wypisywany tekst:
 A ten skrypt pokazuje jak zmieniać kolor tła
 i znaki normalne na znaki pobgrubione:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     esc="\033["
     echo -n " _ _ _ _ _40 _ _ _ 41_ _ _ _42 _ _ _ 43"
@@ -174,7 +174,7 @@ Czasami w nazwach plików pojawiają się spacje. To jest *bad thing*.
 Skrypt *blank-rename.sh* zamienia spacje w nazwach na znak
 podkreślenia *_*.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
     number=0             # licznik plików, którym zmieniono nazwy
     FOUND=0              # zmienna: aby kod się lepiej czytał
@@ -217,7 +217,7 @@ przesunięcia; domyślna wartość to 1.
 Poniższy skrypt pokazuje jak wykorzystać `shift` do przetwarzania
 opcji: `-f`, `-v` i `-q`.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     file=
@@ -262,7 +262,7 @@ Jak przygotować samemu słownik, zobacz następny skrypt.
 
 Sam skrypt jest prosty:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/sh
     FILES="
     	/usr/share/dict/words-doroszewski
@@ -289,7 +289,7 @@ found in the files.  This may be useful for compiling dictionaries and
 for other lexicographic purposes.” Niestety, ten skrypt nie rozpoznaje
 polskich liter: ą, ć, ę, itd.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     E_BADARGS=64
@@ -327,7 +327,7 @@ Gdzie podziały się znaki kontynuacji wiersza \(&nbsp;\\&nbsp;\)?
 Tworzymy archiwum ze wszystkich plików zmienionych w ostatnich
 24 godzinach. Archiwum, to plik "tarball" (tarred i gzipped).
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     BACKUPFILE=backup-$(date +%m-%d-%Y)
@@ -362,7 +362,7 @@ i zapisuje rezultat do pliku.
 
 Opcje programu *rpm* są opisane w manualu.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     SUCCESS=0
@@ -414,7 +414,7 @@ of the current shell; no new process is created to interpret them
 
 Tradycyjnie pierwszą funkcją będzie `hello_world`.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     JUST_A_SECOND=1
@@ -440,7 +440,7 @@ Tradycyjnie pierwszą funkcją będzie `hello_world`.
 
 Teraz kolej na trzy użyteczne funkcje:
 
-    :::shell-unix-generic
+    :::bash
     PROGRAM=$0
 
     usage()
@@ -482,7 +482,7 @@ ustawiając jakąś zmienną globalną skryptu albo wypisując tę wartość
 na wyjście. Wartość tę możemy przechwycić korzystając z podstawiania
 wartości poleceń:
 
-    :::shell-unix-generic
+    :::bash
     function foo() {
       printf "bar $1"
       return 0
@@ -497,7 +497,7 @@ Wymienić co najmniej 4 rzeczy różniące funkcje powłoki od funkcji C.
 
 W skrypcie korzystamy z polecenia wbudowanego `set`.
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     variable="raz dwa trzy cztery"
@@ -537,7 +537,7 @@ Dlatego w skrypcie zabezpieczamy się sami ustawiając wartość `IFS`.
 
 A to skrypt w całej swej okazałości:
 
-    :::shell-unix-generic
+    :::bash
     #! /bin/sh -
 
     # <newline> <space> <tab>
@@ -622,7 +622,7 @@ Rezultat:
 
 Skrypt *echo-params.sh*:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     params=$#              # liczba parametrów w linii poleceń
@@ -664,7 +664,7 @@ There three kinds of weasel words
 
 Skrypt znajdujący wszystkie takie słowa w pliku:
 
-    :::shell-unix-generic
+    :::bash
     #!/bin/bash
 
     weasels="many|various|very|fairly|several|extremely\

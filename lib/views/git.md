@@ -106,7 +106,7 @@ I już po konfiguracji.
 Wygodnie też jest mieć kilka aliasów w bashu.
 Dopisujemy je do pliku *~/.bashrc*:
 
-    :::shell-unix-generic
+    :::bash
     alias gb='git branch -a'
     alias gl='git log -p'
     alias gt='git status'
@@ -124,7 +124,7 @@ z katalogu *contrib/completion]* kopiujemy plik (*Fedora*):
 
 Następnie do pliku *.bashrc* dopisujemy, coś w stylu:
 
-    :::shell-unix-generic
+    :::bash
     if [ "$PS1" ]; then
       [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \w]"' $(__git_ps1 "(%s)")'"\n→ "
       export PS1
@@ -215,7 +215,7 @@ W logach zapisane są „commit messages”, z których łatwo się
 wyczytać co zostało zrobione i przez kogo. Dlatego logi są często
 przeglądane. Kilka przykładów:
 
-    :::shell-unix-generic
+    :::bash
     git log
     git log -p
     git log --grep 'important'
@@ -237,7 +237,7 @@ Polecenie `git show` służy do wypisywania zawartości obiektów
 dowolnego typu. Czasami używamy bardziej specjalizowanych
 poleceń:
 
-    :::shell-unix-generic
+    :::bash
     git ls-tree SHA1               # obiekt tree
     git show -s --pretty=raw SHA1  # obiekt commit
     git cat-file tag v1.0          # obiekt tag

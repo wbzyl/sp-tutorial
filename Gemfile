@@ -9,5 +9,5 @@ gem 'sinatra-static-assets', :git => 'git://github.com/wbzyl/sinatra-static-asse
 gem 'sinatra-filler', :git => 'git://github.com/wbzyl/sinatra-filler.git'
 
 # updated for Ruby 1.9
-gem 'ultraviolet', :git => 'git://github.com/spox/ultraviolet.git'
+gem 'coderay', :git => 'git://github.com/wbzyl/coderay.git'
 gem 'rack-codehighlighter', :git => 'git://github.com/wbzyl/rack-codehighlighter.git', :branch => 'pre-caption'
