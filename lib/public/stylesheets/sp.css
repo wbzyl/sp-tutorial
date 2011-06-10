@@ -25,6 +25,7 @@
 
 #logo a:focus, #logo a:hover {
   color: #321494;
+  background-color: transparent;
 }
 
 #logo span {
