@@ -4,8 +4,8 @@
   {%= image_tag "/images/algorithm.png", :alt => "[Rozwiązanie…]" %}
 </blockquote>
 
-1\. Podaj przykład skryptu wykorzystującego zmienne i
-zmienne środowiskowa np. $USER, $PWD, $HOME.
+1\. Podaj przykład skryptu wykorzystującego zmienne
+i zmienne środowiska np. USER, PWD, HOME.
 
     :::bash
     #!/bin/bash
