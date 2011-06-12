@@ -1,6 +1,4 @@
 .CodeRay {
-  /* background-color: #f8f8f8; */
-  /* border: 1px solid silver; */
   font-family: 'DejaVu Sans Mono', monospace;
   color: #000;
 }
@@ -129,3 +127,5 @@ ol.CodeRay li { white-space: pre }
 .CodeRay .del .del { color: #800; font-weight:bold }
 .CodeRay .chg .chg { color: #66f; }
 .CodeRay .head .head { color: #f4f; }
+
+.CodeRay .filename { color:#855F00; font-weight:bold }
