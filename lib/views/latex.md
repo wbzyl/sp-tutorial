@@ -9,11 +9,20 @@
   <p class="author">— Donald E. Knuth</p>
 </blockquote>
 
-System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
-Od tego czasu system jest stale rozwijany i udoskonalany.
+System TeX powstał w 1980 roku. Jego autorem jest prof. D. Knuth.
+Od tego czasu system jest stale rozwijany i udoskonalany.
 
 Co to jest TeX? Krótko: TeX jest systemem do składu dokumentów.
 Długo: [Najkrótsze wprowadzenie do systemu TeX](http://www.gust.org.pl/doc/tex_whatisit/).
+
+
+Wzory matematyczne można też wyświetlać w przeglądarce.
+Wpisujemy je w LaTeX-u, a renderowanie zlecamy
+bibliotece [MathJax](http://www.mathjax.org/), czyli
+„an open-source JavaScript display engine for LaTeX and
+MathML that works in all modern browsers”.
+Link do przykładowego dokumentu
+{%= link_to "MathJax TeX Test Page", "/mathjax.html" %}.
 
 Skompilować jakiś dokument z [arXiv] [].
 
