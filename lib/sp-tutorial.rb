@@ -5,13 +5,11 @@ require 'erubis'
 
 require 'sinatra/base'
 
-require 'sinatra/url_for'
 require 'sinatra/static_assets'
 require 'sinatra/filler'
 
 module WB
   class SP < Sinatra::Base
-    helpers Sinatra::UrlForHelper
     register Sinatra::StaticAssets
 
     # disable overriding public and views dirs
