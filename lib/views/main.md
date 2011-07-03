@@ -17,7 +17,8 @@
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
 1. {%= link_to "Bash w przykładach", "/bash" %}
 
-Różne rzeczy:
+
+## Laboratoria
 
 * {%= link_to "Ćwiczenia", "/exercises" %}
 
@@ -27,7 +28,8 @@ Różne rzeczy:
 1. [FreeBSD Man Pages] [freebsd].
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
 1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
-1. S. Chacon. [Pro Git – professional version control] [progit].
+1. S. Chacon. [Pro Git – professional version control] [progit]
+   ([ściąga] [git cheatsheet]).
 1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
    (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
@@ -52,6 +54,7 @@ Różne rzeczy:
 [lshort2e]: ftp://ftp.gust.org.pl/pub/CTAN/info/lshort/polish/lshort2e.pdf "Wprowadzenie do systemu LaTeX2e"
 [gnu os]: http://www.gnu.org/fun/fun.html "Laugh along with GNU - GNU Project - Free Software Foundation (FSF)"
 [progit]: http://progit.org/book/ "Pro Git – professional version control"
+[git cheatsheet]: http://blog.fournova.com/2011/06/git-cheat-sheet/ "Git cheatsheet | fournova"
 [markdown]: http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown"
 [texlive]: http://www.tug.org/texlive/ "TeX Live"
 [texworks]: http://www.tug.org/texworks/ "TeXworks: lowering the entry barrier to the TeX world"
