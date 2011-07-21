@@ -636,6 +636,7 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 * [Hunting bugs thru history](http://phunkwork.com/post/460924983/hunting-bugs-thru-history)
   ([An example repository that can be used to play with git-bisect, bugs and
   rspec](http://github.com/phunkwork/Bisect-bug-hunt))
+* [Reset Demystified](http://progit.org/2011/07/11/reset.html)
 
 
 #### Linki
