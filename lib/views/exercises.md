@@ -174,6 +174,11 @@ Poniższe polecenia wykonać w sklonowanym repozytorium:
 
 Co każde z tych poleceń wylicza?
 
+Na koniec, jeszcze jedno polecenie:
+
+    :::bash
+    git shortlog --no-merges
+
 2\. Napisać historyjkę pokazującą jak można
 wyszukać *commit* w którym po raz pierwszy
 pojawiła się określona funkcja.
