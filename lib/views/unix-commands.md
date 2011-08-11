@@ -663,7 +663,9 @@ W utrwaleniu składni poleceń uniksowych może pomóc lektura
 tej krótkiej satyry science-fiction: [Spłuczka w linuxie] [spluczka].
 
 Też warte przeczytania:
-<a href="http://bashcurescancer.com">BASH Cures Cancer</a>.
+
+* <a href="http://bashcurescancer.com">BASH Cures Cancer</a>
+* <a href="http://liw.fi/linux-anecdotes/">Linux Anecdotes</a>
 
 
 ## Alternatywa
