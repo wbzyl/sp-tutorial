@@ -530,6 +530,24 @@ Wracamy na główną gałąź, scalamy zmiany z gałęzi
     gitk
 
 
+## Przykładowy „workflow”
+
+Według guru [Scotta Chacona](http://scottchacon.com/),
+[Issues with git-flow](http://scottchacon.com/2011/08/31/github-flow.html):
+
+* anything in the master branch is deployable
+* create descriptive branches off of master
+* pushing named branches constantly
+
+Rzeczy specyficzne dla github repos:
+
+* open a pull request at any time
+* merge only after pull request review
+* deploy immediately after review
+
+**TODO:** dopisać przykład lub uzupełnić przykład powyżej.
+
+
 ## Praca rozproszona z *Githubem*
 
 Przykład: wspólna praca nad projektem *jBlog*.
