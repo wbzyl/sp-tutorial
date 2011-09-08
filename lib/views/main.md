@@ -2,9 +2,13 @@
 
 <blockquote>
   {%= image_tag "/images/the_thinker.jpg", :alt => "[The Thinker]" %}
-  <p>There's no sense in being precise when you don't even know what
-     you're talking about.</p>
-  <p class="author">— John von Neumann</p>
+  <p>In the emerging, highly programmed landscape ahead, you will
+  either create the software or you will be the software. It’s really
+  that simple: Program, or be programmed. Choose the former, and you
+  gain access to the control panel of civilization. Choose the latter,
+  and it could be the last real choice you get to make.
+  </p>
+  <p class="author">— Douglas Rushkoff</p>
 </blockquote>
 
 ## Notatki do wykładów
