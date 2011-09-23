@@ -1,13 +1,10 @@
 #### {% title "Git jest git" %}
 
 <blockquote>
-  {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
-  <p>
-   Zawinski's Law: Every program attempts to expand until it can read
-   mail. Those programs which cannot so expand are replaced by ones
-   which can.
-  </p>
-  <p class="author">— <a href="http://www.jwz.org/">Jamie Zawinski</a></p>
+  {%= image_tag "/images/the_thinker.jpg", :alt => "[The Thinker]" %}
+  <p>There's no sense in being precise when you don't even know what
+     you're talking about.</p>
+  <p class="author">— John von Neumann</p>
 </blockquote>
 
 Do czego służy system *Git*? Odpowiedź znajdziemy na stronie domowej projektu
@@ -577,6 +574,14 @@ jako *remote* do mojego repozytrorium *jblog*:
 Zob. też John Resig. [Pulley: Easy Github Pull Request Landing](http://ejohn.org/blog/pulley/).
 
 
+<blockquote>
+ <p>
+  Wsiada informatyk do taksówki. Taksiarz pyta:<br/>
+  — Dokąd jedziemy?<br/>
+  — 127.0.0.1
+ </p>
+</blockquote>
+
 ## My typical Git day
 
 … to przykład ze strony
@@ -586,6 +591,16 @@ Jak znaleźć bug w kodzie za pomocą *git-bisect*? Zaczynamy od lektury:
 
     man git-bisect
 
+
+<blockquote>
+  {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
+  <p>
+   Zawinski's Law: Every program attempts to expand until it can read
+   mail. Those programs which cannot so expand are replaced by ones
+   which can.
+  </p>
+  <p class="author">— <a href="http://www.jwz.org/">Jamie Zawinski</a></p>
+</blockquote>
 
 ## Zalety *nagich* repozytoriów
 
@@ -603,15 +618,6 @@ powinno to wyjaśnić.
 
 Zaletą posiadania nagiego repozytorium jest możliwość pracy
 rozproszonej, takiej jak z repozytoriami githuba.
-
-
-<blockquote>
- <p>
-  Wsiada informatyk do taksówki. Taksiarz pyta:<br/>
-  — Dokąd jedziemy?<br/>
-  — 127.0.0.1
- </p>
-</blockquote>
 
 
 ## Tak klonujemy projekty z *Sigmy*

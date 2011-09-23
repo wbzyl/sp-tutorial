@@ -116,7 +116,6 @@ h1 {
 }
 
 blockquote {
-  font: normal "DejaVu Sans" 14/1.5 sans-serif;
   width: 297px;
   margin-top: 6px;
   margin-left: 528px;
@@ -130,6 +129,10 @@ blockquote {
 blockquote img {
   margin: 0 auto 12px auto;
   display: block;
+}
+
+blockquote p {
+  font: italic 80%/1.5 "DejaVu Sans", sans-serif;
 }
 
 blockquote p.author {

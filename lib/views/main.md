@@ -1,10 +1,17 @@
 # ROZKŁAD JAZDY
 
 <blockquote>
-  {%= image_tag "/images/the_thinker.jpg", :alt => "[The Thinker]" %}
-  <p>There's no sense in being precise when you don't even know what
-     you're talking about.</p>
-  <p class="author">— John von Neumann</p>
+  {%= image_tag "/images/douglas_ruskoff.jpg", :alt => "[Douglas Rushkoff]" %}
+  <p>
+   According to best estimates, only <b>7%</b>
+   of human communication occurs on the verbal level.
+   Pich, volume, and other vocal tone account for <b>35%</b>,
+   and body movements such as gestures and facial expression
+   account for whopping <b>55%</b>. As we have all experienced, the
+   way a person makes eye contact can mean a whole lot
+   more to us than whatever he is saying.
+  </p>
+  <p class="author">— <a href="http://www.rushkoff.com/blog/">Douglas Rushkoff</a></p>
 </blockquote>
 
 ## Notatki do wykładów
