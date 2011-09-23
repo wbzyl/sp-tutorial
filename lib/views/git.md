@@ -2,9 +2,13 @@
 
 <blockquote>
   {%= image_tag "/images/the_thinker.jpg", :alt => "[The Thinker]" %}
-  <p>There's no sense in being precise when you don't even know what
-     you're talking about.</p>
-  <p class="author">— John von Neumann</p>
+  <p>In the emerging, highly programmed landscape ahead, you will
+  either create the software or you will be the software. It’s really
+  that simple: <b>Program, or be programmed</b>. Choose the former, and you
+  gain access to the control panel of civilization. Choose the latter,
+  and it could be the last real choice you get to make.
+  </p>
+  <p class="author">— Douglas Rushkoff</p>
 </blockquote>
 
 Do czego służy system *Git*? Odpowiedź znajdziemy na stronie domowej projektu
@@ -527,6 +531,24 @@ Wracamy na główną gałąź, scalamy zmiany z gałęzi
     gitk
 
 
+## Przykładowy „workflow”
+
+Według guru [Scotta Chacona](http://scottchacon.com/),
+[Issues with git-flow](http://scottchacon.com/2011/08/31/github-flow.html):
+
+* anything in the master branch is deployable
+* create descriptive branches off of master
+* pushing named branches constantly
+
+Rzeczy specyficzne dla github repos:
+
+* open a pull request at any time
+* merge only after pull request review
+* deploy immediately after review
+
+**TODO:** dopisać przykład lub uzupełnić przykład powyżej.
+
+
 ## Praca rozproszona z *Githubem*
 
 Przykład: wspólna praca nad projektem *jBlog*.
@@ -642,6 +664,7 @@ To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 * [Hunting bugs thru history](http://phunkwork.com/post/460924983/hunting-bugs-thru-history)
   ([An example repository that can be used to play with git-bisect, bugs and
   rspec](http://github.com/phunkwork/Bisect-bug-hunt))
+* [Reset Demystified](http://progit.org/2011/07/11/reset.html)
 
 
 #### Linki

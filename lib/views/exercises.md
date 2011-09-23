@@ -158,16 +158,37 @@ Wskazówka: Zajrzyj na strony Wiki:
 
 ## Git
 
-1\. Napisać historyjkę pokazującą jak można
+1\. Sklonować repozytorium programu Git:
+
+    :::bash
+    git clone git://github.com/git/git.git
+
+Poniższe polecenia wykonać w sklonowanym repozytorium:
+
+    :::bash
+    find . -type f -not -regex '\./\.git/.*' | wc -l
+    find . -type f -not -regex '\./\.git.*' -print0 | xargs -0 cat | wc -l
+    find . -name '*.[hcS]' -not -regex '\./\.git.*' | xargs cat | wc -l
+    git log --no-merges --pretty=oneline v1.7.5..v1.7.6 | wc -l
+    git diff --shortstat v1.7.5..v1.7.6
+
+Co każde z tych poleceń wylicza?
+
+Na koniec, jeszcze jedno polecenie:
+
+    :::bash
+    git shortlog --no-merges
+
+2\. Napisać historyjkę pokazującą jak można
 wyszukać *commit* w którym po raz pierwszy
 pojawiła się określona funkcja.
 Umieścić historyjkę na jBlogu pod *git-grep*.
 
-2\. Napisać historyjkę ilustrującą użycie polecenia
+3\. Napisać historyjkę ilustrującą użycie polecenia
 `git cherry-pick`.
 Umieścić historyjkę na jBlogu pod *git-cherry-pick*.
 
-3\. Przeczytać [Git Repo Hosting via SSH](http://rfelix.com/2010/04/06/git-repo-hosting-via-ssh/)
+4\. Przeczytać [Git Repo Hosting via SSH](http://rfelix.com/2010/04/06/git-repo-hosting-via-ssh/)
 i zastosować w praktyce. (dobrać jakiś projekt na 2–3 osoby).
 
 

@@ -307,3 +307,11 @@ jako pierwszy argument skryptu.
 
     :::bash
     find -type f -print0 | xargs -0 egrep *pattern*
+
+15\. Przykład z *while* i *find*:
+
+    :::bash
+    find $PWD/assets -name "*.css.scss" | while read i;
+    do
+      mv "$i" "${i%.css.scss}.scss";
+    done
