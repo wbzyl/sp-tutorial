@@ -5,7 +5,7 @@
   <p>
    According to best estimates, only <b>7%</b>
    of human communication occurs on the verbal level.
-   Pich, volume, and other vocal tone account for <b>35%</b>,
+   Pitch, volume, and other vocal tone account for <b>35%</b>,
    and body movements such as gestures and facial expression
    account for whopping <b>55%</b>. As we have all experienced, the
    way a person makes eye contact can mean a whole lot
