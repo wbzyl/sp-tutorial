@@ -39,7 +39,7 @@
    ([ściąga] [git cheatsheet]).
 1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
-   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
+   (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
 1. P. Flynn.
    [Formatting Information](http://www.ctan.org/tex-archive/info/beginlatex/),
    Version 3.6, March 2005.
