@@ -344,7 +344,7 @@ Plik *index.html*:
 
 Plik *application.css*:
 
-    :::css_experimental
+    :::css
     html {
       background-color: #AAAAAA;
     }
@@ -634,6 +634,13 @@ Odmontowanie systemu zdalnego:
     :::bash
     fusermount -u mountpoint
 
+**TODO:**
+
+* dodać aliasy na każde poleceń; jak je nazwać?
+  *sigma-mount*, *sigma-umount*, *sm*, *su* (oj! niedobrze), … inne propozycje?
+* przerobić te polecenia na jednowierszowe skrypty
+* które podejście jest „lepsze”?
+
 
 <blockquote>
  <p>
@@ -668,13 +675,16 @@ Też warte przeczytania:
 * <a href="http://liw.fi/linux-anecdotes/">Linux Anecdotes</a>
 
 
-## Alternatywa
+<!--
+
+## Alternatywa, raczej ciekawostka
 
 [Ruby shell] [rush]. Instalacja:
 
     :::bash
     gem install rush
 
+-->
 
 #### Linki
 
