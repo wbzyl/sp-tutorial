@@ -17,12 +17,12 @@
 ## Notatki do wykładów
 
 1. {%= link_to "Przetrwać z Unixem", "/unix-commands" %}
-1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
 1. {%= link_to "Git jest git", "/git" %}
 1. {%= link_to "Jak zostać Uniksowym guru w kwadrans", "/unix-guru" %}
-1. {%= link_to "Nie tylko TeXLive", "/texlive" %}
 1. {%= link_to "Skryptologia stosowana", "/scripts" %}
 1. {%= link_to "Bash w przykładach", "/bash" %}
+1. {%= link_to "Nie za krótkie wprowadzenie do LaTeX-a", "/latex" %}
+1. {%= link_to "Nie tylko TeXLive", "/texlive" %}
 
 
 ## Laboratoria
