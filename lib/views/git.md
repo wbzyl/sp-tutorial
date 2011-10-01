@@ -684,16 +684,6 @@ Jak znaleźć bug w kodzie za pomocą *git-bisect*? Zaczynamy od lektury:
     man git-bisect
 
 
-<blockquote>
-  {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
-  <p>
-   Zawinski's Law: Every program attempts to expand until it can read
-   mail. Those programs which cannot so expand are replaced by ones
-   which can.
-  </p>
-  <p class="author">— <a href="http://www.jwz.org/">Jamie Zawinski</a></p>
-</blockquote>
-
 ## Zalety *nagich* repozytoriów
 
 Jak utworzyć nagie repozytorium?
@@ -720,14 +710,25 @@ Korzystając z protokołu GIT:
 
 Własne projekty klonujemy korzystając z SSH:
 
-    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+    git clone wbzyl@sigma.inf.ug.edu.pl:public_git/test.git
 
 albo tak:
 
-    git clone wbzyl@sigma.inf.ug.edu.pl:public_git/test.git
+    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+
 
 To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
 
+
+<blockquote>
+  {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
+  <p>
+   Zawinski's Law: Every program attempts to expand until it can read
+   mail. Those programs which cannot so expand are replaced by ones
+   which can.
+  </p>
+  <p class="author">— <a href="http://www.jwz.org/">Jamie Zawinski</a></p>
+</blockquote>
 
 ## Różne
 
