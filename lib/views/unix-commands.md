@@ -33,7 +33,7 @@ Użyteczne jest też polecenie *alias*:
     alias ls
     alias rm
 
-oraz polecenie *command* i *whereis*::
+oraz polecenie *command* i *whereis*:
 
     command -v redcarpet
     whereis ls
