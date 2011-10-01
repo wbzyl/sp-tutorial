@@ -37,8 +37,6 @@ gitopodobny od podstaw.
 Też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
 
 
-## Konfiguracja
-
 <blockquote>
  <p>
   Podchodzi informatyk do fortepianu i ogląda go wnikliwie:
@@ -47,6 +45,8 @@ Też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
   chociaż… shift naciskany nogą. Oryginalnie.
  </p>
 </blockquote>
+
+## Konfiguracja
 
 Pracę z gitem zaczynamy od przedstawienia się:
 
@@ -166,11 +166,11 @@ powinno mieć nazwę *hello-world*:
     git commit -m "pierwsza wrzutka"
 
 Każdy plik w systemie Git może mieć aż trzy życia:
-jedno w „drzewie roboczym”, drugie w „indeks” i trzecie w „trunk”:
+jedno w „katalogu roboczym”, drugie w „staging area” i trzecie w „repozytorium”:
 
-    git diff           # shows you the differences from index to working tree
-    git diff HEAD      # shows you the differences from trunk to working tree
-    git diff --cached  # shows you the differences from trunk to index
+    git diff           # shows you the differences from staging area to working tree
+    git diff HEAD      # shows you the differences from repo to working tree
+    git diff --cached  # shows you the differences from repo to staging area
 
 Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
 [The Thing About Git] [tomayko about git].
@@ -180,9 +180,9 @@ Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
   {%= image_tag "/images/staging_area.png", :alt => "[working tree / index / trunk]" %}
 </blockquote>
 
-Na *indeks* mówimy też *staging area* (punkt etapowy, punkt tranzytowy),
-*working tree* tłumaczymy na drzewo robocze (kopia robocza?),
-a *trunk* to *trunk*.
+Na *staging area* (punkt etapowy, punkt tranzytowy) mówimy też
+*indeks*; *working tree* to katalog roboczy (kopia robocza);
+a *repozytorium* to *repozytorium*.
 
 
 ### Git na co dzień
@@ -322,38 +322,47 @@ A teraz konkrety. Serwis będzie dostępny z takiego URL:
     http://sigma.inf.ug.edu.pl/~wbzyl/dowcipy/
 
 Na początek serwis www będzie się składał z jednej strony:
-*index.html*.
+*index.txt*.
 
-1\. Zakładamy repozytorium. Do pliku *index.html*
-wpisujemy dowcip:
+1\. Zakładamy repozytorium:
 
     mkdir ~/public_html/dowcipy/
     cd ~/public_html/dowcipy/
     git init
-    cat > index.html
+
+Tworzymy nowy plik *index.txt*:
+
+    vim index.txt
+
+gdzie wpisujemy:
+
     Jestem albańskim wirusem komputerowym, ale z uwagi
     na słabe zaawansowanie informatyczne mojego kraju
     nie mogę nic ci zrobić.
     Proszę skasuj sobie jakiś plik i prześlij mnie dalej.
 
-Dodajemy plik do repozytorium i umieszczamy go w repozytorium
+Dodajemy plik *index.txt* do „staging area” i zapisujemy go
+w repozytorium:
 
+    git status
     git add index.html
     git commit -m "dodałem albański dowcip"
 
-2\. Tworzymy nową gałąź i zaczynamy wpisywać nowy dowcip:
+2\. Tworzymy nową gałąź:
 
     git checkout -b newidea
-    cat >> index.html
+
+gdzie zaczynamy wpisywać wpisywać nowy dowcip:
+
     Webmaster wypełnia podanie o dowód.
     Data urodzenia: 31.11.1990
     Wzrost: 190
 
 3\. W trakcie wpisywania dowcipu dostajemy wiadomość o wirusie:
 
-    git status
-    git stash
-    git status
+    git status              # dobry zwyczaj nakazuje, aby sprawdzić stan kopii roboczej
+    git stash               # zanim ukryjemy zmiany w „dirty” kopii roboczej
+    git lola                # mój skrót; zob. początek wykładu
     git checkout master
     git checkout -b hotfix
 
@@ -370,8 +379,10 @@ nowym dowcipem:
 5\. Czytamy dowcip kolegom. Ponieważ teraz wydaje się,
 że wszystko jest OK, wykonujemy:
 
-    git commit -m "usunięto wirusa" -a
+    git commit -m "usunąłem albańskiego wirusa" -a
+    git lola  # przyglądamy się jak zmieniła się historia
     git checkout master
+    git lola  # j.w.
     git merge hotfix
     git branch -d hotfix
 
@@ -379,37 +390,45 @@ nowym dowcipem:
 
     git checkout newidea
     git stash apply
-    cat >> index.html
+
+Uruchamiamy edytor:
+
+    vim index.txt
+
+i dopisujemy puentę dowcipu:
+
     Kolor oczu: #4040EE
 
 Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
 scalamy *master* z *newidea* i usuwamy *newidea*:
 
-    git add index.html
-    git commit -m "raczej słaby dowcip"
+    git commit -m "dodałem raczej słaby dowcip" -a
+
+**Pytanie:* Jakie dowcipy są wpliku *index.txt* na gałęzi:
+
+* *newidea* (za proste!)
+* *master*  (czy jeszcze pamiętamy jakie?)
 
 Teraz kolejno wykonujemy:
 
-    git merge master        # najpierw scalanie
+    git merge master        # najpierw scalanie (CONFLICT)
     git checkout master     # następnie zmieniamy gałąź
-    git merge newidea       # i na konie jeszcze raz scalanie
+    git merge newidea       # i na koniec jeszcze raz scalanie
     git branch -d newidea
 
-**Uwaga:** Najpierw wykonujemy na gałęzi *newidea* scalanie z *master*.
-Jeśli pominiemy ten krok, to scalenie z *newidea*
-daje konflikt. Dlaczego?
+Zostajemy z pokrętną historią. Aby się o tym przekonać wykonujemy:
 
-Zostajemy z pokrętną historią:
+    git lola
 
-    gitk --all
+**Pytanie:** Jak przejść powyższy scenariusz, tak aby na końcu
+otrzymać „prostą historię”?
 
-Jak przejść powyższy scenariusz, tak aby na końcu otrzymać „prostą
-historię”?
-
-Możemy nieco oczyścić gałęzie w taki sposób:
+Możemy nieco oczyścić historię usuwając niepotrzebny „stash”:
 
     git stash clear
-    git gc
+    git lola
+
+Tak jest lepiej. Ale z rebase będzie jeszcze lepiej!
 
 
 ## Remote branches
@@ -477,58 +496,100 @@ pobierając nową wersję (jeśli były jakieś zmiany).
 
 ## Prostowanie historii, czyli rebasing
 
-Zobacz też [The Basic Rebase](http://progit.org/book/ch3-6.html)
+Zaczynamy od przyjrzenia się historii systemu *Git*.
+W ty celu klonujemy repo systemu *Git*.
+Następnie przeoglądamy historię korzystając
+z programu *gitk*, albo wykonujac na terminalu polecenia:
+
+    git lola  # mój alias; definicja u góry strony
+
+Edytor *mg* jest malutki i ma klawiszologię Emacsa.
+Użyjemy go poniżej.
 
 Zakładamy repo:
 
     mkdir test
     cd test
-    cat > README.md
-    # Hello project
-    .. ctrl+d
     git init
+
+Dodajemy plik:
+
+    mg .gitignore
+    *~
+    .. zapisujemy plik, opuszczamy edytor: ctrl+x ctrl+c
+    mg README.md
+    # Hello project
+    .. zapisujemy plik, opuszczamy edytor
     git add .
     git commit -m "wrzutka: 1."
-    gitk
+    git lola
 
 Nowy pomysł:
 
     git checkout -b newidea
-    cat > README.md
+    mg README.md
     # Hello world project
-    .. ctrl+d
+    .. zapisujemy plik, opuszczamy edytor
     git commit -m "wrzutka z gałęzi newidea: 1." -a
-    cat >> README.md
+    git lola
+    mg README.md
     Kolekcja programów hello world.
-    .. ctrl+d
+    .. zapisujemy plik, opuszczamy edytor
     git commit -m "wrzutka z gałęzi newidea: 2." -a
-    gitk
+    git lola
 
 Przechodzimy na główną gałąź:
 
     git checkout master
-    cat >> README.md
+    mg README.md
     ## Ruby
         print "hello world"
-    .. ctrl+d
+    .. zapisujemy plik, opuszczamy edytor
     git commit -m "wrzutka: 2." -a
-    gitk
+    git lola
 
 Przechodzimy na gałąź *newidea*.
 Rebase **wykonujemy** z gałęzi *newidea*:
 
     git checkout newidea
-    git rebase master
+    git rebase master      # mamy konflikt, dlaczego?
 
-Wracamy na główną gałąź, scalamy zmiany z gałęzi
-*newidea* i usuwamy gałąź *newidea*:
+Rozwiązujemy konflikt. Następnie wykonujemy:
+
+    git add .
+    git rebase --continue  # ponownie mamy konflikt, dlaczego?
+
+Rozwiązujemy drugi konflikt. Następnie wykonujemy:
+
+    git add
+    git rebase --continue
+    git lola
+
+Widzimy wyprostowaną historię:
+
+    * 1141770 (HEAD, newidea) wrzutka z gałęzi newidea: 2.
+    * d791e95 wrzutka z gałęzi newidea: 1.
+    * 83c7ef9 (master) wrzutka: 2.
+    * 3b10add wrzutka: 1.
+
+Pozostaje jeszcze wrócić na główną gałąź i posprzątanie po sobie:
 
     git checkout master
-    gitk                   # podgląd
+    git lola               # podgląd historii
     git merge newidea      # powinno być fast-forward
-    gitk
+    git lola
     git branch -d newidea
-    gitk
+    git lola
+
+Jest dobrze:
+
+    * 1141770 (HEAD, master) wrzutka z gałęzi newidea: 2.
+    * d791e95 wrzutka z gałęzi newidea: 1.
+    * 83c7ef9 wrzutka: 2.
+    * 3b10add wrzutka: 1.
+
+Warto też przeczytać [The Basic Rebase](http://progit.org/book/ch3-6.html)
+(jest polskie tłumaczenie?).
 
 
 ## Przykładowy „workflow”
@@ -540,13 +601,22 @@ Według guru [Scotta Chacona](http://scottchacon.com/),
 * create descriptive branches off of master
 * pushing named branches constantly
 
-Rzeczy specyficzne dla github repos:
+Rzeczy specyficzne dla repozytoriów Github’a:
 
 * open a pull request at any time
 * merge only after pull request review
 * deploy immediately after review
 
-**TODO:** dopisać przykład lub uzupełnić przykład powyżej.
+Z tego „workflow” nie wiemy tylko jak „to push named branches”.
+Można na przykład tak:
+
+    git push origin patch-git-fetch-performance
+
+Po wykonaniu tego polecenia, gałąź *patch-git-fetch-performance*
+powinna się pojawić na stronie repozytorium na *github.com*
+w zakładkach **Branch List** (koniecznie obejrzeć jak to wygląda, na przykład
+[tutaj](https://github.com/github/git/branches)) oraz *Switch Branches*.
+
 
 
 ## Praca rozproszona z *Githubem*
