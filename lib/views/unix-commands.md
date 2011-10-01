@@ -28,11 +28,15 @@ Tworzenie aliasów:
     :::bash
     alias l='ls -l'
 
-Polecenie *alias*:
+Użyteczne jest też polecenie *alias*:
 
     alias ls
     alias rm
 
+oraz polecenie *command* i *whereis*::
+
+    command -v redcarpet
+    whereis ls
 
 
 <blockquote>
