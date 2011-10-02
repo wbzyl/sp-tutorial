@@ -13,7 +13,7 @@ Dlaczego?
 
 ## Logowanie i wylogowywanie
 
-* Hasła. Co mierzy [The Password Meter] [password meter]
+* Hasła. Co mierzy [The Password Meter] [password meter]?
 * Zmiana hasła: polecenie `passwd`
 * Logowanie zdalne: `ssh`. [Getting started with SSH] [started with ssh]
 * Wylogowywanie: `exit`, `logout`
