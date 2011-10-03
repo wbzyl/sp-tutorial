@@ -698,7 +698,7 @@ Też warte przeczytania:
 [fuse]: http://fuse.sourceforge.net/sshfs.html "SSH Filesystem"
 [regexp tutorial]: http://gnosis.cx/publish/programming/regular_expressions.html "Learning to Use Regexp"
 [regexp tester]: http://www.roblocher.com/technotes/regexp.aspx "Regular Expression Tester"
-[spluczka]: http://www.piotr.nabielec.com/index.php?option=com_content&task=view&id=41 "Spłuczka w linuxie"
+[spluczka]: http://kurde.pl/katalog/linuks-a-sprawa-spluczki.php "Spłuczka w linuxie"
 
 [emacs-starter-kit]: http://github.com/technomancy/emacs-starter-kit "Emacs Starter Kit"
 [emacs-wiki]: http://www.emacswiki.org "Emacs Wiki"
