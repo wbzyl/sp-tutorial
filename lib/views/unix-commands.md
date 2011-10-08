@@ -124,6 +124,11 @@ Do wypróbowania:
 Konfiguracja przeglądarki: zmiana wielkości pamięci podręcznej
 przeglądarki (ang. *cache*).
 
+Wyszukiwanie katalogów zajmujących najwięcej miejsca:
+
+    :::bash
+    du -m ~ | sort -k1nr | head
+
 
 <blockquote>
   <h1>Bashowy hardcore</h1>
@@ -258,11 +263,6 @@ kill -9 $( ps augxww | \
   awk '{print $2}' )
 </pre>
 </blockquote>
-
-Wyszukiwanie katalogów zajmujących najwięcej miejsca na dysku:
-
-    :::bash
-    du -m ~ | sort -k1nr | head
 
 
 ## Korzystamy z archiwum plików
