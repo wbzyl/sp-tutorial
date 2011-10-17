@@ -10,7 +10,11 @@ gem 'sinatra-filler', :git => 'git://github.com/wbzyl/sinatra-filler.git'
 #   a workaround
 # RUBYOPT='-rpsych' bundle install
 #
-# Bash: cd tutorials
-#   for x in $(ls) ; do pushd $x ; bundle install --path=$HOME/.gems ; popd ;done
+# useful bash oneliners:
+#
+#   cd tutorials
+#
+#   for x in $(ls) ; do pushd $x ; bundle install --path=$HOME/.gems ; popd ; done
+#   for x in $(ls) ; do pushd $x ; git pull ; popd ; done
 
 gem 'rack-codehighlighter', :git => 'git://github.com/wbzyl/rack-codehighlighter.git', :branch => 'pre-caption'
