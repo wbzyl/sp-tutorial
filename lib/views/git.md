@@ -497,7 +497,7 @@ pobierając nową wersję (jeśli były jakieś zmiany).
 ## Prostowanie historii, czyli rebasing
 
 Zaczynamy od przyjrzenia się historii systemu *Git*.
-W ty celu klonujemy repo systemu *Git*.
+W tym celu klonujemy repo systemu *Git*.
 Następnie przeoglądamy historię korzystając
 z programu *gitk*, albo wykonujac na terminalu polecenia:
 
@@ -548,8 +548,14 @@ Przechodzimy na główną gałąź:
     git commit -m "wrzutka: 2." -a
     git lola
 
-Przechodzimy na gałąź *newidea*.
-Rebase **wykonujemy** z gałęzi *newidea*:
+Rebase **wykonujemy** z gałęzi *newidea*. **Dlaczego?**
+Aby się o tym przekonać wykonujemy rebase
+z gałęzi *master* (na kopii repozytorium):
+
+    git rebase newidea
+    git lola
+
+Przechodzimy na gałąź *newidea* gdzie wykonujemy *rebase*:
 
     git checkout newidea
     git rebase master      # mamy konflikt, dlaczego?
