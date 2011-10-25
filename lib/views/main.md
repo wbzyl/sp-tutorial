@@ -29,6 +29,11 @@
 
 * {%= link_to "Ćwiczenia", "/exercises" %}
 
+Dodatkowe materiały:
+
+* {%= link_to "Stanford OpenClassroom", "http://openclassroom.stanford.edu/MainFolder/HomePage.php" %} –
+  Practical Unix, Introduction to Databases, Web Applications…
+
 
 ## Literatura
 
