@@ -547,18 +547,14 @@ Na przykład tak:
 Chcemy „wyprostować” powyższą historię do takiej:
 
     git lola
-    * 70dfb0b (HEAD, master, foo) H
-    * 75a85db G
-    * 9c9aad5 F
-    * 4924aec E
-    * dda7577 D
-    * 90e01ff C
-    * 27cb1b0 B
-    * c70a51c A
-
-Z tej historii usuwamy niepotrzebną gałąź *foo*:
-
-    git branch -d foo
+    * 5965449 (HEAD, master) H
+    * 292f360 G
+    * 2e134c9 F
+    * ee5cfcc E
+    * 8517a45 D
+    * c126d7a C
+    * 9eb57d2 B
+    * ca9e9e2 A
 
 Prostowanie historii wykonujemy w kilku krokach.
 
