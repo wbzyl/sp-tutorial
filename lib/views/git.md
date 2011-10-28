@@ -519,10 +519,14 @@ Zaczniemy od utworzenia następującego repozytorium:
     * d558084 A
 
     ls
-
       A B C D E
 
-Jak utworzyć takie repozytorium z taką historią?
+    git checkout foo
+    ls
+      A B F G H
+
+
+Jak utworzyć repozytorium z taką zawartością i historią?
 Na przykład tak:
 
     :::bash
