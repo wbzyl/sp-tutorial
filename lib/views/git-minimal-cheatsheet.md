@@ -65,3 +65,10 @@ Wrzucamy zamiany na *githuba*:
   po wejściu na stronę z projektem, zakładka **Admin**.
   Na początek można dodać jako współpracowników wykładowcę
   (login *wbzyl*) i prowadzących laboratoria.
+
+## Git for ages 4 an up
+
+* [Michael Schwern](http://blip.tv/open-source-developers-conference/git-for-ages-4-and-up-4460524) –
+  git makes so much more sense when you understand how it really works,
+  because its really a two trick pony.
+* [Git shouldn't be so hard to learn](http://think-like-a-git.net/)

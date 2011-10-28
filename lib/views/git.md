@@ -503,8 +503,107 @@ z programu *gitk*, albo wykonujac na terminalu polecenia:
 
     git lola  # mój alias; definicja u góry strony
 
+Zaczniemy od utworzenia następującego repozytorium:
+
+    cd simple-rebase-example
+    git lola
+
+    * 762524f (foo) H
+    * a8dbb5a G
+    * 6796ee0 F
+    | * 37d5345 (HEAD, master) E
+    | * 3172f08 D
+    | * 5e62f10 C
+    |/
+    * c1f4e53 B
+    * d558084 A
+
+    ls
+
+      A B C D E
+
+Jak utworzyć takie repozytorium z taką historią?
+Na przykład tak:
+
+    :::bash
+    mkdir simple-rebase-example
+    cd simple-rebase-example
+    git init
+    touch A ; git add A ; git commit -m A
+    touch B ; git add B ; git commit -m B
+    git checkout -b foo
+    git checkout master
+    touch C ; git add C ; git commit -m C
+    touch D ; git add D ; git commit -m D
+    touch E ; git add E ; git commit -m E
+    git checkout foo
+    touch F ; git add F ; git commit -m F
+    touch G ; git add G ; git commit -m G
+    touch H ; git add H ; git commit -m H
+    git checkout master
+
+**Uwaga:** SHA commitów będą się różniły od tych wypisanych powyżej!
+
+Chcemy „wyprostować” powyższą historię do takiej:
+
+    git lola
+    * 70dfb0b (HEAD, master, foo) H
+    * 75a85db G
+    * 9c9aad5 F
+    * 4924aec E
+    * dda7577 D
+    * 90e01ff C
+    * 27cb1b0 B
+    * c70a51c A
+
+Z tej historii usuwamy niepotrzebną gałąź *foo*:
+
+    git branch -d foo
+
+Prostowanie historii wykonujemy w kilku krokach.
+
+Pierwszy krok:
+
+    :::bash
+    git checkout foo
+    git rebase master foo
+
+Dlaczego tak? Oto odpowiedź:
+
+    git lola
+
+    * 5965449 (HEAD, foo) H
+    * 292f360 G
+    * 2e134c9 F
+    * ee5cfcc (master) E
+    * 8517a45 D
+    * c126d7a C
+    * 9eb57d2 B
+    * ca9e9e2 A
+
+Drugi krok:
+
+    git checkout master
+    git merge foo
+    git branch -d foo
+
+I już! Gotowe:
+
+    git lola
+    * 5965449 (HEAD, master) H
+    * 292f360 G
+    * 2e134c9 F
+    * ee5cfcc E
+    * 8517a45 D
+    * c126d7a C
+    * 9eb57d2 B
+    * ca9e9e2 A
+
+
+## Prostowanie historii z konfliktami po drodze
+
 Edytor *mg* jest malutki i ma klawiszologię Emacsa.
-Użyjemy go poniżej.
+Użyjemy go w poniższym, pokrętnym przykładzie.
 
 Zakładamy repo:
 
@@ -598,31 +697,36 @@ Warto też przeczytać [The Basic Rebase](http://progit.org/book/ch3-6.html)
 (jest polskie tłumaczenie?).
 
 
-## Przykładowy „workflow”
+## „Github flow”
 
-Według guru [Scotta Chacona](http://scottchacon.com/),
-[Issues with git-flow](http://scottchacon.com/2011/08/31/github-flow.html):
+Git evangelist, writer, world traveler, father, husband, cat
+rescuer, baby signer and gorilla tamer, czyli krótko
+[Scott Chacon](http://scottchacon.com/)
+opisał jak używany jest git na swoim blogu
+w [Issues with git-flow](http://scottchacon.com/2011/08/31/github-flow.html).
+
+Oto główne punkty:
 
 * anything in the master branch is deployable
 * create descriptive branches off of master
 * pushing named branches constantly
 
-Rzeczy specyficzne dla repozytoriów Github’a:
+Plus rzeczy specyficzne dla Github’a:
 
 * open a pull request at any time
 * merge only after pull request review
 * deploy immediately after review
 
-Z tego „workflow” nie wiemy tylko jak „to push named branches”.
-Można na przykład tak:
+W artykule nie opisano jak „push named branches”.
+Pewnie chodziło o takie polecenie:
 
     git push origin patch-git-fetch-performance
 
 Po wykonaniu tego polecenia, gałąź *patch-git-fetch-performance*
-powinna się pojawić na stronie repozytorium na *github.com*
-w zakładkach **Branch List** (koniecznie obejrzeć jak to wygląda, na przykład
-[tutaj](https://github.com/github/git/branches)) oraz *Switch Branches*.
-
+powinna pojawić się w zakładkach **Branch List**
+(oraz *Switch Branches*) na stronie
+repozytorium na *github.com* (koniecznie obejrzeć takie galęzie,
+na przykład [tutaj](https://github.com/github/git/branches)).
 
 
 ## Praca rozproszona z *Githubem*
