@@ -34,8 +34,8 @@ incantations.”
 Przypowieść ta opisuje perypetie czeladnika tworzącego system
 gitopodobny od podstaw.
 
-Też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
-
+Też też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour].
+A tutaj są ściągi: [Git cheat sheets](http://help.github.com/git-cheat-sheets/).
 
 <blockquote>
  <p>
@@ -506,6 +506,12 @@ z programu *gitk*, albo wykonujac na terminalu polecenia:
 Zaczniemy od utworzenia następującego repozytorium:
 
     cd simple-rebase-example
+    git checkout foo
+    ls
+      A B F G H
+    git checkout master
+    ls
+      A B C D E
     git lola
 
     * 762524f (foo) H
@@ -518,12 +524,6 @@ Zaczniemy od utworzenia następującego repozytorium:
     * c1f4e53 B
     * d558084 A
 
-    ls
-      A B C D E
-
-    git checkout foo
-    ls
-      A B F G H
 
 
 Jak utworzyć repozytorium z taką zawartością i historią?
