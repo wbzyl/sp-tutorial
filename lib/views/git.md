@@ -728,11 +728,11 @@ Pewnie chodziło o takie polecenie:
     git push origin new-oauth2-scopes
 
 Po wykonaniu tego polecenia, gałąź *new-oauth2-scopes*
-powinna pojawić się ma stronie repozytorium w zakładce **Branches**.
+powinna się pojawić na stronie repozytorium w zakładce **Branches**.
 
 Koniecznie obejrzeć takie gałęzie, na przykład
-[tutaj](https://github.com/github/gollum/branches)).
-Kliknąć przycisk **Compare**.
+[tutaj](https://github.com/github/gollum/branches).
+Na tej stronie kliknąć przycisk **Compare**.
 
 
 ## Praca rozproszona z *Githubem*
