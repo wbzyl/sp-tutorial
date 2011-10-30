@@ -707,26 +707,32 @@ w [Issues with git-flow](http://scottchacon.com/2011/08/31/github-flow.html).
 
 Oto główne punkty:
 
-* anything in the master branch is deployable
-* create descriptive branches off of master
-* pushing named branches constantly
+1. Anything in the master branch is deployable.
+2. To work on something new, create a descriptively named branch off
+of master (ie: new-oauth2-scopes)
+3. Commit to that branch locally and regularly push your work to the
+same named branch on the server.
 
 Plus rzeczy specyficzne dla Github’a:
 
-* open a pull request at any time
-* merge only after pull request review
-* deploy immediately after review
+4. When you **need feedback or help**, or you think the branch is ready
+for merging, **open a pull request**.
+5. After someone else has reviewed and signed off on the feature, you
+can merge it into master
+6. Once it is merged and pushed to ‘master’, you can and should
+deploy immediately.
 
 W artykule nie opisano jak „push named branches”.
 Pewnie chodziło o takie polecenie:
 
-    git push origin patch-git-fetch-performance
+    git push origin new-oauth2-scopes
 
-Po wykonaniu tego polecenia, gałąź *patch-git-fetch-performance*
-powinna pojawić się w zakładkach **Branch List**
-(oraz *Switch Branches*) na stronie
-repozytorium na *github.com* (koniecznie obejrzeć takie galęzie,
-na przykład [tutaj](https://github.com/github/git/branches)).
+Po wykonaniu tego polecenia, gałąź *new-oauth2-scopes*
+powinna pojawić się ma stronie repozytorium w zakładce **Branches**.
+
+Koniecznie obejrzeć takie gałęzie, na przykład
+[tutaj](https://github.com/github/gollum/branches)).
+Kliknąć przycisk **Compare**.
 
 
 ## Praca rozproszona z *Githubem*
