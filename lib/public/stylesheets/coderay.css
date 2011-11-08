@@ -1,5 +1,4 @@
 .CodeRay {
-  background-color: hsl(0,0%,95%);
   color: black;
 }
 .CodeRay pre {
@@ -30,7 +29,6 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay span.line-numbers { padding: 0px 4px; }
 .CodeRay .line { display: block; float: left; width: 100%; }
 .CodeRay .code { width: 100%; }
-.CodeRay .code pre { overflow: auto; }
 
 .CodeRay .debug { color: white !important; background: blue !important; }
 
@@ -104,6 +102,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay .type { color:#339; font-weight:bold }
 .CodeRay .value { color: #088; }
 .CodeRay .variable  { color:#037 }
+.CodeRay .filename  { color:#300C7A; font-weight: bold; }
 
 .CodeRay .insert { background: hsla(120,100%,50%,0.12) }
 .CodeRay .delete { background: hsla(0,100%,50%,0.12) }
