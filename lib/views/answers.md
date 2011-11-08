@@ -14,7 +14,7 @@ Przykład:
 
 Tworzymy drzewko z plikami do testowania:
 
-
+    :::bash
     mkdir -p secret/{a,b/{c,d}}
     touch  secret/{a/x,b/c/y}
 
