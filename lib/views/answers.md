@@ -32,15 +32,15 @@ albo krótko:
 Z rozpakowaniem w locie:
 
     :::bash
-    tar -c secret --to-stdout | ssh wbzyl@sigma "tar x --"
+    tar -c secret --to-stdout | ssh wbzyl@backup.sigma.edu.pl "tar x --"
 
 Z rozpakowaniem w locie i zmianą katalogu::
 
     :::bash
-    tar -c secret --to-stdout | ssh wbzyl@sigma "( cd backup ; tar x -- )"
+    tar -c secret --to-stdout | ssh wbzyl@backup.sigma.ug.edu.pl "( cd backup ; tar x -- )"
 
 Polecenia na deser:
 
     :::bash
-    ssh wbzyl@sigma "tree backup/secret"
-    ssh wbzyl@sigma "rm -r secret"
+    ssh wbzyl@backup.sigma.ug.edu.pl "tree backup/secret"
+    ssh wbzyl@backup.sigma.ug.edu.pl "rm -r secret"
