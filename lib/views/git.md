@@ -599,6 +599,19 @@ I już! Gotowe:
     * 9eb57d2 B
     * ca9e9e2 A
 
+Co to jest *interactive rebase*? Wykonać:
+
+    git rebase -i master foo
+
+Jaka są różnice w historii repozytorium, po wykonaniu
+poleceń po lewej stronie v. te po prawej:
+
+    git co master            git co master # kontekst
+    git rebase foo master    git rebase master foo
+    git checkout foo
+    git merge master         git merge foo
+
+
 
 ## Prostowanie historii z konfliktami po drodze
 
