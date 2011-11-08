@@ -611,6 +611,10 @@ poleceń po lewej stronie v. te po prawej:
     git checkout foo
     git merge master         git merge foo
 
+[Undoing a git rebase](http://stackoverflow.com/questions/134882/undoing-a-git-rebase):
+
+    git reset --hard ORIG_HEAD
+
 
 
 ## Prostowanie historii z konfliktami po drodze
