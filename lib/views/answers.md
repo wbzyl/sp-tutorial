@@ -44,3 +44,12 @@ Polecenia na deser:
     :::bash
     ssh wbzyl@backup.sigma.ug.edu.pl "tree backup/secret"
     ssh wbzyl@backup.sigma.ug.edu.pl "rm -r secret"
+
+2\. [HOWTO Log Bash History to Syslog](http://jablonskis.org/2011/howto-log-bash-history-to-syslog/).
+Po co? „You may wonder what problem I was trying to solve? Right, the
+issue is that I want to log root users bash history from multiple
+servers to a central syslog box. I also want to preserve root users
+history on each server for convenience purposes.
+
+    :::bash
+    PROMPT_COMMAND='history -a >(logger -t "$USER[$$] $SSH_CONNECTION")'
