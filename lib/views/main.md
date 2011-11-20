@@ -31,8 +31,11 @@
 
 Dodatkowe materiały:
 
+* Nick Parlante.
+  {%= link_to "Computer Science 101", "http://www.cs101-class.org/" %} –
+  teaches the essential ideas of Computer Science for a zero-prior-experience audience
 * {%= link_to "Stanford OpenClassroom", "http://openclassroom.stanford.edu/MainFolder/HomePage.php" %} –
-  Practical Unix, Introduction to Databases, Web Applications…
+  Practical Unix, Introduction to Databases, Web Applications + inne kursy online
 
 
 ## Literatura
