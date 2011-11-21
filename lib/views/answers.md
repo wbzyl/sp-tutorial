@@ -76,8 +76,14 @@ Też fajne:
     :::bash
     cp some_file $OLDPWD
     dmidecode
+
+Ciekawe:
+
     lscpi
     lsusb
+    lsof
+
+Dużo przykładów z [lsof](http://danielmiessler.com/study/lsof/).
 
 Ekstra fajny *find*:
 
