@@ -752,6 +752,11 @@ Koniecznie obejrzeć takie gałęzie, na przykład
 Na tej stronie kliknąć przycisk **Compare**.
 
 
+## „Mozilla flow”
+
+* [Using topic branches and interactive rebasing effectively](http://blog.mozilla.com/webdev/2011/11/21/git-using-topic-branches-and-interactive-rebasing-effectively/)
+
+
 ## Praca rozproszona z *Githubem*
 
 Przykład: wspólna praca nad projektem *jBlog*.
