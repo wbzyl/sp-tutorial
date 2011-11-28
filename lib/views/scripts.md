@@ -185,7 +185,7 @@ podkreślenia *_*.
          if [ $? -eq $FOUND ]                   # zawiera spacje
          then
            fname=$filename                      # tak, więc zabieramy sie do pracy
-           n=`echo $fname | sed -e "s/ /_/g"`   # podstawiamy _ za każdą spację
+           n=$(echo $fname | sed -e "s/ /_/g")  # podstawiamy _ za każdą spację
            mv "$fname" "$n"                     # zmieniamy nazwę pliku
            let "number += 1"
          fi
@@ -193,6 +193,14 @@ podkreślenia *_*.
 
     echo "Liczba plików, którym zmieniono nazwy: $number"
     exit 0
+
+*Uwaga:* Wiersz z *sed* powyżej można podmienić na:
+
+    :::bash
+    n=${fname// /_}
+
+Konstrukcja `${parameter/pattern/string}` to *pattern substitution*.
+Jej opis znajdziemy w sekcji *Parameter Expansion* manuala *basha*.
 
 
 <blockquote>
