@@ -677,6 +677,7 @@ Też warte przeczytania:
 
 * <a href="http://bashcurescancer.com">BASH Cures Cancer</a>
 * <a href="http://liw.fi/linux-anecdotes/">Linux Anecdotes</a>
+* [Tips for Remote Unix Work (SSH, screen, and VNC)](http://shebang.brandonmintern.com/tips-for-remote-unix-work-ssh-screen-and-vnc)
 
 
 <!--
