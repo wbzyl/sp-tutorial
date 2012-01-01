@@ -93,7 +93,7 @@ Aliasy nazw plików: *ln*. Przykłady:
     rm LINK
 
 
-## SSH: secure shell
+## SSH, czyli secure shell
 
 Generujemy klucze: prywatny i publiczny:
 
@@ -102,9 +102,14 @@ Generujemy klucze: prywatny i publiczny:
     ... Enter, Enter…
     cat ~/.ssh/id_rsa.pub
 
-Zdalne kopiowanie plików: `scp`.
+Kopiuję klucz publiczny, tam gdzie będę się logować zdalnie,
+na przykład na *Sigmę*:
 
-Przykłady użycia?
+    :::bash
+    ssh-copy-id wbzyl@sigma.ug.edu.pl
+
+Zdalne kopiowanie plików za pomocą polecenia `scp`.
+Przykłady…
 
 
 ## Limity dyskowe
