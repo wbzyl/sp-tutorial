@@ -667,6 +667,9 @@ was the Command Line</a> — obowiązkowa lektura guru uniksowego!
 Praktyczne:
 <a href="http://www.pixelbeat.org/cmdline.html">Linux command: A practical reference</a>.
 
+Szersze spojrzenie na system:
+[Charting the Linux Anatomy](http://www.oreillynet.com/pub/a/oreilly/linux/news/linuxanatomy_0101.html)
+
 Samouczek:
 <a href="http://www.ee.surrey.ac.uk/Teaching/Unix">UNIX Tutorial for Beginners</a>.
 
