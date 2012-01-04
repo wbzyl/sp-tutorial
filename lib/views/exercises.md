@@ -116,7 +116,7 @@ rozpoznawanych przez program *egrep*.
 
 ## Markdown
 
-Przećwiczyć notację Markdown online, na przykład
+1\. Przećwiczyć notację Markdown online, na przykład
 [tutaj](http://joncom.be/experiments/markdown-editor/edit/)…
 
 
