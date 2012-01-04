@@ -108,10 +108,16 @@ Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
 no i data będzie też inna.
 
 
-## Edytor & notacja Markdown
+## Edytor
 
 1\. Przygotować post ze ściągą do wyrażeń regularnych
 rozpoznawanych przez program *egrep*.
+
+
+## Markdown
+
+Przećwiczyć notację Markdown online, na przykład
+[tutaj](http://joncom.be/experiments/markdown-editor/edit/)…
 
 
 ## Grep
