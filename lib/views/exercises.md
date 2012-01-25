@@ -67,6 +67,12 @@ Zadania do wykonania w laboratorium:
 * {%= link_to "Laboratorium 6", "/labs06" %} (*grep*)
 * {%= link_to "Laboratorium 7", "/labs07" %} (skrypty)
 
+W skryptach interaktywnych warto niekiedy użyć
+jednego z narzędzi:
+
+* [Dialog](http://en.wikipedia.org/wiki/Dialog_%28software%29)
+* [Zenity](http://en.wikipedia.org/wiki/Zenity)
+
 
 ## LaTeX
 
