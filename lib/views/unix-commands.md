@@ -311,6 +311,13 @@ Dlaczego nie ma przykładów dla polecenia `chown`:
     groups
 
 
+<blockquote>
+ <h1>7XX HTTP Codes</h1>
+ <p>An RFC for a new series of HTTP status
+  codes covering developer fouls.</p>
+ <p class="author">— John Barton</p>
+</blockquote>
+
 ## Przykład: własna strona WWW na *Sigmie*
 
 Własna strona na *Sigmie* krok po kroku:

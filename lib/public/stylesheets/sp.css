@@ -132,7 +132,11 @@ blockquote img {
 }
 
 blockquote p {
-  font: italic 80%/1.5 "DejaVu Sans", sans-serif;
+  font: italic 85%/1.5 "DejaVu Sans", sans-serif;
+}
+
+blockquote pre {
+  font: normal 85%/1.5 "DejaVu Sans Mono", monospace;
 }
 
 blockquote p.author {
@@ -209,12 +213,12 @@ blockquote h1 {
   font-size: 100%;
   font-family: Cyklop, serif;
   color: #D80000;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 22px 16px 22px;
   background-color: #00A800;
   color: white;
   width: 100%;
   margin-left: -22px;
   margin-top: -18px;
+  margin-bottom: 16px;
   -moz-border-radius: 4px;
 }
