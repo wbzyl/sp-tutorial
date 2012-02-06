@@ -67,6 +67,12 @@ Zadania do wykonania w laboratorium:
 * {%= link_to "Laboratorium 6", "/labs06" %} (*grep*)
 * {%= link_to "Laboratorium 7", "/labs07" %} (skrypty)
 
+W skryptach interaktywnych warto niekiedy użyć
+jednego z narzędzi:
+
+* [Dialog](http://en.wikipedia.org/wiki/Dialog_%28software%29)
+* [Zenity](http://en.wikipedia.org/wiki/Zenity)
+
 
 ## LaTeX
 
@@ -108,10 +114,16 @@ Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
 no i data będzie też inna.
 
 
-## Edytor & notacja Markdown
+## Edytor
 
 1\. Przygotować post ze ściągą do wyrażeń regularnych
 rozpoznawanych przez program *egrep*.
+
+
+## Markdown
+
+1\. Przećwiczyć notację Markdown online, na przykład
+[tutaj](http://joncom.be/experiments/markdown-editor/edit/)…
 
 
 ## Grep

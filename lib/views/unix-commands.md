@@ -93,7 +93,7 @@ Aliasy nazw plików: *ln*. Przykłady:
     rm LINK
 
 
-## SSH: secure shell
+## SSH, czyli secure shell
 
 Generujemy klucze: prywatny i publiczny:
 
@@ -102,9 +102,14 @@ Generujemy klucze: prywatny i publiczny:
     ... Enter, Enter…
     cat ~/.ssh/id_rsa.pub
 
-Zdalne kopiowanie plików: `scp`.
+Kopiuję klucz publiczny, tam gdzie będę się logować zdalnie,
+na przykład na *Sigmę*:
 
-Przykłady użycia?
+    :::bash
+    ssh-copy-id wbzyl@sigma.ug.edu.pl
+
+Zdalne kopiowanie plików za pomocą polecenia `scp`.
+Przykłady…
 
 
 ## Limity dyskowe
@@ -674,6 +679,9 @@ was the Command Line</a> — obowiązkowa lektura guru uniksowego!
 Praktyczne:
 <a href="http://www.pixelbeat.org/cmdline.html">Linux command: A practical reference</a>.
 
+Szersze spojrzenie na system:
+[Charting the Linux Anatomy](http://www.oreillynet.com/pub/a/oreilly/linux/news/linuxanatomy_0101.html)
+
 Samouczek:
 <a href="http://www.ee.surrey.ac.uk/Teaching/Unix">UNIX Tutorial for Beginners</a>.
 
@@ -684,6 +692,7 @@ Też warte przeczytania:
 
 * <a href="http://bashcurescancer.com">BASH Cures Cancer</a>
 * <a href="http://liw.fi/linux-anecdotes/">Linux Anecdotes</a>
+* [Tips for Remote Unix Work (SSH, screen, and VNC)](http://shebang.brandonmintern.com/tips-for-remote-unix-work-ssh-screen-and-vnc)
 
 
 <!--
