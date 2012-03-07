@@ -39,3 +39,12 @@ poleceń?
     who | sort | less                           # 12
     find -type f | wc                           # 13
     find -type f -print0 | wc --files0-from=-   # 14
+
+Plik z serwisu Gutenberg {%= link_to "idiota.txt", "/doc/idiota.txt" %} zawiera
+tekst powieści F. Dostojewskiego.
+
+    :::bash
+    tr -sc 'A-Za-z' '\n' < idiota.txt \
+      | sort \
+      | uniq -c \
+      | sort -k1,1 -rn
