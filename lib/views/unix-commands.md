@@ -134,6 +134,9 @@ Wyszukiwanie katalogów zajmujących najwięcej miejsca:
     :::bash
     du -m ~ | sort -k1nr | head
 
+Można też w tym celu użyć programu *ncdu*
+(skrót od *NCurses Disk Usage*).
+
 
 <blockquote>
   <h1>Bashowy hardcore</h1>
