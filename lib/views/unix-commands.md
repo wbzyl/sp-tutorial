@@ -102,6 +102,15 @@ Generujemy klucze: prywatny i publiczny:
     ... Enter, Enter…
     cat ~/.ssh/id_rsa.pub
 
+
+<blockquote>
+ {%= image_tag "/images/ssh-passphrase.jpg", :alt => "[agent forwarding]" %}
+ <p><a href="http://unixwiz.net/techtips/ssh-agent-forwarding.html">An
+   Illustrated Guide to SSH Agent Forwarding</a>
+ </p>
+ <p class="author">— Steve Friedl</p>
+</blockquote>
+
 Kopiuję klucz publiczny, tam gdzie będę się logować zdalnie,
 na przykład na *Sigmę*:
 
@@ -109,7 +118,6 @@ na przykład na *Sigmę*:
     ssh-copy-id wbzyl@sigma.ug.edu.pl
 
 Zdalne kopiowanie plików za pomocą polecenia `scp`.
-Przykłady…
 
 
 ## Limity dyskowe
