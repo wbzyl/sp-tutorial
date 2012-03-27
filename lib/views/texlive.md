@@ -155,7 +155,7 @@ bezpośrednio. Oczywiście pod warunkiem, że nie wymaga to szukania
 znaków w «tablicy symboli».”
 Marcin Woliński. [Racjonalna polska klawiatura dla programisty i&nbsp;typografa] [mw keyboard].
 
-Opis instalacji dla Ubuntu (i dla Fedory) łatki ze strony autora.
+Opis instalacji łatki dla Ubuntu ze strony autora:
 
 W terminalu przejść do katalogu */usr/share/X11/xkb/*:
 
