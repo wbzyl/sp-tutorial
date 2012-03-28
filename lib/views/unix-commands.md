@@ -393,6 +393,14 @@ Edytory ASCII i non-ASCII. [Emacs kontra Vi] [wojny edytorowe].
 
 {%= image_tag "/images/real_programmers.png", :alt => "[real programmers comics]" %}
 
+<blockquote>
+{%= image_tag "/images/larry_tesler.jpg", :alt => "[Larry Tesler]" %}
+<p>Primary inventor of modeless editing and cut, copy, paste.
+</p>
+<p class="author"><a href="http://www.nomodes.com/Larry_Tesler_Personal/Home.html">Larry Tesler?</a>
+</p>
+</blockquote>
+
 Użyteczne linki:
 
 * [emacs-fu](http://emacs-fu.blogspot.com/)
