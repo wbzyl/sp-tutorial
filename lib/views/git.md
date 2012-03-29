@@ -714,6 +714,12 @@ Warto też przeczytać [The Basic Rebase](http://progit.org/book/ch3-6.html)
 (jest polskie tłumaczenie?).
 
 
+<blockquote>
+ {%= image_tag "/images/howto-github.jpg", :alt => "[How to GitHub]" %}
+ <p><a href="http://gun.io/blog/how-to-github-fork-branch-and-pull-request/">How to GitHub:
+  Fork, Branch, Track, Squash and Pull Request</a></p>
+</blockquote>
+
 ## „Github flow”
 
 Git evangelist, writer, world traveler, father, husband, cat
