@@ -211,6 +211,12 @@ w sekcji *QUOTING*. Mały przykład:
     echo {a..z}
     echo {0..4}
 
+<blockquote>
+ <p>
+  <a href="https://groups.google.com/forum/?fromgroups#!topic/comp.os.minix/wlhw16QWltI">LINUX is obsolete</a> !?
+ </p>
+ <p class="author">— Andy Tanenbaum (1992)</p>
+</blockquote>
 
 ## Jedno po drugim
 
