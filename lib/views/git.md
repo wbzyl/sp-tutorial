@@ -215,7 +215,6 @@ Zazwyczaj praca z repozytorium wygląda tak:
  </p>
 </blockquote>
 
-
 ### Przeglądanie logów i nie tylko
 
 Użytecznymi programami są przeglądarki repozytoriów.
@@ -225,11 +224,16 @@ W logach zapisane są „commit messages”, z których łatwo się
 wyczytać co zostało zrobione i przez kogo. Dlatego logi są często
 przeglądane. Kilka przykładów:
 
+<blockquote>
+ <p><a href="http://anders.janmyr.com/2012/01/finding-with-git.html">Finding with Git</a></p>
+ <p class="author">— Anders Janmyr</p>
+</blockquote>
+
     :::bash
     git log
     git log -p
     git log --grep 'important'
-    git log -Sword                       # search thru history
+    git log -Sword               # search thru history
     git log --pickaxe-regex -S'\bword\b' # with regexp
     git log origin/master..HEAD
 
