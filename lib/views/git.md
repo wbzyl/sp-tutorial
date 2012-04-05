@@ -50,17 +50,20 @@ A tutaj są ściągi: [Git cheat sheets](http://help.github.com/git-cheat-sheet
 
 Pracę z gitem zaczynamy od przedstawienia się:
 
+    :::bash
     git config -l
     git config --global user.name "Wlodek Bzyl"
     git config --global user.email "matwb@univ.gda.pl"
 
 po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 
+    :::bash
     cat ~/.gitconfig
 
 Łatwiej będzie nam porozumiewać się z Gitem, po dodaniu do pliku
 konfiguracyjnego kilku skrótów:
 
+    :::bash
     git config --global alias.br    "branch -a"
     git config --global alias.co    "checkout"
     git config --global alias.ci    "commit"
@@ -73,6 +76,7 @@ konfiguracyjnego kilku skrótów:
 
 Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
 
+    :::bash
     git config --global color.branch auto
     git config --global color.diff auto
     git config --global color.status auto
@@ -117,10 +121,12 @@ Dopisujemy je do pliku *~/.bashrc*:
 
 Po sklonowaniu repozytorium samego Gita:
 
+    :::bash
     git clone git://git.kernel.org/pub/scm/git/git.git
 
 z katalogu *contrib/completion]* kopiujemy plik (*Fedora*):
 
+    :::bash
     cp git-completion.bash /etc/profile.d/git-completion.sh
 
 Następnie do pliku *.bashrc* dopisujemy, coś w stylu:
@@ -158,6 +164,7 @@ Teraz powinniśmy mieć taki „znak zachęty”:
 Pierwsze repozytorium, zgodnie ze starą uniksową tradycją
 powinno mieć nazwę *hello-world*:
 
+    :::bash
     mkdir hello-world
     cd hello-world
     git init
@@ -168,6 +175,7 @@ powinno mieć nazwę *hello-world*:
 Każdy plik w systemie Git może mieć aż trzy życia:
 jedno w „katalogu roboczym”, drugie w „staging area” i trzecie w „repozytorium”:
 
+    :::bash
     git diff           # shows you the differences from staging area to working tree
     git diff HEAD      # shows you the differences from repo to working tree
     git diff --cached  # shows you the differences from repo to staging area
@@ -189,6 +197,7 @@ a *repozytorium* to *repozytorium*.
 
 Zazwyczaj praca z repozytorium wygląda tak:
 
+    :::bash
     ... edycja, edycja ...
     git status
     git add [nazwy plików albo .]
@@ -255,10 +264,12 @@ sobie wyobrażać:
 
 Zmieniamy **ostatni** wpis w logu:
 
+    :::bash
     git commit --amend
 
 Unstaging staged plik:
 
+    :::bash
     git add .
     git status
     # On branch master
@@ -269,6 +280,7 @@ Unstaging staged plik:
 
 Wycofanie zmian w edytowanym pliku:
 
+    :::bash
     # Changed but not updated:
     #   (use "git add <file>..." to update what will be committed)
     #   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -277,6 +289,7 @@ Wycofanie zmian w edytowanym pliku:
 
 Undo merge:
 
+    :::bash
     git reset --hard ORIG_HEAD
 
 
@@ -326,12 +339,14 @@ Na początek serwis www będzie się składał z jednej strony:
 
 1\. Zakładamy repozytorium:
 
+    :::bash
     mkdir ~/public_html/dowcipy/
     cd ~/public_html/dowcipy/
     git init
 
 Tworzymy nowy plik *index.txt*:
 
+    :::bash
     vim index.txt
 
 gdzie wpisujemy:
@@ -344,12 +359,14 @@ gdzie wpisujemy:
 Dodajemy plik *index.txt* do „staging area” i zapisujemy go
 w repozytorium:
 
+    :::bash
     git status
     git add index.html
     git commit -m "dodałem albański dowcip"
 
 2\. Tworzymy nową gałąź:
 
+    :::bash
     git checkout -b newidea
 
 gdzie zaczynamy wpisywać wpisywać nowy dowcip:
@@ -360,6 +377,7 @@ gdzie zaczynamy wpisywać wpisywać nowy dowcip:
 
 3\. W trakcie wpisywania dowcipu dostajemy wiadomość o wirusie:
 
+    :::bash
     git status              # dobry zwyczaj nakazuje, aby sprawdzić stan kopii roboczej
     git stash               # zanim ukryjemy zmiany w „dirty” kopii roboczej
     git lola                # mój skrót; zob. początek wykładu
@@ -379,6 +397,7 @@ nowym dowcipem:
 5\. Czytamy dowcip kolegom. Ponieważ teraz wydaje się,
 że wszystko jest OK, wykonujemy:
 
+    :::bash
     git commit -m "usunąłem albańskiego wirusa" -a
     git lola  # przyglądamy się jak zmieniła się historia
     git checkout master
@@ -388,11 +407,13 @@ nowym dowcipem:
 
 6\. Kończymy nowy dowcip:
 
+    :::bash
     git checkout newidea
     git stash apply
 
 Uruchamiamy edytor:
 
+    :::bash
     vim index.txt
 
 i dopisujemy puentę dowcipu:
@@ -402,6 +423,7 @@ i dopisujemy puentę dowcipu:
 Testujemy czy wszystko jest OK. Jeśli tak, to jak poprzednio
 scalamy *master* z *newidea* i usuwamy *newidea*:
 
+    :::bash
     git commit -m "dodałem raczej słaby dowcip" -a
 
 **Pytanie:* Jakie dowcipy są wpliku *index.txt* na gałęzi:
@@ -411,6 +433,7 @@ scalamy *master* z *newidea* i usuwamy *newidea*:
 
 Teraz kolejno wykonujemy:
 
+    :::bash
     git merge master        # najpierw scalanie (CONFLICT)
     git checkout master     # następnie zmieniamy gałąź
     git merge newidea       # i na koniec jeszcze raz scalanie
@@ -418,6 +441,7 @@ Teraz kolejno wykonujemy:
 
 Zostajemy z pokrętną historią. Aby się o tym przekonać wykonujemy:
 
+    :::bash
     git lola
 
 **Pytanie:** Jak przejść powyższy scenariusz, tak aby na końcu
@@ -425,6 +449,7 @@ otrzymać „prostą historię”?
 
 Możemy nieco oczyścić historię usuwając niepotrzebny „stash”:
 
+    :::bash
     git stash clear
     git lola
 
@@ -441,14 +466,17 @@ Forkuję projekt Phil Hagelberga (nick: technomancy):
 
 i tworzę klon sforkowanego projektu na swoim komputerze:
 
+    :::bash
     git clone git@github.com:wbzyl/emacs-starter-kit.git
 
 Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
 
+    :::bash
     git remote add technomancy git://github.com/technomancy/emacs-starter-kit.git
 
 Po dodaniu gałęzi remote, wykonujemy polecenie:
 
+    :::bash
     git fetch technomancy
 
 ściągając na gałąź *technomancy* najnowszą wersję projektu
@@ -456,6 +484,7 @@ z serwera *github.com*.
 
 Sprawdzamy co zostało zrobione. Wykonujemy polecenie:
 
+    :::bash
     git remote
     origin
     technomancy
@@ -464,6 +493,7 @@ i widzimy że wszystko jest w porządku: mamy dwie gałęzie remote.
 
 Polecenie:
 
+    :::bash
     git branch -a
 
 daje nieco więcej informacji od poprzedniego polecenia:
@@ -476,19 +506,23 @@ daje nieco więcej informacji od poprzedniego polecenia:
 
 Po co to zrobiliśmy? Teraz możemy porównać nową wersję ze swoją:
 
+    :::bash
     git diff technomancy/master
 
 i scalić nową wersję ze swoim projektem:
 
+    :::bash
     git merge technomancy/master
 
 Albo, możemy postąpić ostrożniej:
 
+    :::bash
     git checkout -b technomancy
     git merge technomancy/master
 
 Od czasu do czasu wykonujemy:
 
+    :::bash
     git fetch technomancy
 
 pobierając nową wersję (jeśli były jakieś zmiany).
@@ -501,10 +535,12 @@ W tym celu klonujemy repo systemu *Git*.
 Następnie przeoglądamy historię korzystając
 z programu *gitk*, albo wykonujac na terminalu polecenia:
 
+    :::bash
     git lola  # mój alias; definicja u góry strony
 
 Zaczniemy od utworzenia następującego repozytorium:
 
+    :::bash
     cd simple-rebase-example
     git checkout foo
     ls
@@ -550,6 +586,7 @@ Na przykład tak:
 
 Chcemy „wyprostować” powyższą historię do takiej:
 
+    :::bash
     git lola
     * 5965449 (HEAD, master) H
     * 292f360 G
@@ -570,8 +607,8 @@ Pierwszy krok:
 
 Dlaczego tak? Oto odpowiedź:
 
+    :::bash
     git lola
-
     * 5965449 (HEAD, foo) H
     * 292f360 G
     * 2e134c9 F
@@ -583,12 +620,14 @@ Dlaczego tak? Oto odpowiedź:
 
 Drugi krok:
 
+    :::bash
     git checkout master
     git merge foo
     git branch -d foo
 
 I już! Gotowe:
 
+    :::bash
     git lola
     * 5965449 (HEAD, master) H
     * 292f360 G
@@ -601,11 +640,13 @@ I już! Gotowe:
 
 Co to jest *interactive rebase*? Wykonać:
 
+    :::bash
     git rebase -i master foo
 
 Jaka są różnice w historii repozytorium, po wykonaniu
 poleceń po lewej stronie v. te po prawej:
 
+    :::bash
     git co master            git co master # kontekst
     git rebase foo master    git rebase master foo
     git checkout foo
@@ -613,6 +654,7 @@ poleceń po lewej stronie v. te po prawej:
 
 [Undoing a git rebase](http://stackoverflow.com/questions/134882/undoing-a-git-rebase):
 
+    :::bash
     git reset --hard ORIG_HEAD
 
 
@@ -624,12 +666,14 @@ Użyjemy go w poniższym, pokrętnym przykładzie.
 
 Zakładamy repo:
 
+    :::bash
     mkdir test
     cd test
     git init
 
 Dodajemy plik:
 
+    :::bash
     mg .gitignore
     *~
     .. zapisujemy plik, opuszczamy edytor: ctrl+x ctrl+c
@@ -642,6 +686,7 @@ Dodajemy plik:
 
 Nowy pomysł:
 
+    :::bash
     git checkout -b newidea
     mg README.md
     # Hello world project
@@ -656,6 +701,7 @@ Nowy pomysł:
 
 Przechodzimy na główną gałąź:
 
+    :::bash
     git checkout master
     mg README.md
     ## Ruby
@@ -668,21 +714,25 @@ Rebase **wykonujemy** z gałęzi *newidea*. **Dlaczego?**
 Aby się o tym przekonać wykonujemy rebase
 z gałęzi *master* (na kopii repozytorium):
 
+    :::bash
     git rebase newidea
     git lola
 
 Przechodzimy na gałąź *newidea* gdzie wykonujemy *rebase*:
 
+    :::bash
     git checkout newidea
     git rebase master      # mamy konflikt, dlaczego?
 
 Rozwiązujemy konflikt. Następnie wykonujemy:
 
+    :::bash
     git add .
     git rebase --continue  # ponownie mamy konflikt, dlaczego?
 
 Rozwiązujemy drugi konflikt. Następnie wykonujemy:
 
+    :::bash
     git add
     git rebase --continue
     git lola
@@ -696,6 +746,7 @@ Widzimy wyprostowaną historię:
 
 Pozostaje jeszcze wrócić na główną gałąź i posprzątanie po sobie:
 
+    :::bash
     git checkout master
     git lola               # podgląd historii
     git merge newidea      # powinno być fast-forward
@@ -748,6 +799,7 @@ deploy immediately.
 W artykule nie opisano jak „push named branches”.
 Pewnie chodziło o takie polecenie:
 
+    :::bash
     git push origin new-oauth2-scopes
 
 Po wykonaniu tego polecenia, gałąź *new-oauth2-scopes*
@@ -800,6 +852,7 @@ W ten sposób Ala wysłała do mnie *pull request*.
 Ja po otrzymaniu *pull request* dodaję repozytorium Ali
 jako *remote* do mojego repozytrorium *jblog*:
 
+    :::bash
     git add remote as007 git://github.com/as007/jblog.git
 
 1. Następnie ściągam remote repo: `git fetch as007`.
@@ -825,6 +878,7 @@ Zob. też John Resig. [Pulley: Easy Github Pull Request Landing](http://ejohn.or
 
 Jak znaleźć bug w kodzie za pomocą *git-bisect*? Zaczynamy od lektury:
 
+    :::bash
     man git-bisect
 
 
@@ -834,10 +888,12 @@ Jak utworzyć nagie repozytorium?
 Załóżmy, że w katalogu *~/tmp/* mamy repozytorium *photos*.
 Po wykonaniu polecenia:
 
+    :::bash
     git clone --bare ~/tmp/photos ~/public_git/photos.git
 
 Skąd takie określenie *nagi*. Wykonanie polecenia:
 
+    :::bash
     ls ~/public_git/photos.git
 
 powinno to wyjaśnić.
@@ -850,14 +906,17 @@ rozproszonej, takiej jak z repozytoriami githuba.
 
 Korzystając z protokołu GIT:
 
+    :::bash
     git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
 
 Własne projekty klonujemy korzystając z SSH:
 
+    :::bash
     git clone wbzyl@sigma.inf.ug.edu.pl:public_git/test.git
 
 albo tak:
 
+    :::bash
     git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
 
 

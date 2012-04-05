@@ -67,7 +67,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay .inline { background-color: hsla(0,0%,0%,0.07); color: black }
 .CodeRay .inline-delimiter { font-weight: bold; color: #666 }
 .CodeRay .instance-variable { color:#33B }
-.CodeRay .integer  { color:#00D }
+.CodeRay .integer  { color: #000 }
 .CodeRay .key .char { color: #60f }
 .CodeRay .key .delimiter { color: #404 }
 .CodeRay .key { color: #606 }
