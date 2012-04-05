@@ -55,7 +55,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay .doc-string { color:#D42; font-weight:bold }
 .CodeRay .doctype { color:#34b }
 .CodeRay .entity { color:#800; font-weight:bold }
-.CodeRay .error { color:#F00; background-color:#FAA }
+.CodeRay .error { color:#F00; background-color:#FAA; padding: 0; color: black; background-color: transparent; border: none; }
 .CodeRay .escape  { color:#666 }
 .CodeRay .exception { color:#C00; font-weight:bold }
 .CodeRay .float { color:#60E }
