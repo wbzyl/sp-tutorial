@@ -240,6 +240,12 @@ Przykłady:
     hello world
 
 
+<blockquote>
+  {%= image_tag "/images/master-master.jpg", :alt => "[master master …]" %}
+  <pre>shopt -s histappend  <em># ~/.bashrc</em></pre>
+  <p class="author"><a href="http://briancarper.net/blog/248">keeping bash history in sync…</a></p>
+</blockquote>
+
 ## Dopisywanie
 
 Przykład:
