@@ -57,6 +57,35 @@ Wrzucamy zamiany na *githuba*:
 … i tak w kółko …
 
 
+## git diff z meld
+
+Najpierw instalujemy program [Meld](http://meldmerge.org/)
+(najlepiej z jakiejś paczki). Następnie do pliku *.gitconfig*
+dopisujemy:
+
+    :::ini
+    [merge]
+      tool = extMerge
+    [mergetool "extMerge"]
+      cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+      trustExitCode = false
+    [diff]
+      external = extDiff
+
+gdzie skrypt *extMerge*:
+
+    #! /bin/bash
+    /usr/bin/meld "$@"
+
+i skrypt *extDiff*:
+
+    #! /bin/bash
+    [ $# -eq 7 ] && extMerge "$2" "$5"
+
+zapisujemy, np. w katalogu *$HOME/bin*
+(o ile mamy go w ścieżkach zmiennej *PATH).
+
+
 ## …i co dalej?
 
 * Pracę z projektem ułatwiają [gałęzie](http://progit.org/book/pl/ch3-0.html)
