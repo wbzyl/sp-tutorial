@@ -74,11 +74,13 @@ dopisujemy:
 
 gdzie skrypt *extMerge*:
 
+    :::bash
     #! /bin/bash
     /usr/bin/meld "$@"
 
 i skrypt *extDiff*:
 
+    :::bash
     #! /bin/bash
     [ $# -eq 7 ] && extMerge "$2" "$5"
 
