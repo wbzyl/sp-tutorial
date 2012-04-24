@@ -478,10 +478,10 @@ i tworzę klon sforkowanego projektu na swoim komputerze:
 <p>
   <i>upstream</i> to oryginalny projekt.
   Jeśli będziemy scalać uaktualnienia
-  z upstream, to powinniśmy je dodać jako
-  <i>remote</i> repozytorium tak jak to jest
-  zrobione po lewej stronie z emacsowym repo.
-  Ale można też postąpić tak:
+  z upstream, to powinniśmy go dodać jako
+  <i>remote</i>, np. tak jak to zrobiono
+  z emacsowym repo.
+  Ale można postąpić też tak:
 </p>
 <pre>git remote add --track \
   master upstream \
