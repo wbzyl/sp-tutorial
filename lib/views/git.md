@@ -488,6 +488,10 @@ i tworzę klon sforkowanego projektu na swoim komputerze:
   git://github.com/upstream/repo.git
 </pre>
 <p>Co to daje?</p>
+<pre>
+git fetch upstream
+git merge upstream/master
+</pre>
 </blockquote>
 
 Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
