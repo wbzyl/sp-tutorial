@@ -473,6 +473,21 @@ i tworzę klon sforkowanego projektu na swoim komputerze:
     :::bash
     git clone git@github.com:wbzyl/emacs-starter-kit.git
 
+<blockquote>
+<h1>Upstream</h1>
+<p>
+  <i>upstream</i> to oryginalny projekt.
+  Jeśli będziemy scalać uaktualnienia
+  z upstream, to powinniśmy je dodać jako
+  <i>remote</i> repozytorium tak jak to jest
+  zrobione po lewej stronie z emacsowym repo.
+  Ale można też postąpić tak:
+</p>
+<pre>git remote add --track master upstream \
+  git://github.com/upstream/project.git
+</pre>
+</blockquote>
+
 Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
 
     :::bash
