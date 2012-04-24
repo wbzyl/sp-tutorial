@@ -483,15 +483,17 @@ i tworzę klon sforkowanego projektu na swoim komputerze:
   zrobione po lewej stronie z emacsowym repo.
   Ale można też postąpić tak:
 </p>
-<pre>git remote add --track master upstream \
-  git://github.com/upstream/project.git
+<pre>git remote add --track \
+  master upstream \
+  git://github.com/upstream/repo.git
 </pre>
 </blockquote>
 
 Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
 
     :::bash
-    git remote add technomancy git://github.com/technomancy/emacs-starter-kit.git
+    git remote add technomancy \
+      git://github.com/technomancy/emacs-starter-kit.git
 
 Po dodaniu gałęzi remote, wykonujemy polecenie:
 
