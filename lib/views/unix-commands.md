@@ -1,17 +1,15 @@
 #### {% title "Przetrwać z Uniksem" %}
 
-<blockquote>
-  {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
-  <p>
-   Computer Science is embarrassed by the computer.
-  </p>
-  <p class="author">— Alan Perlis</p>
-</blockquote>
-
 Dlaczego?
 
 
 ## Logowanie i wylogowywanie
+
+<blockquote>
+<p>&lt;GraveDigger&gt; Skąd wziął się twój nick?<br>
+   &lt;6gcqG9nN58zhTK&gt; Pomyliłem hasło z loginem.
+</p>
+</blockquote>
 
 * Hasła. Co mierzy [The Password Meter] [password meter]?
 * Zmiana hasła: polecenie `passwd`
@@ -591,6 +589,14 @@ Zamiast przeszukiwać dysk, co zawsze jest wolen,
 można skorzystać z polecenia *locate*, które przeszukuje bazę
 plików wcześniej utworzoną/uaktualnioną przez polecenie *updatedb*.
 
+
+<blockquote>
+  {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
+  <p>
+   Computer Science is embarrassed by the computer.
+  </p>
+  <p class="author">— Alan Perlis</p>
+</blockquote>
 
 ## Polecenia *diff* i *patch*
 
