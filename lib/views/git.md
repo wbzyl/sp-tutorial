@@ -473,10 +473,32 @@ i tworzę klon sforkowanego projektu na swoim komputerze:
     :::bash
     git clone git@github.com:wbzyl/emacs-starter-kit.git
 
+<blockquote>
+<h1>Upstream</h1>
+<p>
+  <i>upstream</i> to oryginalny projekt.
+  Jeśli będziemy scalać uaktualnienia
+  z upstream, to powinniśmy go dodać jako
+  <i>remote</i>, np. tak jak to zrobiono
+  z emacsowym repo.
+  Ale można postąpić też tak:
+</p>
+<pre>git remote add --track \
+  master upstream \
+  git://github.com/upstream/repo.git
+</pre>
+<p>Co to daje?</p>
+<pre>
+git fetch upstream
+git merge upstream/master
+</pre>
+</blockquote>
+
 Teraz dodaję do klona oryginalny projekt jako *remote* repozytorium:
 
     :::bash
-    git remote add technomancy git://github.com/technomancy/emacs-starter-kit.git
+    git remote add technomancy \
+      git://github.com/technomancy/emacs-starter-kit.git
 
 Po dodaniu gałęzi remote, wykonujemy polecenie:
 
