@@ -183,13 +183,12 @@ jedno w „katalogu roboczym”, drugie w „staging area” i trzecie w „re
 Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
 [The Thing About Git] [tomayko about git].
 
-
 <blockquote cite="http://www.gitready.com/beginner/2009/01/18/the-staging-area.html">
   {%= image_tag "/images/staging_area.png", :alt => "[working tree / index / trunk]" %}
 </blockquote>
 
 Na *staging area* (punkt etapowy, punkt tranzytowy) mówimy też
-*indeks*; *working tree* to katalog roboczy (kopia robocza);
+index; *working tree* to katalog roboczy (kopia robocza);
 a *repozytorium* to *repozytorium*.
 
 
@@ -835,6 +834,16 @@ Koniecznie obejrzeć takie gałęzie, na przykład
 [tutaj](https://github.com/github/gollum/branches).
 Na tej stronie kliknąć przycisk **Compare**.
 
+
+<blockquote>
+ {%= image_tag "/images/gitlog.jpg", :alt => "[GitHub & Pull Requests & Logs]" %}
+ <p>Linus Torvalds o
+  <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5654674">pull requests</a>
+  i log messages:
+  <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">A Note About Git Commit Messages</a>
+  (Tim Pope).
+ </p>
+</blockquote>
 
 ## „Mozilla flow”
 
