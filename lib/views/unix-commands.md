@@ -225,6 +225,14 @@ Wykonywanie kilku poleceń kolejno:
     ls ; ls -l
 
 
+<blockquote>
+ {%= image_tag "/images/fabrice_bellard.jpg", :alt => "[Fabrice Bellard]" %}
+ <p>
+  <a href="http://bellard.org/jslinux/">JSLinux</a>, czyli Linux w przeglądarce
+ </p>
+ <p class="author">— <a href="http://bellard.org/">Fabrice Bellard</a></p>
+</blockquote>
+
 ## Przekierowanie
 
 Standard input, output i error: STDIN, STDOUT, STDERR.
@@ -239,12 +247,6 @@ Przykłady:
     echo $x
     hello world
 
-
-<blockquote>
-  {%= image_tag "/images/master-master.jpg", :alt => "[master master …]" %}
-  <pre>shopt -s histappend  <em># ~/.bashrc</em></pre>
-  <p class="author"><a href="http://briancarper.net/blog/248">keeping bash history in sync…</a></p>
-</blockquote>
 
 ## Dopisywanie
 
@@ -261,6 +263,12 @@ Inny przykład:
 
     nl test.txt
 
+
+<blockquote>
+  {%= image_tag "/images/master-master.jpg", :alt => "[master master …]" %}
+  <pre>shopt -s histappend  <em># ~/.bashrc</em></pre>
+  <p class="author"><a href="http://briancarper.net/blog/248">keeping bash history in sync…</a></p>
+</blockquote>
 
 ## Grupowanie
 
