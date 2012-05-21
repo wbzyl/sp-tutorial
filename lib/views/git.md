@@ -67,12 +67,23 @@ konfiguracyjnego kilku skrótów:
     git config --global alias.br    "branch -a"
     git config --global alias.co    "checkout"
     git config --global alias.ci    "commit"
-    git config --global alias.df    "diff"
     git config --global alias.lg    "log -p"
     git config --global alias.lol   "log --graph --decorate --pretty=oneline --abbrev-commit"
     git config --global alias.lola  "log --graph --decorate --pretty=oneline --abbrev-commit --all"
     git config --global alias.ls    "ls-files"
     git config --global alias.st    "status"
+    git config --global alias.df    "diff"
+
+**Uwaga:** Porównywanie zmian w kodzie ułatwia program [meld](http://meldmerge.org/).
+Po instalacji tego programu w systemie, konfigurujemy program *git*:
+
+    :::bash
+    git config --global diff.tool meld
+
+Teraz zmiany w kodzie przeglądamy za pomocą programu *meld* w taki sposób:
+
+    :::bash
+    git difftool
 
 Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
 
