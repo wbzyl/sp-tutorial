@@ -420,7 +420,7 @@ i [HTML Shell](http://www.htmlshell.com/).
 {%= image_tag "/images/larry_tesler.jpg", :alt => "[Larry Tesler]" %}
 <p>Primary inventor of modeless editing and cut, copy, paste.
 </p>
-<p class="author"><a href="http://www.nomodes.com/Larry_Tesler_Personal/Home.html">Larry Tesler?</a>
+<p class="author"><a href="http://www.nomodes.com/Larry_Tesler_Personal/Home.html">Larry Tesler</a>
 </p>
 </blockquote>
 
