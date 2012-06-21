@@ -43,6 +43,7 @@ Dodatkowe materiały:
 1. [FreeBSD Man Pages] [freebsd].
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
 1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
+1. [Git Documentation] [git documentation] – reference, book, videos.
 1. S. Chacon. [Pro Git – professional version control] [progit]
    ([ściąga] [git cheatsheet]).
 1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
@@ -65,6 +66,7 @@ Dodatkowe materiały:
 
 #### Linki
 
+[git documentation]: http://git-scm.com/doc "Git Documentation"
 [freebsd]: http://www.freebsd.org/cgi/man.cgi "FreeBSD Man Pages: Index Page"
 [lshort2e]: ftp://ftp.gust.org.pl/pub/CTAN/info/lshort/polish/lshort2e.pdf "Wprowadzenie do systemu LaTeX2e"
 [gnu os]: http://www.gnu.org/fun/fun.html "Laugh along with GNU - GNU Project - Free Software Foundation (FSF)"

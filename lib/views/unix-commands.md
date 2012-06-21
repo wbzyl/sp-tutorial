@@ -1,17 +1,15 @@
 #### {% title "Przetrwać z Uniksem" %}
 
-<blockquote>
-  {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
-  <p>
-   Computer Science is embarrassed by the computer.
-  </p>
-  <p class="author">— Alan Perlis</p>
-</blockquote>
-
 Dlaczego?
 
 
 ## Logowanie i wylogowywanie
+
+<blockquote>
+<p>&lt;GraveDigger&gt; Skąd wziął się twój nick?<br>
+   &lt;6gcqG9nN58zhTK&gt; Pomyliłem hasło z loginem.
+</p>
+</blockquote>
 
 * Hasła. Co mierzy [The Password Meter] [password meter]?
 * Zmiana hasła: polecenie `passwd`
@@ -30,11 +28,13 @@ Tworzenie aliasów:
 
 Użyteczne jest też polecenie *alias*:
 
+    :::bash
     alias ls
     alias rm
 
 oraz polecenie *command* i *whereis*:
 
+    :::bash
     command -v redcarpet
     whereis ls
 
@@ -225,6 +225,14 @@ Wykonywanie kilku poleceń kolejno:
     ls ; ls -l
 
 
+<blockquote>
+ {%= image_tag "/images/fabrice_bellard.jpg", :alt => "[Fabrice Bellard]" %}
+ <p>
+  <a href="http://bellard.org/jslinux/">JSLinux</a>, czyli Linux w przeglądarce
+ </p>
+ <p class="author">— <a href="http://bellard.org/">Fabrice Bellard</a></p>
+</blockquote>
+
 ## Przekierowanie
 
 Standard input, output i error: STDIN, STDOUT, STDERR.
@@ -255,6 +263,12 @@ Inny przykład:
 
     nl test.txt
 
+
+<blockquote>
+  {%= image_tag "/images/master-master.jpg", :alt => "[master master …]" %}
+  <pre>shopt -s histappend  <em># ~/.bashrc</em></pre>
+  <p class="author"><a href="http://briancarper.net/blog/248">keeping bash history in sync…</a></p>
+</blockquote>
 
 ## Grupowanie
 
@@ -294,14 +308,17 @@ Polecenia: *tar*, *gzip*, *gunzip*, *zip*, *unzip*.
 Jak utworzyć archiwum *.tar.gz*? Na przykład
 w katalogu nadrzędnym wykonujemy polecenie:
 
+    :::bash
     tar zcf backup.tar.gz public_git
 
 Jak rozpakować archiwum *backup.tar.gz*?
 
+    :::bash
     tar zxf backup.tar.gz
 
 Jak podejrzeć co zawiera archiwum *.tar.gz*:
 
+    :::bash
     tar ztf backup.tar.gz
 
 Zwykle w opcjach dopisujemy *v*, co oznacza
@@ -362,16 +379,13 @@ Plik *index.html*:
     :::html
     <html>
       <head>
-        <meta charset="utf-8" />
-        <!--[if IE]>
-          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <link rel="stylesheet" type="text/css" href="application.css" charset="utf-8">
+        <meta charset="utf-8">
         <title>HTML5 Template</title>
+        <link rel="stylesheet" href="application.css">
       </head>
       <body>
         <h1>HTML5 template</h1>
-        <p>Przykładowy akapit.</p>
+        <p>Akapit.</p>
       </body>
     </html>
 
@@ -388,7 +402,8 @@ Plik *application.css*:
       background-color: #EEEEEE;
     }
 
-Zobacz też [HTML5 ★ Boilerplate](http://html5boilerplate.com/)
+Zobacz też: [HTML5 ★ Boilerplate](http://html5boilerplate.com/)
+i [HTML Shell](http://www.htmlshell.com/).
 
 
 ## Praca z *Emacsem* czystym relaksem
@@ -567,14 +582,17 @@ Znajdź pliki puste lub nie otwierane od ponad roku:
 
 Jeszcze jeden przykład z *xargs*:
 
+    :::bash
     find . -name "*.c" | xargs wc
 
 Użyteczny skrót do ostatnio wykonanego *find* (bash):
 
+    :::bash
     !find
 
 I jeszcze kilka przykładów:
 
+    :::bash
     find . -mtime -1  # modyfikowane dzisiaj
     find . -perm 777
     find . -maxdepth 1 -type f -newer hello.c  # przeszukiwanie bez podkatalogów
@@ -584,6 +602,14 @@ Zamiast przeszukiwać dysk, co zawsze jest wolen,
 można skorzystać z polecenia *locate*, które przeszukuje bazę
 plików wcześniej utworzoną/uaktualnioną przez polecenie *updatedb*.
 
+
+<blockquote>
+  {%= image_tag "/images/alan_perlis.jpg", :alt => "[Alan Perlis]" %}
+  <p>
+   Computer Science is embarrassed by the computer.
+  </p>
+  <p class="author">— Alan Perlis</p>
+</blockquote>
 
 ## Polecenia *diff* i *patch*
 

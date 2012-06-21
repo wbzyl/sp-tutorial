@@ -55,7 +55,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay .doc-string { color:#D42; font-weight:bold }
 .CodeRay .doctype { color:#34b }
 .CodeRay .entity { color:#800; font-weight:bold }
-.CodeRay .error { color:#F00; background-color:#FAA }
+.CodeRay .error { color:#F00; background-color:#FAA; padding: 0; color: black; background-color: transparent; border: none; }
 .CodeRay .escape  { color:#666 }
 .CodeRay .exception { color:#C00; font-weight:bold }
 .CodeRay .float { color:#60E }
@@ -67,7 +67,7 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .CodeRay .inline { background-color: hsla(0,0%,0%,0.07); color: black }
 .CodeRay .inline-delimiter { font-weight: bold; color: #666 }
 .CodeRay .instance-variable { color:#33B }
-.CodeRay .integer  { color:#00D }
+.CodeRay .integer  { color: #000 }
 .CodeRay .key .char { color: #60f }
 .CodeRay .key .delimiter { color: #404 }
 .CodeRay .key { color: #606 }
