@@ -393,7 +393,9 @@ Zobacz też [HTML5 ★ Boilerplate](http://html5boilerplate.com/)
 
 ## Praca z *Emacsem* czystym relaksem
 
-Edytory ASCII i non-ASCII. [Emacs kontra Vi] [wojny edytorowe].
+* Edytory ASCII i non-ASCII
+* Vivek Haldar.
+ [The levels of Emacs proficiency](http://blog.vivekhaldar.com/post/3996068979/the-levels-of-emacs-proficiency)
 
 [**Real Programmers**](http://xkcd.com/378/)
 
@@ -418,9 +420,6 @@ Użyteczne linki:
 * [GNU Emacs manual] [emacs-manual]
 * [Programming in Emacs Lisp (Second Edition)] [emacs-lisp-intro]
 * [An Introduction to Programming in Emacs Lisp] [elisp]
-
-Zobacz też edytor [Skywriter » Code in the Cloud] [skywriter]
-oraz [bespin server][].
 
 
 ## Repozytorium Git z systemem „wte”
