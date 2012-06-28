@@ -564,6 +564,12 @@ Od czasu do czasu wykonujemy:
 pobierając nową wersję (jeśli były jakieś zmiany).
 
 
+<blockquote>
+ <p>Mała powtórka?
+   <a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Reference</a>
+ </p>
+</blockquote>
+
 ## Prostowanie historii, czyli rebasing
 
 Zaczynamy od przyjrzenia się historii systemu *Git*.
