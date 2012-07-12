@@ -40,6 +40,8 @@ Dodatkowe materiały:
 
 ## Literatura
 
+1. John Graham-Cumming.
+   [Some things I've learnt about programming](http://blog.jgc.org/2012/07/some-things-ive-learnt-about.html)
 1. [FreeBSD Man Pages] [freebsd].
 1. A. Robbins, N. H. F. Beebe. „Programowanie skryptów powłoki”. Helion 2005.
 1. C. Albing, JP Vossen, C. Newham. „Bash receptury”. Helion 2008.
