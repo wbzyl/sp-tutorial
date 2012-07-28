@@ -305,8 +305,8 @@ Dlaczego nie ma przykładów dla polecenia `chown`:
  <h1>Klasyka – program WC</h1>
  <p>
    Skrypt <i>word count</i> – 6 linii kodu – napisany przez Douga McIlroy’a:
-   <a href="http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/">More shell, less egg</a>.
-   McIlroy wymyślił potoki (ang. <i>pipes</i>).
+   <a href="http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/">More shell, less egg</a>.<br>
+   McIlroy wymyślił też potoki (ang. <i>pipes</i>).
  </p>
 </blockquote>
 
