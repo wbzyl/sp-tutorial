@@ -276,8 +276,41 @@ Przykład:
 
     (ls ; df -h; who) > result.txt
 
+## Uprawnienia
 
-## Potoki
+Polecenia `chmod` i `chown`. Przykład:
+
+    :::bash
+    cd ~/tmp
+    mkdir xxx
+    ls -ld xxx
+    # drwxr-xr-x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
+    chmod 701 xxx
+    ls -ld xxx
+    # drwx-----x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
+    touch xxx/readme
+    ls -l xxx/readme
+    # -rw-r--r-- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
+    chmod 600 xxx/readme
+    ls -l xxx/readme
+    # -rw------- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
+
+Dlaczego nie ma przykładów dla polecenia `chown`:
+
+    :::bash
+    groups
+
+
+<blockquote>
+ <h1>Klasyka – program WC</h1>
+ <p>
+   Skrypt <i>word count</i> – 6 linii kodu – napisany przez Douga McIlroy’a:
+   <a href="http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/">More shell, less egg</a>.
+   McIlroy wymyślił potoki (ang. <i>pipes</i>).
+ </p>
+</blockquote>
+
+## Pipes (potoki)
 
 Zestawianie poleceń w potok:
 
@@ -323,31 +356,6 @@ Jak podejrzeć co zawiera archiwum *.tar.gz*:
 
 Zwykle w opcjach dopisujemy *v*, co oznacza
 *verbose*, po polsku to chyba gadatliwość?
-
-
-## Uprawnienia
-
-Polecenia `chmod` i `chown`. Przykład:
-
-    :::bash
-    cd ~/tmp
-    mkdir xxx
-    ls -ld xxx
-    # drwxr-xr-x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
-    chmod 701 xxx
-    ls -ld xxx
-    # drwx-----x 2 wbzyl pracinf 4096 09-14 12:48 xxx/
-    touch xxx/readme
-    ls -l xxx/readme
-    # -rw-r--r-- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
-    chmod 600 xxx/readme
-    ls -l xxx/readme
-    # -rw------- 1 wbzyl pracinf 0 09-14 12:52 xxx/readme
-
-Dlaczego nie ma przykładów dla polecenia `chown`:
-
-    :::bash
-    groups
 
 
 <blockquote>
