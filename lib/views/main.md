@@ -65,6 +65,14 @@ Dodatkowe materiały:
 1. GNU Operating System. [Laugh along with GNU] [gnu os].
 1. J. Gruber. [Markdown] [markdown].
 
+## Misc
+
+* Joeal Franusic.
+  [Online-REPs-and-REPLs](http://joel.franusic.com/w/page/26128430/Online-REPs-and-REPLs):
+  – [ideone](http://ideone.com/) – Bash
+  - [Codepad](http://codepad.org/) – C, Ruby, …
+  - [Reply](http://repl.it/)
+
 
 #### Linki
 
