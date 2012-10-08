@@ -472,6 +472,8 @@ Tak jest lepiej. Ale z rebase będzie jeszcze lepiej!
 
 ## Remote branches
 
+Zob. też [9.5 Git Internals - The Refspec](http://git-scm.com/book/en/Git-Internals-The-Refspec).
+
 Dodajemy oryginalny projekt jako *remote*.
 
 Forkuję projekt Phil Hagelberga (nick: technomancy):
