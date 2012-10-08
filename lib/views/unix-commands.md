@@ -252,7 +252,7 @@ Przykłady:
 
 Przykład:
 
-    echo 'ala > test.txt
+    echo 'ala' > test.txt
     echo 'ma kota' >> test.txt
     cat test.txt
     ala
