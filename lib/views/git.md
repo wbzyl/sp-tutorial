@@ -956,25 +956,95 @@ Zaletą posiadania nagiego repozytorium jest możliwość pracy
 rozproszonej, takiej jak z repozytoriami githuba.
 
 
-## Tak klonujemy projekty z *Sigmy*
+## Repozytorium Git z systemem „wte”
 
-Korzystając z protokołu GIT:
-
-    :::bash
-    git clone git://sigma.inf.ug.edu.pl/~wbzyl/test.git
-
-Własne projekty klonujemy korzystając z SSH:
+Zakładamy repozytorium z systemem „wte”:
 
     :::bash
-    git clone wbzyl@sigma.inf.ug.edu.pl:public_git/test.git
+    cd ~/public_git
+    mkdir test
+    cd test
+    touch README.md
+    git init
+    git add .
+    git commit -m "pierwsza wrzutka"
+    ... edycja README.md, add – zmiany, commit – co zostało zrobione
 
-albo tak:
+Korzystając z protokołu git, każdy użytkownik może sklonować na swój
+komputer repo *test*:
 
     :::bash
-    git clone ssh://sigma.inf.ug.edu.pl/~wbzyl/public_git/test.git
+    git clone git://sigma.ug.edu.pl/~wbzyl/test
+
+Kilka zdań o magiczności katalogu *public_git* na Sigmie oraz o małej
+użyteczności repozytoriów z systemem „wte”.
 
 
-To ostatnie polecenie nie mówi *explicite*, że ma być użyte ssh.
+## Repozytorium Git z systemem „wtewewte”
+
+Tworzymy *bare* repo *test.git* z repozytorium *test*:
+
+    :::bash
+    mkdir ~/public_git  # katalog na publiczne repozytoria
+    git clone --bare ~/tmp/test ~/public_git/test.git
+    rm -rf test  # usuwamy niepotrzebne już repozytorium
+
+Korzystając z protokołu git, każdy użytkownik może sklonować na swój
+komputer repo *test.git*:
+
+    :::bash
+    git clone git://sigma.ug.edu.pl/~wbzyl/test.git
+
+A **właściciel repozytorium**, czyli ja, klonuje repo korzystając
+z protokołu **ssh** w taki sposób:
+
+    :::bash
+    git clone ssh://sigma.ug.edu.pl/~wbzyl/public_git/test.git
+
+Właściciel repozytorium może wykonać `pull` i `push`
+(system wtewewte), a pozostali tylko `pull` (system wte).
+
+
+## Workflow dla Bloga
+
+Skorzystamy z gotowego bloga [Jekyll-Bloga] [jblog]
+który specjalnie przygotowałem na tę okazję.
+
+Wchodzimy na serwer *http://github.com*, gdzie zakładamy darmowe publiczne
+konto: zakładka *Pricing and Signup*.
+
+Po zalogowaniu się na swoje konto, klikamy w zakładkę *account*
+i **dodajemy klucz publiczny** z *Sigmy*: zakładka *SSH Public Keys*.
+
+<blockquote>
+ <p>
+  <em>fork</em> – widelec, widły, <b>rozwidlenie</b><br/>
+  <em>branch</em> – gałąź, odnoga; <b>odgałęzienie</b>
+ </p>
+</blockquote>
+
+Przechodzimy na konto: *http://github.com/wbzyl/*, gdzie klikamy
+w projekt *jblog*. Forkujemy projekt. Na koniec, klonujemy
+sforkowany przed chwilą projekt na swój komputer.
+
+Teraz przechodzimy do katalogu z projektem:
+
+    :::bash
+    cd jblog
+
+i dodajemy oryginalne repozytorium jako **remote**:
+
+    :::bash
+    git remote add wbzyl git://github.com/wbzyl/jblog.git
+
+Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
+
+    :::bash
+    git fetch wbzyl
+    git diff wbzyl/master
+    git merge wbzyl/master
+
+Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
 
 
 <blockquote>
