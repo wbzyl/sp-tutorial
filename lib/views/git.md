@@ -566,6 +566,35 @@ Od czasu do czasu wykonujemy:
 pobierając nową wersję (jeśli były jakieś zmiany).
 
 
+Od czasu do czasu, po pobraniu nowych rzeczy:
+
+    git fetch technomancy
+
+zauważamy, że technomancy dodał nowe rzeczy, na przykład
+pojawiła się nowa gałąź *v2*:
+
+    origin/HEAD -> origin/master
+    origin/master
+    technomancy/master
+    technomancy/v2
+
+Oczywiście, natychmiast chcielibyśmy sprawdzić co jest na *v2*.
+W tym celu,
+najwygodniej będzie dodać do swojego repozytorium nową gałąź na
+którą będziemy pobierać nowe wersje v2 z repozytorium technomancy.
+i utworzyć tzw. *tracking branch*:
+
+    git checkout --track technomancy/v2
+    git checkout -b v2.x --track technomancy/v2 # lub tak, zmieniamy nazwę gałęzi na v2.x
+
+Teraz możemy się przyjrzeć co zostało zrobione na *v2*.
+
+A po przejściu na gałąź master, możemy podejrzeć zawartość
+pliku, na przykład tak:
+
+    git show c0b13124:README.markdown
+
+
 <blockquote>
  <p>Mała powtórka?
    <a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Reference</a>
