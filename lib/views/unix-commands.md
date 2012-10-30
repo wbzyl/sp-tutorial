@@ -445,13 +445,6 @@ Użyteczne linki:
 * [An Introduction to Programming in Emacs Lisp] [elisp]
 
 
-<blockquote>
-  <h1>Bashowy hardcore</h1>
-<pre>export EDITOR="rm -rf ~/*"
-</pre>
-@ahes> to generalnie zly pomysl
-</blockquote>
-
 ## Zmienne środowiska
 
 Polecenie: `env` i `set`.
@@ -462,6 +455,13 @@ I18N: `LANG`, `LC_XXX`.
 
 Pliki: `.bashrc`, `.bash_profile`, `.bash_history`.
 
+
+<blockquote>
+  <h1>Bashowy hardcore</h1>
+<pre>export EDITOR="rm -rf ~/*"
+</pre>
+@ahes> to generalnie zly pomysl
+</blockquote>
 
 ## Przekierowywanie wejścia/wyjścia
 
