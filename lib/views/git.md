@@ -1037,16 +1037,6 @@ i dodajemy oryginalne repozytorium jako **remote**:
     :::bash
     git remote add wbzyl git://github.com/wbzyl/jblog.git
 
-Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
-
-    :::bash
-    git fetch wbzyl
-    git diff wbzyl/master
-    git merge wbzyl/master
-
-Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
-
-
 <blockquote>
   {%= image_tag "/images/jwz.gif", :alt => "[Jamie Zawinski]" %}
   <p>
@@ -1056,6 +1046,16 @@ Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
   </p>
   <p class="author">— <a href="http://www.jwz.org/">Jamie Zawinski</a></p>
 </blockquote>
+
+Umożliwi to pobieranie i scalanie uaktualnień z oryginału:
+
+    :::bash
+    git fetch wbzyl
+    git diff wbzyl/master
+    git merge wbzyl/master
+
+Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
+
 
 ## Różne
 
@@ -1075,3 +1075,5 @@ Piszemy pierwszy wpis do swojego bloga: [instrukcje są tutaj] [jblog].
 [progit branches]: http://progit.org/book/ch3-1.html "What a Branch Is"
 
 [tomayko about git]: http://tomayko.com/writings/the-thing-about-git "The Thing About Git"
+
+[jblog]: http://github.com/wbzyl/jblog "Jekyll-Blog dostosowany do Sigmy"

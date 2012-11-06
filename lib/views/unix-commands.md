@@ -38,6 +38,20 @@ oraz polecenie *command* i *whereis*:
     command -v redcarpet
     whereis ls
 
+Jeszcze jeden użyteczny alias:
+
+    :::bash
+    alias r='fc -s'
+
+Użycie:
+
+    :::bash
+    r cc
+    r
+
+Jak on działa? Podpowiedź: *fc* to wewnętrzne polecenie
+powłoki (*shell builtin*).
+
 
 <blockquote>
   <p>
@@ -682,8 +696,6 @@ Z półki Z. A. Shaw’a, „Learn Code The Hard Way”:
 [emacs-lisp-intro]: http://www.gnu.org/software/emacs/emacs-lisp-intro/emacs-lisp-intro.html "Programming in Emacs Lisp (Second Edition)"
 [elisp]: http://www.gnu.org/software/emacs/manual/elisp.html "An Introduction to Programming in Emacs Lisp"
 [emacs-tour]: http://www.gnu.org/software/emacs/tour "A Guided Tour of Emacs"
-
-[jblog]: http://github.com/wbzyl/jblog "Jekyll-Blog dostosowany do Sigmy"
 
 [skywriter]: https://mozillalabs.com/skywriter "Skywriter » Code in the Cloud"
 [bespin server]: https://bespin.mozillalabs.com/ "Bespin Server"
