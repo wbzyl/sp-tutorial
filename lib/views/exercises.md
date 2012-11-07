@@ -99,16 +99,16 @@ Laboratoria 14, 15.
 # Zadania opisowe
 
 <blockquote>
-  <p>Jeśli chodzi o obserwację, los nagradza tylko przygotowane umysły.
-  </p>
-  <p class="author">— Louis Pasteur</p>
+  <h1>Blogger #1 (1995)</h1>
+  <p>{%= image_tag "/images/jorn-barger.jpg", :alt => "[Jorn Barger]" %}</p>
+  <p class="author">Jorn Barger (ukuł termin „weblog”)</p>
 </blockquote>
 
-Rozwiązania zadań opisowych należy umieścić na swoim blogu.
+Rozwiązania zadań opisowych należy umieścić na swoim11 blogu.
 Na przykład, rozwiązania ćwiczeń LaTeX-owych, powinny
 być dostępne pod jakimś takim URL:
 
-    http://sigma.ug.edu.pl/~wbzyl/sp/2009-11-22-latex.html
+    http://sigma.ug.edu.pl/~wbzyl/sp/2009-11-22-tex.html
 
 Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
 no i data będzie też inna.
