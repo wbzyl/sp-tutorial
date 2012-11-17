@@ -59,8 +59,8 @@ zmienne `go_libs`, `go_flags` oraz alias `go_c`:
     go_flags="-g -Wall -include stdio.h"
     alias go_c="c99 -xc '-' $go_libs $go_flags"
 
-Czy potrafisz wyjaśnić jaki będzie wynik wykonania na terminalu
-poniższego polecenia:
+Czy potrafisz wyjaśnić jaki będzie wynik wykonania
+poniższego polecenia na terminalu:
 
     :::bash Terminal
     go_c << '---'
