@@ -62,7 +62,7 @@ zmienne `go_libs`, `go_flags` oraz alias `go_c`:
 Czy potrafisz wyjaśnić jaki będzie wynik wykonania
 poniższego polecenia na terminalu:
 
-    :::bash Terminal
+    :::bash
     go_c << '---'
     int main(){ printf("hello world from the command line.\n"); }
     ---
