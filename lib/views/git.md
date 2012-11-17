@@ -440,7 +440,7 @@ scalamy *master* z *newidea* i usuwamy *newidea*:
     :::bash
     git commit -m "dodałem raczej słaby dowcip" -a
 
-**Pytanie:* Jakie dowcipy są wpliku *index.txt* na gałęzi:
+**Pytanie:** Jakie dowcipy są zapisane w pliku *index.txt* na gałęzi:
 
 * *newidea* (za proste!)
 * *master*  (czy jeszcze pamiętamy jakie?)
