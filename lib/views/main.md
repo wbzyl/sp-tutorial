@@ -72,6 +72,10 @@ Dodatkowe materiały:
   – [ideone](http://ideone.com/) – Bash
   - [Codepad](http://codepad.org/) – C, Ruby, …
   - [Reply](http://repl.it/)
+* Edytory:
+  - [Sublime Text](http://www.sublimetext.com/),
+  [download v2](http://www.sublimetext.com/2).
+  [screencasts](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/)
 
 
 #### Linki
