@@ -21,7 +21,7 @@ następnie UID.
 7\. Sporządź statystykę praw dostępu (dla każdego z praw dostępu
 podaj ile razy zostało ono przydzielone).
 
-Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych
+8\. Czy potrafisz odpowiedzieć jaki będzie efekt wykonania poniższych
 poleceń?
 
     :::bash
@@ -40,11 +40,32 @@ poleceń?
     find -type f | wc                           # 13
     find -type f -print0 | wc --files0-from=-   # 14
 
-Plik z serwisu Gutenberg {%= link_to "idiota.txt", "/doc/idiota.txt" %} zawiera
-tekst powieści F. Dostojewskiego.
+A co wypisze na standardowym wyjściu to polecenie:
 
-    :::bash
     tr -sc 'A-Za-z' '\n' < idiota.txt \
       | sort \
       | uniq -c \
       | sort -k1,1 -rn
+
+Użyty w powyższym poleceniu plik {%= link_to "idiota.txt", "/doc/idiota.txt" %}
+zawiera tekst powieści Fiodora Dostojewskiego „Idiota”.
+Plik pobrałem z serwisu [Gutenberg](http://www.gutenberg.org/).
+
+9\. Załóżmy, że w pliku *.bashrc* mamy zdefiniowane następujące dwie
+zmienne `go_libs`, `go_flags` oraz alias `go_c`:
+
+    :::bash
+    go_libs="-lm"
+    go_flags="-g -Wall -include stdio.h"
+    alias go_c="c99 -xc '-' $go_libs $go_flags"
+
+Czy potrafisz wyjaśnić jaki będzie wynik wykonania
+poniższego polecenia na terminalu:
+
+    :::bash
+    go_c << '---'
+    int main(){ printf("hello world from the command line.\n"); }
+    ---
+
+(Przykład z książki Bena Klemensa „21st Century C”.)
+
