@@ -155,6 +155,13 @@ Teraz powinniśmy mieć taki „znak zachęty”:
 
 
 <blockquote>
+ <h1><a href="https://github.com/milkbikis/powerline-shell">powerline-shell</a></h1>
+ ??
+</blockquote>
+
+## Podstawy
+
+<blockquote>
  <h1>Zasłyszane</h1>
  <p>
   Q: Couldn't this be done using a Git repo?<br/>
@@ -167,8 +174,6 @@ Teraz powinniśmy mieć taki „znak zachęty”:
   Call it the poor man’s approach to usability.
  </p>
 </blockquote>
-
-## Podstawy
 
 ### Zakładamy repozytorium
 
