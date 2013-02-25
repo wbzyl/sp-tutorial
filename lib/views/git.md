@@ -754,6 +754,16 @@ I już! Gotowe:
     * 9eb57d2 B
     * ca9e9e2 A
 
+
+<blockquote>
+<h1>merge vel rebase</h1>
+{%= image_tag "/images/git-rebase.jpg", :alt => "https://github.com/blog/593-github-rebase-35" %}
+<p>
+  M. Marhonić, <a href="http://mislav.uniqpath.com/2013/02/merge-vs-rebase/">Git merge vs. rebase</a>,
+  K. Buckley, <a href="http://www.kerrybuckley.org/2008/06/18/avoiding-merge-commits-in-git/">Avoiding Merge Commits in Git</a>
+</p>
+</blockquote>
+
 Co to jest *interactive rebase*? Wykonać:
 
     :::bash
