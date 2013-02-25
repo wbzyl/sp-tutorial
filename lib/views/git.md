@@ -153,11 +153,11 @@ Teraz powinniśmy mieć taki „znak zachęty”:
     [wbzyl@localhost ~/github.com/git] (master)
     →
 
+Kolorowy prompt z nazwą gałęzi uzyskamy
+z [powerline-shell](https://github.com/milkbikis/powerline-shell):
 
-<blockquote>
- <h1><a href="https://github.com/milkbikis/powerline-shell">powerline-shell</a></h1>
- ??
-</blockquote>
+{%= image_tag "/images/powerline-shell.png" %}
+
 
 ## Podstawy
 
