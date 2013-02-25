@@ -60,8 +60,19 @@ Wrzucamy zamiany na *githuba*:
 ## git diff z meld
 
 Najpierw instalujemy program [Meld](http://meldmerge.org/)
-(najlepiej z jakiejś paczki). Następnie do pliku *.gitconfig*
-dopisujemy:
+(najlepiej z jakiejś paczki).
+
+Następnie konfigurujemy Gita:
+
+    :::bash
+    git config --global diff.tool meld
+
+Teraz wystarczy wykonać, na przykład:
+
+    :::bash
+    git difftool
+
+*Można też tak:* do pliku *.gitconfig* dopisujemy:
 
     :::ini
     [merge]

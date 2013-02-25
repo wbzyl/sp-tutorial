@@ -600,6 +600,44 @@ pliku, na przykład tak:
     git show c0b13124:README.markdown
 
 
+## Usuwamy zbędne gałęzie
+
+Usuwamy wszystkie gałęzie scalone z bieżącą gałęzią (sprawdzić czy to działa):
+
+    :::bash
+    git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+
+Usuwamy gałąź lokalną:
+
+    :::bash
+    git branch -d branchname
+
+Usuwamy niescaloną gałąź lokalną:
+
+    :::bash
+    git branch -D branchname
+
+Usuwamy gałąź z repozytorium zdalnego (*remote*):
+
+    :::bash
+    git push origin :branchname
+
+to samo ale prościej:
+
+    :::bash
+    git push --delete origin branchname
+
+Usuwamy wszystkie tzw. zdalne *tracking branches*:
+
+    :::bash
+    git remote prune origin
+
+to samo, ale pojedynczo:
+
+    :::bash
+    git branch -dr branchname
+
+
 <blockquote>
  <p>Mała powtórka?
    <a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Reference</a>
