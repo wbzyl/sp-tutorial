@@ -591,6 +591,8 @@ Zaczynamy od lektury:
 
 Różne implementacje wyrażeń regularnych:
 
+* [DebuggexBeta](http://www.debuggex.com) –
+  a visual regular expression debugger, tester, and helper
 * Javascript: [Regular Expression Tester] [regexp tester]
 * Ruby: [Rubular](http://rubular.com/). Fajne! Można
   zrobić *permalink*.
