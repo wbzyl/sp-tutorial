@@ -158,6 +158,21 @@ z [powerline-shell](https://github.com/milkbikis/powerline-shell):
 
 {%= image_tag "/images/powerline-shell.png" %}
 
+*Konfiguracja powerline-shell:* wyszukujemy i odkomentowujemy
+w pliku *powerline-shell.py* dwa wiersze z *p.append*:
+
+    if __name__ == '__main__':
+        p.append(Segment(p, '\\u ', 250, 240))
+        p.append(Segment(p, '\\h ', 250, 238))
+
+dodajemy znak nowego wiersza do *bash* w zmiennej *root_indicators*:
+
+    root_indicators = {
+        'bash': '\\n\\$ ',
+        'zsh': ' \\$ ',
+        'bare': ' $ ',
+    }
+
 
 ## Podstawy
 
