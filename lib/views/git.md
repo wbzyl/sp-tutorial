@@ -34,9 +34,11 @@ incantations.”
 Przypowieść ta opisuje perypetie czeladnika tworzącego system
 gitopodobny od podstaw.
 
-Też też należy obejrzeć: S. Chacon, [Git in One Hour] [git-in-one-hour];
-tutaj są ściągi: [Git cheat sheets](http://help.github.com/git-cheat-sheets/);
-tutaj manual [Git User’s Manual](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html).
+Klika linków na początek:
+
+* S. Chacon, [Git in One Hour] [git-in-one-hour]
+* [Git User’s Manual](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
+
 
 <blockquote>
  <p>
