@@ -212,14 +212,21 @@ jedno w „katalogu roboczym”, drugie w „staging area” i trzecie w „re
     :::bash
     git diff           # shows you the differences from staging area to working tree
     git diff HEAD      # shows you the differences from repo to working tree
-    git diff --cached  # shows you the differences from repo to staging area
+    git diff --staged  # shows you the differences from repo to staging area
 
-Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
-[The Thing About Git] [tomayko about git].
+*Użyteczne aliasy:*
 
 <blockquote cite="http://www.gitready.com/beginner/2009/01/18/the-staging-area.html">
   {%= image_tag "/images/staging_area.png", :alt => "[working tree / index / trunk]" %}
 </blockquote>
+
+    :::bash
+    git config --global alias.sw    "diff"
+    git config --global alias.rw    "diff HEAD"
+    git config --global alias.rs    "diff --staged"
+
+Do czego służy drugie życie opisał Ryan Tomayko na swoim blogu,
+[The Thing About Git] [tomayko about git].
 
 Na *staging area* (punkt etapowy, punkt tranzytowy) mówimy też
 index; *working tree* to katalog roboczy (kopia robocza);
