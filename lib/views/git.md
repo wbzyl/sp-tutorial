@@ -131,29 +131,37 @@ Dopisujemy je do pliku *~/.bashrc*:
     alias gt='git status'
 
 
-### Nazwa gałęzi w prompt basha
+### Nazwa gałęzi w znaku zachęty basha
 
 Po sklonowaniu repozytorium samego Gita:
 
     :::bash
     git clone git://git.kernel.org/pub/scm/git/git.git
 
-z katalogu *contrib/completion]* kopiujemy plik (*Fedora*):
+z katalogu *contrib/completion* kopiujemy
+do katalogu domowego te pliki:
 
     :::bash
-    cp git-completion.bash /etc/profile.d/git-completion.sh
+    cp git-prompt.bash ~/.git-prompt.sh
+    cp git-completion.bash ~/.git-completion.sh
 
-Następnie do pliku *.bashrc* dopisujemy, coś w stylu:
+Następnie do pliku *.bashrc* dopisujemy:
 
     :::bash
-    if [ "$PS1" ]; then
-      [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \w]"' $(__git_ps1 "(%s)")'"\n→ "
-      export PS1
-    fi
+    source ~/.git-prompt.sh
+    source ~/.git-completion.sh
+    # bash                    <pre>      <post>
+    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\n→ "'
+    GIT_PS1_SHOWDIRTYSTATE=enable      # unstaged (*), staged (+) changes
+    GIT_PS1_SHOWSTASHSTATE=enable      # something is stashed ($)
+    GIT_PS1_SHOWUNTRACKEDFILES=enable  # untracked (%)
+    GIT_PS1_SHOWUPSTREAM=verbose       # no difference (=), behind (<), ahead(>)
+    GIT_PS1_DESCRIBE_STYLE=branch      # relative to newer tag or branch (master~4)
+    GIT_PS1_SHOWCOLORHINTS=enable
 
-Teraz powinniśmy mieć taki „znak zachęty”:
+Teraz w repozytoriach powinniśmy mieć taki „znak zachęty”:
 
-    [wbzyl@localhost ~/github.com/git] (master)
+    wbzyl@localhost:~/GitHub/git (master =)
     →
 
 Kolorowy prompt z nazwą gałęzi uzyskamy
