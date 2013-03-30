@@ -448,6 +448,8 @@ i [HTML Shell](http://www.htmlshell.com/).
 
 Użyteczne linki:
 
+* Bozhidar Batsov,
+  [Emacs Redux](http://emacsredux.com/) – Return to the Essence of Text Editing
 * [emacs-fu](http://emacs-fu.blogspot.com/)
 * [A Guided Tour of Emacs] [emacs-tour]
 * {%= link_to "Skróty klawiszowe edytora Emacs", "/doc/survival.pdf" %}
