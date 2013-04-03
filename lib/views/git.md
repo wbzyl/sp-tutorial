@@ -142,7 +142,7 @@ z katalogu *contrib/completion* kopiujemy
 do katalogu domowego te pliki:
 
     :::bash
-    cp git-prompt.bash ~/.git-prompt.sh
+    cp git-prompt.sh ~/.git-prompt.sh
     cp git-completion.bash ~/.git-completion.sh
 
 Następnie do pliku *.bashrc* dopisujemy:
