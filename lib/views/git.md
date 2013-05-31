@@ -57,6 +57,8 @@ Pracę z gitem zaczynamy od przedstawienia się:
     git config -l
     git config --global user.name "Wlodek Bzyl"
     git config --global user.email "matwb@univ.gda.pl"
+    git config --global core.autocrlf auto
+    git config --global push.default current
 
 po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 
