@@ -37,13 +37,9 @@
       </div>
     </div>
 
+<!--
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script>!window.jQuery && document.write(unescape('%3Cscript src="/sp/javascripts/libs/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>
-
-<script>
-  var _gaq=[['_setAccount','UA-20399167-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script></body>
+-->
+</body>
 </html>
