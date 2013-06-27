@@ -57,9 +57,10 @@ Pracę z gitem zaczynamy od przedstawienia się:
     git config -l
     git config --global user.name "Wlodek Bzyl"
     git config --global user.email "matwb@univ.gda.pl"
-    git config --global core.autocrlf input   # on Linux
-    git config --global core.autocrlf auto    # on Windows
-    # git config --global push.default current
+    git config --global core.autocrlf input      # on Linux
+    git config --global core.autocrlf auto       # on Windows
+
+    # git config --global push.default matching  # or simple or current
 
 po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
 
