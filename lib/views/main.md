@@ -14,6 +14,13 @@
   <p class="author">— <a href="http://www.rushkoff.com/blog/">Douglas Rushkoff</a></p>
 </blockquote>
 
+
+## Zaczynamy!
+
+* Atul Gawande,
+  [Annals of Medicine – Slow Ideas](http://www.newyorker.com/reporting/2013/07/29/130729fa_fact_gawande?currentPage=all)
+
+
 ## Notatki do wykładów
 
 1. {%= link_to "Przetrwać z Unixem", "/unix-commands" %}
