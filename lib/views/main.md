@@ -15,10 +15,15 @@
 </blockquote>
 
 
-## Zaczynamy!
+## 7.10.2013 – zaczynamy!
 
+* Bret Victor,
+  [References for “The Future of Programming”](http://worrydream.com/dbx/)
 * Atul Gawande,
   [Annals of Medicine – Slow Ideas](http://www.newyorker.com/reporting/2013/07/29/130729fa_fact_gawande?currentPage=all)
+* Rich Hickey, *Greatest Hits*:
+  - [Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
+  - [Hammock Driven Development](http://www.youtube.com/watch?v=f84n5oFoZBc)
 
 
 ## Notatki do wykładów
