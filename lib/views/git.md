@@ -39,6 +39,11 @@ Klika linków na początek:
 * S. Chacon, [Git in One Hour] [git-in-one-hour]
 * [Git User’s Manual](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
 
+[Github](https://github.com/):
+
+* [GitHub Archive](http://www.githubarchive.org/)
+* [The Open Source Report Card](http://osrc.dfm.io/) by Dan Foreman-Mackey.
+
 
 <blockquote>
  <p>
@@ -51,7 +56,7 @@ Klika linków na początek:
 
 ## Konfiguracja
 
-Pracę z gitem zaczynamy od przedstawienia się:
+Zanim zaczniemy pracę systemem Git musimy go skonfigurować:
 
     :::bash
     git config -l
@@ -62,13 +67,13 @@ Pracę z gitem zaczynamy od przedstawienia się:
 
     # git config --global push.default matching  # or simple or current
 
-po czym natychmiast sprawdzamy, czy Git zrozumiał kim jesteśmy:
+Po czym natychmiast sprawdzamy, czy coś poszło nie tak:
 
     :::bash
     cat ~/.gitconfig
 
 Łatwiej będzie nam porozumiewać się z Gitem, po dodaniu do pliku
-konfiguracyjnego kilku skrótów:
+konfiguracyjnego kilku zwyczajowych skrótów:
 
     :::bash
     git config --global alias.br    "branch -a"
@@ -99,8 +104,8 @@ Ułatwimy sobie śledzenie zmian w kodzie jeśli je podkolorujemy:
     git config --global color.diff auto
     git config --global color.status auto
 
-Jeszcze trochę ręcznych robótek, bo czemu nie, w pliku konfiguracyjnym
-i oto rezultat — mój plik *~/.gitconfig* w całej okazałości:
+Jeszcze trochę ręcznych robótek w pliku konfiguracyjnym.
+I oto rezultat — mój plik *~/.gitconfig* w całej okazałości:
 
     :::ini
     [user]
