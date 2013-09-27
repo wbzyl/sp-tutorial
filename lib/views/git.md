@@ -36,7 +36,9 @@ gitopodobny od podstaw.
 
 Klika linków na początek:
 
-* S. Chacon, [Git in One Hour] [git-in-one-hour]
+* S. Chacon:
+  - [Git in One Hour] [git-in-one-hour]
+  - [Pro Git](http://git-scm.com/book) ([polska wersja](http://git-scm.com/book/pl)
 * [Git User’s Manual](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
 
 [Github](https://github.com/):
