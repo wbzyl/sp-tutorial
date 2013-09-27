@@ -49,7 +49,7 @@ Klika linków na początek:
 
 <blockquote>
  <p>
-  Podchodzi informatyk do fortepianu i ogląda go wnikliwie:
+  Podchodzi informatyk do fortepianu i ogląda go wnikliwie:<br>
   — Hmm, tylko 84
   klawisze, z czego 1/3 funkcyjnych, wszystkie nieopisane,
   chociaż… shift naciskany nogą. Oryginalnie.
