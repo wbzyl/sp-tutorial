@@ -1,16 +1,24 @@
 #### {% title "Ćwiczenia" %}
 
 <blockquote>
-  {%= image_tag "/images/albert_einstein.jpg", :alt => "[Albert Einstein]" %}
+  {%= image_tag "/images/training-brain.jpg", :alt => "[Training Brain]" %}
   <p>
+   One should not pursue goals that are easily achieved. One must
+   develop an instinct for what one can just barely achieve through
+   one’s greatest efforts.
+  </p>
+  <p class="author">— Albert Einstein</p>
+  <p><b>In essence:</b> What doesn’t kill you makes you smarter.</p>
+</blockquote>
+
+<!---
    In the interests of clarity, it seemed necessary to constantly
    remind myself to pay not the slightest attention to the elegance of
    the presentation; I adhered conscientiously to the rule of the
    brilliant theoretician, Ludwig Boltzmann, to leave elegance to
    tailors and shoemakers.
-  </p>
-  <p class="author">— Albert Einstein</p>
-</blockquote>
+   — Albert Einstein
+-->
 
 Skrypty należy umieścić w repozytorium git. Nazwa repozytorium
 dla konkretnego zestawu zadań powinna być jedna dla całej
