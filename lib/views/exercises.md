@@ -1,7 +1,7 @@
 #### {% title "Ćwiczenia" %}
 
 <blockquote>
-  {%= image_tag "/images/training-brain.jpg", :alt => "[Training Brain]" %}
+  {%= image_tag "/images/data-brain.jpg", :alt => "[Data Brain]" %}
   <p>
    One should not pursue goals that are easily achieved. One must
    develop an instinct for what one can just barely achieve through
@@ -18,7 +18,6 @@
    brilliant theoretician, Ludwig Boltzmann, to leave elegance to
    tailors and shoemakers.
    — Albert Einstein
--->
 
 Skrypty należy umieścić w repozytorium git. Nazwa repozytorium
 dla konkretnego zestawu zadań powinna być jedna dla całej
@@ -57,11 +56,7 @@ polecenie *push*:
     git commit -m "nowa wersja"
     git push
 
-<blockquote>
-  <p>Uważaj na człowieka, którego nie interesują szczegóły.
-  </p>
-  <p class="author">— William Feather</p>
-</blockquote>
+-->
 
 ## Bash
 
@@ -81,6 +76,12 @@ jednego z narzędzi:
 * [Dialog](http://en.wikipedia.org/wiki/Dialog_%28software%29)
 * [Zenity](http://en.wikipedia.org/wiki/Zenity)
 
+
+<blockquote>
+  <p>Uważaj na człowieka, którego nie interesują szczegóły.
+  </p>
+  <p class="author">— William Feather</p>
+</blockquote>
 
 ## LaTeX
 
