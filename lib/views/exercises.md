@@ -119,8 +119,9 @@ być dostępne pod jakimś takim URL:
 
     http://sigma.ug.edu.pl/~wbzyl/sp/2009-11-22-tex.html
 
-Oczywiście, zamiast *wbzyl* trzeba wstawić swój login,
-no i data będzie też inna.
+***Oczywistości:***
+1\. Zamiast *wbzyl* trzeba wstawić swój login, no i data będzie też inna.<br>
+2\. Najprościej będzie dodać bloga do swojego repo na Githubie.
 
 
 ## Edytor
