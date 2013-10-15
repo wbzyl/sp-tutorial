@@ -402,19 +402,25 @@ Własna strona na *Sigmie* krok po kroku:
     ... wklejamy zawarość pliku main.css poniżej ...
     ... wciskamy ctrl-D
 
-Plik *index.html*:
+Plik [index.html](http://stackoverflow.com/questions/1987065/what-are-best-practices-to-order-elements-in-head):
 
     :::html
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>HTML5 Template</title>
-        <link rel="stylesheet" href="application.css">
-      </head>
-      <body>
-        <h1>HTML5 template</h1>
-        <p>Akapit.</p>
-      </body>
+    <!doctype html public "♥♥♥">
+    <html lang=pl>
+    <head>
+      <meta charset=utf-8>
+      <title>Szablon strony HTML5</title>
+      <link rel="stylesheet" href="application.css">
+      <style>
+        body { background: #E2DF9A; }
+      </style>
+    </head>
+    <body>
+      <h3>Szablon strony HTML5</h3>
+      <p>ąćęłńóśźż ĄĆĘŁŃÓŚŹŻ</p>
+
+      <script src="http://code.jquery.com/jquery.min.js"></script>
+    </body>
     </html>
 
 Plik *application.css*:
