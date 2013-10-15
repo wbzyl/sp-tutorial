@@ -206,9 +206,6 @@ w sekcji *QUOTING*. Mały przykład:
     echo The \# here does not begin a comment.
     echo The # here begins a comment.
 
-    echo ${PATH#*:}    # podstawienie parametru
-    echo $(( 2#101 ))  # zmiana podstawy na 10
-
     echo hello; echo world
 
     for file in /{,usr/}bin/*calc
