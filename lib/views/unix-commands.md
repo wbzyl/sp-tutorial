@@ -206,8 +206,6 @@ w sekcji *QUOTING*. Mały przykład:
     echo The \# here does not begin a comment.
     echo The # here begins a comment.
 
-    echo hello; echo world
-
     for file in /{,usr/}bin/*calc
     #             ^   wyszukaj wszystkie pliki wykonywalne
     #                 o nazwie kończącej się na "calc"
