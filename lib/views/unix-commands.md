@@ -68,7 +68,7 @@ Zawartość katalogu `/`. Katalog domowy użytkownika: `pwd`, `~`.
 Ścieżka, ścieżka względna, katalog bieżący, rodzicielski.
 
 Pliki: tworzenie, usuwanie, przenoszenie, zmiana nazwy.
-Polecenia: `ls`, `tree`, `cp`, `cd`, `rm`, `rmdir`.
+Polecenia: `ls`, `tree`, `cp`, `mv`, `cd`, `rm`, `rmdir`.
 
 Rozwijanie nazw plików: globbing.
 
