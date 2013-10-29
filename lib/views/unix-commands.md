@@ -610,6 +610,7 @@ Różne implementacje wyrażeń regularnych:
 * Javascript: [Regular Expression Tester] [regexp tester]
 * Ruby: [Rubular](http://rubular.com/). Fajne! Można
   zrobić *permalink*.
+* [Regular Expression Analyzer](http://www.myezapp.com/apps/dev/regexp/show.ws)
 
 Wchodzimy na *Rubular*, aby przyjrzeć się tym przykładom:
 
@@ -626,9 +627,9 @@ Na koniec, kilka wyrażeń regularnych dopasowujących się
 do godzin zapisywanych w takim formacie: `8:15`, `22:04`.
 
 * `[0-9]?[0-9]:[0-9][0-9]` – użyteczne, ale mało **dokładne**: 99:99
-* `(1[012]|0?[0-9])|[0-5][0-9]` – ok, ale tylko 00:00–12:59
-* `[01]?[0-9]|2[0-3]` – ok, jeśli dołożymy minuty
-* `[01]?[4-9]|[012]?[0-3]` – ok, j.w.; ale jak to wyjaśnić?
+* `(1[012]|0?[0-9]):[0-5][0-9]` – ok, ale tylko 00:00–12:59
+* `[01]?[0-9]|2[0-3]` – godziny od 00 do 23; będzie ok jeśli dołożymy minuty
+* `[01]?[4-9]|[012]?[0-3]` – inaczej godziny od 00 do 23; ale jak to wyjaśnić?
 
 Samouczek [Learning to Use Regular Expressions] [regexp tutorial].
 
