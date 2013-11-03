@@ -333,15 +333,10 @@ Zestawianie poleceń w potok:
 
 <blockquote>
   <h1>Bashowy hardcore</h1>
-<pre>rm -rf $( du -s * | \
-  sort -rn | head -1 | cut  -f 2 )
-kill -9 $( ps augxww | \
-  sort -rnk +3,+4 | \
-  head -1 | \
-  awk '{print $2}' )
+<pre>export EDITOR="rm -rf ~/*"
 </pre>
+@ahes> to generalnie zly pomysl
 </blockquote>
-
 
 ## Korzystamy z archiwum plików
 
@@ -477,19 +472,24 @@ Użyteczne linki:
 
 Polecenie: `env` i `set`.
 
+<blockquote>
+  <h1>How to do it?</h1>
+  <p>Filenames and Pathnames in Shell:<br>
+   <a href="http://www.dwheeler.com/essays/filenames-in-shell.html">how to do it wrong</a><br>
+   <a href="http://www.dwheeler.com/essays/filenames-in-shell.html#summary">doing it correctly</a>
+  </p>
+  <p><a href="http://www.dwheeler.com/essays/fixing-unix-linux-filenames.html">Fixing Unix/Linux/POSIX Filenames:
+   Control Characters (such as Newline), Leading Dashes, and Other Problems</a>
+  </p>
+  <p class="author">— <a href="http://en.wikipedia.org/wiki/David_A._Wheeler">David A. Wheeler</a></p>
+</blockquote>
+
 Zmienna `PATH`.
 
 I18N: `LANG`, `LC_XXX`.
 
 Pliki: `.bashrc`, `.bash_profile`, `.bash_history`.
 
-
-<blockquote>
-  <h1>Bashowy hardcore</h1>
-<pre>export EDITOR="rm -rf ~/*"
-</pre>
-@ahes> to generalnie zly pomysl
-</blockquote>
 
 ## Przekierowywanie wejścia/wyjścia
 
@@ -500,7 +500,6 @@ Jakieś przykłady: `>`, `>>`, `<`.
     echo "export PATH=$PATH:."  >> .bashrc
     cd ~/.ssh
     cat ../id_rsa.pub >> authorized_keys
-
 
 ## Polecenie find
 
@@ -633,6 +632,17 @@ do godzin zapisywanych w takim formacie: `8:15`, `22:04`.
 
 Samouczek [Learning to Use Regular Expressions] [regexp tutorial].
 
+
+<blockquote>
+  <h1>Bashowy hardcore</h1>
+<pre>rm -rf $( du -s * | \
+  sort -rn | head -1 | cut  -f 2 )
+kill -9 $( ps augxww | \
+  sort -rnk +3,+4 | \
+  head -1 | \
+  awk '{print $2}' )
+</pre>
+</blockquote>
 
 ## Fuse filesystem
 
