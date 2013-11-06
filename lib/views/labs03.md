@@ -17,9 +17,9 @@ domowym w taki sposób, aby nie były wyświetlane ich nazwy.
 6\. Wyświetl zawartość pliku */etc/passwd* w jednej linii.
 
 7\. Za pomocą filtru *tr* wykonaj modyfikację pliku *plik.txt*,
-polegającą na umieszczeniu każdego słowa w osobnej linii.
+polegającą na wypisaniu każdego słowa w osobnej linii.
 
-8\. Zlicz wszystkie pliki znajdujące się w katalogu */etc* i jego
+8\. Zlicz wszystkie pliki znajdujące się w katalogu */var* i jego
 podkatalogach.
 
 9\. Napisać polecenie zliczające ilość znaków z pierwszych trzech
