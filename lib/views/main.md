@@ -17,6 +17,9 @@
 
 ## 7.10.2013 – zaczynamy!
 
+**[6.11.2013]** link do pliku [README](https://github.com/wbzyl/jekyll-based-repository-pages)
+z instrukcjami jak dodać bloga do repozytorium na serwerze Github.
+
 * Bret Victor,
   [References for “The Future of Programming”](http://worrydream.com/dbx/)
 * Atul Gawande,
