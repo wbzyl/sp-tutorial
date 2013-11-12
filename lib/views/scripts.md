@@ -184,6 +184,7 @@ podkreślenia *_*.
 
     :::bash
     #!/bin/bash
+    
     number=0             # licznik plików, którym zmieniono nazwy
     FOUND=0              # zmienna: aby kod się lepiej czytał
 
