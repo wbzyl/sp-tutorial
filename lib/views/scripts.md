@@ -168,6 +168,14 @@ i znaki normalne na znaki pobgrubione:
     done
 
 
+<blockquote>
+  <h1>How to do it?</h1>
+  <p><a href="http://www.dwheeler.com/essays/fixing-unix-linux-filenames.html">Fixing Unix/Linux/POSIX Filenames:
+   Control Characters (such as Newline), Leading Dashes, and Other Problems</a>
+  </p>
+  <p class="author">— <a href="http://en.wikipedia.org/wiki/David_A._Wheeler">David A. Wheeler</a></p>
+</blockquote>
+
 ## Blank rename
 
 Czasami w nazwach plików pojawiają się spacje. To jest *bad thing*.
