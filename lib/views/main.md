@@ -17,7 +17,12 @@
 
 ## 7.10.2013 – zaczynamy!
 
-**[6.11.2013]** link do pliku [README](https://github.com/wbzyl/jekyll-based-repository-pages)
+**[18.11.2013]** Aby uzyskać wpis z przedmiotu SP należy wykonać *pull request*
+do repozytorium [jp](https://github.com/egzamin/sp). W pull request
+podmieniamy wiersz ze swoimi danymi na wiersz 
+z linkiem do swojej strony na serwerze Github.
+
+**[6.11.2013]** Link do pliku [README](https://github.com/wbzyl/jekyll-based-repository-pages)
 z instrukcjami jak dodać bloga do repozytorium na serwerze Github.
 
 * Bret Victor,
