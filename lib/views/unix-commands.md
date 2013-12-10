@@ -706,6 +706,10 @@ Z półki Z. A. Shaw’a, „Learn Code The Hard Way”:
 * [CLI Crash Course](http://cli.learncodethehardway.org/)
 * [Learn Regex](http://regex.learncodethehardway.org/)
 
+Ciekawe:
+
+* [Linux shell tips and tricks](http://www.techbar.me/linux-shell-tips/)
+
 
 #### Linki
 
