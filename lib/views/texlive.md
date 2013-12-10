@@ -27,13 +27,21 @@ Tylko podstawowe informacje.
 TeX Live to ok. 35000 plików (razem, +1GB).
 Pliki te są umieszczone w „drzewach katalogów” o korzeniach:
 
-    /home/wbzyl/.texlive2010/texmf-config
-    /home/wbzyl/.texlive2010/texmf-var
-    !!/usr/local/texlive/2010/texmf-config
-    !!/usr/local/texlive/2010/texmf-var
-    !!/usr/local/texlive/2010/texmf
-    !!/usr/local/texlive/2010/../texmf-local
-    !!/usr/local/texlive/2010/texmf-dist
+    <D> directories:
+       TEXDIR (the main TeX directory):
+         /usr/local/texlive/2013
+       TEXMFLOCAL (directory for site-wide local files):
+         /usr/local/texlive/texmf-local
+       TEXMFSYSVAR (directory for variable and automatically generated data):
+         /usr/local/texlive/2013/texmf-var
+       TEXMFSYSCONFIG (directory for local config):
+         /usr/local/texlive/2013/texmf-config
+       TEXMFVAR (personal directory for variable and automatically generated data):
+         ~/.texlive2013/texmf-var
+       TEXMFCONFIG (personal directory for local config):
+         ~/.texlive2013/texmf-config
+       TEXMFHOME (directory for user-specific files):
+         ~/texmf
 
 Listę korzeni drzewek otrzymamy wykonując polecenie:
 
@@ -45,7 +53,7 @@ Plik ten odszukujemy w systemie w taki sposób:
     kpsewhich texmf.cnf
     /usr/share/texmf/web2c/texmf.cnf
 
-Zawartość tego pliku podejrzymy tak:
+Zawartość tego pliku można podejrzeć w taki sposób:
 
     less $(kpsewhich texmf.cnf)
 
