@@ -327,6 +327,15 @@ sobie wyobrażać:
 Źródło, [Git Community Book](http://book.git-scm.com/1_the_git_object_model.html).
 
 
+<blockquote>
+  {%= image_tag "/images/plan_b.jpg", :alt => "[Plan B]" %}
+  <p><a href="http://gitready.com/intermediate/2009/03/16/rolling-back-changes-with-revert.html">We’ve all done it.</a>
+  Perhaps you didn’t have enough coffee that
+  morning, or it was just before lunch. Somehow though, that bug got
+  into the repository, and now you need to get it out.</p>
+  <p class="author"><a href="">undo, fix, remove in git</a></p>
+</blockquote>
+
 ### Undo różnych rzeczy
 
 Zmieniamy **ostatni** wpis w logu:
