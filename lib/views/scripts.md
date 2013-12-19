@@ -158,13 +158,13 @@ i znaki normalne na znaki pobgrubione:
     echo -n " _ _ _ _ _40 _ _ _ 41_ _ _ _42 _ _ _ 43"
     echo "_ _ _ 44_ _ _ _45 _ _ _ 46_ _ _ _47 _"
     for fore in 30 31 32 33 34 35 36 37; do
-    	line1="$fore  "
-    	line2="    "
-    	for back in 40 41 42 43 44 45 46 47; do
-    		line1="${line1}${esc}${back};${fore}m Normal  ${esc}0m"
-    		line2="${line2}${esc}${back};${fore};1m Bold    ${esc}0m"
-    	done
-    	echo -e "$line1\n$line2"
+        line1="$fore  "
+        line2="    "
+        for back in 40 41 42 43 44 45 46 47; do
+            line1="${line1}${esc}${back};${fore}m Normal  ${esc}0m"
+            line2="${line2}${esc}${back};${fore};1m Bold    ${esc}0m"
+        done
+        echo -e "$line1\n$line2"
     done
 
 
@@ -184,7 +184,7 @@ podkreślenia *_*.
 
     :::bash
     #!/bin/bash
-    
+
     number=0             # licznik plików, którym zmieniono nazwy
     FOUND=0              # zmienna: aby kod się lepiej czytał
 
@@ -282,7 +282,7 @@ Sam skrypt jest prosty:
     :::bash
     #!/bin/sh
     FILES="
-    	/usr/share/dict/words-doroszewski
+        /usr/share/dict/words-doroszewski
           "
     pattern="$1"
     shift
@@ -482,6 +482,18 @@ Teraz kolej na trzy użyteczne funkcje:
     # przykład użycia
     error "ERROR 128"
 
+<blockquote>
+  {%= image_tag "/images/learn.jpg", :alt => "[Learn Key]" %}
+  <p>
+  One afternoon several of us had the same experience — typesetting
+  something, feeding the paper through the developer, only to find a
+  single, beautifully typeset line: “cannot open file foobar” The
+  grumbles were loud enough and in the presence of the right people,
+  and a couple of days later the standard error file was born…
+</p>
+  <p class="author"><a href="http://spinellis.gr/blog/20131211/">The Birth of Standard Error</a></p>
+</blockquote>
+
 Dwa polecenia wbudowane:
 
     declare -f
@@ -559,7 +571,7 @@ A to skrypt w całej swej okazałości:
 
     # <newline> <space> <tab>
     IFS='
-     	'
+        '
 
     # security: ograniczamy wyszukiwanie tylko do wymienionych katalogów
     PATH=/usr/local/bin:/bin:/usr/bin
@@ -567,27 +579,27 @@ A to skrypt w całej swej okazałości:
 
     if [ $# -ne 1 ]
     then
-    	echo "Stosowanie: $0 katalog" >&2
-    	exit 1
+        echo "Stosowanie: $0 katalog" >&2
+        exit 1
     fi
 
     umask 077             # gwarantuje prywatność tworzonych plików
 
     TMP=${TMPDIR:-/tmp}   # uwzględnia alternatywne katalogi plików tymczasowych
     TMPFILES="
-    	$TMP/DIRECTORIES.all.$$ $TMP/DIRECTORIES.all.$$.tmp
-    	$TMP/DIRECTORIES.last01.$$ $TMP/DIRECTORIES.last01.$$.tmp
-    	$TMP/DIRECTORIES.last02.$$ $TMP/DIRECTORIES.last02.$$.tmp
-    	$TMP/DIRECTORIES.last07.$$ $TMP/DIRECTORIES.last07.$$.tmp
-    	$TMP/DIRECTORIES.last14.$$ $TMP/DIRECTORIES.last14.$$.tmp
-    	$TMP/DIRECTORIES.last31.$$ $TMP/DIRECTORIES.last31.$$.tmp
-    	$TMP/FILES.all.$$ $TMP/FILES.all.$$.tmp
-    	$TMP/FILES.last01.$$ $TMP/FILES.last01.$$.tmp
-    	$TMP/FILES.last02.$$ $TMP/FILES.last02.$$.tmp
-    	$TMP/FILES.last07.$$ $TMP/FILES.last07.$$.tmp
-    	$TMP/FILES.last14.$$ $TMP/FILES.last14.$$.tmp
-    	$TMP/FILES.last31.$$ $TMP/FILES.last31.$$.tmp
-    	"
+        $TMP/DIRECTORIES.all.$$ $TMP/DIRECTORIES.all.$$.tmp
+        $TMP/DIRECTORIES.last01.$$ $TMP/DIRECTORIES.last01.$$.tmp
+        $TMP/DIRECTORIES.last02.$$ $TMP/DIRECTORIES.last02.$$.tmp
+        $TMP/DIRECTORIES.last07.$$ $TMP/DIRECTORIES.last07.$$.tmp
+        $TMP/DIRECTORIES.last14.$$ $TMP/DIRECTORIES.last14.$$.tmp
+        $TMP/DIRECTORIES.last31.$$ $TMP/DIRECTORIES.last31.$$.tmp
+        $TMP/FILES.all.$$ $TMP/FILES.all.$$.tmp
+        $TMP/FILES.last01.$$ $TMP/FILES.last01.$$.tmp
+        $TMP/FILES.last02.$$ $TMP/FILES.last02.$$.tmp
+        $TMP/FILES.last07.$$ $TMP/FILES.last07.$$.tmp
+        $TMP/FILES.last14.$$ $TMP/FILES.last14.$$.tmp
+        $TMP/FILES.last31.$$ $TMP/FILES.last31.$$.tmp
+        "
 
     WD=$1
     cd $WD || exit 1
@@ -597,31 +609,31 @@ A to skrypt w całej swej okazałości:
 
     # opcja -fprint dostępna tylko w programie find GNU
     find . \
-    	   -name DIRECTORIES.all -true \
-    	-o -name 'DIRECTORIES.last[0-9][0-9]' -true \
-    	-o -name FILES.all -true \
-    	-o -name 'FILES.last[0-9][0-9]' -true \
+           -name DIRECTORIES.all -true \
+        -o -name 'DIRECTORIES.last[0-9][0-9]' -true \
+        -o -name FILES.all -true \
+        -o -name 'FILES.last[0-9][0-9]' -true \
         -o -path '*.svn*' -true \
-    	-o -type f            -fprint $TMP/FILES.all.$$ \
-    	-a         -mtime -31 -fprint $TMP/FILES.last31.$$ \
-    	-a         -mtime -14 -fprint $TMP/FILES.last14.$$ \
-    	-a         -mtime  -7 -fprint $TMP/FILES.last07.$$ \
-    	-a         -mtime  -2 -fprint $TMP/FILES.last02.$$ \
-    	-a         -mtime  -1 -fprint $TMP/FILES.last01.$$ \
-    	-o -type d            -fprint $TMP/DIRECTORIES.all.$$ \
-    	-a         -mtime -31 -fprint $TMP/DIRECTORIES.last31.$$ \
-    	-a         -mtime -14 -fprint $TMP/DIRECTORIES.last14.$$ \
-    	-a         -mtime  -7 -fprint $TMP/DIRECTORIES.last07.$$ \
-    	-a         -mtime  -2 -fprint $TMP/DIRECTORIES.last02.$$ \
-    	-a         -mtime  -1 -fprint $TMP/DIRECTORIES.last01.$$
+        -o -type f            -fprint $TMP/FILES.all.$$ \
+        -a         -mtime -31 -fprint $TMP/FILES.last31.$$ \
+        -a         -mtime -14 -fprint $TMP/FILES.last14.$$ \
+        -a         -mtime  -7 -fprint $TMP/FILES.last07.$$ \
+        -a         -mtime  -2 -fprint $TMP/FILES.last02.$$ \
+        -a         -mtime  -1 -fprint $TMP/FILES.last01.$$ \
+        -o -type d            -fprint $TMP/DIRECTORIES.all.$$ \
+        -a         -mtime -31 -fprint $TMP/DIRECTORIES.last31.$$ \
+        -a         -mtime -14 -fprint $TMP/DIRECTORIES.last14.$$ \
+        -a         -mtime  -7 -fprint $TMP/DIRECTORIES.last07.$$ \
+        -a         -mtime  -2 -fprint $TMP/DIRECTORIES.last02.$$ \
+        -a         -mtime  -1 -fprint $TMP/DIRECTORIES.last01.$$
 
     for i in FILES.all FILES.last31 FILES.last14 FILES.last07 \
-    	FILES.last02 FILES.last01 DIRECTORIES.all \
-    	DIRECTORIES.last31 DIRECTORIES.last14 \
-    	DIRECTORIES.last07
+        FILES.last02 FILES.last01 DIRECTORIES.all \
+        DIRECTORIES.last31 DIRECTORIES.last14 \
+        DIRECTORIES.last07
     do
-    	sed -e "s=^[.]/=$WD/=" -e "s=^[.]$=$WD=" $TMP/$i.$$ |
-    		LC_ALL=C sort > $TMP/$i.$$.tmp
+        sed -e "s=^[.]/=$WD/=" -e "s=^[.]$=$WD=" $TMP/$i.$$ |
+            LC_ALL=C sort > $TMP/$i.$$.tmp
         cmp -s $TMP/$i.$$.tmp $i || mv $TMP/$i.$$.tmp $i
     done
 
