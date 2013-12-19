@@ -483,15 +483,15 @@ Teraz kolej na trzy użyteczne funkcje:
     error "ERROR 128"
 
 <blockquote>
-  {%= image_tag "/images/learn.jpg", :alt => "[Learn Key]" %}
-  <p>
+ {%= image_tag "/images/learn.jpg", :alt => "[Learn Key]" %}
+ <p>
   One afternoon several of us had the same experience — typesetting
   something, feeding the paper through the developer, only to find a
   single, beautifully typeset line: “cannot open file foobar” The
   grumbles were loud enough and in the presence of the right people,
   and a couple of days later the standard error file was born…
-</p>
-  <p class="author"><a href="http://spinellis.gr/blog/20131211/">The Birth of Standard Error</a></p>
+ </p>
+ <p class="author"><a href="http://spinellis.gr/blog/20131211/">The Birth of Standard Error</a></p>
 </blockquote>
 
 Dwa polecenia wbudowane:
