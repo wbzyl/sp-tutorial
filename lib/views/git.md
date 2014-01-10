@@ -44,6 +44,8 @@ Klika linków na początek:
 * Juan Batiz-Benet, [A simple Git branching model](https://gist.github.com/wbzyl/52947ec7869e7ba13323)
 * [Git tutorials](https://www.atlassian.com/git/tutorial/) –
   na Atlassian
+* [Seth Robertson](http://sethrobertson.github.io/),
+  [On undoing, fixing, or removing commits in git](http://sethrobertson.github.io/GitFixUm/fixup.html)
 
 [Github](https://github.com/):
 
