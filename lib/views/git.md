@@ -36,8 +36,11 @@ gitopodobny od podstaw.
 
 <blockquote>
   {%= image_tag "/images/git-beginner.jpg", :alt => "[Git Beginner]" %}
+  <p>After a few years with git everyone has their own bag o’tricks
+  – a collection of bash aliases, one liners and habits that make his daily work easier.
+  </p>
   <p class="author">C. Okrona,
-  <a href="https://ochronus.com/git-tips-from-the-trenches/">Git tips from the trenches</a></p>
+   <a href="https://ochronus.com/git-tips-from-the-trenches/">Git tips from the trenches</a></p>
 </blockquote>
 
 Klika linków na początek:
