@@ -34,11 +34,14 @@ incantations.”
 Przypowieść ta opisuje perypetie czeladnika tworzącego system
 gitopodobny od podstaw.
 
+<blockquote>
+  {%= image_tag "/images/git-beginner.jpg", :alt => "[Git Beginner]" %}
+  <p class="author">C. Okrona,
+  <a href="https://ochronus.com/git-tips-from-the-trenches/">Git tips from the trenches</a></p>
+</blockquote>
+
 Klika linków na początek:
 
-* S. Chacon:
-  - [Git in One Hour] [git-in-one-hour]
-  - [Pro Git](http://git-scm.com/book) ([polskie tłumaczenie](http://git-scm.com/book/pl))
 * [Git Concepts Simplified](http://gitolite.com/gcs/index.html)
 * [Git User’s Manual](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
 * Juan Batiz-Benet, [A simple Git branching model](https://gist.github.com/wbzyl/52947ec7869e7ba13323)
@@ -46,6 +49,9 @@ Klika linków na początek:
   na Atlassian
 * [Seth Robertson](http://sethrobertson.github.io/),
   [On undoing, fixing, or removing commits in git](http://sethrobertson.github.io/GitFixUm/fixup.html)
+* Scott Chacon,
+  - [Git in One Hour] [git-in-one-hour]
+  - [Pro Git](http://git-scm.com/book) ([polskie tłumaczenie](http://git-scm.com/book/pl))
 
 [Github](https://github.com/):
 
