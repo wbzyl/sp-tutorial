@@ -99,6 +99,27 @@ zapisujemy, np. w katalogu *$HOME/bin*
 (o ile mamy go w ścieżkach zmiennej *PATH).
 
 
+## Search a git repo like a Ninja
+
+Konfiguracja:
+
+    :::bash
+    git config --global grep.extendRegexp true
+    git config --global grep.lineNumber true
+
+Aliasy – group like Ack:
+
+    :::bash
+    git config --global alias.g "grep --break --heading --line-number"
+
+Praktyczne przykłady:
+
+    :::bash
+    git grep -e <regexp> other_branch -- '*.js'
+    git grep <regexp> $(git rev-list --all)
+    git log --grep=login --author=travis --since=1.month
+
+
 ## …i co dalej?
 
 * Pracę z projektem ułatwiają [gałęzie](http://progit.org/book/pl/ch3-0.html)
