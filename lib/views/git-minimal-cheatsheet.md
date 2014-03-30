@@ -31,8 +31,11 @@ do czego służy opcja **-u** powyżej.
 Na razie są to „szczegóły techniczne”.
 Ważne jest aby przeklikać **całe** polecenia.
 
-O pozostałych poleceniach należy umieć powiedzieć
-swoimi słowami co one robią.
+
+## GitHub command line tools
+
+Użyteczne: [Node GH](http://nodegh.io/).
+
 
 ## git na co dzień
 
