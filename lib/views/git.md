@@ -43,6 +43,12 @@ gitopodobny od podstaw.
    <a href="https://ochronus.com/git-tips-from-the-trenches/">Git tips from the trenches</a></p>
 </blockquote>
 
+[Github](https://github.com/):
+
+* Tim Green. [GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
+* [The Open Source Report Card](http://osrc.dfm.io/) by Dan Foreman-Mackey.
+* [GitHub Archive](http://www.githubarchive.org/)
+
 Klika linków na początek:
 
 * [Git Concepts Simplified](http://gitolite.com/gcs/index.html)
@@ -55,12 +61,6 @@ Klika linków na początek:
 * Scott Chacon,
   - [Git in One Hour] [git-in-one-hour]
   - [Pro Git](http://git-scm.com/book) ([polskie tłumaczenie](http://git-scm.com/book/pl))
-
-[Github](https://github.com/):
-
-* [GitHub Archive](http://www.githubarchive.org/)
-* [The Open Source Report Card](http://osrc.dfm.io/) by Dan Foreman-Mackey.
-
 
 <blockquote>
  <p>
