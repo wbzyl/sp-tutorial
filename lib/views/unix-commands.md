@@ -52,6 +52,8 @@ Użycie:
 Jak on działa? Podpowiedź: *fc* to wewnętrzne polecenie
 powłoki (*shell builtin*).
 
+* [Bash CheatSheet](https://github.com/rafalchmiel/bash-cheat-sheet)
+
 
 <blockquote>
   <p>

@@ -4,6 +4,8 @@
   {%= image_tag "/images/algorithm.png", :alt => "[Rozwiązanie…]" %}
 </blockquote>
 
+Użyteczna ściąga: [Linux Commands In Structured Order with Detailed Reference](http://linoxide.com/guide/linux-command-shelf.html).
+
 1\. Podaj przykład skryptu wykorzystującego zmienne
 i zmienne środowiska np. USER, PWD, HOME.
 

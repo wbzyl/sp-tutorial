@@ -31,8 +31,11 @@ do czego służy opcja **-u** powyżej.
 Na razie są to „szczegóły techniczne”.
 Ważne jest aby przeklikać **całe** polecenia.
 
-O pozostałych poleceniach należy umieć powiedzieć
-swoimi słowami co one robią.
+
+## GitHub command line tools
+
+Użyteczne: [Node GH](http://nodegh.io/).
+
 
 ## git na co dzień
 
@@ -97,6 +100,27 @@ i skrypt *extDiff*:
 
 zapisujemy, np. w katalogu *$HOME/bin*
 (o ile mamy go w ścieżkach zmiennej *PATH).
+
+
+## Search a git repo like a Ninja
+
+Konfiguracja:
+
+    :::bash
+    git config --global grep.extendRegexp true
+    git config --global grep.lineNumber true
+
+Aliasy – group like Ack:
+
+    :::bash
+    git config --global alias.g "grep --break --heading --line-number"
+
+Praktyczne przykłady:
+
+    :::bash
+    git grep -e <regexp> other_branch -- '*.js'
+    git grep <regexp> $(git rev-list --all)
+    git log --grep=login --author=travis --since=1.month
 
 
 ## …i co dalej?

@@ -15,6 +15,11 @@
 W podręczniku użytkownika programu *bash* znajdziesz wszystkie
 szczegóły dotyczące programowania powłoki.
 
+Użyteczne rzeczy:
+
+* Robert Muth.
+  [Better Bash Scripting in 15 Minutes](http://robertmuth.blogspot.com/2012/08/better-bash-scripting-in-15-minutes.html)
+
 Pomoc na temat wbudowanych poleceń uzyskasz, korzystając z
 polecenia *help*, na przykład:
 
