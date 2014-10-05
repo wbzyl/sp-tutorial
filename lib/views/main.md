@@ -91,13 +91,9 @@ Dodatkowe materiały:
 
 * Joeal Franusic.
   [Online-REPs-and-REPLs](http://joel.franusic.com/w/page/26128430/Online-REPs-and-REPLs):
-  – [ideone](http://ideone.com/) – Bash
+  - [ideone](http://ideone.com/) – Bash
   - [Codepad](http://codepad.org/) – C, Ruby, …
   - [Reply](http://repl.it/)
-* Edytory:
-  - [Sublime Text](http://www.sublimetext.com/),
-  [download v2](http://www.sublimetext.com/2).
-  [screencasts](https://tutsplus.com/course/improve-workflow-in-sublime-text-2/)
 
 
 #### Linki
