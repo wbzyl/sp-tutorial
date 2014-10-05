@@ -15,17 +15,7 @@
 </blockquote>
 
 
-## 2013.10.07 – zaczynamy!
-
-**[2013.11.18]** Aby uzyskać wpis z przedmiotu SP należy:
-(1) utworzyć swoją stronę na *github.io* lub stronę
-do swojego repozytorium na [github.com](https://github.com)
-(2) wykonać *pull request* do repozytorium [jp](https://github.com/egzamin/sp).
-W *pull request* należy podmienić wiersz ze swoimi danymi na wiersz
-z linkiem do swojej strony na serwerze Github.
-
-**[2013.11.06]** Link do pliku [README](https://github.com/wbzyl/jekyll-based-repository-pages)
-z instrukcjami jak dodać bloga do repozytorium na serwerze Github.
+## 2014.10.05 – zaczynamy!
 
 * Bret Victor,
   [References for “The Future of Programming”](http://worrydream.com/dbx/)
