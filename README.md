@@ -3,12 +3,6 @@
 Gem zawierający notatki do wykładu „Środowisko Programisty”.
 
 
-## TODO
-
-1. Bash scanner dla gemu CodeRay.
-2. UV -> CodeRay
-
-
 ## Instalacja
 
 Wykonać polecenie:
