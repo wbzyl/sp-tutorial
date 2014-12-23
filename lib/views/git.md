@@ -177,7 +177,8 @@ Następnie do pliku *.bashrc* dopisujemy:
     source ~/.git-prompt.sh
     source ~/.git-completion.sh
     # bash                    <pre>      <post>
-    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\n→ "'
+    # PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\n→ "'
+    PS1='\u@\h \W$(__git_ps1 " (%s)")\n\$ '
     GIT_PS1_SHOWDIRTYSTATE=enable      # unstaged (*), staged (+) changes
     GIT_PS1_SHOWSTASHSTATE=enable      # something is stashed ($)
     GIT_PS1_SHOWUNTRACKEDFILES=enable  # untracked (%)
