@@ -15,7 +15,7 @@
 </blockquote>
 
 
-## 2014.10.05 – zaczynamy!
+## 2015.10.03 – zaczynamy!
 
 * Bret Victor,
   [References for “The Future of Programming”](http://worrydream.com/dbx/)
