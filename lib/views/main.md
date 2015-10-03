@@ -43,9 +43,6 @@
 
 Dodatkowe materiały:
 
-* Nick Parlante.
-  {%= link_to "Computer Science 101", "http://www.cs101-class.org/" %} –
-  teaches the essential ideas of Computer Science for a zero-prior-experience audience
 * {%= link_to "Stanford OpenClassroom", "http://openclassroom.stanford.edu/MainFolder/HomePage.php" %} –
   Practical Unix, Introduction to Databases, Web Applications + inne kursy online
 
@@ -63,10 +60,6 @@ Dodatkowe materiały:
 1. T. Oetiker, H. Partl, I. Hyna, E. Schlegl.
    [Nie za krótkie wprowadzenie do systemu LaTeX2e] [lshort2e]
    (tłumaczenie J. Gołdasz, R. Kubiak, T. Przechlewski).
-1. P. Flynn.
-   [Formatting Information](http://www.ctan.org/tex-archive/info/beginlatex/),
-   Version 3.6, March 2005.
-   [Wersja HTML](http://www.tex.ac.uk/tex-archive/info/beginlatex/html/).
 1. M. Downes. {%= link_to "Short Math Guide for LaTeX", "/doc/short-math-guide.pdf" %}.
 1. L. Lamport. „LaTeX. System opracowywania dokumentów”. Wydawnictwa Naukowo-Techniczne 2004.
 1. [LaTeX2ε Cheatsheet] [latex2e cheatsheet].
