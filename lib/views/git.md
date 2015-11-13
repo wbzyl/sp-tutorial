@@ -102,6 +102,7 @@ konfiguracyjnego kilku zwyczajowych skrótów:
     git config --global alias.ls    "ls-files"
     git config --global alias.st    "status"
     git config --global alias.df    "diff"
+    git config --global core.editor "atom --wait"
 
 **Uwaga:** Porównywanie zmian w kodzie ułatwia program [meld](http://meldmerge.org/).
 Po instalacji tego programu w systemie, konfigurujemy program *git*:
