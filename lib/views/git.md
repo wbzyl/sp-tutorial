@@ -79,8 +79,7 @@ Zanim zaczniemy pracę systemem Git musimy go skonfigurować:
     git config -l
     git config --global user.name "Wlodek Bzyl"
     git config --global user.email "matwb@univ.gda.pl"
-    git config --global core.autocrlf input # on Linux & Mac OSX
-    git config --global core.autocrlf auto  # on Windows
+    git config --global core.autocrlf input # on Linux & Mac OS
     git config --global push.default simple # want to push the branch we are on
 
 Po czym natychmiast sprawdzamy, czy coś poszło nie tak:
