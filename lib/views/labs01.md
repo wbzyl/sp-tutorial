@@ -47,18 +47,18 @@ katalogu *dokumenty*.
 9\. Będąc w katalogu *wazne-sprawy* sprawdź, czy są jakieś różnice w
 zawartości plików *wykonano.txt* i *odtworzono.txt*.
 
-10\. Wyświetl kalendarz na październik 2009 r.  (*cal*)
+10\. Wyświetl kalendarz na październik 2016 r.  (*cal*)
 
-Wyświetl kalendarz na wrzesień, październik i listopad 2009 r.
+Wyświetl kalendarz na wrzesień, październik i listopad 2016 r.
 z miesiącami obok siebie (*cal*):
 
-        wrzesień 2009       październik 2009        listopad 2009
+        wrzesień              październik           listopad
     ni po wt śr cz pi so  ni po wt śr cz pi so  ni po wt śr cz pi so
            1  2  3  4  5               1  2  3   1  2  3  4  5  6  7
      6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14
     ...                   ...                   ...
 
-Wyświetl kalendarz na październik, listopad i grudzień 2009 r.
+Wyświetl kalendarz na październik, listopad i grudzień 2016 r.
 w taki sposób:
 
          październik             listopad               grudzień
@@ -69,7 +69,7 @@ w taki sposób:
     ...                    ...                    ...
 
 I jeszcze raz na wrzesień i październik oraz
-na październik i listopad 2009 r z miesiącami obok siebie
+na październik i listopad 2016 r z miesiącami obok siebie
 (*cal*, *cut*?):
 
          październik             listopad
