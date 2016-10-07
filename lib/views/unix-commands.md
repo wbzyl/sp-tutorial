@@ -38,6 +38,7 @@ oraz polecenie *command* i *whereis*:
     command -v redcarpet
     whereis ls
 
+<!--
 Jeszcze jeden użyteczny alias:
 
     :::bash
@@ -51,6 +52,7 @@ Użycie:
 
 Jak on działa? Podpowiedź: *fc* to wewnętrzne polecenie
 powłoki (*shell builtin*).
+-->
 
 * [Bash CheatSheet](https://github.com/rafalchmiel/bash-cheat-sheet)
 
@@ -362,17 +364,6 @@ Jak podejrzeć co zawiera archiwum *.tar.gz*:
 
 Zwykle w opcjach dopisujemy *v*, co oznacza
 *verbose*, po polsku to chyba gadatliwość?
-
-***Przykład:***
-Instalujemy edytor Sublime Text:
-
-1. Ze strony [Sublime Text](http://www.sublimetext.com/)
-   pobieramy archiwum z programem.
-   Wybieramy właściwą dla naszego komputera wersję – 32bit lub 64bit.
-2. Rozpakowujemy pobrane archiwum.
-3. Sprawdzamy czy plik *sublime_text* ma ustawione
-   uprawnienia do wykonywania. Jeśli nie, to zmieniamy je.
-4. Uruchamiamy edytor.
 
 
 <blockquote>
